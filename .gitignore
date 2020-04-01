@@ -1,2 +1,11 @@
 
-./Debug/
+Debug
+*.d
+*.out
+**.elf
+*.o
+*.map
+*.elf.in
+*settings/
+*launch
+*.xml
