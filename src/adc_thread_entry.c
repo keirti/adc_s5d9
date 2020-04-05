@@ -158,40 +158,41 @@ void adc_thread_entry(void)
 	 */
 	while (1)
 	{
-           tx_event_flags_get (&g_adc_flags, ALL_FLAGS, TX_OR_CLEAR, &actual_flags, TX_WAIT_FOREVER);
+		uint8_t count = 0u;
+        tx_event_flags_get (&g_adc_flags, ALL_FLAGS, TX_OR_CLEAR, &actual_flags, TX_WAIT_FOREVER);
 
-           if( EVENT_FLAG_1 == (actual_flags & EVENT_FLAG_1))
-           {
+        if( EVENT_FLAG_1 == (actual_flags & EVENT_FLAG_1))
+        {
 				/*
 				 * process ADC data accordingly
 				 */
-				for(uint32_t count=0; count<g_sf_adc_periodic0.p_cfg->sample_count; count++)
+				for(count=0; count<g_sf_adc_periodic0.p_cfg->sample_count; count++)
 				{
 					result = g_user_buffer[count];
 					g_ioport.p_api->pinWrite(g_leds.p_leds[0], IOPORT_LEVEL_LOW);
 					g_ioport.p_api->pinWrite(g_leds.p_leds[1], IOPORT_LEVEL_HIGH);
 				}
-           }
-           else if (EVENT_FLAG_2 == (actual_flags & EVENT_FLAG_2))
-           {
-				/*
-			     * Loop storing the number of samples
-				 */
-				for(uint32_t count=0; count<g_sf_adc_periodic0.p_cfg->sample_count; count++)
-				{
+        }
+        else if (EVENT_FLAG_2 == (actual_flags & EVENT_FLAG_2))
+        {
+			/*
+			 * Loop storing the number of samples
+			 */
+			for(count=0; count<g_sf_adc_periodic0.p_cfg->sample_count; count++)
+			{
 				result = g_user_buffer[count];
-				}
-				/*
-			     * process ADC data accordingly
-				 */
+			}
+			/*
+			 * process ADC data accordingly
+			 */
 				
-               g_ioport.p_api->pinWrite(g_leds.p_leds[0], IOPORT_LEVEL_HIGH);
-               g_ioport.p_api->pinWrite(g_leds.p_leds[1], IOPORT_LEVEL_LOW);
+            g_ioport.p_api->pinWrite(g_leds.p_leds[0], IOPORT_LEVEL_HIGH);
+            g_ioport.p_api->pinWrite(g_leds.p_leds[1], IOPORT_LEVEL_LOW);
 
-           }
-           else
-           {
-           }
+        }
+        else
+        {
+        }
     }
 }
 
