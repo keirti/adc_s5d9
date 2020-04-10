@@ -46,6 +46,12 @@ extern uint32_t g_ssp_common_thread_count;
 extern TX_SEMAPHORE g_ssp_common_initialized_semaphore;
 
 static uint8_t led_thread_stack[1024] BSP_PLACE_IN_SECTION_V2(".stack.led_thread") BSP_ALIGN_VARIABLE_V2(BSP_STACK_ALIGNMENT);
+static const uint32_t threadx_tick_rate_Hz = 100; /* Define the units to be used with the threadx sleep function */
+static const uint32_t freq_in_hz = 10; /* Set the blink frequency (must be <= threadx_tick_rate_Hz */
+static uint32_t delay = 0u; /* Calculate the delay in terms of the threadx tick rate */
+static bsp_leds_t leds; /* LED type structure */
+static ioport_level_t level = IOPORT_LEVEL_LOW; /* LED state variable */
+
 
 /*=============================================================================*
  Private Function Definitions (static)
@@ -67,7 +73,11 @@ static void led_thread_func(ULONG thread_input)
     /* Initialize common components */
     tx_startup_common_init();
 
-    /* Initialize each module instance. */
+    /*
+     * Init the local thread variables
+     */
+    delay = threadx_tick_rate_Hz/freq_in_hz;
+    R_BSP_LedsGet(&leds);
 
     /* Enter user code for this thread. */
     led_thread_entry();
@@ -75,43 +85,16 @@ static void led_thread_func(ULONG thread_input)
 
 static void led_thread_entry(void)
 {
-    /* Define the units to be used with the threadx sleep function */
-	const uint32_t threadx_tick_rate_Hz = 100;
-    /* Set the blink frequency (must be <= threadx_tick_rate_Hz */
-    const uint32_t freq_in_hz = 10;
-    /* Calculate the delay in terms of the threadx tick rate */
-    const uint32_t delay = threadx_tick_rate_Hz/freq_in_hz;
-    /* LED type structure */
-    bsp_leds_t leds;
-    /* LED state variable */
-    ioport_level_t level = IOPORT_LEVEL_LOW;
-
-    /* Get LED information for this board */
-    R_BSP_LedsGet(&leds);
-
-    /* If this board has no leds then trap here */
-    if (0 == leds.led_count)
+    /*
+     * Continually loop
+     * toggling the pin setting and applying it to the pin
+     * Sleep the thread for the delay period
+     */
+    while(1)
     {
-        while(1);   // There are no leds on this board
-    }
-
-    while (1)
-    {
-        /* Determine the next state of the LEDs */
-        if(IOPORT_LEVEL_LOW == level)
-        {
-            level = IOPORT_LEVEL_HIGH;
-        }
-        else
-        {
-            level = IOPORT_LEVEL_LOW;
-        }
-
-        /* Update all board LEDs */
+        level = !level;
         g_ioport.p_api->pinWrite(leds.p_leds[1], level);
-
-        /* Delay */
-        tx_thread_sleep (delay);
+        tx_thread_sleep(delay);
     }
 }
 /*=============================================================================*
