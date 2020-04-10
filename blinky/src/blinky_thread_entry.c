@@ -47,10 +47,8 @@ void blinky_thread_entry(void)
         }
 
         /* Update all board LEDs */
-        for(uint32_t i = 0; i < leds.led_count; i++)
-        {
-            g_ioport.p_api->pinWrite(leds.p_leds[i], level);
-        }
+        g_ioport.p_api->pinWrite(leds.p_leds[0], level);
+        g_ioport.p_api->pinWrite(leds.p_leds[2], level);
 
         /* Delay */
         tx_thread_sleep (delay);

@@ -1,6 +1,7 @@
 /* generated main source file - do not edit */
 #include "bsp_api.h"
 #include "tx_api.h"
+#include "led_thread.h"
 
 extern void blinky_thread_create(void);
 
@@ -58,6 +59,7 @@ void tx_application_define(void *first_unused_memory)
     }
 
     blinky_thread_create ();
+	led_thread_create();
 
 #ifdef TX_USER_ENABLE_TRACE
     TX_USER_ENABLE_TRACE;
