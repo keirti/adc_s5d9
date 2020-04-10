@@ -17,7 +17,7 @@ void blinky_thread_entry(void)
     /* Define the units to be used with the threadx sleep function */
 	const uint32_t threadx_tick_rate_Hz = 100;
     /* Set the blink frequency (must be <= threadx_tick_rate_Hz */
-    const uint32_t freq_in_hz = 2;
+    const uint32_t freq_in_hz = 10;
     /* Calculate the delay in terms of the threadx tick rate */
     const uint32_t delay = threadx_tick_rate_Hz/freq_in_hz;
     /* LED type structure */
