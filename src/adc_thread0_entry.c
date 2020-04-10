@@ -10,7 +10,7 @@ bsp_leds_t led;
 void adc_thread0_entry(void)
 {
     /* TODO: add your own code here */
-    ssp_err_t status;// = SSP_SUCCESS;
+    volatile ssp_err_t status;// = SSP_SUCCESS;
 
     initialise_monitor_handles();
 
@@ -38,19 +38,19 @@ void adc_thread0_entry(void)
     while (1)
     {
        g_adc0.p_api->read(g_adc0.p_ctrl, ADC_REG_CHANNEL_0, &adc_data);
-       printf("read channel 1 : %d\n",adc_data);
+       //printf("read channel 1 : %d\n",adc_data);
        g_adc0.p_api->read(g_adc0.p_ctrl, ADC_REG_CHANNEL_1, &adc_data);
-       printf("read channel 2 : %d\n",adc_data);
+       //printf("read channel 2 : %d\n",adc_data);
        g_adc0.p_api->read(g_adc0.p_ctrl, ADC_REG_CHANNEL_2, &adc_data);
-       printf("read channel 3 : %d\n",adc_data);
+       //printf("read channel 3 : %d\n",adc_data);
        g_adc0.p_api->read(g_adc0.p_ctrl, ADC_REG_CHANNEL_3, &adc_data);
-       printf("read channel 4 : %d\n",adc_data);
+       //printf("read channel 4 : %d\n",adc_data);
        g_adc0.p_api->read(g_adc0.p_ctrl, ADC_REG_CHANNEL_4, &adc_data);
-       printf("read channel 5 : %d\n",adc_data);
+       //printf("read channel 5 : %d\n",adc_data);
        g_adc0.p_api->read(g_adc0.p_ctrl, ADC_REG_CHANNEL_5, &adc_data);
-       printf("read channel 6 : %d\n",adc_data);
+       //printf("read channel 6 : %d\n",adc_data);
        status = g_adc0.p_api->read(g_adc0.p_ctrl, ADC_REG_CHANNEL_6, &adc_data);
-       printf("read channel 7 : %d\n",adc_data);
+       //printf("read channel 7 : %d\n",adc_data);
 
        if(status == SSP_SUCCESS)
        {

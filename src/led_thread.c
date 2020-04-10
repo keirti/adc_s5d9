@@ -47,7 +47,7 @@ extern TX_SEMAPHORE g_ssp_common_initialized_semaphore;
 
 static uint8_t led_thread_stack[1024] BSP_PLACE_IN_SECTION_V2(".stack.led_thread") BSP_ALIGN_VARIABLE_V2(BSP_STACK_ALIGNMENT);
 static const uint32_t threadx_tick_rate_Hz = 100; /* Define the units to be used with the threadx sleep function */
-static const uint32_t freq_in_hz = 10; /* Set the blink frequency (must be <= threadx_tick_rate_Hz */
+static const uint32_t freq_in_hz = 50; /* Set the blink frequency (must be <= threadx_tick_rate_Hz */
 static uint32_t delay = 0u; /* Calculate the delay in terms of the threadx tick rate */
 static bsp_leds_t leds; /* LED type structure */
 static ioport_level_t level = IOPORT_LEVEL_LOW; /* LED state variable */
@@ -93,7 +93,7 @@ static void led_thread_entry(void)
     while(1)
     {
         level = !level;
-        g_ioport.p_api->pinWrite(leds.p_leds[2], level);
+        g_ioport.p_api->pinWrite(leds.p_leds[1], level);
         tx_thread_sleep(delay);
     }
 }

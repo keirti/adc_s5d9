@@ -27,6 +27,7 @@ REVIEWS
 *=============================================================================*/
 #include "led_thread.h"
 #include "adc_thread.h"
+#include "adc_thread0.h"
 
 /*=============================================================================*
  Local Header File
@@ -47,7 +48,8 @@ typedef struct
 init_func_ptr thread_create_func_arr[] = 
 {
 	{&led_thread_create},
-	{&adc_thread_create},
+	{&adc_thread0_create},
+	//{&adc_thread_create},
 };
 
 const uint8_t num_thread_creates = ((sizeof(thread_create_func_arr))/(sizeof(init_func_ptr)));

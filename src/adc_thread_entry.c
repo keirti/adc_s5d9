@@ -170,12 +170,9 @@ void adc_thread_entry(void)
 				{
 					result = g_user_buffer[count];
 				}
-				
-				if(result > 10u)
-				{
-		            g_ioport.p_api->pinWrite(g_leds.p_leds[0], IOPORT_LEVEL_LOW);
-		            g_ioport.p_api->pinWrite(g_leds.p_leds[1], IOPORT_LEVEL_HIGH);
-				}
+
+		        g_ioport.p_api->pinWrite(g_leds.p_leds[0], IOPORT_LEVEL_LOW);
+		        g_ioport.p_api->pinWrite(g_leds.p_leds[1], IOPORT_LEVEL_HIGH);
         }
         else if (EVENT_FLAG_2 == (actual_flags & EVENT_FLAG_2))
         {
