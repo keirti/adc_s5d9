@@ -169,8 +169,13 @@ void adc_thread_entry(void)
 				for(count=0; count<g_sf_adc_periodic0.p_cfg->sample_count; count++)
 				{
 					result = g_user_buffer[count];
-					g_ioport.p_api->pinWrite(g_leds.p_leds[0], IOPORT_LEVEL_LOW);
-					g_ioport.p_api->pinWrite(g_leds.p_leds[1], IOPORT_LEVEL_HIGH);
+					printf("Event 1: ADC %d: %f",count,result);
+				}
+				
+				if(result > 10u)
+				{
+		            g_ioport.p_api->pinWrite(g_leds.p_leds[0], IOPORT_LEVEL_LOW);
+		            g_ioport.p_api->pinWrite(g_leds.p_leds[1], IOPORT_LEVEL_HIGH);
 				}
         }
         else if (EVENT_FLAG_2 == (actual_flags & EVENT_FLAG_2))
@@ -181,6 +186,7 @@ void adc_thread_entry(void)
 			for(count=0; count<g_sf_adc_periodic0.p_cfg->sample_count; count++)
 			{
 				result = g_user_buffer[count];
+				printf("Event 2: ADC %d: %f",count,result);
 			}
 			/*
 			 * process ADC data accordingly
