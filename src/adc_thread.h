@@ -8,6 +8,7 @@
 extern "C" void adc_thread_entry(void);
 #else
 extern void adc_thread_entry(void);
+void adc_thread_create(void);
 #endif
 #include "r_dtc.h"
 #include "r_transfer_api.h"

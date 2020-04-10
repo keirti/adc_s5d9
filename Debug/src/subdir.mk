@@ -4,16 +4,28 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../src/adc_thread.c \
 ../src/adc_thread_entry.c \
-../src/hal_entry.c 
+../src/hal_entry.c \
+../src/led_thread.c \
+../src/main.c \
+../src/threadx_interface.c 
 
 OBJS += \
+./src/adc_thread.o \
 ./src/adc_thread_entry.o \
-./src/hal_entry.o 
+./src/hal_entry.o \
+./src/led_thread.o \
+./src/main.o \
+./src/threadx_interface.o 
 
 C_DEPS += \
+./src/adc_thread.d \
 ./src/adc_thread_entry.d \
-./src/hal_entry.d 
+./src/hal_entry.d \
+./src/led_thread.d \
+./src/main.d \
+./src/threadx_interface.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

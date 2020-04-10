@@ -169,7 +169,6 @@ void adc_thread_entry(void)
 				for(count=0; count<g_sf_adc_periodic0.p_cfg->sample_count; count++)
 				{
 					result = g_user_buffer[count];
-					printf("Event 1: ADC %d: %f",count,result);
 				}
 				
 				if(result > 10u)
@@ -186,7 +185,6 @@ void adc_thread_entry(void)
 			for(count=0; count<g_sf_adc_periodic0.p_cfg->sample_count; count++)
 			{
 				result = g_user_buffer[count];
-				printf("Event 2: ADC %d: %f",count,result);
 			}
 			/*
 			 * process ADC data accordingly

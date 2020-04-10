@@ -67,7 +67,7 @@ src/adc_thread_entry.o: ../src/adc_thread_entry.c \
  c:\users\cjg19\documents\github\adc_s5d9\synergy\ssp\inc\framework\el\cm4_gcc\tx_port.h \
  C:\Users\cjg19\Documents\GitHub\adc_s5d9\synergy_cfg\ssp_cfg\framework\el/tx_user.h \
  C:\Users\cjg19\Documents\GitHub\adc_s5d9\synergy\ssp\inc\framework\el/tx_cmsis.h \
- C:\Users\cjg19\Documents\GitHub\adc_s5d9\src\synergy_gen/adc_thread.h \
+ ../src/adc_thread.h \
  C:\Users\cjg19\Documents\GitHub\adc_s5d9\src\synergy_gen/hal_data.h \
  C:\Users\cjg19\Documents\GitHub\adc_s5d9\src\synergy_gen/common_data.h \
  C:\Users\cjg19\Documents\GitHub\adc_s5d9\synergy\ssp\inc\driver\instances/r_cgc.h \
@@ -220,7 +220,7 @@ C:\Users\cjg19\Documents\GitHub\adc_s5d9\synergy_cfg\ssp_cfg\framework\el/tx_use
 
 C:\Users\cjg19\Documents\GitHub\adc_s5d9\synergy\ssp\inc\framework\el/tx_cmsis.h:
 
-C:\Users\cjg19\Documents\GitHub\adc_s5d9\src\synergy_gen/adc_thread.h:
+../src/adc_thread.h:
 
 C:\Users\cjg19\Documents\GitHub\adc_s5d9\src\synergy_gen/hal_data.h:
 

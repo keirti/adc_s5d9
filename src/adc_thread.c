@@ -2,7 +2,6 @@
 #include "adc_thread.h"
 
 TX_THREAD adc_thread;
-void adc_thread_create(void);
 static void adc_thread_func(ULONG thread_input);
 static uint8_t adc_thread_stack[1024] BSP_PLACE_IN_SECTION_V2(".stack.adc_thread") BSP_ALIGN_VARIABLE_V2(BSP_STACK_ALIGNMENT);
 void tx_startup_err_callback(void *p_instance, void *p_data);
