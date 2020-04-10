@@ -2,7 +2,7 @@
 (C) COPYRIGHT Smart Power Solutions Limited - 2020
 
 FILE
-    threada_interface.c
+    thread_config
 
 ORIGINAL AUTHOR
     Chris Goodwin
@@ -17,6 +17,13 @@ REVIEWS
     None
 *******************************************************************************/
 
+#ifndef _THREAD_CONFIG_H_
+#define _THREAD_CONFIG_H_
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /*=============================================================================*
  ANSI C & System-wide Header Files
 *=============================================================================*/
@@ -25,67 +32,53 @@ REVIEWS
 /*=============================================================================*
  Interface Header Files
 *=============================================================================*/
-#include "thread_config.h"
+#include "led_thread.h"
+#include "adc_thread.h"
+#include "adc_thread0.h"
 
 /*=============================================================================*
- Local Header File
-*=============================================================================*/
-#include "threadx_interface.h"
-
-/*=============================================================================*
- Private Defines
+ Pragmas
 *=============================================================================*/
 /* None */
 
 /*=============================================================================*
- Private Variable Definitions (static)
+ Public Defines
 *=============================================================================*/
-const uint8_t num_thread_creates = ((sizeof(thread_create_func_arr))/(sizeof(init_func_ptr)));
+typedef struct
+{
+	void(*init_func)(void);
+}init_func_ptr;
+	
+/*=============================================================================*
+ Public Data
+*=============================================================================*/
+init_func_ptr thread_create_func_arr[] = 
+{
+	{&led_thread_create},
+	{&adc_thread0_create},
+	//{&adc_thread_create},
+};
 
 /*=============================================================================*
- Private Function Definitions (static)
-*=============================================================================*/
-/* None */
-
-/*=============================================================================*
- Private Function Implementations (Static)
-*=============================================================================*/
-/* None */
-
-/*=============================================================================*
- Public Function Implementations
+ Public Function Definitions
 *=============================================================================*/
 /*-------------------------------------------------------------------* 
 
   NAME
-	thread_create_main
+	_ENTER_FUNCTION_NAME_HERE_
   
   DESCRIPTION
-	loop called from main.c to create all the threads within the table
-	above
+	_ENTER_FUNCTION_DESCRIPTION_HERE_
   PARAM
-	None
+	_PARAM_NAME_ - _DESCRIPTION_
   
   RETURNS
-	None
+	_RETURN_DESCRIPTION_
 
 *--------------------------------------------------------------------*/
-void thread_create_main(void)
-{
-	uint8_t i = 0u;
-	/*
-	 * Loop for all the size of the array and call all the functions
-	 * Check they arent null just for safety
-	 */
-    for(i = 0u; i < num_thread_creates; i++)
-    {
-        if(thread_create_func_arr[i].init_func != NULL)
-        {
-            thread_create_func_arr[i].init_func();
-        }
-    }
-}
+/* None */ 
 
 /*=============================================================================*
 End Of File
 *=============================================================================*/
+#endif  /* _THREAD_CONFIG_H_ */
