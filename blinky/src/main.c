@@ -1,9 +1,7 @@
 /* generated main source file - do not edit */
 #include "bsp_api.h"
 #include "tx_api.h"
-#include "led_thread.h"
-
-extern void blinky_thread_create(void);
+#include "threadx_interface.h"
 
 uint32_t g_ssp_common_thread_count;
 bool g_ssp_common_initialized;
@@ -58,8 +56,7 @@ void tx_application_define(void *first_unused_memory)
         tx_startup_err_callback (&g_ssp_common_initialized_semaphore, 0);
     }
 
-    blinky_thread_create ();
-	led_thread_create();
+    thread_create_main();
 
 #ifdef TX_USER_ENABLE_TRACE
     TX_USER_ENABLE_TRACE;
