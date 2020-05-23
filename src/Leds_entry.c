@@ -73,8 +73,7 @@ void Leds_entry(void)
     /*
      * Register the thread with the monitor
      */
-    ssp_err_t err = g_sf_thread_monitor0.p_api->threadRegister (g_sf_thread_monitor0.p_ctrl, &min_max_values);
-    if(SSP_SUCCESS != err)
+    if(SSP_SUCCESS != g_sf_thread_monitor0.p_api->threadRegister (g_sf_thread_monitor0.p_ctrl, &min_max_values))
     {
         __BKPT(0);
     }
