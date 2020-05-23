@@ -93,6 +93,16 @@ vTaskMODBUS( void )
 
                     /* Here we simply count the number of poll cycles. */
                     usRegInputBuf[0]++;
+
+                    /*
+                     *  Increment the thread_counter
+                     *  Sleep the thread
+                     */
+                    if(SSP_SUCCESS != g_sf_thread_monitor0.p_api->countIncrement(g_sf_thread_monitor0.p_ctrl))
+                    {
+                        __BKPT(0);
+                    }
+                    tx_thread_sleep (5);
                 }
                 while( usRegHoldingBuf[0] );
             }
