@@ -57,7 +57,7 @@ static USHORT   usRegInputStart = REG_INPUT_START;
 static USHORT   usRegInputBuf[REG_INPUT_NREGS];
 static USHORT   usRegHoldingStart = REG_HOLDING_START;
 static USHORT   usRegHoldingBuf[REG_HOLDING_NREGS];
-static uint16_t* adc_data;
+static adc_data_t* adc_data;
 /* ----------------------- Start implementation -----------------------------*/
 
 void
@@ -125,7 +125,7 @@ eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs )
         while( usNRegs > 0 )
         {
             if(iRegIndex <7)
-            usRegInputBuf[iRegIndex] = adc_data[iRegIndex];
+            usRegInputBuf[iRegIndex] = adc_data[iRegIndex].adc_raw_count;
             *pucRegBuffer++ = ( unsigned char )( usRegInputBuf[iRegIndex] >> 8 );
             *pucRegBuffer++ = ( unsigned char )( usRegInputBuf[iRegIndex] & 0xFF );
             iRegIndex++;

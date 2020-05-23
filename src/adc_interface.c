@@ -40,7 +40,7 @@ REVIEWS
 /*=============================================================================*
  Private Variable Definitions (static)
 *=============================================================================*/
-static uint16_t adc_data_arr[7];
+static adc_data_t adc_data_arr[7];
 
 /*=============================================================================*
  Private Function Definitions (static)
@@ -55,7 +55,7 @@ static uint16_t adc_data_arr[7];
 /*=============================================================================*
  Public Function Implementations
 *=============================================================================*/
-uint16_t* get_adc_arr(void)
+adc_data_t* get_adc_arr(void)
 {
     return &adc_data_arr[0];
 }

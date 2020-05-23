@@ -45,8 +45,7 @@ REVIEWS
  Private Variable Definitions (static)
 *=============================================================================*/
 static sf_thread_monitor_counter_min_max_t min_max_values;
-static uint16_t* adc_data;
-static float adc_voltages[NUM_ADC_CHANNELS] = {{ 0 }};
+static adc_data_t* adc_data;
 
 /*=============================================================================*
  Private Function Definitions (static)
@@ -59,7 +58,7 @@ static void calculate_adc_voltages(uint8_t channel);
 *=============================================================================*/
 static void calculate_adc_voltages(uint8_t channel)
 {
-    adc_voltages[channel] = (float)((float)(adc_data[channel]/4095)*3.3f);
+    adc_data[channel].adc_voltage = ((adc_data[channel].adc_raw_count/4095.0f)*3.3f);
 }
 
 /*=============================================================================*
@@ -112,10 +111,10 @@ void thread0_entry(void)
          * Increment the channel
          * Check the channel is within the range of the configured amount of adcs
          */
-        g_adc0.p_api->read(g_adc0.p_ctrl, channel, &adc_data[channel]);
+        g_adc0.p_api->read(g_adc0.p_ctrl, channel, &adc_data[channel].adc_raw_count);
         calculate_adc_voltages(channel);
         channel++;
-        if(channel >= NUM_ADC_CHANNELS)
+        if(channel > NUM_ADC_CHANNELS)
         {
             channel = ADC_REG_CHANNEL_0;
         }
