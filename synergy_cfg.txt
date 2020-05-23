@@ -482,4 +482,12 @@ Synergy Configuration
       Message Size (Words): 1
       Queue Size (Bytes): 20
       
+  Thread "Led Thread"
+    Symbol: Leds
+    Name: Led Thread
+    Stack size (bytes): 1024
+    Priority: 1
+    Auto start: Enabled
+    Time slicing interval (ticks): 1
+    
   Messaging

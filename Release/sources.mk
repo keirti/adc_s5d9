@@ -30,12 +30,12 @@ C_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+src \
 src/freemb/demo \
 src/freemb/demo/port \
 src/freemb/modbus/functions \
 src/freemb/modbus \
 src/freemb/modbus/rtu \
-src \
 src/synergy_gen \
 synergy/board/s5d9_pk \
 synergy/ssp/src/bsp/cmsis/Device/RENESAS/S5D9/Source \
