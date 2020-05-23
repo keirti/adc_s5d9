@@ -77,7 +77,7 @@ src/thread0_entry.o: ../src/thread0_entry.c \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_wdt.h \
  K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_wdt_cfg.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\instances/sf_thread_monitor.h \
- K:\GitHub\adc_s5d9\EMS\src\synergy_gen/thread0.h \
+ ../src/adc_interface.h K:\GitHub\adc_s5d9\EMS\src\synergy_gen/thread0.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_gpt.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_timer_api.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_dtc.h \
@@ -247,6 +247,8 @@ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_wdt.h:
 K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_wdt_cfg.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\instances/sf_thread_monitor.h:
+
+../src/adc_interface.h:
 
 K:\GitHub\adc_s5d9\EMS\src\synergy_gen/thread0.h:
 
