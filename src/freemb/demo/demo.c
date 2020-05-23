@@ -36,6 +36,7 @@
 
 #include "sf_thread_monitor_api.h"
 #include "watchdog.h"
+#include "adc_interface.h"
 /* ----------------------- Defines ------------------------------------------*/
 #define REG_INPUT_START                 ( 1000 )
 #define REG_INPUT_NREGS                 ( 64 )
@@ -56,7 +57,7 @@ static USHORT   usRegInputStart = REG_INPUT_START;
 static USHORT   usRegInputBuf[REG_INPUT_NREGS];
 static USHORT   usRegHoldingStart = REG_HOLDING_START;
 static USHORT   usRegHoldingBuf[REG_HOLDING_NREGS];
-extern uint16_t adc_data[7];
+static uint16_t* adc_data;
 /* ----------------------- Start implementation -----------------------------*/
 
 void
@@ -67,6 +68,7 @@ vTaskMODBUS( void )
 {
     const UCHAR     ucSlaveID[] = { 0xAA, 0xBB, 0xCC };
     eMBErrorCode    eStatus;
+    adc_data = adc_arr_get();
 
         if( MB_ENOERR != ( eStatus = eMBInit( MB_RTU, 0x04, 3, 9600, MB_PAR_EVEN ) ) )
         {
