@@ -18,7 +18,9 @@ void Leds_entry(void)
     while (1)
     {
         level = !level;
+        g_ioport.p_api->pinWrite(leds.p_leds[0], !level);
         g_ioport.p_api->pinWrite(leds.p_leds[1], level);
+        g_ioport.p_api->pinWrite(leds.p_leds[2], !level);
         tx_thread_sleep(delay);
     }
 }
