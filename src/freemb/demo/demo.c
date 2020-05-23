@@ -86,23 +86,19 @@ vTaskMODBUS( void )
             }
             else
             {
+                uint8_t num_adcs = NUM_ADC_CHANNELS;
+                uint8_t channel = ADC_REG_CHANNEL_0;
                 usRegHoldingBuf[0] = 1;
                 do
                 {
                     ( void )eMBPoll(  );
-                    g_adc0.p_api->read(g_adc0.p_ctrl, ADC_REG_CHANNEL_0, &adc_data[0]);
+                    g_adc0.p_api->read(g_adc0.p_ctrl, channel, &adc_data[channel]);
 
-                    g_adc0.p_api->read(g_adc0.p_ctrl, ADC_REG_CHANNEL_1, &adc_data[1]);
-
-                    g_adc0.p_api->read(g_adc0.p_ctrl, ADC_REG_CHANNEL_2, &adc_data[2]);
-
-                    g_adc0.p_api->read(g_adc0.p_ctrl, ADC_REG_CHANNEL_3, &adc_data[3]);
-
-                    g_adc0.p_api->read(g_adc0.p_ctrl, ADC_REG_CHANNEL_4, &adc_data[4]);
-
-                    g_adc0.p_api->read(g_adc0.p_ctrl, ADC_REG_CHANNEL_5, &adc_data[5]);
-
-                    g_adc0.p_api->read(g_adc0.p_ctrl, ADC_REG_CHANNEL_6, &adc_data[6]);
+                    channel++;
+                    if(channel > NUM_ADC_CHANNELS)
+                    {
+                        channel = ADC_REG_CHANNEL_0;
+                    }
 
                     /* Here we simply count the number of poll cycles. */
                     usRegInputBuf[0]++;
