@@ -26,9 +26,9 @@ REVIEWS
 /*=============================================================================*
  Interface Header Files
 *=============================================================================*/
+#include "adc_interface.h"
 #include "sf_thread_monitor_api.h"
 #include "watchdog.h"
-#include "adc_interface.h"
 
 /*=============================================================================*
  Local Header File
@@ -45,6 +45,7 @@ REVIEWS
  Private Variable Definitions (static)
 *=============================================================================*/
 static sf_thread_monitor_counter_min_max_t min_max_values;
+static uint16_t* adc_data;
 
 /*=============================================================================*
  Private Function Definitions (static)
@@ -64,6 +65,9 @@ void vTaskMODBUS( void );
 
 void thread0_entry(void)
 {
+    uint8_t num_adcs = NUM_ADC_CHANNELS;
+    uint8_t channel = ADC_REG_CHANNEL_0;
+    adc_data = get_adc_arr();
     initialise_monitor_handles();
 
     /*
@@ -104,7 +108,24 @@ void thread0_entry(void)
          * Run the modbus code
          * Sleep the thread
          */
-        vTaskMODBUS();
+        //vTaskMODBUS();
+
+        g_adc0.p_api->read(g_adc0.p_ctrl, channel, &adc_data[channel]);
+
+        channel++;
+        if(channel >= NUM_ADC_CHANNELS)
+        {
+            channel = ADC_REG_CHANNEL_0;
+        }
+
+        /*
+         *  Increment the thread_counter
+         */
+        if(SSP_SUCCESS != g_sf_thread_monitor0.p_api->countIncrement(g_sf_thread_monitor0.p_ctrl))
+        {
+            __BKPT(0);
+        }
+        tx_thread_sleep (5);
     }
     g_adc0.p_api->close(g_adc0.p_ctrl);
 }

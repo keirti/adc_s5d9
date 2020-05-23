@@ -86,31 +86,13 @@ vTaskMODBUS( void )
             }
             else
             {
-                uint8_t num_adcs = NUM_ADC_CHANNELS;
-                uint8_t channel = ADC_REG_CHANNEL_0;
                 usRegHoldingBuf[0] = 1;
                 do
                 {
                     ( void )eMBPoll(  );
-                    g_adc0.p_api->read(g_adc0.p_ctrl, channel, &adc_data[channel]);
-
-                    channel++;
-                    if(channel > NUM_ADC_CHANNELS)
-                    {
-                        channel = ADC_REG_CHANNEL_0;
-                    }
 
                     /* Here we simply count the number of poll cycles. */
                     usRegInputBuf[0]++;
-
-                    /*
-                     *  Increment the thread_counter
-                     */
-                    if(SSP_SUCCESS != g_sf_thread_monitor0.p_api->countIncrement(g_sf_thread_monitor0.p_ctrl))
-                    {
-                        __BKPT(0);
-                    }
-                    tx_thread_sleep (5);
                 }
                 while( usRegHoldingBuf[0] );
             }

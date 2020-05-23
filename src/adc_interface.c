@@ -55,7 +55,7 @@ static uint16_t adc_data_arr[7];
 /*=============================================================================*
  Public Function Implementations
 *=============================================================================*/
-uint16_t* adc_arr_get(void)
+uint16_t* get_adc_arr(void)
 {
     return &adc_data_arr[0];
 }
