@@ -5,6 +5,7 @@
 extern void thread0_create(void);
 extern void Leds_create(void);
 extern void watchdog_create(void);
+extern void modbus_thread_create(void);
 
 uint32_t g_ssp_common_thread_count;
 bool g_ssp_common_initialized;
@@ -62,6 +63,7 @@ void tx_application_define(void *first_unused_memory)
     thread0_create ();
     Leds_create ();
     watchdog_create ();
+    modbus_thread_create ();
 
 #ifdef TX_USER_ENABLE_TRACE
     TX_USER_ENABLE_TRACE;

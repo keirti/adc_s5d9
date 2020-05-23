@@ -418,6 +418,14 @@
         <stack module="module.driver.watchdog_on_wdt.159755993" requires="module.framework.thread_monitor.requires.wdt"/>
       </stack>
     </context>
+    <context id="rtos.threadx.thread.5020636">
+      <property id="_symbol" value="modbus_thread"/>
+      <property id="rtos.threadx.thread.name" value="Modbus Thread"/>
+      <property id="rtos.threadx.thread.stack" value="1024"/>
+      <property id="rtos.threadx.thread.priority" value="4"/>
+      <property id="rtos.threadx.thread.autostart" value="rtos.threadx.thread.autostart.enabled"/>
+      <property id="rtos.threadx.thread.timeslice" value="1"/>
+    </context>
     <config id="config.driver.wdt">
       <property id="config.driver.wdt.param_checking_enable" value="config.driver.wdt.param_checking_enable.bsp"/>
     </config>

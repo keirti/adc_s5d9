@@ -525,4 +525,12 @@ Synergy Configuration
         Stop Control: WDT Count Disabled in Low Power Mode
         NMI Callback: NULL
         
+  Thread "Modbus Thread"
+    Symbol: modbus_thread
+    Name: Modbus Thread
+    Stack size (bytes): 1024
+    Priority: 4
+    Auto start: Enabled
+    Time slicing interval (ticks): 1
+    
   Messaging

@@ -51,7 +51,6 @@ static uint16_t* adc_data;
  Private Function Definitions (static)
 *=============================================================================*/
 extern void initialise_monitor_handles(void);
-void vTaskMODBUS( void );
 
 /*=============================================================================*
  Private Function Implementations (Static)
@@ -65,7 +64,6 @@ void vTaskMODBUS( void );
 
 void thread0_entry(void)
 {
-    uint8_t num_adcs = NUM_ADC_CHANNELS;
     uint8_t channel = ADC_REG_CHANNEL_0;
     adc_data = get_adc_arr();
     initialise_monitor_handles();
@@ -105,13 +103,11 @@ void thread0_entry(void)
     while (1)
     {
         /*
-         * Run the modbus code
-         * Sleep the thread
+         * Updating the the adc channel array
+         * Increment the channel
+         * Check the channel is within the range of the configured amount of adcs
          */
-        //vTaskMODBUS();
-
         g_adc0.p_api->read(g_adc0.p_ctrl, channel, &adc_data[channel]);
-
         channel++;
         if(channel >= NUM_ADC_CHANNELS)
         {
@@ -120,6 +116,7 @@ void thread0_entry(void)
 
         /*
          *  Increment the thread_counter
+         *  Sleep the thread
          */
         if(SSP_SUCCESS != g_sf_thread_monitor0.p_api->countIncrement(g_sf_thread_monitor0.p_ctrl))
         {
@@ -127,6 +124,11 @@ void thread0_entry(void)
         }
         tx_thread_sleep (5);
     }
+
+    /*
+     * Only close the api when we break out of the while loop..
+     * which is never
+     */
     g_adc0.p_api->close(g_adc0.p_ctrl);
 }
 

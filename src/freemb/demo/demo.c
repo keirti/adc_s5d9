@@ -68,7 +68,7 @@ vTaskMODBUS( void )
 {
     const UCHAR     ucSlaveID[] = { 0xAA, 0xBB, 0xCC };
     eMBErrorCode    eStatus;
-    adc_data = adc_arr_get();
+    adc_data = get_adc_arr();
 
         if( MB_ENOERR != ( eStatus = eMBInit( MB_RTU, 0x04, 3, 9600, MB_PAR_EVEN ) ) )
         {
