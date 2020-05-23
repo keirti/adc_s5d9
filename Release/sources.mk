@@ -49,4 +49,6 @@ synergy/ssp/src/driver/r_fmi \
 synergy/ssp/src/driver/r_gpt \
 synergy/ssp/src/driver/r_ioport \
 synergy/ssp/src/driver/r_sci_uart \
+synergy/ssp/src/driver/r_wdt \
+synergy/ssp/src/framework/sf_thread_monitor \
 

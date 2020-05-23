@@ -1,5 +1,5 @@
-src/Leds_entry.o: ../src/Leds_entry.c \
- K:\GitHub\adc_s5d9\EMS\src\synergy_gen/Leds.h \
+src/watchdog_entry.o: ../src/watchdog_entry.c \
+ K:\GitHub\adc_s5d9\EMS\src\synergy_gen/watchdog.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\bsp/bsp_api.h \
  k:\github\adc_s5d9\ems\synergy\ssp\inc\ssp_common_api.h \
  k:\github\adc_s5d9\ems\synergy\ssp\inc\ssp_version.h \
@@ -71,15 +71,14 @@ src/Leds_entry.o: ../src/Leds_entry.c \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_elc_api.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_ioport.h \
  K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_ioport_cfg.h \
- K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\api/sf_thread_monitor_api.h \
- K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework/sf_thread_monitor_cfg.h \
- K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_wdt_api.h \
- K:\GitHub\adc_s5d9\EMS\src\synergy_gen/watchdog.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_wdt.h \
  K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_wdt_cfg.h \
- K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\instances/sf_thread_monitor.h
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_wdt_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\instances/sf_thread_monitor.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\api/sf_thread_monitor_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework/sf_thread_monitor_cfg.h
 
-K:\GitHub\adc_s5d9\EMS\src\synergy_gen/Leds.h:
+K:\GitHub\adc_s5d9\EMS\src\synergy_gen/watchdog.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\bsp/bsp_api.h:
 
@@ -223,16 +222,14 @@ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_ioport.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_ioport_cfg.h:
 
-K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\api/sf_thread_monitor_api.h:
-
-K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework/sf_thread_monitor_cfg.h:
-
-K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_wdt_api.h:
-
-K:\GitHub\adc_s5d9\EMS\src\synergy_gen/watchdog.h:
-
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_wdt.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_wdt_cfg.h:
 
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_wdt_api.h:
+
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\instances/sf_thread_monitor.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\api/sf_thread_monitor_api.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework/sf_thread_monitor_cfg.h:

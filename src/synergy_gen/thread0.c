@@ -219,7 +219,7 @@ void thread0_create(void)
     }
 
     UINT err;
-    err = tx_thread_create (&thread0, (CHAR *) "Thread", thread0_func, (ULONG) NULL, &thread0_stack, 1024, 1, 1, 1,
+    err = tx_thread_create (&thread0, (CHAR *) "Thread", thread0_func, (ULONG) NULL, &thread0_stack, 1024, 3, 3, 1,
                             TX_AUTO_START);
     if (TX_SUCCESS != err)
     {

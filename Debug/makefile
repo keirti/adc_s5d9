@@ -10,6 +10,8 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include synergy/ssp/src/framework/sf_thread_monitor/subdir.mk
+-include synergy/ssp/src/driver/r_wdt/subdir.mk
 -include synergy/ssp/src/driver/r_sci_uart/subdir.mk
 -include synergy/ssp/src/driver/r_ioport/subdir.mk
 -include synergy/ssp/src/driver/r_gpt/subdir.mk
@@ -76,7 +78,7 @@ verify.siz \
 all: verify.elf secondary-outputs
 
 dependents:
-	-cd K:/GitHub/adc_s5d9/EMS/Release && $(MAKE) all
+	-cd K:/GitHub/adc_s5d9/EMS/Release && $(MAKE) clean all
 
 # Tool invocations
 verify.elf: $(OBJS) $(USER_OBJS) $(LINKER_SCRIPT) K:/GitHub/adc_s5d9/EMS/Release/verify.elf

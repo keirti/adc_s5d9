@@ -19,7 +19,7 @@ void Leds_create(void)
     /* Initialize each kernel object. */
 
     UINT err;
-    err = tx_thread_create (&Leds, (CHAR *) "Led Thread", Leds_func, (ULONG) NULL, &Leds_stack, 1024, 1, 1, 1,
+    err = tx_thread_create (&Leds, (CHAR *) "Led Thread", Leds_func, (ULONG) NULL, &Leds_stack, 1024, 3, 3, 1,
                             TX_AUTO_START);
     if (TX_SUCCESS != err)
     {

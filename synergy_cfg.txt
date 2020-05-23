@@ -295,6 +295,14 @@ Synergy Configuration
   Module "Timer Driver on r_gpt"
     Parameter Checking: Default (BSP)
     
+  Module "Thread Monitor Framework on sf_thread_monitor"
+    Parameter Checking: Default (BSP)
+    Maximum Number of Monitored Threads: 5
+    Stack size of the Thread Monitor Thread (bytes): 1024
+    
+  Module "Watchdog Driver on r_wdt"
+    Parameter Checking: Default (BSP)
+    
   HAL
     Instance "g_ioport I/O Port Driver on r_ioport"
       Name [Fixed]: g_ioport
@@ -312,7 +320,7 @@ Synergy Configuration
     Symbol: thread0
     Name: Thread
     Stack size (bytes): 1024
-    Priority: 1
+    Priority: 3
     Auto start: Enabled
     Time slicing interval (ticks): 1
     
@@ -486,8 +494,35 @@ Synergy Configuration
     Symbol: Leds
     Name: Led Thread
     Stack size (bytes): 1024
+    Priority: 3
+    Auto start: Enabled
+    Time slicing interval (ticks): 1
+    
+  Thread "WD"
+    Symbol: watchdog
+    Name: WD
+    Stack size (bytes): 1024
     Priority: 1
     Auto start: Enabled
     Time slicing interval (ticks): 1
     
+    Instance "g_sf_thread_monitor0 Thread Monitor Framework on sf_thread_monitor"
+      Name: g_sf_thread_monitor0
+      Profiling Mode: Disabled
+      Thread Monitor Thread Priority: 1
+      Name of generated initialization function: sf_thread_monitor_init0
+      Auto Initialization: Enable
+      
+      Instance "g_wdt0 Watchdog Driver on r_wdt"
+        Name: g_wdt0
+        Start Mode: Register
+        Start Watchdog After Configuration: True
+        Timeout: 16,384 Cycles
+        Clock Division Ratio: PCLK/8192
+        Window Start Position: 100% (Window Position Not Specified)
+        Window End Position: 0% (Window Position Not Specified)
+        Reset Control: Reset Output
+        Stop Control: WDT Count Disabled in Low Power Mode
+        NMI Callback: NULL
+        
   Messaging
