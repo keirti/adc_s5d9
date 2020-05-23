@@ -65,11 +65,6 @@ static sf_thread_monitor_counter_min_max_t min_max_values;
 void Leds_entry(void)
 {
     /*
-     * Enable the WD to work in Debug Mode
-     */
-    R_DBG->DBGSTOPCR_b.DSWDT = 0u;
-
-    /*
      * Populate the structure counters for the thread monitor with the defines
      */
     min_max_values.maximum_count = WD_MAX_COUNT;
