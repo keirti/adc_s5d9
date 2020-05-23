@@ -114,10 +114,10 @@ vTaskMODBUS( void )
         /*
          *  Increment the thread_counter
          */
-        if(SSP_SUCCESS != g_sf_thread_monitor0.p_api->countIncrement(g_sf_thread_monitor0.p_ctrl))
-        {
-            __BKPT(0);
-        }
+        //if(SSP_SUCCESS != g_sf_thread_monitor0.p_api->countIncrement(g_sf_thread_monitor0.p_ctrl))
+        //{
+            //__BKPT(0);
+        //}
         tx_thread_sleep (5);
 }
 
