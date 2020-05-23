@@ -33,6 +33,9 @@
 #include "mb.h"
 #include "mbport.h"
 #include "stdio.h"
+
+#include "sf_thread_monitor_api.h"
+#include "watchdog.h"
 /* ----------------------- Defines ------------------------------------------*/
 #define REG_INPUT_START                 ( 1000 )
 #define REG_INPUT_NREGS                 ( 64 )
@@ -65,8 +68,6 @@ vTaskMODBUS( void )
     const UCHAR     ucSlaveID[] = { 0xAA, 0xBB, 0xCC };
     eMBErrorCode    eStatus;
 
-    for( ;; )
-    {
         if( MB_ENOERR != ( eStatus = eMBInit( MB_RTU, 0x04, 3, 9600, MB_PAR_EVEN ) ) )
         {
             printf("modbus not initialized : %d\n",eStatus);/* Can not initialize. Add error handling code here. */
@@ -109,8 +110,15 @@ vTaskMODBUS( void )
             ( void )eMBDisable(  );
             ( void )eMBClose(  );
         }
-        tx_thread_sleep( 5 );
-    }
+
+        /*
+         *  Increment the thread_counter
+         */
+        if(SSP_SUCCESS != g_sf_thread_monitor0.p_api->countIncrement(g_sf_thread_monitor0.p_ctrl))
+        {
+            __BKPT(0);
+        }
+        tx_thread_sleep (5);
 }
 
 

@@ -30,7 +30,7 @@ void thread0_entry(void)
      */
     if(SSP_SUCCESS != g_sf_thread_monitor0.p_api->threadRegister (g_sf_thread_monitor0.p_ctrl, &min_max_values))
     {
-        __BKPT(0);
+       __BKPT(0);
     }
 
     /*
@@ -55,17 +55,9 @@ void thread0_entry(void)
     {
         /*
          * Run the modbus code
-         * Increment the monitor counter
          * Sleep the thread
          */
         vTaskMODBUS();
-
-        if(SSP_SUCCESS != g_sf_thread_monitor0.p_api->countIncrement(g_sf_thread_monitor0.p_ctrl))
-        {
-            __BKPT(0);
-        }
-
-       tx_thread_sleep (5);
     }
     g_adc0.p_api->close(g_adc0.p_ctrl);
 }
