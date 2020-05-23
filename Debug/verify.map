@@ -6314,6 +6314,7 @@ Discarded input sections
  .group         0x00000000        0xc ./src/thread0_entry.o
  .group         0x00000000        0xc ./src/thread0_entry.o
  .group         0x00000000        0xc ./src/thread0_entry.o
+ .group         0x00000000        0xc ./src/thread0_entry.o
  .text          0x00000000        0x0 ./src/thread0_entry.o
  .data          0x00000000        0x0 ./src/thread0_entry.o
  .bss           0x00000000        0x0 ./src/thread0_entry.o
@@ -6324,10 +6325,22 @@ Discarded input sections
  .debug_macro   0x00000000       0x55 ./src/thread0_entry.o
  .debug_macro   0x00000000       0x35 ./src/thread0_entry.o
  .debug_macro   0x00000000       0x9c ./src/thread0_entry.o
- .debug_macro   0x00000000       0x16 ./src/thread0_entry.o
  .debug_macro   0x00000000       0x57 ./src/thread0_entry.o
- .debug_macro   0x00000000       0xef ./src/thread0_entry.o
+ .debug_macro   0x00000000      0x353 ./src/thread0_entry.o
+ .debug_macro   0x00000000       0x10 ./src/thread0_entry.o
+ .debug_macro   0x00000000       0x58 ./src/thread0_entry.o
+ .debug_macro   0x00000000       0x1f ./src/thread0_entry.o
+ .debug_macro   0x00000000       0x43 ./src/thread0_entry.o
+ .debug_macro   0x00000000       0x20 ./src/thread0_entry.o
+ .debug_macro   0x00000000      0x18e ./src/thread0_entry.o
+ .debug_macro   0x00000000       0x10 ./src/thread0_entry.o
  .debug_macro   0x00000000       0x6a ./src/thread0_entry.o
+ .debug_macro   0x00000000       0xb6 ./src/thread0_entry.o
+ .debug_macro   0x00000000       0x16 ./src/thread0_entry.o
+ .debug_macro   0x00000000      0x129 ./src/thread0_entry.o
+ .debug_macro   0x00000000       0x22 ./src/thread0_entry.o
+ .debug_macro   0x00000000       0x16 ./src/thread0_entry.o
+ .debug_macro   0x00000000       0xef ./src/thread0_entry.o
  .debug_macro   0x00000000      0x1df ./src/thread0_entry.o
  .debug_macro   0x00000000       0x28 ./src/thread0_entry.o
  .debug_macro   0x00000000       0x22 ./src/thread0_entry.o
@@ -6337,15 +6350,13 @@ Discarded input sections
  .debug_macro   0x00000000       0x28 ./src/thread0_entry.o
  .debug_macro   0x00000000       0x1c ./src/thread0_entry.o
  .debug_macro   0x00000000       0x22 ./src/thread0_entry.o
- .debug_macro   0x00000000       0xd9 ./src/thread0_entry.o
+ .debug_macro   0x00000000       0xd3 ./src/thread0_entry.o
  .debug_macro   0x00000000      0xfe0 ./src/thread0_entry.o
  .debug_macro   0x00000000       0xe2 ./src/thread0_entry.o
  .debug_macro   0x00000000      0x7b4 ./src/thread0_entry.o
  .debug_macro   0x00000000       0x16 ./src/thread0_entry.o
  .debug_macro   0x00000000       0x34 ./src/thread0_entry.o
  .debug_macro   0x00000000       0x1c ./src/thread0_entry.o
- .debug_macro   0x00000000      0x16d ./src/thread0_entry.o
- .debug_macro   0x00000000       0x22 ./src/thread0_entry.o
  .debug_macro   0x00000000       0x10 ./src/thread0_entry.o
  .debug_macro   0x00000000       0x64 ./src/thread0_entry.o
  .debug_macro   0x00000000       0x29 ./src/thread0_entry.o
@@ -6358,20 +6369,17 @@ Discarded input sections
  .debug_macro   0x00000000       0x5e ./src/thread0_entry.o
  .debug_macro   0x00000000       0x69 ./src/thread0_entry.o
  .debug_macro   0x00000000       0x10 ./src/thread0_entry.o
+ .debug_macro   0x00000000       0x1c ./src/thread0_entry.o
+ .debug_macro   0x00000000       0x16 ./src/thread0_entry.o
  .debug_macro   0x00000000       0x10 ./src/thread0_entry.o
  .debug_macro   0x00000000       0x1c ./src/thread0_entry.o
  .debug_macro   0x00000000       0x16 ./src/thread0_entry.o
  .debug_macro   0x00000000       0x35 ./src/thread0_entry.o
- .debug_macro   0x00000000       0x58 ./src/thread0_entry.o
- .debug_macro   0x00000000       0x1f ./src/thread0_entry.o
- .debug_macro   0x00000000       0x43 ./src/thread0_entry.o
- .debug_macro   0x00000000       0x20 ./src/thread0_entry.o
- .debug_macro   0x00000000      0x18e ./src/thread0_entry.o
- .debug_macro   0x00000000      0x34d ./src/thread0_entry.o
  .debug_macro   0x00000000       0x22 ./src/thread0_entry.o
  .debug_macro   0x00000000       0x16 ./src/thread0_entry.o
  .debug_macro   0x00000000      0x16e ./src/thread0_entry.o
  .debug_macro   0x00000000      0x903 ./src/thread0_entry.o
+ .debug_macro   0x00000000       0x10 ./src/thread0_entry.o
  .debug_macro   0x00000000       0x34 ./src/thread0_entry.o
  .debug_macro   0x00000000       0x16 ./src/thread0_entry.o
  .debug_macro   0x00000000       0x10 ./src/thread0_entry.o
@@ -6380,6 +6388,9 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./src/thread0_entry.o
  .debug_macro   0x00000000       0x10 ./src/thread0_entry.o
  .debug_macro   0x00000000       0x10 ./src/thread0_entry.o
+ .debug_macro   0x00000000       0x10 ./src/thread0_entry.o
+ .debug_macro   0x00000000       0x10 ./src/thread0_entry.o
+ .debug_macro   0x00000000       0x16 ./src/thread0_entry.o
  .debug_macro   0x00000000       0x16 ./src/thread0_entry.o
  .debug_macro   0x00000000       0x10 ./src/thread0_entry.o
  .debug_macro   0x00000000       0x10 ./src/thread0_entry.o
@@ -6391,18 +6402,6 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./src/thread0_entry.o
  .debug_macro   0x00000000       0x16 ./src/thread0_entry.o
  .debug_macro   0x00000000       0xfa ./src/thread0_entry.o
- .debug_macro   0x00000000       0x1c ./src/thread0_entry.o
- .debug_macro   0x00000000       0x10 ./src/thread0_entry.o
- .debug_macro   0x00000000       0x10 ./src/thread0_entry.o
- .debug_macro   0x00000000       0xb6 ./src/thread0_entry.o
- .debug_macro   0x00000000       0x16 ./src/thread0_entry.o
- .debug_macro   0x00000000      0x129 ./src/thread0_entry.o
- .debug_macro   0x00000000       0x1c ./src/thread0_entry.o
- .debug_macro   0x00000000       0x16 ./src/thread0_entry.o
- .debug_macro   0x00000000       0x10 ./src/thread0_entry.o
- .debug_macro   0x00000000       0x10 ./src/thread0_entry.o
- .debug_macro   0x00000000       0x10 ./src/thread0_entry.o
- .debug_macro   0x00000000       0x16 ./src/thread0_entry.o
  .group         0x00000000        0xc ./src/watchdog_entry.o
  .group         0x00000000        0xc ./src/watchdog_entry.o
  .group         0x00000000        0xc ./src/watchdog_entry.o
@@ -10532,7 +10531,7 @@ OUTPUT(verify.elf elf32-littlearm)
  .debug_ranges  0x00003878       0x30 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_time_slice.o)
  .debug_ranges  0x000038a8       0x28 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_timer_expiration_process.o)
 
-.debug_line     0x00000000    0x2aed6
+.debug_line     0x00000000    0x2aed7
  .debug_line    0x00000000      0x73b ./synergy/ssp/src/framework/sf_thread_monitor/sf_thread_monitor.o
  .debug_line    0x0000073b      0xac8 ./synergy/ssp/src/driver/r_wdt/r_wdt.o
  .debug_line    0x00001203     0x147c ./synergy/ssp/src/driver/r_sci_uart/r_sci_uart.o
@@ -10584,62 +10583,62 @@ OUTPUT(verify.elf elf32-littlearm)
  .debug_line    0x0001e5d9      0xb22 ./src/freemb/demo/port/porttimer.o
  .debug_line    0x0001f0fb      0xd5c ./src/freemb/demo/demo.o
  .debug_line    0x0001fe57      0xaf2 ./src/Leds_entry.o
- .debug_line    0x00020949      0xbea ./src/thread0_entry.o
- .debug_line    0x00021533      0xacc ./src/watchdog_entry.o
- .debug_line    0x00021fff      0x2e7 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_mutex_create.o)
- .debug_line    0x000222e6      0x267 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_mutex_delete.o)
- .debug_line    0x0002254d      0x28f K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_mutex_get.o)
- .debug_line    0x000227dc      0x275 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_mutex_put.o)
- .debug_line    0x00022a51      0x2ea K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_queue_create.o)
- .debug_line    0x00022d3b      0x27e K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_queue_receive.o)
- .debug_line    0x00022fb9      0x27b K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_queue_send.o)
- .debug_line    0x00023234      0x253 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_semaphore_ceiling_put.o)
- .debug_line    0x00023487      0x2eb K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_semaphore_create.o)
- .debug_line    0x00023772      0x26f K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_semaphore_get.o)
- .debug_line    0x000239e1      0x239 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_semaphore_put.o)
- .debug_line    0x00023c1a      0x2f9 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_thread_create.o)
- .debug_line    0x00023f13      0x246 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_thread_delete.o)
- .debug_line    0x00024159      0x24d K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_thread_terminate.o)
- .debug_line    0x000243a6      0x2de K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_initialize_high_level.o)
- .debug_line    0x00024684      0x26d K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_initialize_kernel_enter.o)
- .debug_line    0x000248f1      0x20a K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_isr_end.o)
- .debug_line    0x00024afb      0x20c K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_isr_start.o)
- .debug_line    0x00024d07      0x27f K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_mutex_create.o)
- .debug_line    0x00024f86      0x2d2 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_mutex_delete.o)
- .debug_line    0x00025258      0x2de K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_mutex_get.o)
- .debug_line    0x00025536      0x2cb K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_mutex_priority_change.o)
- .debug_line    0x00025801      0x394 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_mutex_put.o)
- .debug_line    0x00025b95      0x281 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_queue_create.o)
- .debug_line    0x00025e16      0x35d K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_queue_receive.o)
- .debug_line    0x00026173      0x319 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_queue_send.o)
- .debug_line    0x0002648c      0x2b2 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_semaphore_ceiling_put.o)
- .debug_line    0x0002673e      0x269 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_semaphore_create.o)
- .debug_line    0x000269a7      0x2ba K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_semaphore_get.o)
- .debug_line    0x00026c61      0x293 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_semaphore_put.o)
- .debug_line    0x00026ef4      0x360 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_create.o)
- .debug_line    0x00027254      0x27c K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_delete.o)
- .debug_line    0x000274d0      0x24a K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_identify.o)
- .debug_line    0x0002771a      0x290 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_initialize.o)
- .debug_line    0x000279aa      0x26a K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_shell_entry.o)
- .debug_line    0x00027c14      0x29c K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_sleep.o)
- .debug_line    0x00027eb0      0x25d K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_system_preempt_check.o)
- .debug_line    0x0002810d      0x2e5 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_system_resume.o)
- .debug_line    0x000283f2      0x2fe K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_system_suspend.o)
- .debug_line    0x000286f0      0x2d8 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_terminate.o)
- .debug_line    0x000289c8      0x276 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_timeout.o)
- .debug_line    0x00028c3e      0x288 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_timer_initialize.o)
- .debug_line    0x00028ec6      0x25c K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_timer_system_activate.o)
- .debug_line    0x00029122      0x24a K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_timer_system_deactivate.o)
- .debug_line    0x0002936c      0x2f2 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_initialize_low_level.o)
- .debug_line    0x0002965e      0x339 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_schedule.o)
- .debug_line    0x00029997      0x27a K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_stack_build.o)
- .debug_line    0x00029c11      0x2b5 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_timer_interrupt.o)
- .debug_line    0x00029ec6      0x2d7 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_mutex_cleanup.o)
- .debug_line    0x0002a19d      0x29c K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_mutex_prioritize.o)
- .debug_line    0x0002a439      0x292 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_queue_cleanup.o)
- .debug_line    0x0002a6cb      0x29c K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_semaphore_cleanup.o)
- .debug_line    0x0002a967      0x286 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_time_slice.o)
- .debug_line    0x0002abed      0x2e9 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_timer_expiration_process.o)
+ .debug_line    0x00020949      0xbeb ./src/thread0_entry.o
+ .debug_line    0x00021534      0xacc ./src/watchdog_entry.o
+ .debug_line    0x00022000      0x2e7 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_mutex_create.o)
+ .debug_line    0x000222e7      0x267 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_mutex_delete.o)
+ .debug_line    0x0002254e      0x28f K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_mutex_get.o)
+ .debug_line    0x000227dd      0x275 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_mutex_put.o)
+ .debug_line    0x00022a52      0x2ea K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_queue_create.o)
+ .debug_line    0x00022d3c      0x27e K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_queue_receive.o)
+ .debug_line    0x00022fba      0x27b K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_queue_send.o)
+ .debug_line    0x00023235      0x253 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_semaphore_ceiling_put.o)
+ .debug_line    0x00023488      0x2eb K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_semaphore_create.o)
+ .debug_line    0x00023773      0x26f K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_semaphore_get.o)
+ .debug_line    0x000239e2      0x239 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_semaphore_put.o)
+ .debug_line    0x00023c1b      0x2f9 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_thread_create.o)
+ .debug_line    0x00023f14      0x246 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_thread_delete.o)
+ .debug_line    0x0002415a      0x24d K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_thread_terminate.o)
+ .debug_line    0x000243a7      0x2de K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_initialize_high_level.o)
+ .debug_line    0x00024685      0x26d K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_initialize_kernel_enter.o)
+ .debug_line    0x000248f2      0x20a K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_isr_end.o)
+ .debug_line    0x00024afc      0x20c K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_isr_start.o)
+ .debug_line    0x00024d08      0x27f K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_mutex_create.o)
+ .debug_line    0x00024f87      0x2d2 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_mutex_delete.o)
+ .debug_line    0x00025259      0x2de K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_mutex_get.o)
+ .debug_line    0x00025537      0x2cb K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_mutex_priority_change.o)
+ .debug_line    0x00025802      0x394 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_mutex_put.o)
+ .debug_line    0x00025b96      0x281 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_queue_create.o)
+ .debug_line    0x00025e17      0x35d K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_queue_receive.o)
+ .debug_line    0x00026174      0x319 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_queue_send.o)
+ .debug_line    0x0002648d      0x2b2 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_semaphore_ceiling_put.o)
+ .debug_line    0x0002673f      0x269 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_semaphore_create.o)
+ .debug_line    0x000269a8      0x2ba K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_semaphore_get.o)
+ .debug_line    0x00026c62      0x293 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_semaphore_put.o)
+ .debug_line    0x00026ef5      0x360 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_create.o)
+ .debug_line    0x00027255      0x27c K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_delete.o)
+ .debug_line    0x000274d1      0x24a K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_identify.o)
+ .debug_line    0x0002771b      0x290 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_initialize.o)
+ .debug_line    0x000279ab      0x26a K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_shell_entry.o)
+ .debug_line    0x00027c15      0x29c K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_sleep.o)
+ .debug_line    0x00027eb1      0x25d K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_system_preempt_check.o)
+ .debug_line    0x0002810e      0x2e5 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_system_resume.o)
+ .debug_line    0x000283f3      0x2fe K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_system_suspend.o)
+ .debug_line    0x000286f1      0x2d8 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_terminate.o)
+ .debug_line    0x000289c9      0x276 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_timeout.o)
+ .debug_line    0x00028c3f      0x288 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_timer_initialize.o)
+ .debug_line    0x00028ec7      0x25c K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_timer_system_activate.o)
+ .debug_line    0x00029123      0x24a K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_timer_system_deactivate.o)
+ .debug_line    0x0002936d      0x2f2 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_initialize_low_level.o)
+ .debug_line    0x0002965f      0x339 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_schedule.o)
+ .debug_line    0x00029998      0x27a K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_stack_build.o)
+ .debug_line    0x00029c12      0x2b5 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_timer_interrupt.o)
+ .debug_line    0x00029ec7      0x2d7 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_mutex_cleanup.o)
+ .debug_line    0x0002a19e      0x29c K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_mutex_prioritize.o)
+ .debug_line    0x0002a43a      0x292 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_queue_cleanup.o)
+ .debug_line    0x0002a6cc      0x29c K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_semaphore_cleanup.o)
+ .debug_line    0x0002a968      0x286 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_time_slice.o)
+ .debug_line    0x0002abee      0x2e9 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_timer_expiration_process.o)
 
 .debug_str      0x00000000    0x31ae9
  .debug_str     0x00000000     0x5ec4 ./synergy/ssp/src/framework/sf_thread_monitor/sf_thread_monitor.o
@@ -10744,7 +10743,7 @@ OUTPUT(verify.elf elf32-littlearm)
  .debug_str     0x0002fe9d       0x63 ./src/Leds_entry.o
                               0x1d038 (size before relaxing)
  .debug_str     0x0002ff00       0x32 ./src/thread0_entry.o
-                              0x20891 (size before relaxing)
+                              0x2088f (size before relaxing)
  .debug_str     0x0002ff32       0xb2 ./src/watchdog_entry.o
                               0x1d04e (size before relaxing)
  .debug_str     0x0002ffe4      0x3f4 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(txe_mutex_create.o)
@@ -10999,7 +10998,7 @@ OUTPUT(verify.elf elf32-littlearm)
  .debug_frame   0x00003cf8       0x20 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\librdimon_nano.a(rdimon-_exit.o)
  .debug_frame   0x00003d18       0x2c c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\librdimon_nano.a(rdimon-_kill.o)
 
-.debug_macro    0x00000000    0x11658
+.debug_macro    0x00000000    0x11801
  .debug_macro   0x00000000      0x356 ./synergy/ssp/src/driver/r_wdt/r_wdt.o
  .debug_macro   0x00000356      0xa42 ./synergy/ssp/src/driver/r_wdt/r_wdt.o
  .debug_macro   0x00000d98       0x22 ./synergy/ssp/src/driver/r_wdt/r_wdt.o
@@ -11165,5 +11164,8 @@ OUTPUT(verify.elf elf32-littlearm)
  .debug_macro   0x000101f6      0x5d1 ./src/freemb/demo/demo.o
  .debug_macro   0x000107c7       0x16 ./src/freemb/demo/demo.o
  .debug_macro   0x000107dd      0x48a ./src/Leds_entry.o
- .debug_macro   0x00010c67      0x577 ./src/thread0_entry.o
- .debug_macro   0x000111de      0x47a ./src/watchdog_entry.o
+ .debug_macro   0x00010c67      0x57d ./src/thread0_entry.o
+ .debug_macro   0x000111e4       0x16 ./src/thread0_entry.o
+ .debug_macro   0x000111fa       0x97 ./src/thread0_entry.o
+ .debug_macro   0x00011291       0xf6 ./src/thread0_entry.o
+ .debug_macro   0x00011387      0x47a ./src/watchdog_entry.o
