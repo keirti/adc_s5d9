@@ -46,16 +46,21 @@ REVIEWS
 *=============================================================================*/
 static sf_thread_monitor_counter_min_max_t min_max_values;
 static uint16_t* adc_data;
+static float adc_voltages[NUM_ADC_CHANNELS] = {{ 0 }};
 
 /*=============================================================================*
  Private Function Definitions (static)
 *=============================================================================*/
 extern void initialise_monitor_handles(void);
+static void calculate_adc_voltages(uint8_t channel);
 
 /*=============================================================================*
  Private Function Implementations (Static)
 *=============================================================================*/
-/* None */
+static void calculate_adc_voltages(uint8_t channel)
+{
+    adc_voltages[channel] = (float)((float)(adc_data[channel]/4095)*3.3f);
+}
 
 /*=============================================================================*
  Public Function Implementations
@@ -108,6 +113,7 @@ void thread0_entry(void)
          * Check the channel is within the range of the configured amount of adcs
          */
         g_adc0.p_api->read(g_adc0.p_ctrl, channel, &adc_data[channel]);
+        calculate_adc_voltages(channel);
         channel++;
         if(channel >= NUM_ADC_CHANNELS)
         {
