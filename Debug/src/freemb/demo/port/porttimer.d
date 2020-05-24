@@ -82,9 +82,6 @@ src/freemb/demo/port/porttimer.o: ../src/freemb/demo/port/porttimer.c \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_uart_api.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_transfer_api.h \
  K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_sci_uart_cfg.h \
- K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_adc.h \
- K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_adc_cfg.h \
- K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_adc_api.h \
  K:\GitHub\adc_s5d9\EMS\src\freemb\modbus\include/mbport.h
 
 ../src/freemb/demo/port/port.h:
@@ -252,11 +249,5 @@ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_uart_api.h:
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_transfer_api.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_sci_uart_cfg.h:
-
-K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_adc.h:
-
-K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_adc_cfg.h:
-
-K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_adc_api.h:
 
 K:\GitHub\adc_s5d9\EMS\src\freemb\modbus\include/mbport.h:

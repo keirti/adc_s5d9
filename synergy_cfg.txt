@@ -278,9 +278,6 @@ Synergy Configuration
     SSP MCU Information Symbol Name: g_fmi_data
     Part Number Mask: 0xFE00
     
-  Module "ADC Driver on r_adc"
-    Parameter Checking: Enabled
-    
   Module "UART Driver on r_sci_uart"
     External RTS Operation: Disable
     Reception: Enable
@@ -303,6 +300,9 @@ Synergy Configuration
   Module "Watchdog Driver on r_wdt"
     Parameter Checking: Default (BSP)
     
+  Module "ADC Driver on r_adc"
+    Parameter Checking: Enabled
+    
   HAL
     Instance "g_ioport I/O Port Driver on r_ioport"
       Name [Fixed]: g_ioport
@@ -324,95 +324,6 @@ Synergy Configuration
     Auto start: Enabled
     Time slicing interval (ticks): 1
     
-    Instance "g_adc0 ADC Driver on r_adc"
-      Name: g_adc0
-      Unit: 0
-      Resolution: 12-Bit
-      Alignment: Right
-      Clear after read: On
-      Mode: Continuous Scan
-      Internal Calibration During Open(): Enabled
-      Channel Scan Mask (channel availability varies by MCU): Select channels below
-          Channel 0: PGA 0: Configure Gain from below field
-          Channel 1: PGA 1: Configure Gain from below field
-          Channel 2: PGA 2: Configure Gain from below field
-          Channel 3: Use in Normal/Group A
-          Channel 4: Use in Normal/Group A
-          Channel 5: Use in Normal/Group A
-          Channel 6: Use in Normal/Group A
-          Channel 7: Use in Normal/Group A
-          Channel 8: Unused
-          Channel 9: Unused
-          Channel 10: Unused
-          Channel 11: Unused
-          Channel 12: Unused
-          Channel 13: Unused
-          Channel 14 (S3 series Only): Unused
-          Channel 15 (S3A7/S3A3 Only): Unused
-          Channel 16: Unused
-          Channel 17: Unused
-          Channel 18: Unused
-          Channel 19: Unused
-          Channel 20: Unused
-          Channel 21 (Unit 0 Only): Unused
-          Channel 22: Unused
-          Channel 23: Unused
-          Channel 24: Unused
-          Channel 25 (S3 series only): Unused
-          Channel 26 (S3A7/S3A3 Only): Unused
-          Channel 27 (S3A7/S3A3 Only): Unused
-          Temperature Sensor: Unused
-          Voltage Sensor: Unused
-      Normal/Group A Trigger: Software
-      Group B Trigger (Valid only in Group Scan Mode): ELC Event (The only valid trigger for either group in Group Scan Mode)
-      Group Priority (Valid only in Group Scan Mode): Group A cannot interrupt Group B
-      Add/Average Count: Disabled
-      Addition/Averaging Mask (channel availability varies by MCU): Select channels to perform addition/averaging below
-          Channel 0: Disabled
-          Channel 1: Disabled
-          Channel 2: Disabled
-          Channel 3: Disabled
-          Channel 4: Disabled
-          Channel 5: Disabled
-          Channel 6: Disabled
-          Channel 7: Disabled
-          Channel 8: Disabled
-          Channel 9: Disabled
-          Channel 10: Disabled
-          Channel 11: Disabled
-          Channel 12: Disabled
-          Channel 13: Disabled
-          Channel 14: Disabled
-          Channel 15: Disabled
-          Channel 16: Disabled
-          Channel 17: Disabled
-          Channel 18: Disabled
-          Channel 19: Disabled
-          Channel 20: Disabled
-          Channel 21: Disabled
-          Channel 22: Disabled
-          Channel 23: Disabled
-          Channel 24: Disabled
-          Channel 25: Disabled
-          Channel 26: Disabled
-          Channel 27: Disabled
-          Temperature Sensor: Disabled
-          Voltage Sensor: Disabled
-      Sample and Hold Mask (Available only on selected MCUs): Select channels for which individual sample and hold circuit is to be enabled
-          Channel 0: Enabled
-          Channel 1: Enabled
-          Channel 2: Enabled
-      Sample Hold States (Applies only to the 3 channels selected above): 24
-      Callback: NULL
-      Scan End Interrupt Priority: Priority 4
-      Scan End Group B Interrupt Priority: Disabled
-      Voltage reference(Only for S1JA): External VREFH0
-      Over current protection(Only for S1JA): Enabled
-      Programmable Gain Amplifier: Select PGA Channel from 'Channel Scan Mask,Gain from below options'
-      PGA 0: Single Input_x2
-      PGA 1: Disabled
-      PGA 2: Disabled
-      
     Instance "g_uart0 UART Driver on r_sci_uart"
       Name: g_uart0
       Channel: 3
@@ -533,4 +444,93 @@ Synergy Configuration
     Auto start: Enabled
     Time slicing interval (ticks): 1
     
+    Instance "g_adc0 ADC Driver on r_adc"
+      Name: g_adc0
+      Unit: 0
+      Resolution: 12-Bit
+      Alignment: Right
+      Clear after read: On
+      Mode: Continuous Scan
+      Internal Calibration During Open(): Enabled
+      Channel Scan Mask (channel availability varies by MCU): Select channels below
+          Channel 0: PGA 0: Configure Gain from below field
+          Channel 1: PGA 1: Configure Gain from below field
+          Channel 2: PGA 2: Configure Gain from below field
+          Channel 3: Use in Normal/Group A
+          Channel 4: Use in Normal/Group A
+          Channel 5: Use in Normal/Group A
+          Channel 6: Use in Normal/Group A
+          Channel 7: Use in Normal/Group A
+          Channel 8: Unused
+          Channel 9: Unused
+          Channel 10: Unused
+          Channel 11: Unused
+          Channel 12: Unused
+          Channel 13: Unused
+          Channel 14 (S3 series Only): Unused
+          Channel 15 (S3A7/S3A3 Only): Unused
+          Channel 16: Unused
+          Channel 17: Unused
+          Channel 18: Unused
+          Channel 19: Unused
+          Channel 20: Unused
+          Channel 21 (Unit 0 Only): Unused
+          Channel 22: Unused
+          Channel 23: Unused
+          Channel 24: Unused
+          Channel 25 (S3 series only): Unused
+          Channel 26 (S3A7/S3A3 Only): Unused
+          Channel 27 (S3A7/S3A3 Only): Unused
+          Temperature Sensor: Unused
+          Voltage Sensor: Unused
+      Normal/Group A Trigger: Software
+      Group B Trigger (Valid only in Group Scan Mode): ELC Event (The only valid trigger for either group in Group Scan Mode)
+      Group Priority (Valid only in Group Scan Mode): Group A cannot interrupt Group B
+      Add/Average Count: Disabled
+      Addition/Averaging Mask (channel availability varies by MCU): Select channels to perform addition/averaging below
+          Channel 0: Disabled
+          Channel 1: Disabled
+          Channel 2: Disabled
+          Channel 3: Disabled
+          Channel 4: Disabled
+          Channel 5: Disabled
+          Channel 6: Disabled
+          Channel 7: Disabled
+          Channel 8: Disabled
+          Channel 9: Disabled
+          Channel 10: Disabled
+          Channel 11: Disabled
+          Channel 12: Disabled
+          Channel 13: Disabled
+          Channel 14: Disabled
+          Channel 15: Disabled
+          Channel 16: Disabled
+          Channel 17: Disabled
+          Channel 18: Disabled
+          Channel 19: Disabled
+          Channel 20: Disabled
+          Channel 21: Disabled
+          Channel 22: Disabled
+          Channel 23: Disabled
+          Channel 24: Disabled
+          Channel 25: Disabled
+          Channel 26: Disabled
+          Channel 27: Disabled
+          Temperature Sensor: Disabled
+          Voltage Sensor: Disabled
+      Sample and Hold Mask (Available only on selected MCUs): Select channels for which individual sample and hold circuit is to be enabled
+          Channel 0: Enabled
+          Channel 1: Enabled
+          Channel 2: Enabled
+      Sample Hold States (Applies only to the 3 channels selected above): 24
+      Callback: NULL
+      Scan End Interrupt Priority: Priority 4
+      Scan End Group B Interrupt Priority: Disabled
+      Voltage reference(Only for S1JA): External VREFH0
+      Over current protection(Only for S1JA): Enabled
+      Programmable Gain Amplifier: Select PGA Channel from 'Channel Scan Mask,Gain from below options'
+      PGA 0: Single Input_x2
+      PGA 1: Disabled
+      PGA 2: Disabled
+      
   Messaging

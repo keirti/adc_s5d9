@@ -195,7 +195,86 @@
     <module id="module.driver.fmi_on_fmi.0">
       <property id="module.driver.fmi.name" value="g_fmi"/>
     </module>
-    <module id="module.driver.adc_on_adc.1904216187">
+    <module id="module.driver.uart_on_sci_uart.2097021479">
+      <property id="module.driver.uart.name" value="g_uart0"/>
+      <property id="module.driver.uart.channel" value="3"/>
+      <property id="module.driver.uart.baud_rate" value="9600"/>
+      <property id="module.driver.uart.data_bits" value="module.driver.uart.data_bits.data_bits_8"/>
+      <property id="module.driver.uart.parity" value="module.driver.uart.parity.parity_off"/>
+      <property id="module.driver.uart.stop_bits" value="module.driver.uart.stop_bits.stop_bits_1"/>
+      <property id="module.driver.uart.ctsrts_en" value="module.driver.uart.ctsrts_en.false"/>
+      <property id="module.driver.uart.callback" value="user_uart_callback"/>
+      <property id="module.driver.uart.callback.rts_pin_ctrl" value="NULL"/>
+      <property id="module.driver.uart.clk_src" value="module.driver.uart.clk_src.int_clk"/>
+      <property id="module.driver.uart.baudclk_out" value="module.driver.uart.baudclk_out.false"/>
+      <property id="module.driver.uart.rx_edge_start" value="module.driver.uart.rx_edge_start.true"/>
+      <property id="module.driver.uart.noisecancel_en" value="module.driver.uart.noisecancel_en.false"/>
+      <property id="module.driver.uart.bitrate_modulation" value="module.driver.uart.bitrate_modulation.true"/>
+      <property id="module.driver.uart.rx_fifo_trigger" value="module.driver.uart.rx_fifo_trigger.max"/>
+      <property id="module.driver.uart.rxi_ipl" value="board.icu.common.irq.priority12"/>
+      <property id="module.driver.uart.txi_ipl" value="board.icu.common.irq.priority12"/>
+      <property id="module.driver.uart.tei_ipl" value="board.icu.common.irq.priority12"/>
+      <property id="module.driver.uart.eri_ipl" value="board.icu.common.irq.disabled"/>
+      <property id="module.driver.uart.baud_rate_error" value="2.0"/>
+      <property id="module.driver.uart.uart_comm_mode" value="module.driver.uart.uart_comm_mode.uart_rs485_mode"/>
+      <property id="module.driver.uart.uart_rs485_mode" value="module.driver.uart.uart_rs485_mode.uart_fd_mode"/>
+      <property id="module.driver.uart.rs485_de_port" value="module.driver.uart.rs485_de_port.PORT_08"/>
+      <property id="module.driver.uart.rs485_de_pin" value="module.driver.uart.rs485_de_pin.PIN_00"/>
+    </module>
+    <module id="module.driver.transfer_on_dtc.1737285144">
+      <property id="module.driver.transfer.name" value="g_transfer0"/>
+      <property id="module.driver.transfer.mode" value="module.driver.transfer.mode.mode_normal"/>
+      <property id="module.driver.transfer.size" value="module.driver.transfer.size.size_2_byte"/>
+      <property id="module.driver.transfer.dest_addr_mode" value="module.driver.transfer.dest_addr_mode.addr_mode_fixed"/>
+      <property id="module.driver.transfer.src_addr_mode" value="module.driver.transfer.src_addr_mode.addr_mode_fixed"/>
+      <property id="module.driver.transfer.repeat_area" value="module.driver.transfer.repeat_area.repeat_area_source"/>
+      <property id="module.driver.transfer.interrupt" value="module.driver.transfer.interrupt.interrupt_end"/>
+      <property id="module.driver.transfer.p_dest" value="NULL"/>
+      <property id="module.driver.transfer.p_src" value="NULL"/>
+      <property id="module.driver.transfer.length" value="0"/>
+      <property id="module.driver.transfer.num_blocks" value="0"/>
+      <property id="module.driver.transfer.activation_source" value="module.driver.transfer.event.event_elc_software_event_0"/>
+      <property id="module.driver.transfer.auto_enable" value="module.driver.transfer.auto_enable.true"/>
+      <property id="module.driver.transfer.p_callback" value="NULL"/>
+      <property id="module.driver.transfer.irq_ipl" value="board.icu.common.irq.disabled"/>
+    </module>
+    <module id="module.driver.timer_on_gpt.441649034">
+      <property id="module.driver.timer.name" value="g_timer0"/>
+      <property id="module.driver.timer.channel" value="0"/>
+      <property id="module.driver.timer.mode" value="module.driver.timer.mode.mode_periodic"/>
+      <property id="module.driver.timer.shortest_pwm_signal" value="module.driver.timer.mode.shortest_pwm_signal_disabled"/>
+      <property id="module.driver.timer.period" value="50"/>
+      <property id="module.driver.timer.unit" value="module.driver.timer.unit.unit_period_usec"/>
+      <property id="module.driver.timer.duty_cycle" value="50"/>
+      <property id="module.driver.timer.duty_cycle_unit" value="module.driver.timer.duty_cycle_unit.unit_percent"/>
+      <property id="module.driver.timer.autostart" value="module.driver.timer.autostart.true"/>
+      <property id="module.driver.timer.gtioca_output_enabled" value="module.driver.timer.gtioca_output_enabled.false"/>
+      <property id="module.driver.timer.gtioca_stop_level" value="module.driver.timer.gtioca_stop_level.pin_level_low"/>
+      <property id="module.driver.timer.gtiocb_output_enabled" value="module.driver.timer.gtiocb_output_enabled.false"/>
+      <property id="module.driver.timer.gtiocb_stop_level" value="module.driver.timer.gtiocb_stop_level.pin_level_low"/>
+      <property id="module.driver.timer.p_callback" value="timer_user_callback"/>
+      <property id="module.driver.timer.irq_ipl" value="board.icu.common.irq.priority7"/>
+    </module>
+    <module id="module.framework.thread_monitor.245673544">
+      <property id="module.framework.sf_thread_monitor.name" value="g_sf_thread_monitor0"/>
+      <property id="module.framework.thread_monitor.profiling_mode_enable" value="module.framework.thread_monitor.profiling_mode_enable.disabled"/>
+      <property id="module.framework.thread_monitor.priority" value="1"/>
+      <property id="module.framework.thread_monitor.init_function" value="sf_thread_monitor_init0"/>
+      <property id="module.framework.thread_monitor.init" value="module.framework.sf_thread_monitor.init.enable"/>
+    </module>
+    <module id="module.driver.watchdog_on_wdt.159755993">
+      <property id="module.driver.watchdog.name" value="g_wdt0"/>
+      <property id="module.driver.watchdog.start_mode" value="module.driver.watchdog.start_mode.register"/>
+      <property id="module.driver.watchdog.start_wdt_after_cfg" value="module.driver.watchdog.start_mode.start_wdt_after_cfg.true"/>
+      <property id="module.driver.watchdog.timeout" value="module.driver.watchdog.timeout.16384"/>
+      <property id="module.driver.watchdog.clock_division" value="module.driver.watchdog.clock_division.8192"/>
+      <property id="module.driver.watchdog.window_start" value="module.driver.watchdog.window_start.100"/>
+      <property id="module.driver.watchdog.window_end" value="module.driver.watchdog.window_end.0"/>
+      <property id="module.driver.watchdog.reset_control" value="module.driver.watchdog.reset_control.reset"/>
+      <property id="module.driver.watchdog.stop_control" value="module.driver.watchdog.stop_control.enable"/>
+      <property id="module.driver.watchdog.nmi_callback" value="NULL"/>
+    </module>
+    <module id="module.driver.adc_on_adc.702076447">
       <property id="module.driver.adc.name" value="g_adc0"/>
       <property id="module.driver.adc.unit" value="module.driver.adc.unit.unit0"/>
       <property id="module.driver.adc.resolution" value="module.driver.adc.resolution.resolution_12_bit"/>
@@ -284,85 +363,6 @@
       <property id="module.driver.adc.pga1" value="module.driver.adc.pga.disabled"/>
       <property id="module.driver.adc.pga2" value="module.driver.adc.pga.disabled"/>
     </module>
-    <module id="module.driver.uart_on_sci_uart.2097021479">
-      <property id="module.driver.uart.name" value="g_uart0"/>
-      <property id="module.driver.uart.channel" value="3"/>
-      <property id="module.driver.uart.baud_rate" value="9600"/>
-      <property id="module.driver.uart.data_bits" value="module.driver.uart.data_bits.data_bits_8"/>
-      <property id="module.driver.uart.parity" value="module.driver.uart.parity.parity_off"/>
-      <property id="module.driver.uart.stop_bits" value="module.driver.uart.stop_bits.stop_bits_1"/>
-      <property id="module.driver.uart.ctsrts_en" value="module.driver.uart.ctsrts_en.false"/>
-      <property id="module.driver.uart.callback" value="user_uart_callback"/>
-      <property id="module.driver.uart.callback.rts_pin_ctrl" value="NULL"/>
-      <property id="module.driver.uart.clk_src" value="module.driver.uart.clk_src.int_clk"/>
-      <property id="module.driver.uart.baudclk_out" value="module.driver.uart.baudclk_out.false"/>
-      <property id="module.driver.uart.rx_edge_start" value="module.driver.uart.rx_edge_start.true"/>
-      <property id="module.driver.uart.noisecancel_en" value="module.driver.uart.noisecancel_en.false"/>
-      <property id="module.driver.uart.bitrate_modulation" value="module.driver.uart.bitrate_modulation.true"/>
-      <property id="module.driver.uart.rx_fifo_trigger" value="module.driver.uart.rx_fifo_trigger.max"/>
-      <property id="module.driver.uart.rxi_ipl" value="board.icu.common.irq.priority12"/>
-      <property id="module.driver.uart.txi_ipl" value="board.icu.common.irq.priority12"/>
-      <property id="module.driver.uart.tei_ipl" value="board.icu.common.irq.priority12"/>
-      <property id="module.driver.uart.eri_ipl" value="board.icu.common.irq.disabled"/>
-      <property id="module.driver.uart.baud_rate_error" value="2.0"/>
-      <property id="module.driver.uart.uart_comm_mode" value="module.driver.uart.uart_comm_mode.uart_rs485_mode"/>
-      <property id="module.driver.uart.uart_rs485_mode" value="module.driver.uart.uart_rs485_mode.uart_fd_mode"/>
-      <property id="module.driver.uart.rs485_de_port" value="module.driver.uart.rs485_de_port.PORT_08"/>
-      <property id="module.driver.uart.rs485_de_pin" value="module.driver.uart.rs485_de_pin.PIN_00"/>
-    </module>
-    <module id="module.driver.transfer_on_dtc.1737285144">
-      <property id="module.driver.transfer.name" value="g_transfer0"/>
-      <property id="module.driver.transfer.mode" value="module.driver.transfer.mode.mode_normal"/>
-      <property id="module.driver.transfer.size" value="module.driver.transfer.size.size_2_byte"/>
-      <property id="module.driver.transfer.dest_addr_mode" value="module.driver.transfer.dest_addr_mode.addr_mode_fixed"/>
-      <property id="module.driver.transfer.src_addr_mode" value="module.driver.transfer.src_addr_mode.addr_mode_fixed"/>
-      <property id="module.driver.transfer.repeat_area" value="module.driver.transfer.repeat_area.repeat_area_source"/>
-      <property id="module.driver.transfer.interrupt" value="module.driver.transfer.interrupt.interrupt_end"/>
-      <property id="module.driver.transfer.p_dest" value="NULL"/>
-      <property id="module.driver.transfer.p_src" value="NULL"/>
-      <property id="module.driver.transfer.length" value="0"/>
-      <property id="module.driver.transfer.num_blocks" value="0"/>
-      <property id="module.driver.transfer.activation_source" value="module.driver.transfer.event.event_elc_software_event_0"/>
-      <property id="module.driver.transfer.auto_enable" value="module.driver.transfer.auto_enable.true"/>
-      <property id="module.driver.transfer.p_callback" value="NULL"/>
-      <property id="module.driver.transfer.irq_ipl" value="board.icu.common.irq.disabled"/>
-    </module>
-    <module id="module.driver.timer_on_gpt.441649034">
-      <property id="module.driver.timer.name" value="g_timer0"/>
-      <property id="module.driver.timer.channel" value="0"/>
-      <property id="module.driver.timer.mode" value="module.driver.timer.mode.mode_periodic"/>
-      <property id="module.driver.timer.shortest_pwm_signal" value="module.driver.timer.mode.shortest_pwm_signal_disabled"/>
-      <property id="module.driver.timer.period" value="50"/>
-      <property id="module.driver.timer.unit" value="module.driver.timer.unit.unit_period_usec"/>
-      <property id="module.driver.timer.duty_cycle" value="50"/>
-      <property id="module.driver.timer.duty_cycle_unit" value="module.driver.timer.duty_cycle_unit.unit_percent"/>
-      <property id="module.driver.timer.autostart" value="module.driver.timer.autostart.true"/>
-      <property id="module.driver.timer.gtioca_output_enabled" value="module.driver.timer.gtioca_output_enabled.false"/>
-      <property id="module.driver.timer.gtioca_stop_level" value="module.driver.timer.gtioca_stop_level.pin_level_low"/>
-      <property id="module.driver.timer.gtiocb_output_enabled" value="module.driver.timer.gtiocb_output_enabled.false"/>
-      <property id="module.driver.timer.gtiocb_stop_level" value="module.driver.timer.gtiocb_stop_level.pin_level_low"/>
-      <property id="module.driver.timer.p_callback" value="timer_user_callback"/>
-      <property id="module.driver.timer.irq_ipl" value="board.icu.common.irq.priority7"/>
-    </module>
-    <module id="module.framework.thread_monitor.245673544">
-      <property id="module.framework.sf_thread_monitor.name" value="g_sf_thread_monitor0"/>
-      <property id="module.framework.thread_monitor.profiling_mode_enable" value="module.framework.thread_monitor.profiling_mode_enable.disabled"/>
-      <property id="module.framework.thread_monitor.priority" value="1"/>
-      <property id="module.framework.thread_monitor.init_function" value="sf_thread_monitor_init0"/>
-      <property id="module.framework.thread_monitor.init" value="module.framework.sf_thread_monitor.init.enable"/>
-    </module>
-    <module id="module.driver.watchdog_on_wdt.159755993">
-      <property id="module.driver.watchdog.name" value="g_wdt0"/>
-      <property id="module.driver.watchdog.start_mode" value="module.driver.watchdog.start_mode.register"/>
-      <property id="module.driver.watchdog.start_wdt_after_cfg" value="module.driver.watchdog.start_mode.start_wdt_after_cfg.true"/>
-      <property id="module.driver.watchdog.timeout" value="module.driver.watchdog.timeout.16384"/>
-      <property id="module.driver.watchdog.clock_division" value="module.driver.watchdog.clock_division.8192"/>
-      <property id="module.driver.watchdog.window_start" value="module.driver.watchdog.window_start.100"/>
-      <property id="module.driver.watchdog.window_end" value="module.driver.watchdog.window_end.0"/>
-      <property id="module.driver.watchdog.reset_control" value="module.driver.watchdog.reset_control.reset"/>
-      <property id="module.driver.watchdog.stop_control" value="module.driver.watchdog.stop_control.enable"/>
-      <property id="module.driver.watchdog.nmi_callback" value="NULL"/>
-    </module>
     <context id="_hal.0">
       <stack module="module.driver.ioport_on_ioport.0"/>
       <stack module="module.driver.elc_on_elc.0"/>
@@ -376,7 +376,6 @@
       <property id="rtos.threadx.thread.priority" value="3"/>
       <property id="rtos.threadx.thread.autostart" value="rtos.threadx.thread.autostart.enabled"/>
       <property id="rtos.threadx.thread.timeslice" value="1"/>
-      <stack module="module.driver.adc_on_adc.1904216187"/>
       <stack module="module.driver.uart_on_sci_uart.2097021479">
         <stack module="module.driver.transfer_on_dtc.1737285144" requires="module.driver.uart_on_sci_uart.requires.transfer_tx"/>
       </stack>
@@ -425,6 +424,7 @@
       <property id="rtos.threadx.thread.priority" value="4"/>
       <property id="rtos.threadx.thread.autostart" value="rtos.threadx.thread.autostart.enabled"/>
       <property id="rtos.threadx.thread.timeslice" value="1"/>
+      <stack module="module.driver.adc_on_adc.702076447"/>
     </context>
     <config id="config.driver.wdt">
       <property id="config.driver.wdt.param_checking_enable" value="config.driver.wdt.param_checking_enable.bsp"/>

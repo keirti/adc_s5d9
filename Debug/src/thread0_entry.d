@@ -88,9 +88,7 @@ src/thread0_entry.o: ../src/thread0_entry.c ../src/adc_interface.h \
  K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_dtc_cfg.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_sci_uart.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_uart_api.h \
- K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_sci_uart_cfg.h \
- K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_adc.h \
- K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_adc_cfg.h
+ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_sci_uart_cfg.h
 
 ../src/adc_interface.h:
 
@@ -273,7 +271,3 @@ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_sci_uart.h:
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_uart_api.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_sci_uart_cfg.h:
-
-K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_adc.h:
-
-K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_adc_cfg.h:
