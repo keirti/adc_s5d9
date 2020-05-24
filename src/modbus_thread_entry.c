@@ -22,10 +22,10 @@ void modbus_thread_entry(void)
     /*
      * Register the thread with the monitor
      */
-    if(SSP_SUCCESS != g_sf_thread_monitor0.p_api->threadRegister(g_sf_thread_monitor0.p_ctrl, &min_max_values))
-    {
-        __BKPT(0);
-    }
+    //if(SSP_SUCCESS != g_sf_thread_monitor0.p_api->threadRegister(g_sf_thread_monitor0.p_ctrl, &min_max_values))
+    //{
+       // __BKPT(0);
+    //}
 
     /*
      * Thread Loop
@@ -35,6 +35,6 @@ void modbus_thread_entry(void)
         /*
          * Call the modbus function
          */
-        vTaskMODBUS();
+        //vTaskMODBUS();
     }
 }

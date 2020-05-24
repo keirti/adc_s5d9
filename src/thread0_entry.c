@@ -95,6 +95,8 @@ static void calculate_adc_voltages(uint8_t channel)
     adc_data[channel].adc_voltage = ((adc_data[channel].adc_raw_count/MAX_ADC_COUNT)*ADC_VREF);
 }
 
+void vTaskMODBUS( void );
+
 /*=============================================================================*
  Public Function Implementations
 *=============================================================================*/
@@ -124,16 +126,16 @@ void thread0_entry(void)
      * Open the ADC Module
      * Configure the scan
      */
-    g_adc0.p_api->open(g_adc0.p_ctrl,g_adc0.p_cfg);
-    g_adc0.p_api->scanCfg(g_adc0.p_ctrl, g_adc0.p_channel_cfg);
+    //g_adc0.p_api->open(g_adc0.p_ctrl,g_adc0.p_cfg);
+    //g_adc0.p_api->scanCfg(g_adc0.p_ctrl, g_adc0.p_channel_cfg);
 
     /*
      * Start the ADC scan, print and error message should this fail
      */
-    if(g_adc0.p_api->scanStart(g_adc0.p_ctrl) != SSP_SUCCESS)
-    {
-         printf("scan start failed\n");
-    }
+    //if(g_adc0.p_api->scanStart(g_adc0.p_ctrl) != SSP_SUCCESS)
+    //{
+         //printf("scan start failed\n");
+    //}
 
     /*
      * Thread Loop
@@ -145,30 +147,34 @@ void thread0_entry(void)
          * Increment the channel
          * Check the channel is within the range of the configured amount of adcs
          */
-        g_adc0.p_api->read(g_adc0.p_ctrl, channel, &adc_data[channel].adc_raw_count);
-        calculate_adc_voltages(channel);
-        channel++;
-        if(channel > NUM_ADC_CHANNELS)
-        {
-            channel = ADC_REG_CHANNEL_0;
-        }
+        //g_adc0.p_api->read(g_adc0.p_ctrl, channel, &adc_data[channel].adc_raw_count);
+        //calculate_adc_voltages(channel);
+        //channel++;
+        //if(channel > NUM_ADC_CHANNELS)
+        //{
+            //channel = ADC_REG_CHANNEL_0;
+        //}
 
         /*
          *  Increment the thread_counter
          *  Sleep the thread
          */
-        if(SSP_SUCCESS != g_sf_thread_monitor0.p_api->countIncrement(g_sf_thread_monitor0.p_ctrl))
-        {
-            __BKPT(0);
-        }
-        tx_thread_sleep (1);
+        //if(SSP_SUCCESS != g_sf_thread_monitor0.p_api->countIncrement(g_sf_thread_monitor0.p_ctrl))
+        //{
+            //__BKPT(0);
+        //}
+        //tx_thread_sleep (1);
+        /*
+         * Call the modbus function
+         */
+        vTaskMODBUS();
     }
 
     /*
      * Only close the api when we break out of the while loop..
      * which is never
      */
-    g_adc0.p_api->close(g_adc0.p_ctrl);
+    //g_adc0.p_api->close(g_adc0.p_ctrl);
 }
 
 /*=============================================================================*
