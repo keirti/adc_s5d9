@@ -78,7 +78,7 @@ verify.siz \
 all: verify.elf secondary-outputs
 
 dependents:
-	-cd K:/GitHub/adc_s5d9/EMS/Release && $(MAKE) clean all
+	-cd K:/GitHub/adc_s5d9/EMS/Release && $(MAKE) all
 
 # Tool invocations
 verify.elf: $(OBJS) $(USER_OBJS) $(LINKER_SCRIPT) K:/GitHub/adc_s5d9/EMS/Release/verify.elf

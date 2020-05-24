@@ -98,8 +98,21 @@ static void calculate_adc_voltages(uint8_t channel)
 /*=============================================================================*
  Public Function Implementations
 *=============================================================================*/
-/* Adc Thread entry function */
+/*-------------------------------------------------------------------*
 
+  NAME
+    adc_thread_entry
+
+  DESCRIPTION
+    Thread function, processing all the ADC values and reading the latest
+
+  PARAM
+    None
+
+  RETURNS
+    None
+
+*--------------------------------------------------------------------*/
 void adc_thread_entry(void)
 {
     uint8_t channel = ADC_REG_CHANNEL_0;
