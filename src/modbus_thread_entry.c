@@ -2,13 +2,13 @@
 (C) COPYRIGHT Sprint Power Limited - 2020
 
 FILE
-    Enter File Name
+    modbus_thread_entry.c
 
 ORIGINAL AUTHOR
-    Enter Name Here
+    Chris Goodwin
 
 DESCRIPTION
-    Enter file description
+    Modbus thread functionality
 
 REFERENCES
     None
@@ -59,8 +59,23 @@ static sf_thread_monitor_counter_min_max_t min_max_values;
 /*=============================================================================*
  Public Function Implementations
 *=============================================================================*/
-/* Adc Thread entry function */
+/*-------------------------------------------------------------------*
 
+  NAME
+    modbus_thread_entry
+
+  DESCRIPTION
+    Modbus thread,
+    Registers it to be checked within the thread monitor and runs
+    the modbus task
+
+  PARAM
+    None
+
+  RETURNS
+    None
+
+*--------------------------------------------------------------------*/
 void modbus_thread_entry(void)
 {
     /*

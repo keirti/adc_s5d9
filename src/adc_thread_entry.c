@@ -2,13 +2,14 @@
 (C) COPYRIGHT Sprint Power Limited - 2020
 
 FILE
-    Enter File Name
+    adc_thread_entry.c
 
 ORIGINAL AUTHOR
-    Enter Name Here
+    Chris Goodwin
 
 DESCRIPTION
-    Enter file description
+    adc functionality file, will allow for reading and processing all adc values
+    found within the adc_interface data files.
 
 REFERENCES
     None

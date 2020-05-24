@@ -8,7 +8,7 @@ ORIGINAL AUTHOR
     Chris Goodwin
 
 DESCRIPTION
-    Enter file description
+   led thread file - Will run and control the LEDs on the board
 
 REFERENCES
     None
@@ -61,7 +61,21 @@ static sf_thread_monitor_counter_min_max_t min_max_values;
 /*=============================================================================*
  Public Function Implementations
 *=============================================================================*/
-/* Led Thread entry function */
+/*-------------------------------------------------------------------*
+
+  NAME
+    Leds_entry
+
+  DESCRIPTION
+    Led entry function, controls the LEDs on the board
+
+  PARAM
+    None
+
+  RETURNS
+    None
+
+*--------------------------------------------------------------------*/
 void Leds_entry(void)
 {
     /*
