@@ -426,6 +426,14 @@
       <property id="rtos.threadx.thread.timeslice" value="1"/>
       <stack module="module.driver.adc_on_adc.702076447"/>
     </context>
+    <context id="rtos.threadx.thread.2092337074">
+      <property id="_symbol" value="can_thread"/>
+      <property id="rtos.threadx.thread.name" value="CAN Thread"/>
+      <property id="rtos.threadx.thread.stack" value="1024"/>
+      <property id="rtos.threadx.thread.priority" value="4"/>
+      <property id="rtos.threadx.thread.autostart" value="rtos.threadx.thread.autostart.enabled"/>
+      <property id="rtos.threadx.thread.timeslice" value="1"/>
+    </context>
     <config id="config.driver.wdt">
       <property id="config.driver.wdt.param_checking_enable" value="config.driver.wdt.param_checking_enable.bsp"/>
     </config>

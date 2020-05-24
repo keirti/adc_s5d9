@@ -533,4 +533,12 @@ Synergy Configuration
       PGA 1: Disabled
       PGA 2: Disabled
       
+  Thread "CAN Thread"
+    Symbol: can_thread
+    Name: CAN Thread
+    Stack size (bytes): 1024
+    Priority: 4
+    Auto start: Enabled
+    Time slicing interval (ticks): 1
+    
   Messaging
