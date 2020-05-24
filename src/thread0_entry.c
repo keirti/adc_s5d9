@@ -161,7 +161,7 @@ void thread0_entry(void)
         {
             __BKPT(0);
         }
-        tx_thread_sleep (5);
+        tx_thread_sleep (1);
     }
 
     /*
