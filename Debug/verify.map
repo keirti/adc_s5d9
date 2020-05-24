@@ -9128,7 +9128,7 @@ END GROUP
  .ssp_dtc_vector_table
                 0x1ffe0000      0x1c0 ./synergy/ssp/src/driver/r_dtc/r_dtc.o
 
-.data           0x1ffe01c0      0x184 load address 0x0000c320
+.data           0x1ffe01c0      0x210 load address 0x0000c320
                 0x1ffe01c0                __data_start__ = .
  *(.r_flash_hp_config_set_area)
                 0x1ffe01c0                . = ALIGN (0x4)
@@ -9147,378 +9147,380 @@ END GROUP
  *fill*         0x1ffe01dd        0x3 
  .data.xFuncHandlers
                 0x1ffe01e0       0x80 ./src/freemb/modbus/mb.o
+ .data.adc_data_arr
+                0x1ffe0260       0x8c ./src/adc_interface.o
  .data._tx_thread_system_state
-                0x1ffe0260        0x4 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_initialize.o)
-                0x1ffe0260                _tx_thread_system_state
+                0x1ffe02ec        0x4 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_initialize.o)
+                0x1ffe02ec                _tx_thread_system_state
  .data._impure_ptr
-                0x1ffe0264        0x4 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libg_nano.a(lib_a-impure.o)
-                0x1ffe0264                _impure_ptr
+                0x1ffe02f0        0x4 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libg_nano.a(lib_a-impure.o)
+                0x1ffe02f0                _impure_ptr
  .data.impure_data
-                0x1ffe0268       0x60 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libg_nano.a(lib_a-impure.o)
+                0x1ffe02f4       0x60 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libg_nano.a(lib_a-impure.o)
  .data.supports_ext_exit_extended
-                0x1ffe02c8        0x4 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\librdimon_nano.a(rdimon-syscalls.o)
+                0x1ffe0354        0x4 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\librdimon_nano.a(rdimon-syscalls.o)
  .data.supports_ext_stdout_stderr
-                0x1ffe02cc        0x4 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\librdimon_nano.a(rdimon-syscalls.o)
-                0x1ffe02d0                . = ALIGN (0x4)
-                0x1ffe02d0                PROVIDE (__preinit_array_start, .)
+                0x1ffe0358        0x4 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\librdimon_nano.a(rdimon-syscalls.o)
+                0x1ffe035c                . = ALIGN (0x4)
+                0x1ffe035c                PROVIDE (__preinit_array_start, .)
  *(.preinit_array)
-                0x1ffe02d0                PROVIDE (__preinit_array_end, .)
-                0x1ffe02d0                . = ALIGN (0x4)
-                0x1ffe02d0                PROVIDE (__init_array_start, .)
+                0x1ffe035c                PROVIDE (__preinit_array_end, .)
+                0x1ffe035c                . = ALIGN (0x4)
+                0x1ffe035c                PROVIDE (__init_array_start, .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array)
- .init_array    0x1ffe02d0        0x4 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
-                0x1ffe02d4                PROVIDE (__init_array_end, .)
-                0x1ffe02d4                . = ALIGN (0x4)
+ .init_array    0x1ffe035c        0x4 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+                0x1ffe0360                PROVIDE (__init_array_end, .)
+                0x1ffe0360                . = ALIGN (0x4)
                 [!provide]                PROVIDE (__fini_array_start, .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array)
- .fini_array    0x1ffe02d4        0x4 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+ .fini_array    0x1ffe0360        0x4 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
                 [!provide]                PROVIDE (__fini_array_end, .)
  *(.jcr*)
-                0x1ffe02d8                __Lock_Start = .
+                0x1ffe0364                __Lock_Start = .
  *(SORT_BY_NAME(.hw_lock*))
  .hw_lock.ADC_0U_0U
-                0x1ffe02d8        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02d8                g_hw_lock_ADC_0U_0U
+                0x1ffe0364        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0364                g_hw_lock_ADC_0U_0U
  .hw_lock.ADC_0U_1U
-                0x1ffe02d9        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02d9                g_hw_lock_ADC_0U_1U
+                0x1ffe0365        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0365                g_hw_lock_ADC_0U_1U
  .hw_lock.AGT_0U_0U
-                0x1ffe02da        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02da                g_hw_lock_AGT_0U_0U
+                0x1ffe0366        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0366                g_hw_lock_AGT_0U_0U
  .hw_lock.AGT_0U_1U
-                0x1ffe02db        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02db                g_hw_lock_AGT_0U_1U
+                0x1ffe0367        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0367                g_hw_lock_AGT_0U_1U
  .hw_lock.BSC_0U_1U
-                0x1ffe02dc        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02dc                g_hw_lock_BSC_0U_1U
+                0x1ffe0368        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0368                g_hw_lock_BSC_0U_1U
  .hw_lock.CAC_0U_0U
-                0x1ffe02dd        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02dd                g_hw_lock_CAC_0U_0U
+                0x1ffe0369        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0369                g_hw_lock_CAC_0U_0U
  .hw_lock.CAN_0U_0U
-                0x1ffe02de        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02de                g_hw_lock_CAN_0U_0U
+                0x1ffe036a        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe036a                g_hw_lock_CAN_0U_0U
  .hw_lock.CAN_0U_1U
-                0x1ffe02df        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02df                g_hw_lock_CAN_0U_1U
+                0x1ffe036b        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe036b                g_hw_lock_CAN_0U_1U
  .hw_lock.COMP_HS_0U_0U
-                0x1ffe02e0        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02e0                g_hw_lock_COMP_HS_0U_0U
+                0x1ffe036c        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe036c                g_hw_lock_COMP_HS_0U_0U
  .hw_lock.COMP_HS_0U_1U
-                0x1ffe02e1        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02e1                g_hw_lock_COMP_HS_0U_1U
+                0x1ffe036d        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe036d                g_hw_lock_COMP_HS_0U_1U
  .hw_lock.COMP_HS_0U_2U
-                0x1ffe02e2        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02e2                g_hw_lock_COMP_HS_0U_2U
+                0x1ffe036e        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe036e                g_hw_lock_COMP_HS_0U_2U
  .hw_lock.COMP_HS_0U_3U
-                0x1ffe02e3        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02e3                g_hw_lock_COMP_HS_0U_3U
+                0x1ffe036f        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe036f                g_hw_lock_COMP_HS_0U_3U
  .hw_lock.COMP_HS_0U_4U
-                0x1ffe02e4        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02e4                g_hw_lock_COMP_HS_0U_4U
+                0x1ffe0370        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0370                g_hw_lock_COMP_HS_0U_4U
  .hw_lock.COMP_HS_0U_5U
-                0x1ffe02e5        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02e5                g_hw_lock_COMP_HS_0U_5U
+                0x1ffe0371        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0371                g_hw_lock_COMP_HS_0U_5U
  .hw_lock.CRC_0U_0U
-                0x1ffe02e6        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02e6                g_hw_lock_CRC_0U_0U
+                0x1ffe0372        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0372                g_hw_lock_CRC_0U_0U
  .hw_lock.CTSU_0U_0U
-                0x1ffe02e7        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02e7                g_hw_lock_CTSU_0U_0U
+                0x1ffe0373        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0373                g_hw_lock_CTSU_0U_0U
  .hw_lock.DAAD_0U_0U
-                0x1ffe02e8        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02e8                g_hw_lock_DAAD_0U_0U
+                0x1ffe0374        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0374                g_hw_lock_DAAD_0U_0U
  .hw_lock.DAC_0U_0U
-                0x1ffe02e9        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02e9                g_hw_lock_DAC_0U_0U
+                0x1ffe0375        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0375                g_hw_lock_DAC_0U_0U
  .hw_lock.DAC_0U_1U
-                0x1ffe02ea        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02ea                g_hw_lock_DAC_0U_1U
+                0x1ffe0376        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0376                g_hw_lock_DAC_0U_1U
  .hw_lock.DMAC_0U_0U
-                0x1ffe02eb        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02eb                g_hw_lock_DMAC_0U_0U
+                0x1ffe0377        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0377                g_hw_lock_DMAC_0U_0U
  .hw_lock.DMAC_0U_1U
-                0x1ffe02ec        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02ec                g_hw_lock_DMAC_0U_1U
+                0x1ffe0378        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0378                g_hw_lock_DMAC_0U_1U
  .hw_lock.DMAC_0U_2U
-                0x1ffe02ed        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02ed                g_hw_lock_DMAC_0U_2U
+                0x1ffe0379        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0379                g_hw_lock_DMAC_0U_2U
  .hw_lock.DMAC_0U_3U
-                0x1ffe02ee        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02ee                g_hw_lock_DMAC_0U_3U
+                0x1ffe037a        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe037a                g_hw_lock_DMAC_0U_3U
  .hw_lock.DMAC_0U_4U
-                0x1ffe02ef        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02ef                g_hw_lock_DMAC_0U_4U
+                0x1ffe037b        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe037b                g_hw_lock_DMAC_0U_4U
  .hw_lock.DMAC_0U_5U
-                0x1ffe02f0        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02f0                g_hw_lock_DMAC_0U_5U
+                0x1ffe037c        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe037c                g_hw_lock_DMAC_0U_5U
  .hw_lock.DMAC_0U_6U
-                0x1ffe02f1        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02f1                g_hw_lock_DMAC_0U_6U
+                0x1ffe037d        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe037d                g_hw_lock_DMAC_0U_6U
  .hw_lock.DMAC_0U_7U
-                0x1ffe02f2        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02f2                g_hw_lock_DMAC_0U_7U
+                0x1ffe037e        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe037e                g_hw_lock_DMAC_0U_7U
  .hw_lock.DOC_0U_0U
-                0x1ffe02f3        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02f3                g_hw_lock_DOC_0U_0U
+                0x1ffe037f        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe037f                g_hw_lock_DOC_0U_0U
  .hw_lock.DRW_0U_0U
-                0x1ffe02f4        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02f4                g_hw_lock_DRW_0U_0U
+                0x1ffe0380        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0380                g_hw_lock_DRW_0U_0U
  .hw_lock.DTC_0U_0U
-                0x1ffe02f5        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02f5                g_hw_lock_DTC_0U_0U
+                0x1ffe0381        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0381                g_hw_lock_DTC_0U_0U
  .hw_lock.ELC_0U_0U
-                0x1ffe02f6        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02f6                g_hw_lock_ELC_0U_0U
+                0x1ffe0382        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0382                g_hw_lock_ELC_0U_0U
  .hw_lock.EPTPC_0U_0U
-                0x1ffe02f7        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02f7                g_hw_lock_EPTPC_0U_0U
+                0x1ffe0383        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0383                g_hw_lock_EPTPC_0U_0U
  .hw_lock.ETHER_0U_0U
-                0x1ffe02f8        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02f8                g_hw_lock_ETHER_0U_0U
+                0x1ffe0384        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0384                g_hw_lock_ETHER_0U_0U
  .hw_lock.ETHER_0U_1U
-                0x1ffe02f9        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02f9                g_hw_lock_ETHER_0U_1U
+                0x1ffe0385        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0385                g_hw_lock_ETHER_0U_1U
  .hw_lock.FCU_0U_0U
-                0x1ffe02fa        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02fa                g_hw_lock_FCU_0U_0U
+                0x1ffe0386        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0386                g_hw_lock_FCU_0U_0U
  .hw_lock.GLCDC_0U_0U
-                0x1ffe02fb        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02fb                g_hw_lock_GLCDC_0U_0U
+                0x1ffe0387        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0387                g_hw_lock_GLCDC_0U_0U
  .hw_lock.GPT_0U_0U
-                0x1ffe02fc        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02fc                g_hw_lock_GPT_0U_0U
+                0x1ffe0388        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0388                g_hw_lock_GPT_0U_0U
  .hw_lock.GPT_0U_10U
-                0x1ffe02fd        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02fd                g_hw_lock_GPT_0U_10U
+                0x1ffe0389        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0389                g_hw_lock_GPT_0U_10U
  .hw_lock.GPT_0U_11U
-                0x1ffe02fe        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02fe                g_hw_lock_GPT_0U_11U
+                0x1ffe038a        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe038a                g_hw_lock_GPT_0U_11U
  .hw_lock.GPT_0U_12U
-                0x1ffe02ff        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe02ff                g_hw_lock_GPT_0U_12U
+                0x1ffe038b        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe038b                g_hw_lock_GPT_0U_12U
  .hw_lock.GPT_0U_13U
-                0x1ffe0300        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0300                g_hw_lock_GPT_0U_13U
+                0x1ffe038c        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe038c                g_hw_lock_GPT_0U_13U
  .hw_lock.GPT_0U_1U
-                0x1ffe0301        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0301                g_hw_lock_GPT_0U_1U
+                0x1ffe038d        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe038d                g_hw_lock_GPT_0U_1U
  .hw_lock.GPT_0U_2U
-                0x1ffe0302        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0302                g_hw_lock_GPT_0U_2U
+                0x1ffe038e        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe038e                g_hw_lock_GPT_0U_2U
  .hw_lock.GPT_0U_3U
-                0x1ffe0303        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0303                g_hw_lock_GPT_0U_3U
+                0x1ffe038f        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe038f                g_hw_lock_GPT_0U_3U
  .hw_lock.GPT_0U_4U
-                0x1ffe0304        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0304                g_hw_lock_GPT_0U_4U
+                0x1ffe0390        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0390                g_hw_lock_GPT_0U_4U
  .hw_lock.GPT_0U_5U
-                0x1ffe0305        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0305                g_hw_lock_GPT_0U_5U
+                0x1ffe0391        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0391                g_hw_lock_GPT_0U_5U
  .hw_lock.GPT_0U_6U
-                0x1ffe0306        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0306                g_hw_lock_GPT_0U_6U
+                0x1ffe0392        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0392                g_hw_lock_GPT_0U_6U
  .hw_lock.GPT_0U_7U
-                0x1ffe0307        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0307                g_hw_lock_GPT_0U_7U
+                0x1ffe0393        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0393                g_hw_lock_GPT_0U_7U
  .hw_lock.GPT_0U_8U
-                0x1ffe0308        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0308                g_hw_lock_GPT_0U_8U
+                0x1ffe0394        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0394                g_hw_lock_GPT_0U_8U
  .hw_lock.GPT_0U_9U
-                0x1ffe0309        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0309                g_hw_lock_GPT_0U_9U
+                0x1ffe0395        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0395                g_hw_lock_GPT_0U_9U
  .hw_lock.ICU_0U_0U
-                0x1ffe030a        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe030a                g_hw_lock_ICU_0U_0U
+                0x1ffe0396        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0396                g_hw_lock_ICU_0U_0U
  .hw_lock.ICU_0U_10U
-                0x1ffe030b        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe030b                g_hw_lock_ICU_0U_10U
+                0x1ffe0397        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0397                g_hw_lock_ICU_0U_10U
  .hw_lock.ICU_0U_11U
-                0x1ffe030c        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe030c                g_hw_lock_ICU_0U_11U
+                0x1ffe0398        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0398                g_hw_lock_ICU_0U_11U
  .hw_lock.ICU_0U_12U
-                0x1ffe030d        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe030d                g_hw_lock_ICU_0U_12U
+                0x1ffe0399        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe0399                g_hw_lock_ICU_0U_12U
  .hw_lock.ICU_0U_13U
-                0x1ffe030e        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe030e                g_hw_lock_ICU_0U_13U
+                0x1ffe039a        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe039a                g_hw_lock_ICU_0U_13U
  .hw_lock.ICU_0U_14U
-                0x1ffe030f        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe030f                g_hw_lock_ICU_0U_14U
+                0x1ffe039b        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe039b                g_hw_lock_ICU_0U_14U
  .hw_lock.ICU_0U_15U
-                0x1ffe0310        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0310                g_hw_lock_ICU_0U_15U
+                0x1ffe039c        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe039c                g_hw_lock_ICU_0U_15U
  .hw_lock.ICU_0U_1U
-                0x1ffe0311        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0311                g_hw_lock_ICU_0U_1U
+                0x1ffe039d        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe039d                g_hw_lock_ICU_0U_1U
  .hw_lock.ICU_0U_2U
-                0x1ffe0312        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0312                g_hw_lock_ICU_0U_2U
+                0x1ffe039e        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe039e                g_hw_lock_ICU_0U_2U
  .hw_lock.ICU_0U_3U
-                0x1ffe0313        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0313                g_hw_lock_ICU_0U_3U
+                0x1ffe039f        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe039f                g_hw_lock_ICU_0U_3U
  .hw_lock.ICU_0U_4U
-                0x1ffe0314        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0314                g_hw_lock_ICU_0U_4U
+                0x1ffe03a0        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03a0                g_hw_lock_ICU_0U_4U
  .hw_lock.ICU_0U_5U
-                0x1ffe0315        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0315                g_hw_lock_ICU_0U_5U
+                0x1ffe03a1        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03a1                g_hw_lock_ICU_0U_5U
  .hw_lock.ICU_0U_6U
-                0x1ffe0316        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0316                g_hw_lock_ICU_0U_6U
+                0x1ffe03a2        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03a2                g_hw_lock_ICU_0U_6U
  .hw_lock.ICU_0U_7U
-                0x1ffe0317        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0317                g_hw_lock_ICU_0U_7U
+                0x1ffe03a3        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03a3                g_hw_lock_ICU_0U_7U
  .hw_lock.ICU_0U_8U
-                0x1ffe0318        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0318                g_hw_lock_ICU_0U_8U
+                0x1ffe03a4        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03a4                g_hw_lock_ICU_0U_8U
  .hw_lock.ICU_0U_9U
-                0x1ffe0319        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0319                g_hw_lock_ICU_0U_9U
+                0x1ffe03a5        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03a5                g_hw_lock_ICU_0U_9U
  .hw_lock.IIC_0U_0U
-                0x1ffe031a        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe031a                g_hw_lock_IIC_0U_0U
+                0x1ffe03a6        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03a6                g_hw_lock_IIC_0U_0U
  .hw_lock.IIC_0U_1U
-                0x1ffe031b        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe031b                g_hw_lock_IIC_0U_1U
+                0x1ffe03a7        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03a7                g_hw_lock_IIC_0U_1U
  .hw_lock.IIC_0U_2U
-                0x1ffe031c        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe031c                g_hw_lock_IIC_0U_2U
+                0x1ffe03a8        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03a8                g_hw_lock_IIC_0U_2U
  .hw_lock.IRDA_0U_0U
-                0x1ffe031d        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe031d                g_hw_lock_IRDA_0U_0U
+                0x1ffe03a9        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03a9                g_hw_lock_IRDA_0U_0U
  .hw_lock.IWDT_0U_0U
-                0x1ffe031e        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe031e                g_hw_lock_IWDT_0U_0U
+                0x1ffe03aa        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03aa                g_hw_lock_IWDT_0U_0U
  .hw_lock.JPEG_0U_0U
-                0x1ffe031f        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe031f                g_hw_lock_JPEG_0U_0U
+                0x1ffe03ab        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03ab                g_hw_lock_JPEG_0U_0U
  .hw_lock.KEY_0U_0U
-                0x1ffe0320        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0320                g_hw_lock_KEY_0U_0U
+                0x1ffe03ac        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03ac                g_hw_lock_KEY_0U_0U
  .hw_lock.LPM_1U_0U
-                0x1ffe0321        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0321                g_hw_lock_LPM_1U_0U
+                0x1ffe03ad        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03ad                g_hw_lock_LPM_1U_0U
  .hw_lock.LVD_0U_0U
-                0x1ffe0322        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0322                g_hw_lock_LVD_0U_0U
+                0x1ffe03ae        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03ae                g_hw_lock_LVD_0U_0U
  .hw_lock.LVD_0U_1U
-                0x1ffe0323        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0323                g_hw_lock_LVD_0U_1U
+                0x1ffe03af        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03af                g_hw_lock_LVD_0U_1U
  .hw_lock.MMF_0U_0U
-                0x1ffe0324        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0324                g_hw_lock_MMF_0U_0U
+                0x1ffe03b0        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03b0                g_hw_lock_MMF_0U_0U
  .hw_lock.MPU_0U_0U
-                0x1ffe0325        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0325                g_hw_lock_MPU_0U_0U
+                0x1ffe03b1        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03b1                g_hw_lock_MPU_0U_0U
  .hw_lock.OPS_0U_0U
-                0x1ffe0326        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0326                g_hw_lock_OPS_0U_0U
+                0x1ffe03b2        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03b2                g_hw_lock_OPS_0U_0U
  .hw_lock.PDC_0U_0U
-                0x1ffe0327        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0327                g_hw_lock_PDC_0U_0U
+                0x1ffe03b3        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03b3                g_hw_lock_PDC_0U_0U
  .hw_lock.POEG_0U_0U
-                0x1ffe0328        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0328                g_hw_lock_POEG_0U_0U
+                0x1ffe03b4        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03b4                g_hw_lock_POEG_0U_0U
  .hw_lock.POEG_0U_1U
-                0x1ffe0329        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0329                g_hw_lock_POEG_0U_1U
+                0x1ffe03b5        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03b5                g_hw_lock_POEG_0U_1U
  .hw_lock.POEG_0U_2U
-                0x1ffe032a        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe032a                g_hw_lock_POEG_0U_2U
+                0x1ffe03b6        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03b6                g_hw_lock_POEG_0U_2U
  .hw_lock.POEG_0U_3U
-                0x1ffe032b        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe032b                g_hw_lock_POEG_0U_3U
+                0x1ffe03b7        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03b7                g_hw_lock_POEG_0U_3U
  .hw_lock.QSPI_0U_0U
-                0x1ffe032c        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe032c                g_hw_lock_QSPI_0U_0U
+                0x1ffe03b8        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03b8                g_hw_lock_QSPI_0U_0U
  .hw_lock.RTC_0U_0U
-                0x1ffe032d        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe032d                g_hw_lock_RTC_0U_0U
+                0x1ffe03b9        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03b9                g_hw_lock_RTC_0U_0U
  .hw_lock.SCE_0U_0U
-                0x1ffe032e        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe032e                g_hw_lock_SCE_0U_0U
+                0x1ffe03ba        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03ba                g_hw_lock_SCE_0U_0U
  .hw_lock.SCI_0U_0U
-                0x1ffe032f        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe032f                g_hw_lock_SCI_0U_0U
+                0x1ffe03bb        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03bb                g_hw_lock_SCI_0U_0U
  .hw_lock.SCI_0U_1U
-                0x1ffe0330        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0330                g_hw_lock_SCI_0U_1U
+                0x1ffe03bc        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03bc                g_hw_lock_SCI_0U_1U
  .hw_lock.SCI_0U_2U
-                0x1ffe0331        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0331                g_hw_lock_SCI_0U_2U
+                0x1ffe03bd        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03bd                g_hw_lock_SCI_0U_2U
  .hw_lock.SCI_0U_3U
-                0x1ffe0332        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0332                g_hw_lock_SCI_0U_3U
+                0x1ffe03be        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03be                g_hw_lock_SCI_0U_3U
  .hw_lock.SCI_0U_4U
-                0x1ffe0333        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0333                g_hw_lock_SCI_0U_4U
+                0x1ffe03bf        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03bf                g_hw_lock_SCI_0U_4U
  .hw_lock.SCI_0U_5U
-                0x1ffe0334        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0334                g_hw_lock_SCI_0U_5U
+                0x1ffe03c0        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03c0                g_hw_lock_SCI_0U_5U
  .hw_lock.SCI_0U_6U
-                0x1ffe0335        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0335                g_hw_lock_SCI_0U_6U
+                0x1ffe03c1        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03c1                g_hw_lock_SCI_0U_6U
  .hw_lock.SCI_0U_7U
-                0x1ffe0336        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0336                g_hw_lock_SCI_0U_7U
+                0x1ffe03c2        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03c2                g_hw_lock_SCI_0U_7U
  .hw_lock.SCI_0U_8U
-                0x1ffe0337        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0337                g_hw_lock_SCI_0U_8U
+                0x1ffe03c3        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03c3                g_hw_lock_SCI_0U_8U
  .hw_lock.SCI_0U_9U
-                0x1ffe0338        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0338                g_hw_lock_SCI_0U_9U
+                0x1ffe03c4        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03c4                g_hw_lock_SCI_0U_9U
  .hw_lock.SDHIMMC_0U_0U
-                0x1ffe0339        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0339                g_hw_lock_SDHIMMC_0U_0U
+                0x1ffe03c5        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03c5                g_hw_lock_SDHIMMC_0U_0U
  .hw_lock.SDHIMMC_0U_1U
-                0x1ffe033a        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe033a                g_hw_lock_SDHIMMC_0U_1U
+                0x1ffe03c6        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03c6                g_hw_lock_SDHIMMC_0U_1U
  .hw_lock.SPI_0U_0U
-                0x1ffe033b        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe033b                g_hw_lock_SPI_0U_0U
+                0x1ffe03c7        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03c7                g_hw_lock_SPI_0U_0U
  .hw_lock.SPI_0U_1U
-                0x1ffe033c        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe033c                g_hw_lock_SPI_0U_1U
+                0x1ffe03c8        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03c8                g_hw_lock_SPI_0U_1U
  .hw_lock.SRC_0U_0U
-                0x1ffe033d        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe033d                g_hw_lock_SRC_0U_0U
+                0x1ffe03c9        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03c9                g_hw_lock_SRC_0U_0U
  .hw_lock.SSI_0U_0U
-                0x1ffe033e        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe033e                g_hw_lock_SSI_0U_0U
+                0x1ffe03ca        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03ca                g_hw_lock_SSI_0U_0U
  .hw_lock.SSI_0U_1U
-                0x1ffe033f        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe033f                g_hw_lock_SSI_0U_1U
+                0x1ffe03cb        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03cb                g_hw_lock_SSI_0U_1U
  .hw_lock.TSN_0U_0U
-                0x1ffe0340        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0340                g_hw_lock_TSN_0U_0U
+                0x1ffe03cc        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03cc                g_hw_lock_TSN_0U_0U
  .hw_lock.USB_0U_0U
-                0x1ffe0341        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0341                g_hw_lock_USB_0U_0U
+                0x1ffe03cd        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03cd                g_hw_lock_USB_0U_0U
  .hw_lock.USB_1U_0U
-                0x1ffe0342        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0342                g_hw_lock_USB_1U_0U
+                0x1ffe03ce        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03ce                g_hw_lock_USB_1U_0U
  .hw_lock.WDT_0U_0U
-                0x1ffe0343        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
-                0x1ffe0343                g_hw_lock_WDT_0U_0U
-                0x1ffe0344                __Lock_End = .
-                0x1ffe0344                . = ALIGN (0x4)
-                0x1ffe0344                __data_end__ = .
+                0x1ffe03cf        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_hw_locks.o
+                0x1ffe03cf                g_hw_lock_WDT_0U_0U
+                0x1ffe03d0                __Lock_End = .
+                0x1ffe03d0                . = ALIGN (0x4)
+                0x1ffe03d0                __data_end__ = .
                 0x0000006c                __Lock_Size = (__Lock_End - __Lock_Start)
 
-.igot.plt       0x1ffe0344        0x0 load address 0x0000c4a4
- .igot.plt      0x1ffe0344        0x0 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+.igot.plt       0x1ffe03d0        0x0 load address 0x0000c530
+ .igot.plt      0x1ffe03d0        0x0 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
 
 .qspi_flash     0x60000000        0x0
                 0x60000000                __qspi_flash_start__ = .
  *(.qspi_flash*)
                 0x60000000                __qspi_flash_end__ = .
                 0x00000000                __qspi_flash_code_size__ = (__qspi_flash_end__ - __qspi_flash_start__)
-                0x0000c4a4                __qspi_flash_code_addr__ = (__etext + (__data_end__ - __data_start__))
+                0x0000c530                __qspi_flash_code_addr__ = (__etext + (__data_end__ - __data_start__))
 
 .qspi_non_retentive
-                0x60000000        0x0 load address 0x0000c4a4
+                0x60000000        0x0 load address 0x0000c530
                 0x60000000                __qspi_non_retentive_start__ = .
  *(.qspi_non_retentive*)
                 0x60000000                __qspi_non_retentive_end__ = .
@@ -9527,240 +9529,238 @@ END GROUP
                 0x60000000                __qspi_region_start_address__ = __qspi_flash_start__
                 0x64000000                __qspi_region_end_address__ = (__qspi_flash_start__ + __qspi_region_max_size__)
 
-.noinit         0x1ffe0348       0x40
-                0x1ffe0348                . = ALIGN (0x4)
-                0x1ffe0348                __noinit_start = .
+.noinit         0x1ffe03d0       0x40
+                0x1ffe03d0                . = ALIGN (0x4)
+                0x1ffe03d0                __noinit_start = .
  *(.noinit*)
- .noinit        0x1ffe0348       0x14 ./synergy/ssp/src/driver/r_ioport/r_ioport.o
- .noinit        0x1ffe035c        0x4 ./synergy/ssp/src/driver/r_fmi/r_fmi.o
- .noinit        0x1ffe0360       0x20 ./synergy/ssp/src/driver/r_cgc/r_cgc.o
-                0x1ffe0360                gp_cgc_feature
- .noinit        0x1ffe0380        0x8 ./synergy/ssp/src/bsp/cmsis/Device/RENESAS/S5D9/Source/system_S5D9.o
-                0x1ffe0388                __noinit_end = .
+ .noinit        0x1ffe03d0       0x14 ./synergy/ssp/src/driver/r_ioport/r_ioport.o
+ .noinit        0x1ffe03e4        0x4 ./synergy/ssp/src/driver/r_fmi/r_fmi.o
+ .noinit        0x1ffe03e8       0x20 ./synergy/ssp/src/driver/r_cgc/r_cgc.o
+                0x1ffe03e8                gp_cgc_feature
+ .noinit        0x1ffe0408        0x8 ./synergy/ssp/src/bsp/cmsis/Device/RENESAS/S5D9/Source/system_S5D9.o
+                0x1ffe0410                __noinit_end = .
 
-.bss            0x1ffe0388      0xfd8
-                0x1ffe0388                . = ALIGN (0x4)
-                0x1ffe0388                __bss_start__ = .
+.bss            0x1ffe0410      0xf4c
+                0x1ffe0410                . = ALIGN (0x4)
+                0x1ffe0410                __bss_start__ = .
  *(.bss*)
- .bss           0x1ffe0388       0x1c c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+ .bss           0x1ffe0410       0x1c c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
  .bss.gp_wdt_ctrl
-                0x1ffe03a4        0x4 ./synergy/ssp/src/driver/r_wdt/r_wdt.o
+                0x1ffe042c        0x4 ./synergy/ssp/src/driver/r_wdt/r_wdt.o
  .bss.g_protect_pfswe_counter
-                0x1ffe03a8        0x2 ./synergy/ssp/src/driver/r_ioport/r_ioport.o
-                0x1ffe03a8                g_protect_pfswe_counter
- *fill*         0x1ffe03aa        0x2 
+                0x1ffe0430        0x2 ./synergy/ssp/src/driver/r_ioport/r_ioport.o
+                0x1ffe0430                g_protect_pfswe_counter
+ *fill*         0x1ffe0432        0x2 
  .bss.gp_elc_reg
-                0x1ffe03ac        0x4 ./synergy/ssp/src/driver/r_elc/r_elc.o
+                0x1ffe0434        0x4 ./synergy/ssp/src/driver/r_elc/r_elc.o
  .bss.g_dtc_state_initialized
-                0x1ffe03b0        0x1 ./synergy/ssp/src/driver/r_dtc/r_dtc.o
- *fill*         0x1ffe03b1        0x3 
+                0x1ffe0438        0x1 ./synergy/ssp/src/driver/r_dtc/r_dtc.o
+ *fill*         0x1ffe0439        0x3 
  .bss.gp_dtc_regs
-                0x1ffe03b4        0x4 ./synergy/ssp/src/driver/r_dtc/r_dtc.o
+                0x1ffe043c        0x4 ./synergy/ssp/src/driver/r_dtc/r_dtc.o
  .bss.gp_icu_regs
-                0x1ffe03b8        0x4 ./synergy/ssp/src/driver/r_dtc/r_dtc.o
+                0x1ffe0440        0x4 ./synergy/ssp/src/driver/r_dtc/r_dtc.o
  .bss.g_adc_valid_channels
-                0x1ffe03bc        0x8 ./synergy/ssp/src/driver/r_adc/r_adc.o
+                0x1ffe0444        0x8 ./synergy/ssp/src/driver/r_adc/r_adc.o
  .bss.new_rom_wait_state.23771
-                0x1ffe03c4        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_clocks.o
- *fill*         0x1ffe03c5        0x3 
+                0x1ffe044c        0x1 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_clocks.o
+ *fill*         0x1ffe044d        0x3 
  .bss.g_bsp_group_irq_sources
-                0x1ffe03c8       0x30 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_group_irq.o
+                0x1ffe0450       0x30 ./synergy/ssp/src/bsp/mcu/s5d9/bsp_group_irq.o
  .bss.g_vector_information_size
-                0x1ffe03f8        0x4 ./synergy/ssp/src/bsp/mcu/all/bsp_irq.o
-                0x1ffe03f8                g_vector_information_size
+                0x1ffe0480        0x4 ./synergy/ssp/src/bsp/mcu/all/bsp_irq.o
+                0x1ffe0480                g_vector_information_size
  .bss.g_bsp_lock_lookup_size
-                0x1ffe03fc        0x4 ./synergy/ssp/src/bsp/mcu/all/bsp_locking.o
+                0x1ffe0484        0x4 ./synergy/ssp/src/bsp/mcu/all/bsp_locking.o
  .bss.gp_bsp_lock_lookup
-                0x1ffe0400        0x4 ./synergy/ssp/src/bsp/mcu/all/bsp_locking.o
+                0x1ffe0488        0x4 ./synergy/ssp/src/bsp/mcu/all/bsp_locking.o
  .bss.gp_bsp_locks
-                0x1ffe0404        0x4 ./synergy/ssp/src/bsp/mcu/all/bsp_locking.o
+                0x1ffe048c        0x4 ./synergy/ssp/src/bsp/mcu/all/bsp_locking.o
  .bss.g_protect_counters
-                0x1ffe0408        0x6 ./synergy/ssp/src/bsp/mcu/all/bsp_register_protection.o
- *fill*         0x1ffe040e        0x2 
+                0x1ffe0490        0x6 ./synergy/ssp/src/bsp/mcu/all/bsp_register_protection.o
+ *fill*         0x1ffe0496        0x2 
  .bss.current_heap_end.23821
-                0x1ffe0410        0x4 ./synergy/ssp/src/bsp/mcu/all/bsp_sbrk.o
+                0x1ffe0498        0x4 ./synergy/ssp/src/bsp/mcu/all/bsp_sbrk.o
  .bss.SystemCoreClock
-                0x1ffe0414        0x4 ./synergy/ssp/src/bsp/cmsis/Device/RENESAS/S5D9/Source/system_S5D9.o
-                0x1ffe0414                SystemCoreClock
+                0x1ffe049c        0x4 ./synergy/ssp/src/bsp/cmsis/Device/RENESAS/S5D9/Source/system_S5D9.o
+                0x1ffe049c                SystemCoreClock
  .bss.device_characteristics
-                0x1ffe0418        0x3 ./synergy/board/s5d9_pk/bsp_qspi.o
- *fill*         0x1ffe041b        0x1 
+                0x1ffe04a0        0x3 ./synergy/board/s5d9_pk/bsp_qspi.o
+ *fill*         0x1ffe04a3        0x1 
  .bss.flag_status2
-                0x1ffe041c        0x1 ./synergy/board/s5d9_pk/bsp_qspi.o
- *fill*         0x1ffe041d        0x3 
+                0x1ffe04a4        0x1 ./synergy/board/s5d9_pk/bsp_qspi.o
+ *fill*         0x1ffe04a5        0x3 
  .bss.gp_ctrl_ADC_0_SCAN_END
-                0x1ffe0420        0x4 ./src/synergy_gen/adc_thread.o
+                0x1ffe04a8        0x4 ./src/synergy_gen/adc_thread.o
  .bss.g_timer0_ctrl
-                0x1ffe0424       0x18 ./src/synergy_gen/modbus_thread.o
+                0x1ffe04ac       0x18 ./src/synergy_gen/modbus_thread.o
  .bss.gp_ctrl_GPT_0_COUNTER_OVERFLOW
-                0x1ffe043c        0x4 ./src/synergy_gen/modbus_thread.o
+                0x1ffe04c4        0x4 ./src/synergy_gen/modbus_thread.o
  .bss.gp_ctrl_SCI_3_RXI
-                0x1ffe0440        0x4 ./src/synergy_gen/modbus_thread.o
+                0x1ffe04c8        0x4 ./src/synergy_gen/modbus_thread.o
  .bss.gp_ctrl_SCI_3_TEI
-                0x1ffe0444        0x4 ./src/synergy_gen/modbus_thread.o
+                0x1ffe04cc        0x4 ./src/synergy_gen/modbus_thread.o
  .bss.gp_ctrl_SCI_3_TXI
-                0x1ffe0448        0x4 ./src/synergy_gen/modbus_thread.o
+                0x1ffe04d0        0x4 ./src/synergy_gen/modbus_thread.o
  .bss.queue_memory_g_modbus_queue
-                0x1ffe044c       0x14 ./src/synergy_gen/modbus_thread.o
+                0x1ffe04d4       0x14 ./src/synergy_gen/modbus_thread.o
  .bss.queue_memory_g_serial_RX_queue
-                0x1ffe0460       0x14 ./src/synergy_gen/modbus_thread.o
- *fill*         0x1ffe0474        0x4 
+                0x1ffe04e8       0x14 ./src/synergy_gen/modbus_thread.o
+ *fill*         0x1ffe04fc        0x4 
  .bss.g_sf_thread_monitor0_ctrl
-                0x1ffe0478      0x570 ./src/synergy_gen/watchdog.o
+                0x1ffe0500      0x570 ./src/synergy_gen/watchdog.o
  .bss.g_wdt0_ctrl
-                0x1ffe09e8       0x10 ./src/synergy_gen/watchdog.o
+                0x1ffe0a70       0x10 ./src/synergy_gen/watchdog.o
  .bss.eRcvState
-                0x1ffe09f8        0x1 ./src/freemb/modbus/rtu/mbrtu.o
+                0x1ffe0a80        0x1 ./src/freemb/modbus/rtu/mbrtu.o
  .bss.eSndState
-                0x1ffe09f9        0x1 ./src/freemb/modbus/rtu/mbrtu.o
- *fill*         0x1ffe09fa        0x2 
+                0x1ffe0a81        0x1 ./src/freemb/modbus/rtu/mbrtu.o
+ *fill*         0x1ffe0a82        0x2 
  .bss.pucSndBufferCur
-                0x1ffe09fc        0x4 ./src/freemb/modbus/rtu/mbrtu.o
+                0x1ffe0a84        0x4 ./src/freemb/modbus/rtu/mbrtu.o
  .bss.usRcvBufferPos
-                0x1ffe0a00        0x2 ./src/freemb/modbus/rtu/mbrtu.o
+                0x1ffe0a88        0x2 ./src/freemb/modbus/rtu/mbrtu.o
  .bss.usSndBufferCount
-                0x1ffe0a02        0x2 ./src/freemb/modbus/rtu/mbrtu.o
+                0x1ffe0a8a        0x2 ./src/freemb/modbus/rtu/mbrtu.o
  .bss.ucMBSlaveID
-                0x1ffe0a04       0x20 ./src/freemb/modbus/functions/mbfuncother.o
+                0x1ffe0a8c       0x20 ./src/freemb/modbus/functions/mbfuncother.o
  .bss.usMBSlaveIDLen
-                0x1ffe0a24        0x2 ./src/freemb/modbus/functions/mbfuncother.o
+                0x1ffe0aac        0x2 ./src/freemb/modbus/functions/mbfuncother.o
  .bss.eException.26472
-                0x1ffe0a26        0x1 ./src/freemb/modbus/mb.o
- *fill*         0x1ffe0a27        0x1 
+                0x1ffe0aae        0x1 ./src/freemb/modbus/mb.o
+ *fill*         0x1ffe0aaf        0x1 
  .bss.peMBFrameReceiveCur
-                0x1ffe0a28        0x4 ./src/freemb/modbus/mb.o
+                0x1ffe0ab0        0x4 ./src/freemb/modbus/mb.o
  .bss.peMBFrameSendCur
-                0x1ffe0a2c        0x4 ./src/freemb/modbus/mb.o
+                0x1ffe0ab4        0x4 ./src/freemb/modbus/mb.o
  .bss.pvMBFrameCloseCur
-                0x1ffe0a30        0x4 ./src/freemb/modbus/mb.o
+                0x1ffe0ab8        0x4 ./src/freemb/modbus/mb.o
  .bss.pvMBFrameStartCur
-                0x1ffe0a34        0x4 ./src/freemb/modbus/mb.o
+                0x1ffe0abc        0x4 ./src/freemb/modbus/mb.o
  .bss.pvMBFrameStopCur
-                0x1ffe0a38        0x4 ./src/freemb/modbus/mb.o
+                0x1ffe0ac0        0x4 ./src/freemb/modbus/mb.o
  .bss.ucFunctionCode.26470
-                0x1ffe0a3c        0x1 ./src/freemb/modbus/mb.o
+                0x1ffe0ac4        0x1 ./src/freemb/modbus/mb.o
  .bss.ucMBAddress
-                0x1ffe0a3d        0x1 ./src/freemb/modbus/mb.o
- *fill*         0x1ffe0a3e        0x2 
+                0x1ffe0ac5        0x1 ./src/freemb/modbus/mb.o
+ *fill*         0x1ffe0ac6        0x2 
  .bss.ucMBFrame.26468
-                0x1ffe0a40        0x4 ./src/freemb/modbus/mb.o
+                0x1ffe0ac8        0x4 ./src/freemb/modbus/mb.o
  .bss.ucRcvAddress.26469
-                0x1ffe0a44        0x1 ./src/freemb/modbus/mb.o
- *fill*         0x1ffe0a45        0x1 
+                0x1ffe0acc        0x1 ./src/freemb/modbus/mb.o
+ *fill*         0x1ffe0acd        0x1 
  .bss.usLength.26471
-                0x1ffe0a46        0x2 ./src/freemb/modbus/mb.o
+                0x1ffe0ace        0x2 ./src/freemb/modbus/mb.o
  .bss.eQueuedEvent
-                0x1ffe0a48        0x1 ./src/freemb/demo/port/portevent.o
+                0x1ffe0ad0        0x1 ./src/freemb/demo/port/portevent.o
  .bss.xEventInQueue
-                0x1ffe0a49        0x1 ./src/freemb/demo/port/portevent.o
- *fill*         0x1ffe0a4a        0x2 
- .bss.adc_data  0x1ffe0a4c        0x4 ./src/freemb/demo/demo.o
+                0x1ffe0ad1        0x1 ./src/freemb/demo/port/portevent.o
+ *fill*         0x1ffe0ad2        0x2 
+ .bss.adc_data  0x1ffe0ad4        0x4 ./src/freemb/demo/demo.o
  .bss.usRegHoldingBuf
-                0x1ffe0a50       0x40 ./src/freemb/demo/demo.o
+                0x1ffe0ad8       0x40 ./src/freemb/demo/demo.o
  .bss.usRegInputBuf
-                0x1ffe0a90       0x80 ./src/freemb/demo/demo.o
- .bss.delay     0x1ffe0b10        0x4 ./src/Leds_entry.o
- .bss.leds      0x1ffe0b14        0x8 ./src/Leds_entry.o
- .bss.level     0x1ffe0b1c        0x1 ./src/Leds_entry.o
- *fill*         0x1ffe0b1d        0x3 
+                0x1ffe0b18       0x80 ./src/freemb/demo/demo.o
+ .bss.delay     0x1ffe0b98        0x4 ./src/Leds_entry.o
+ .bss.leds      0x1ffe0b9c        0x8 ./src/Leds_entry.o
+ .bss.level     0x1ffe0ba4        0x1 ./src/Leds_entry.o
+ *fill*         0x1ffe0ba5        0x3 
  .bss.min_max_values
-                0x1ffe0b20        0x8 ./src/Leds_entry.o
- .bss.adc_data_arr
-                0x1ffe0b28       0x8c ./src/adc_interface.o
- .bss.adc_data  0x1ffe0bb4        0x4 ./src/adc_thread_entry.o
+                0x1ffe0ba8        0x8 ./src/Leds_entry.o
+ .bss.adc_data  0x1ffe0bb0        0x4 ./src/adc_thread_entry.o
  .bss.min_max_values
-                0x1ffe0bb8        0x8 ./src/adc_thread_entry.o
+                0x1ffe0bb4        0x8 ./src/adc_thread_entry.o
  .bss.min_max_values
-                0x1ffe0bc0        0x8 ./src/modbus_thread_entry.o
- .bss.g_prcr    0x1ffe0bc8        0x4 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_schedule.o)
+                0x1ffe0bbc        0x8 ./src/modbus_thread_entry.o
+ .bss.g_prcr    0x1ffe0bc4        0x4 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_schedule.o)
  .bss.g_sbycr_ssby
-                0x1ffe0bcc        0x4 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_schedule.o)
+                0x1ffe0bc8        0x4 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_schedule.o)
  .bss.__malloc_free_list
-                0x1ffe0bd0        0x4 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libg_nano.a(lib_a-nano-mallocr.o)
-                0x1ffe0bd0                __malloc_free_list
+                0x1ffe0bcc        0x4 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libg_nano.a(lib_a-nano-mallocr.o)
+                0x1ffe0bcc                __malloc_free_list
  .bss.__malloc_sbrk_start
-                0x1ffe0bd4        0x4 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libg_nano.a(lib_a-nano-mallocr.o)
-                0x1ffe0bd4                __malloc_sbrk_start
+                0x1ffe0bd0        0x4 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libg_nano.a(lib_a-nano-mallocr.o)
+                0x1ffe0bd0                __malloc_sbrk_start
  .bss.monitor_stderr
-                0x1ffe0bd8        0x4 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\librdimon_nano.a(rdimon-syscalls.o)
+                0x1ffe0bd4        0x4 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\librdimon_nano.a(rdimon-syscalls.o)
  .bss.monitor_stdin
-                0x1ffe0bdc        0x4 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\librdimon_nano.a(rdimon-syscalls.o)
+                0x1ffe0bd8        0x4 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\librdimon_nano.a(rdimon-syscalls.o)
  .bss.monitor_stdout
-                0x1ffe0be0        0x4 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\librdimon_nano.a(rdimon-syscalls.o)
+                0x1ffe0bdc        0x4 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\librdimon_nano.a(rdimon-syscalls.o)
  .bss.openfiles
-                0x1ffe0be4       0xa0 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\librdimon_nano.a(rdimon-syscalls.o)
+                0x1ffe0be0       0xa0 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\librdimon_nano.a(rdimon-syscalls.o)
  *(COMMON)
- COMMON         0x1ffe0c84       0xb8 ./src/synergy_gen/Leds.o
-                0x1ffe0c84                Leds
- COMMON         0x1ffe0d3c       0xf0 ./src/synergy_gen/adc_thread.o
-                0x1ffe0d3c                g_adc0_ctrl
-                0x1ffe0d74                adc_thread
- COMMON         0x1ffe0e2c       0x24 ./src/synergy_gen/main.o
-                0x1ffe0e2c                g_ssp_common_initialized
-                0x1ffe0e30                g_ssp_common_initialized_semaphore
-                0x1ffe0e4c                g_ssp_common_thread_count
- COMMON         0x1ffe0e50      0x194 ./src/synergy_gen/modbus_thread.o
-                0x1ffe0e50                g_modbus_queue
-                0x1ffe0e88                g_transfer0_ctrl
-                0x1ffe0e98                g_uart_semaphore0
-                0x1ffe0eb4                g_uart0_ctrl
-                0x1ffe0ef4                modbus_thread
-                0x1ffe0fac                g_serial_RX_queue
- COMMON         0x1ffe0fe4       0xb8 ./src/synergy_gen/watchdog.o
-                0x1ffe0fe4                watchdog
- COMMON         0x1ffe109c      0x100 ./src/freemb/modbus/rtu/mbrtu.o
-                0x1ffe109c                ucRTUBuf
- COMMON         0x1ffe119c       0x14 ./src/freemb/modbus/mb.o
-                0x1ffe119c                pxMBFrameCBTransmitterEmpty
-                0x1ffe11a0                pxMBPortCBTimerExpired
-                0x1ffe11a4                pxMBFrameCBByteReceived
-                0x1ffe11a8                pxMBFrameCBTransmitFSMCur
-                0x1ffe11ac                pxMBFrameCBReceiveFSMCur
- COMMON         0x1ffe11b0       0x24 ./src/freemb/demo/port/portserial.o
-                0x1ffe11b0                g_uart0_cfg_runtime
- COMMON         0x1ffe11d4       0x34 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_initialize_high_level.o)
-                0x1ffe11d4                _tx_event_flags_created_ptr
-                0x1ffe11d8                _tx_mutex_created_count
-                0x1ffe11dc                _tx_mutex_created_ptr
-                0x1ffe11e0                _tx_queue_created_count
-                0x1ffe11e4                _tx_semaphore_created_ptr
-                0x1ffe11e8                _tx_byte_pool_created_ptr
-                0x1ffe11ec                _tx_initialize_unused_memory
-                0x1ffe11f0                _tx_block_pool_created_count
-                0x1ffe11f4                _tx_semaphore_created_count
-                0x1ffe11f8                _tx_event_flags_created_count
-                0x1ffe11fc                _tx_block_pool_created_ptr
-                0x1ffe1200                _tx_queue_created_ptr
-                0x1ffe1204                _tx_byte_pool_created_count
- COMMON         0x1ffe1208       0xa8 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_initialize.o)
-                0x1ffe1208                _tx_thread_priority_list
-                0x1ffe1288                _tx_thread_mutex_release
-                0x1ffe128c                _tx_thread_priority_maps
-                0x1ffe1290                _tx_thread_created_ptr
-                0x1ffe1294                _tx_build_options
-                0x1ffe1298                _tx_thread_created_count
-                0x1ffe129c                _tx_thread_system_stack_ptr
-                0x1ffe12a0                _tx_thread_preempt_disable
-                0x1ffe12a4                _tx_thread_current_ptr
-                0x1ffe12a8                _tx_thread_execute_ptr
-                0x1ffe12ac                _tx_thread_highest_priority
- COMMON         0x1ffe12b0       0xac K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_timer_initialize.o)
-                0x1ffe12b0                _tx_timer_current_ptr
-                0x1ffe12b4                _tx_timer_list
-                0x1ffe1334                _tx_timer_expired
-                0x1ffe1338                _tx_timer_time_slice
-                0x1ffe133c                _tx_timer_list_end
-                0x1ffe1340                _tx_timer_processing_active
-                0x1ffe1344                _tx_timer_expired_timer_ptr
-                0x1ffe1348                _tx_timer_list_start
-                0x1ffe134c                _tx_timer_created_ptr
-                0x1ffe1350                _tx_timer_created_count
-                0x1ffe1354                _tx_timer_expired_time_slice
-                0x1ffe1358                _tx_timer_system_clock
- COMMON         0x1ffe135c        0x4 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libg_nano.a(lib_a-reent.o)
-                0x1ffe135c                errno
-                0x1ffe1360                . = ALIGN (0x4)
-                0x1ffe1360                __bss_end__ = .
+ COMMON         0x1ffe0c80       0xb8 ./src/synergy_gen/Leds.o
+                0x1ffe0c80                Leds
+ COMMON         0x1ffe0d38       0xf0 ./src/synergy_gen/adc_thread.o
+                0x1ffe0d38                g_adc0_ctrl
+                0x1ffe0d70                adc_thread
+ COMMON         0x1ffe0e28       0x24 ./src/synergy_gen/main.o
+                0x1ffe0e28                g_ssp_common_initialized
+                0x1ffe0e2c                g_ssp_common_initialized_semaphore
+                0x1ffe0e48                g_ssp_common_thread_count
+ COMMON         0x1ffe0e4c      0x194 ./src/synergy_gen/modbus_thread.o
+                0x1ffe0e4c                g_modbus_queue
+                0x1ffe0e84                g_transfer0_ctrl
+                0x1ffe0e94                g_uart_semaphore0
+                0x1ffe0eb0                g_uart0_ctrl
+                0x1ffe0ef0                modbus_thread
+                0x1ffe0fa8                g_serial_RX_queue
+ COMMON         0x1ffe0fe0       0xb8 ./src/synergy_gen/watchdog.o
+                0x1ffe0fe0                watchdog
+ COMMON         0x1ffe1098      0x100 ./src/freemb/modbus/rtu/mbrtu.o
+                0x1ffe1098                ucRTUBuf
+ COMMON         0x1ffe1198       0x14 ./src/freemb/modbus/mb.o
+                0x1ffe1198                pxMBFrameCBTransmitterEmpty
+                0x1ffe119c                pxMBPortCBTimerExpired
+                0x1ffe11a0                pxMBFrameCBByteReceived
+                0x1ffe11a4                pxMBFrameCBTransmitFSMCur
+                0x1ffe11a8                pxMBFrameCBReceiveFSMCur
+ COMMON         0x1ffe11ac       0x24 ./src/freemb/demo/port/portserial.o
+                0x1ffe11ac                g_uart0_cfg_runtime
+ COMMON         0x1ffe11d0       0x34 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_initialize_high_level.o)
+                0x1ffe11d0                _tx_event_flags_created_ptr
+                0x1ffe11d4                _tx_mutex_created_count
+                0x1ffe11d8                _tx_mutex_created_ptr
+                0x1ffe11dc                _tx_queue_created_count
+                0x1ffe11e0                _tx_semaphore_created_ptr
+                0x1ffe11e4                _tx_byte_pool_created_ptr
+                0x1ffe11e8                _tx_initialize_unused_memory
+                0x1ffe11ec                _tx_block_pool_created_count
+                0x1ffe11f0                _tx_semaphore_created_count
+                0x1ffe11f4                _tx_event_flags_created_count
+                0x1ffe11f8                _tx_block_pool_created_ptr
+                0x1ffe11fc                _tx_queue_created_ptr
+                0x1ffe1200                _tx_byte_pool_created_count
+ COMMON         0x1ffe1204       0xa8 K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_thread_initialize.o)
+                0x1ffe1204                _tx_thread_priority_list
+                0x1ffe1284                _tx_thread_mutex_release
+                0x1ffe1288                _tx_thread_priority_maps
+                0x1ffe128c                _tx_thread_created_ptr
+                0x1ffe1290                _tx_build_options
+                0x1ffe1294                _tx_thread_created_count
+                0x1ffe1298                _tx_thread_system_stack_ptr
+                0x1ffe129c                _tx_thread_preempt_disable
+                0x1ffe12a0                _tx_thread_current_ptr
+                0x1ffe12a4                _tx_thread_execute_ptr
+                0x1ffe12a8                _tx_thread_highest_priority
+ COMMON         0x1ffe12ac       0xac K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\tx\cm4_gcc\libtx.a(tx_timer_initialize.o)
+                0x1ffe12ac                _tx_timer_current_ptr
+                0x1ffe12b0                _tx_timer_list
+                0x1ffe1330                _tx_timer_expired
+                0x1ffe1334                _tx_timer_time_slice
+                0x1ffe1338                _tx_timer_list_end
+                0x1ffe133c                _tx_timer_processing_active
+                0x1ffe1340                _tx_timer_expired_timer_ptr
+                0x1ffe1344                _tx_timer_list_start
+                0x1ffe1348                _tx_timer_created_ptr
+                0x1ffe134c                _tx_timer_created_count
+                0x1ffe1350                _tx_timer_expired_time_slice
+                0x1ffe1354                _tx_timer_system_clock
+ COMMON         0x1ffe1358        0x4 c:/program files (x86)/gnu tools arm embedded/7 2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libg_nano.a(lib_a-reent.o)
+                0x1ffe1358                errno
+                0x1ffe135c                . = ALIGN (0x4)
+                0x1ffe135c                __bss_end__ = .
 
 .heap           0x1ffe1360     0x1000
                 0x1ffe1360                . = ALIGN (0x8)
