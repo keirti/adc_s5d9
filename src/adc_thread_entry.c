@@ -70,6 +70,21 @@ extern void initialise_monitor_handles(void);
 *--------------------------------------------------------------------*/
 static void calculate_adc_voltages(uint8_t channel);
 
+/*-------------------------------------------------------------------*
+
+  NAME
+    scale_adc
+
+  DESCRIPTION
+    Scales each ADC with the gain and offset configured in the adc_data array
+
+  PARAM
+    uint8_t channel - The channel to convert
+
+  RETURNS
+    None
+
+*--------------------------------------------------------------------*/
 static void scale_adc(uint8_t channel);
 
 /*=============================================================================*
@@ -98,8 +113,26 @@ static void calculate_adc_voltages(uint8_t channel)
     adc_data[channel].adc_voltage = ((adc_data[channel].adc_raw_count/MAX_ADC_COUNT)*ADC_VREF);
 }
 
+/*-------------------------------------------------------------------*
+
+  NAME
+    scale_adc
+
+  DESCRIPTION
+    Scales each ADC with the gain and offset configured in the adc_data array
+
+  PARAM
+    uint8_t channel - The channel to convert
+
+  RETURNS
+    None
+
+*--------------------------------------------------------------------*/
 static void scale_adc(uint8_t channel)
 {
+    /*
+     * Scale the adcs by using the gain and offset seen in the adc_data array
+     */
     adc_data[channel].scaled_value = ((adc_data[channel].adc_voltage - adc_data[channel].offset)* adc_data[channel].gain);
 }
 
