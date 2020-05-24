@@ -20,6 +20,7 @@ REVIEWS
 /*=============================================================================*
  ANSI C & System-wide Header Files
 *=============================================================================*/
+#include <modbus_thread.h>
 #include "stdio.h"
 #include "stdbool.h"
 
@@ -33,7 +34,6 @@ REVIEWS
 /*=============================================================================*
  Local Header File
 *=============================================================================*/
-#include <thread0.h>
 
 /*=============================================================================*
  Private Defines
@@ -61,7 +61,7 @@ static sf_thread_monitor_counter_min_max_t min_max_values;
 *=============================================================================*/
 /* Adc Thread entry function */
 
-void thread0_entry(void)
+void modbus_thread_entry(void)
 {
     /*
      * Populate the structure counters for the thread monitor with the defines

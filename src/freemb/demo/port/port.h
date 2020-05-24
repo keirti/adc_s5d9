@@ -32,8 +32,8 @@
 #define _PORT_H
 
 /* ----------------------- Platform includes --------------------------------*/
+#include <modbus_thread.h>
 #include "bsp_api.h"
-#include "thread0.h"
 
 SSP_HEADER
 

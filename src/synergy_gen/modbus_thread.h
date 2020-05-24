@@ -1,13 +1,13 @@
 /* generated thread header file - do not edit */
-#ifndef THREAD0_H_
-#define THREAD0_H_
+#ifndef MODBUS_THREAD_H_
+#define MODBUS_THREAD_H_
 #include "bsp_api.h"
 #include "tx_api.h"
 #include "hal_data.h"
 #ifdef __cplusplus
-extern "C" void thread0_entry(void);
+extern "C" void modbus_thread_entry(void);
 #else
-extern void thread0_entry(void);
+extern void modbus_thread_entry(void);
 #endif
 #include "r_gpt.h"
 #include "r_timer_api.h"
@@ -44,4 +44,4 @@ extern TX_QUEUE g_serial_RX_queue;
 #ifdef __cplusplus
 } /* extern "C" */
 #endif
-#endif /* THREAD0_H_ */
+#endif /* MODBUS_THREAD_H_ */

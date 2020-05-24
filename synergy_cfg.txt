@@ -316,9 +316,9 @@ Synergy Configuration
     Instance "g_cgc CGC Driver on r_cgc"
       Name [Fixed]: g_cgc
       
-  Thread "Thread"
-    Symbol: thread0
-    Name: Thread
+  Thread "Modbus Thread"
+    Symbol: modbus_thread
+    Name: Modbus Thread
     Stack size (bytes): 1024
     Priority: 3
     Auto start: Enabled

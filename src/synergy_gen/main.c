@@ -2,7 +2,7 @@
 #include "bsp_api.h"
 #include "tx_api.h"
 
-extern void thread0_create(void);
+extern void modbus_thread_create(void);
 extern void Leds_create(void);
 extern void watchdog_create(void);
 extern void adc_thread_create(void);
@@ -60,7 +60,7 @@ void tx_application_define(void *first_unused_memory)
         tx_startup_err_callback (&g_ssp_common_initialized_semaphore, 0);
     }
 
-    thread0_create ();
+    modbus_thread_create ();
     Leds_create ();
     watchdog_create ();
     adc_thread_create ();

@@ -370,8 +370,8 @@
       <stack module="module.driver.cgc_on_cgc.0"/>
     </context>
     <context id="rtos.threadx.thread.378640711">
-      <property id="_symbol" value="thread0"/>
-      <property id="rtos.threadx.thread.name" value="Thread"/>
+      <property id="_symbol" value="modbus_thread"/>
+      <property id="rtos.threadx.thread.name" value="Modbus Thread"/>
       <property id="rtos.threadx.thread.stack" value="1024"/>
       <property id="rtos.threadx.thread.priority" value="3"/>
       <property id="rtos.threadx.thread.autostart" value="rtos.threadx.thread.autostart.enabled"/>
