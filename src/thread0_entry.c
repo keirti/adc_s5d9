@@ -28,6 +28,7 @@ REVIEWS
 *=============================================================================*/
 #include "sf_thread_monitor_api.h"
 #include "watchdog.h"
+#include "modbus.h"
 
 /*=============================================================================*
  Local Header File
@@ -48,12 +49,12 @@ static sf_thread_monitor_counter_min_max_t min_max_values;
 /*=============================================================================*
  Private Function Definitions (static)
 *=============================================================================*/
-extern void initialise_monitor_handles(void);
+/* None */
 
 /*=============================================================================*
  Private Function Implementations (Static)
 *=============================================================================*/
-void vTaskMODBUS( void );
+/* None */
 
 /*=============================================================================*
  Public Function Implementations
@@ -62,8 +63,6 @@ void vTaskMODBUS( void );
 
 void thread0_entry(void)
 {
-    initialise_monitor_handles();
-
     /*
      * Populate the structure counters for the thread monitor with the defines
      */

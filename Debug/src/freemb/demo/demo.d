@@ -86,6 +86,7 @@ src/freemb/demo/demo.o: ../src/freemb/demo/demo.c \
  K:\GitHub\adc_s5d9\EMS\src\freemb\modbus\include/mbport.h \
  K:\GitHub\adc_s5d9\EMS\src\freemb\modbus\include/mbproto.h \
  K:\GitHub\adc_s5d9\EMS\src\freemb\modbus\include/mbport.h \
+ K:\GitHub\adc_s5d9\EMS\src/modbus.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\api/sf_thread_monitor_api.h \
  K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework/sf_thread_monitor_cfg.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_wdt_api.h \
@@ -269,6 +270,8 @@ K:\GitHub\adc_s5d9\EMS\src\freemb\modbus\include/mbport.h:
 K:\GitHub\adc_s5d9\EMS\src\freemb\modbus\include/mbproto.h:
 
 K:\GitHub\adc_s5d9\EMS\src\freemb\modbus\include/mbport.h:
+
+K:\GitHub\adc_s5d9\EMS\src/modbus.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\api/sf_thread_monitor_api.h:
 

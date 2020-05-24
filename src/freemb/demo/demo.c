@@ -34,6 +34,8 @@
 #include "mbport.h"
 #include "stdio.h"
 
+#include "modbus.h"
+
 #include "sf_thread_monitor_api.h"
 #include "watchdog.h"
 #include "adc_interface.h"
@@ -60,11 +62,7 @@ static USHORT   usRegHoldingBuf[REG_HOLDING_NREGS];
 static adc_data_t* adc_data;
 /* ----------------------- Start implementation -----------------------------*/
 
-void
-vTaskMODBUS( void );
-
-void
-vTaskMODBUS( void )
+void vTaskMODBUS(void)
 {
     const UCHAR     ucSlaveID[] = { 0xAA, 0xBB, 0xCC };
     eMBErrorCode    eStatus;
