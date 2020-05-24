@@ -1,4 +1,5 @@
-src/adc_interface.o: ../src/adc_interface.c ../src/adc_interface.h \
+src/adc_interface.o: ../src/adc_interface.c \
+ K:\GitHub\adc_s5d9\EMS\include/adc_interface.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_adc_api.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\bsp/bsp_api.h \
  k:\github\adc_s5d9\ems\synergy\ssp\inc\ssp_common_api.h \
@@ -59,7 +60,7 @@ src/adc_interface.o: ../src/adc_interface.c ../src/adc_interface.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_elc_api.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_transfer_api.h
 
-../src/adc_interface.h:
+K:\GitHub\adc_s5d9\EMS\include/adc_interface.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_adc_api.h:
 

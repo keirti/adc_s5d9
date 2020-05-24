@@ -86,7 +86,7 @@ src/freemb/demo/demo.o: ../src/freemb/demo/demo.c \
  K:\GitHub\adc_s5d9\EMS\src\freemb\modbus\include/mbport.h \
  K:\GitHub\adc_s5d9\EMS\src\freemb\modbus\include/mbproto.h \
  K:\GitHub\adc_s5d9\EMS\src\freemb\modbus\include/mbport.h \
- K:\GitHub\adc_s5d9\EMS\src/modbus.h \
+ K:\GitHub\adc_s5d9\EMS\include/modbus.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\api/sf_thread_monitor_api.h \
  K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework/sf_thread_monitor_cfg.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_wdt_api.h \
@@ -94,7 +94,7 @@ src/freemb/demo/demo.o: ../src/freemb/demo/demo.c \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_wdt.h \
  K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_wdt_cfg.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\instances/sf_thread_monitor.h \
- K:\GitHub\adc_s5d9\EMS\src/adc_interface.h \
+ K:\GitHub\adc_s5d9\EMS\include/adc_interface.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_adc_api.h
 
 K:\GitHub\adc_s5d9\EMS\src\freemb\demo\port/port.h:
@@ -271,7 +271,7 @@ K:\GitHub\adc_s5d9\EMS\src\freemb\modbus\include/mbproto.h:
 
 K:\GitHub\adc_s5d9\EMS\src\freemb\modbus\include/mbport.h:
 
-K:\GitHub\adc_s5d9\EMS\src/modbus.h:
+K:\GitHub\adc_s5d9\EMS\include/modbus.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\api/sf_thread_monitor_api.h:
 
@@ -287,6 +287,6 @@ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_wdt_cfg.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\instances/sf_thread_monitor.h:
 
-K:\GitHub\adc_s5d9\EMS\src/adc_interface.h:
+K:\GitHub\adc_s5d9\EMS\include/adc_interface.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_adc_api.h:

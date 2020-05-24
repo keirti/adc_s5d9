@@ -1,4 +1,5 @@
-src/adc_thread_entry.o: ../src/adc_thread_entry.c ../src/adc_interface.h \
+src/adc_thread_entry.o: ../src/adc_thread_entry.c \
+ K:\GitHub\adc_s5d9\EMS\include/adc_interface.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_adc_api.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\bsp/bsp_api.h \
  k:\github\adc_s5d9\ems\synergy\ssp\inc\ssp_common_api.h \
@@ -84,7 +85,7 @@ src/adc_thread_entry.o: ../src/adc_thread_entry.c ../src/adc_interface.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_adc.h \
  K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_adc_cfg.h
 
-../src/adc_interface.h:
+K:\GitHub\adc_s5d9\EMS\include/adc_interface.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_adc_api.h:
 
