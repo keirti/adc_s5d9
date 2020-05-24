@@ -419,8 +419,8 @@
       </stack>
     </context>
     <context id="rtos.threadx.thread.5020636">
-      <property id="_symbol" value="modbus_thread"/>
-      <property id="rtos.threadx.thread.name" value="Modbus Thread"/>
+      <property id="_symbol" value="adc_thread"/>
+      <property id="rtos.threadx.thread.name" value="ADC Thread"/>
       <property id="rtos.threadx.thread.stack" value="1024"/>
       <property id="rtos.threadx.thread.priority" value="4"/>
       <property id="rtos.threadx.thread.autostart" value="rtos.threadx.thread.autostart.enabled"/>

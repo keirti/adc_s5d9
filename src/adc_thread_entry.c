@@ -1,4 +1,4 @@
-#include "modbus_thread.h"
+#include <adc_thread.h>
 #include "sf_thread_monitor_api.h"
 #include "watchdog.h"
 
@@ -10,7 +10,7 @@ void vTaskMODBUS( void );
 #define WD_MAX_COUNT 200
 
 /* Modbus Thread entry function */
-void modbus_thread_entry(void)
+void adc_thread_entry(void)
 {
 
     /*

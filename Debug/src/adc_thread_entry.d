@@ -1,5 +1,5 @@
-src/modbus_thread_entry.o: ../src/modbus_thread_entry.c \
- K:\GitHub\adc_s5d9\EMS\src\synergy_gen/modbus_thread.h \
+src/adc_thread_entry.o: ../src/adc_thread_entry.c \
+ K:\GitHub\adc_s5d9\EMS\src\synergy_gen/adc_thread.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\bsp/bsp_api.h \
  k:\github\adc_s5d9\ems\synergy\ssp\inc\ssp_common_api.h \
  k:\github\adc_s5d9\ems\synergy\ssp\inc\ssp_version.h \
@@ -79,7 +79,7 @@ src/modbus_thread_entry.o: ../src/modbus_thread_entry.c \
  K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_wdt_cfg.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\instances/sf_thread_monitor.h
 
-K:\GitHub\adc_s5d9\EMS\src\synergy_gen/modbus_thread.h:
+K:\GitHub\adc_s5d9\EMS\src\synergy_gen/adc_thread.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\bsp/bsp_api.h:
 

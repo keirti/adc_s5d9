@@ -6,24 +6,24 @@
 C_SRCS += \
 ../src/Leds_entry.c \
 ../src/adc_interface.c \
+../src/adc_thread_entry.c \
 ../src/hal_entry.c \
-../src/modbus_thread_entry.c \
 ../src/thread0_entry.c \
 ../src/watchdog_entry.c 
 
 OBJS += \
 ./src/Leds_entry.o \
 ./src/adc_interface.o \
+./src/adc_thread_entry.o \
 ./src/hal_entry.o \
-./src/modbus_thread_entry.o \
 ./src/thread0_entry.o \
 ./src/watchdog_entry.o 
 
 C_DEPS += \
 ./src/Leds_entry.d \
 ./src/adc_interface.d \
+./src/adc_thread_entry.d \
 ./src/hal_entry.d \
-./src/modbus_thread_entry.d \
 ./src/thread0_entry.d \
 ./src/watchdog_entry.d 
 
