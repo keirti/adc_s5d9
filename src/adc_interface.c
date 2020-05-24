@@ -43,7 +43,7 @@ REVIEWS
 static adc_data_t adc_data_arr[NUM_ADC_CHANNELS] =
 {
 /* Raw Count, Voltage, Gain, Offset, Scaled Value */
- {  0,          0.0f,   1.0f, 1.0f,     0.0f},
+ {  0,          0.0f,   1.0f, 1.5f,     0.0f},
  {  0,          0.0f,   1.0f, 1.0f,     0.0f},
  {  0,          0.0f,   1.0f, 1.0f,     0.0f},
  {  0,          0.0f,   1.0f, 1.0f,     0.0f},

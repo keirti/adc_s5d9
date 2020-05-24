@@ -70,6 +70,8 @@ extern void initialise_monitor_handles(void);
 *--------------------------------------------------------------------*/
 static void calculate_adc_voltages(uint8_t channel);
 
+static void scale_adc(uint8_t channel);
+
 /*=============================================================================*
  Private Function Implementations (Static)
 *=============================================================================*/
@@ -94,6 +96,11 @@ static void calculate_adc_voltages(uint8_t channel)
      * Convert the ADC counts in voltages and store within the adc_data array
      */
     adc_data[channel].adc_voltage = ((adc_data[channel].adc_raw_count/MAX_ADC_COUNT)*ADC_VREF);
+}
+
+static void scale_adc(uint8_t channel)
+{
+    adc_data[channel].scaled_value = ((adc_data[channel].adc_voltage - adc_data[channel].offset)* adc_data[channel].gain);
 }
 
 /*=============================================================================*
@@ -161,6 +168,7 @@ void adc_thread_entry(void)
          */
         g_adc0.p_api->read(g_adc0.p_ctrl, channel, &adc_data[channel].adc_raw_count);
         calculate_adc_voltages(channel);
+        scale_adc(channel);
         channel++;
         if(channel >= NUM_ADC_CHANNELS)
         {
