@@ -42,7 +42,9 @@ extern "C" {
 /*=============================================================================*
  Public Defines
 *=============================================================================*/
-#define NUM_ADC_CHANNELS ADC_REG_CHANNEL_7
+#define NUM_ADC_CHANNELS    ADC_REG_CHANNEL_7
+#define MAX_ADC_COUNT       4095.0f
+#define ADC_VREF            3.3f
 
 /*=============================================================================*
  Public Data

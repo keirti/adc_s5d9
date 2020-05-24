@@ -58,7 +58,7 @@ static void calculate_adc_voltages(uint8_t channel);
 *=============================================================================*/
 static void calculate_adc_voltages(uint8_t channel)
 {
-    adc_data[channel].adc_voltage = ((adc_data[channel].adc_raw_count/4095.0f)*3.3f);
+    adc_data[channel].adc_voltage = ((adc_data[channel].adc_raw_count/MAX_ADC_COUNT)*ADC_VREF);
 }
 
 /*=============================================================================*
