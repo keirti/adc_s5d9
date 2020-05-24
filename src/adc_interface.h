@@ -53,6 +53,9 @@ typedef struct
 {
     uint16_t adc_raw_count;
     float adc_voltage;
+    float gain;
+    float offset;
+    float scaled_value;
 }adc_data_t;
 
 /*=============================================================================*
