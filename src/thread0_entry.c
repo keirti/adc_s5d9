@@ -51,13 +51,47 @@ static adc_data_t* adc_data;
  Private Function Definitions (static)
 *=============================================================================*/
 extern void initialise_monitor_handles(void);
+
+/*-------------------------------------------------------------------*
+
+  NAME
+    calculate_adc_voltages
+
+  DESCRIPTION
+    Converts the raw adc counts into the voltage
+
+  PARAM
+    uint8_t channel - The channel to convert
+
+  RETURNS
+    None
+
+*--------------------------------------------------------------------*/
 static void calculate_adc_voltages(uint8_t channel);
 
 /*=============================================================================*
  Private Function Implementations (Static)
 *=============================================================================*/
+/*-------------------------------------------------------------------*
+
+  NAME
+    calculate_adc_voltages
+
+  DESCRIPTION
+    Converts the raw adc counts into the voltage
+
+  PARAM
+    uint8_t channel - The channel to convert
+
+  RETURNS
+    None
+
+*--------------------------------------------------------------------*/
 static void calculate_adc_voltages(uint8_t channel)
 {
+    /*
+     * Convert the ADC counts in voltages and store within the adc_data array
+     */
     adc_data[channel].adc_voltage = ((adc_data[channel].adc_raw_count/MAX_ADC_COUNT)*ADC_VREF);
 }
 

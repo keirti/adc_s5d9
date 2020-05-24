@@ -55,8 +55,25 @@ static adc_data_t adc_data_arr[7];
 /*=============================================================================*
  Public Function Implementations
 *=============================================================================*/
+/*-------------------------------------------------------------------*
+
+  NAME
+    get_adc_arr
+
+  DESCRIPTION
+    Accessor function for the ADC data array
+  PARAM
+    None
+
+  RETURNS
+    adc_data_t* - pointer to the adc data array
+
+*--------------------------------------------------------------------*/
 adc_data_t* get_adc_arr(void)
 {
+    /*
+     * Return the address of the data array
+     */
     return &adc_data_arr[0];
 }
 

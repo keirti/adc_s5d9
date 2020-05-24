@@ -61,15 +61,15 @@ typedef struct
 /*-------------------------------------------------------------------*
 
   NAME
-    _ENTER_FUNCTION_NAME_HERE_
+    get_adc_arr
 
   DESCRIPTION
-    _ENTER_FUNCTION_DESCRIPTION_HERE_
+    Accessor function for the ADC data array
   PARAM
-    _PARAM_NAME_ - _DESCRIPTION_
+    None
 
   RETURNS
-    _RETURN_DESCRIPTION_
+    adc_data_t* - pointer to the adc data array
 
 *--------------------------------------------------------------------*/
 adc_data_t* get_adc_arr(void);
