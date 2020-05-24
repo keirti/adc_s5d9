@@ -1,5 +1,5 @@
-src/adc_thread_entry.o: ../src/adc_thread_entry.c \
- K:\GitHub\adc_s5d9\EMS\src\synergy_gen/adc_thread.h \
+src/adc_thread_entry.o: ../src/adc_thread_entry.c ../src/adc_interface.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_adc_api.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\bsp/bsp_api.h \
  k:\github\adc_s5d9\ems\synergy\ssp\inc\ssp_common_api.h \
  k:\github\adc_s5d9\ems\synergy\ssp\inc\ssp_version.h \
@@ -56,11 +56,17 @@ src/adc_thread_entry.o: ../src/adc_thread_entry.c \
  k:\github\adc_s5d9\ems\synergy\ssp\src\bsp\mcu\all\bsp_feature.h \
  k:\github\adc_s5d9\ems\synergy\ssp\src\bsp\mcu\all\bsp_mcu_api.h \
  k:\github\adc_s5d9\ems\synergy\ssp\src\bsp\mcu\all\bsp_error_checking.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_elc_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_transfer_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\api/sf_thread_monitor_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework/sf_thread_monitor_cfg.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_wdt_api.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_api.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_port.h \
  k:\github\adc_s5d9\ems\synergy\ssp\inc\framework\el\cm4_gcc\tx_port.h \
  K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/tx_user.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_cmsis.h \
+ K:\GitHub\adc_s5d9\EMS\src\synergy_gen/watchdog.h \
  K:\GitHub\adc_s5d9\EMS\src\synergy_gen/hal_data.h \
  K:\GitHub\adc_s5d9\EMS\src\synergy_gen/common_data.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_cgc.h \
@@ -71,20 +77,16 @@ src/adc_thread_entry.o: ../src/adc_thread_entry.c \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_elc_api.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_ioport.h \
  K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_ioport_cfg.h \
- K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_adc.h \
- K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_adc_cfg.h \
- K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_adc_api.h \
- K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_elc_api.h \
- K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_transfer_api.h \
- K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\api/sf_thread_monitor_api.h \
- K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework/sf_thread_monitor_cfg.h \
- K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_wdt_api.h \
- K:\GitHub\adc_s5d9\EMS\src\synergy_gen/watchdog.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_wdt.h \
  K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_wdt_cfg.h \
- K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\instances/sf_thread_monitor.h
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\instances/sf_thread_monitor.h \
+ K:\GitHub\adc_s5d9\EMS\src\synergy_gen/adc_thread.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_adc.h \
+ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_adc_cfg.h
 
-K:\GitHub\adc_s5d9\EMS\src\synergy_gen/adc_thread.h:
+../src/adc_interface.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_adc_api.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\bsp/bsp_api.h:
 
@@ -198,6 +200,16 @@ k:\github\adc_s5d9\ems\synergy\ssp\src\bsp\mcu\all\bsp_mcu_api.h:
 
 k:\github\adc_s5d9\ems\synergy\ssp\src\bsp\mcu\all\bsp_error_checking.h:
 
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_elc_api.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_transfer_api.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\api/sf_thread_monitor_api.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework/sf_thread_monitor_cfg.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_wdt_api.h:
+
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_api.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_port.h:
@@ -207,6 +219,8 @@ k:\github\adc_s5d9\ems\synergy\ssp\inc\framework\el\cm4_gcc\tx_port.h:
 K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/tx_user.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_cmsis.h:
+
+K:\GitHub\adc_s5d9\EMS\src\synergy_gen/watchdog.h:
 
 K:\GitHub\adc_s5d9\EMS\src\synergy_gen/hal_data.h:
 
@@ -228,26 +242,14 @@ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_ioport.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_ioport_cfg.h:
 
-K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_adc.h:
-
-K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_adc_cfg.h:
-
-K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_adc_api.h:
-
-K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_elc_api.h:
-
-K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_transfer_api.h:
-
-K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\api/sf_thread_monitor_api.h:
-
-K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework/sf_thread_monitor_cfg.h:
-
-K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_wdt_api.h:
-
-K:\GitHub\adc_s5d9\EMS\src\synergy_gen/watchdog.h:
-
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_wdt.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_wdt_cfg.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\instances/sf_thread_monitor.h:
+
+K:\GitHub\adc_s5d9\EMS\src\synergy_gen/adc_thread.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_adc.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_adc_cfg.h:

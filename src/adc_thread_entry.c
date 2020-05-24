@@ -1,17 +1,110 @@
-#include <adc_thread.h>
+/*******************************************************************************
+(C) COPYRIGHT Sprint Power Limited - 2020
+
+FILE
+    Enter File Name
+
+ORIGINAL AUTHOR
+    Enter Name Here
+
+DESCRIPTION
+    Enter file description
+
+REFERENCES
+    None
+
+REVIEWS
+    None
+*******************************************************************************/
+
+/*=============================================================================*
+ ANSI C & System-wide Header Files
+*=============================================================================*/
+#include "stdio.h"
+#include "stdbool.h"
+
+/*=============================================================================*
+ Interface Header Files
+*=============================================================================*/
+#include "adc_interface.h"
 #include "sf_thread_monitor_api.h"
 #include "watchdog.h"
 
-static sf_thread_monitor_counter_min_max_t min_max_values;
+/*=============================================================================*
+ Local Header File
+*=============================================================================*/
+#include "adc_thread.h"
 
-void vTaskMODBUS( void );
-
+/*=============================================================================*
+ Private Defines
+*=============================================================================*/
 #define WD_MIN_COUNT 1
 #define WD_MAX_COUNT 200
 
-/* Modbus Thread entry function */
+/*=============================================================================*
+ Private Variable Definitions (static)
+*=============================================================================*/
+static sf_thread_monitor_counter_min_max_t min_max_values;
+static adc_data_t* adc_data;
+
+/*=============================================================================*
+ Private Function Definitions (static)
+*=============================================================================*/
+extern void initialise_monitor_handles(void);
+
+/*-------------------------------------------------------------------*
+
+  NAME
+    calculate_adc_voltages
+
+  DESCRIPTION
+    Converts the raw adc counts into the voltage
+
+  PARAM
+    uint8_t channel - The channel to convert
+
+  RETURNS
+    None
+
+*--------------------------------------------------------------------*/
+static void calculate_adc_voltages(uint8_t channel);
+
+/*=============================================================================*
+ Private Function Implementations (Static)
+*=============================================================================*/
+/*-------------------------------------------------------------------*
+
+  NAME
+    calculate_adc_voltages
+
+  DESCRIPTION
+    Converts the raw adc counts into the voltage
+
+  PARAM
+    uint8_t channel - The channel to convert
+
+  RETURNS
+    None
+
+*--------------------------------------------------------------------*/
+static void calculate_adc_voltages(uint8_t channel)
+{
+    /*
+     * Convert the ADC counts in voltages and store within the adc_data array
+     */
+    adc_data[channel].adc_voltage = ((adc_data[channel].adc_raw_count/MAX_ADC_COUNT)*ADC_VREF);
+}
+
+/*=============================================================================*
+ Public Function Implementations
+*=============================================================================*/
+/* Adc Thread entry function */
+
 void adc_thread_entry(void)
 {
+    uint8_t channel = ADC_REG_CHANNEL_0;
+    adc_data = get_adc_arr();
+    initialise_monitor_handles();
 
     /*
      * Populate the structure counters for the thread monitor with the defines
@@ -22,10 +115,25 @@ void adc_thread_entry(void)
     /*
      * Register the thread with the monitor
      */
-    //if(SSP_SUCCESS != g_sf_thread_monitor0.p_api->threadRegister(g_sf_thread_monitor0.p_ctrl, &min_max_values))
-    //{
-       // __BKPT(0);
-    //}
+    if(SSP_SUCCESS != g_sf_thread_monitor0.p_api->threadRegister (g_sf_thread_monitor0.p_ctrl, &min_max_values))
+    {
+       __BKPT(0);
+    }
+
+    /*
+     * Open the ADC Module
+     * Configure the scan
+     */
+    g_adc0.p_api->open(g_adc0.p_ctrl,g_adc0.p_cfg);
+    g_adc0.p_api->scanCfg(g_adc0.p_ctrl, g_adc0.p_channel_cfg);
+
+    /*
+     * Start the ADC scan, print and error message should this fail
+     */
+    if(g_adc0.p_api->scanStart(g_adc0.p_ctrl) != SSP_SUCCESS)
+    {
+         printf("scan start failed\n");
+    }
 
     /*
      * Thread Loop
@@ -33,8 +141,36 @@ void adc_thread_entry(void)
     while (1)
     {
         /*
-         * Call the modbus function
+         * Updating the the adc channel array
+         * Increment the channel
+         * Check the channel is within the range of the configured amount of adcs
          */
-        //vTaskMODBUS();
+        g_adc0.p_api->read(g_adc0.p_ctrl, channel, &adc_data[channel].adc_raw_count);
+        calculate_adc_voltages(channel);
+        channel++;
+        if(channel >= NUM_ADC_CHANNELS)
+        {
+            channel = ADC_REG_CHANNEL_0;
+        }
+
+        /*
+         *  Increment the thread_counter
+         *  Sleep the thread
+         */
+        if(SSP_SUCCESS != g_sf_thread_monitor0.p_api->countIncrement(g_sf_thread_monitor0.p_ctrl))
+        {
+            __BKPT(0);
+        }
+        tx_thread_sleep (1);
     }
+
+    /*
+     * Only close the api when we break out of the while loop..
+     * which is never
+     */
+    g_adc0.p_api->close(g_adc0.p_ctrl);
 }
+
+/*=============================================================================*
+End Of File
+*=============================================================================*/
