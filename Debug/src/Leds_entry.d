@@ -1,4 +1,4 @@
-src/Leds_entry.o: ../src/Leds_entry.c \
+src/leds_entry.o: ../src/leds_entry.c \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\api/sf_thread_monitor_api.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\bsp/bsp_api.h \
  k:\github\adc_s5d9\ems\synergy\ssp\inc\ssp_common_api.h \
