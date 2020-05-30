@@ -13,18 +13,6 @@ extern const char nxlogo[];
 extern const char txlogo[];
 extern UINT nxlogosize, txlogosize;
 
-/* Define the counters used in the demo application...  */
-
-static ULONG   thread_0_counter = 100;
-static ULONG   thread_1_counter = 100;
-static ULONG   thread_2_counter = 100;
-static ULONG   thread_3_counter = 100;
-static ULONG   thread_4_counter = 100;
-static ULONG   thread_5_counter = 100;
-static ULONG   thread_6_counter = 100;
-static ULONG   thread_7_counter = 100;
-static ULONG   trial_counter	 = 100;
-
 static adc_data_t* adc_data = NULL;
 static bool pointer_init = false;
 

@@ -14,8 +14,8 @@
 
 #define hrline "<HR SIZE=6 WIDTH=\"90%\" NOSHADE COLOR=\"black\"  >"
 
-#define titleline "<HEAD><TITLE>NetX HTTP Server</TITLE></HEAD>\r\n"
-#define h1line " <H1 ALIGN=\"center\"> <img src=\"/nxlogo.gif\">{\"date\": \"04-14-2020\",\"milliseconds_since_epoch\": 1586886104845, \"time\": \"05:41:44 PM\"}<img src=\"/txlogo.gif\"></H1>\r\n"
+#define titleline "<HEAD><TITLE>SPS_EMS ADC Information</TITLE></HEAD>\r\n"
+#define h1line " <H1 ALIGN=\"center\"> <img src=\"/nxlogo.gif\"> ADC Information <img src=\"/txlogo.gif\"></H1>\r\n"
 #define tabletag "<TABLE BORDER=\"1\" ALIGN=\"center\" >"
 #define tableendtag "</TABLE>"
 #define captiontag "<CAPTION ALIGN=\"top\" >"
