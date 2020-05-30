@@ -84,7 +84,11 @@ src/demo_nx_http_httpserver_query.o: \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el\nx_application_layer/nx_http_server.h \
  K:\GitHub\adc_s5d9\EMS\src\synergy_gen/http_thread.h \
  K:\GitHub\adc_s5d9\EMS\src\synergy_gen/hal_data.h \
- K:\GitHub\adc_s5d9\EMS\src\synergy_gen/common_data.h
+ K:\GitHub\adc_s5d9\EMS\src\synergy_gen/common_data.h \
+ K:\GitHub\adc_s5d9\EMS\include/adc_interface.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_adc_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_elc_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_transfer_api.h
 
 K:\GitHub\adc_s5d9\EMS\src\synergy_gen/common_data.h:
 
@@ -255,3 +259,11 @@ K:\GitHub\adc_s5d9\EMS\src\synergy_gen/http_thread.h:
 K:\GitHub\adc_s5d9\EMS\src\synergy_gen/hal_data.h:
 
 K:\GitHub\adc_s5d9\EMS\src\synergy_gen/common_data.h:
+
+K:\GitHub\adc_s5d9\EMS\include/adc_interface.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_adc_api.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_elc_api.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_transfer_api.h:

@@ -3,6 +3,8 @@
 #include   "demo_nx_http_htmlstrings.h"
 #include   "nx_http_server.h"
 #include   "http_thread.h"
+#include    "adc_interface.h"
+#include    "stdbool.h"
 
 extern UINT _nx_http_server_number_convert(UINT number, CHAR *string);
 /* graphics are located in nx_http_demo_graphics.c */
@@ -22,6 +24,9 @@ static ULONG   thread_5_counter = 100;
 static ULONG   thread_6_counter = 100;
 static ULONG   thread_7_counter = 100;
 static ULONG   trial_counter	 = 100;
+
+static adc_data_t* adc_data = NULL;
+static bool pointer_init = false;
 
 UINT    authentication_check(struct NX_HTTP_SERVER_STRUCT *server_ptr, UINT request_type, CHAR *resource, CHAR **name, CHAR **password, CHAR **realm)
 {
@@ -50,6 +55,15 @@ NX_PACKET *resp_packet_ptr;
   
     SSP_PARAMETER_NOT_USED(request_type);
     SSP_PARAMETER_NOT_USED(packet_ptr);
+
+    if(!pointer_init)
+    {
+        adc_data = get_adc_arr();
+        if(adc_data != NULL)
+        {
+            pointer_init = true;
+        }
+    }
 
     /* send the graphics data */
     if(strcmp((const char*)resource,(const char*)"/nxlogo.gif")==0)
@@ -101,7 +115,7 @@ NX_PACKET *resp_packet_ptr;
         status += htmlwrite(resp_packet_ptr, tdendtag);
 	
         status += htmlwrite(resp_packet_ptr, tdtag);
-        _nx_http_server_number_convert(thread_0_counter, string);
+        _nx_http_server_number_convert(adc_data[0].adc_raw_count, string);
         status += htmlwrite(resp_packet_ptr, string);
         status += htmlwrite(resp_packet_ptr, tdendtag);
         status += htmlwrite(resp_packet_ptr, trendtag);
@@ -112,7 +126,7 @@ NX_PACKET *resp_packet_ptr;
         status += htmlwrite(resp_packet_ptr, tdendtag);
 	
         status += htmlwrite(resp_packet_ptr, tdtag);
-        _nx_http_server_number_convert(thread_1_counter, string);
+        _nx_http_server_number_convert(adc_data[1].adc_raw_count, string);
         status += htmlwrite(resp_packet_ptr, string);
         status += htmlwrite(resp_packet_ptr, tdendtag);
         status += htmlwrite(resp_packet_ptr, trendtag);
@@ -123,7 +137,7 @@ NX_PACKET *resp_packet_ptr;
         status += htmlwrite(resp_packet_ptr, tdendtag);
 	
         status += htmlwrite(resp_packet_ptr, tdtag);
-        _nx_http_server_number_convert(thread_2_counter, string);
+        _nx_http_server_number_convert(adc_data[2].adc_raw_count, string);
         status += htmlwrite(resp_packet_ptr, string);
         status += htmlwrite(resp_packet_ptr, tdendtag);
         status += htmlwrite(resp_packet_ptr, trendtag);
@@ -134,7 +148,7 @@ NX_PACKET *resp_packet_ptr;
         status += htmlwrite(resp_packet_ptr, tdendtag);
 	
         status += htmlwrite(resp_packet_ptr, tdtag);
-        _nx_http_server_number_convert(thread_3_counter, string);
+        _nx_http_server_number_convert(adc_data[3].adc_raw_count, string);
         status += htmlwrite(resp_packet_ptr, string);
         status += htmlwrite(resp_packet_ptr, tdendtag);
         status += htmlwrite(resp_packet_ptr, trendtag);
@@ -145,7 +159,7 @@ NX_PACKET *resp_packet_ptr;
         status += htmlwrite(resp_packet_ptr, tdendtag);
 	
         status += htmlwrite(resp_packet_ptr, tdtag);
-        _nx_http_server_number_convert(thread_4_counter, string);
+        _nx_http_server_number_convert(adc_data[4].adc_raw_count, string);
         status += htmlwrite(resp_packet_ptr, string);
         status += htmlwrite(resp_packet_ptr, tdendtag);
         status += htmlwrite(resp_packet_ptr, trendtag);
@@ -156,7 +170,7 @@ NX_PACKET *resp_packet_ptr;
         status += htmlwrite(resp_packet_ptr, tdendtag);
 	
         status += htmlwrite(resp_packet_ptr, tdtag);
-        _nx_http_server_number_convert(thread_5_counter, string);
+        _nx_http_server_number_convert(adc_data[5].adc_raw_count, string);
         status += htmlwrite(resp_packet_ptr, string);
         status += htmlwrite(resp_packet_ptr, tdendtag);
         status += htmlwrite(resp_packet_ptr, trendtag);
@@ -167,18 +181,7 @@ NX_PACKET *resp_packet_ptr;
         status += htmlwrite(resp_packet_ptr, tdendtag);
 	
         status += htmlwrite(resp_packet_ptr, tdtag);
-        _nx_http_server_number_convert(thread_6_counter, string);
-        status += htmlwrite(resp_packet_ptr, string);
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-        status += htmlwrite(resp_packet_ptr, trendtag);
-	
-        status += htmlwrite(resp_packet_ptr, trtag);
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        status += htmlwrite(resp_packet_ptr, "<B>Trial Counter </B> ");
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-	
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        _nx_http_server_number_convert(trial_counter, string);
+        _nx_http_server_number_convert(adc_data[6].adc_raw_count, string);
         status += htmlwrite(resp_packet_ptr, string);
         status += htmlwrite(resp_packet_ptr, tdendtag);
         status += htmlwrite(resp_packet_ptr, trendtag);
@@ -189,7 +192,7 @@ NX_PACKET *resp_packet_ptr;
         status += htmlwrite(resp_packet_ptr, tdendtag);
 	
         status += htmlwrite(resp_packet_ptr, tdtag);
-        _nx_http_server_number_convert(thread_7_counter, string);
+        _nx_http_server_number_convert(adc_data[7].adc_raw_count, string);
         status += htmlwrite(resp_packet_ptr, string);
         status += htmlwrite(resp_packet_ptr, tdendtag);
         status += htmlwrite(resp_packet_ptr, trendtag);
