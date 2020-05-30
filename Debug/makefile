@@ -73,36 +73,33 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 SECONDARY_FLASH += \
-verify.srec \
+SPS_EMS.srec \
 
 SECONDARY_SIZE += \
-verify.siz \
+SPS_EMS.siz \
 
 
 # All Target
-all: verify.elf secondary-outputs
-
-dependents:
-	-cd K:/GitHub/adc_s5d9/EMS/Release && $(MAKE) clean all
+all: SPS_EMS.elf secondary-outputs
 
 # Tool invocations
-verify.elf: $(OBJS) $(USER_OBJS) $(LINKER_SCRIPT) K:/GitHub/adc_s5d9/EMS/Release/verify.elf
+SPS_EMS.elf: $(OBJS) $(USER_OBJS) $(LINKER_SCRIPT)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GNU ARM Cross C Linker'
-	$(file > verify.elf.in,-mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O2 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wunused -Wuninitialized -Wall -Wextra -Wmissing-declarations -Wconversion -Wpointer-arith -Wshadow -Wlogical-op -Waggregate-return -Wfloat-equal  -g3 -T "K:\\GitHub\\adc_s5d9\\EMS\\script/s5d9.ld" -Xlinker --gc-sections -L "K:\\GitHub\\adc_s5d9\\EMS\\synergy\\ssp\\src\\bsp\\cmsis\\DSP_Lib\\cm4_gcc" -L "K:\\GitHub\\adc_s5d9\\EMS\\synergy\\ssp\\src\\framework\\el\\tx\\cm4_gcc" -L "K:\\GitHub\\adc_s5d9\\EMS\\synergy\\ssp\\src\\framework\\el\\nx\\cm4_gcc" -Wl,-Map,"verify.map" --specs=nano.specs --specs=rdimon.specs -o "verify.elf" -Wl,--start-group $(OBJS) $(USER_OBJS) $(LIBS) -Wl,--end-group)
-	arm-none-eabi-gcc @"verify.elf.in"
+	$(file > SPS_EMS.elf.in,-mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O2 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wunused -Wuninitialized -Wall -Wextra -Wmissing-declarations -Wconversion -Wpointer-arith -Wshadow -Wlogical-op -Waggregate-return -Wfloat-equal  -g3 -T "K:\\GitHub\\adc_s5d9\\EMS\\script/s5d9.ld" -Xlinker --gc-sections -L "K:\\GitHub\\adc_s5d9\\EMS\\synergy\\ssp\\src\\bsp\\cmsis\\DSP_Lib\\cm4_gcc" -L "K:\\GitHub\\adc_s5d9\\EMS\\synergy\\ssp\\src\\framework\\el\\tx\\cm4_gcc" -L "K:\\GitHub\\adc_s5d9\\EMS\\synergy\\ssp\\src\\framework\\el\\nx\\cm4_gcc" -Wl,-Map,"SPS_EMS.map" --specs=nano.specs --specs=rdimon.specs -o "SPS_EMS.elf" -Wl,--start-group $(OBJS) $(USER_OBJS) $(LIBS) -Wl,--end-group)
+	arm-none-eabi-gcc @"SPS_EMS.elf.in"
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-verify.srec: verify.elf
+SPS_EMS.srec: SPS_EMS.elf
 	@echo 'Invoking: GNU ARM Cross Create Flash Image'
-	arm-none-eabi-objcopy -O srec "verify.elf"  "verify.srec"
+	arm-none-eabi-objcopy -O srec "SPS_EMS.elf"  "SPS_EMS.srec"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-verify.siz: verify.elf
+SPS_EMS.siz: SPS_EMS.elf
 	@echo 'Invoking: GNU ARM Cross Print Size'
-	arm-none-eabi-size --format=berkeley "verify.elf"
+	arm-none-eabi-size --format=berkeley "SPS_EMS.elf"
 	@echo 'Finished building: $@'
 	@echo ' '
 
@@ -168,12 +165,11 @@ ifneq ($(strip $(C_DEPS)),)
 	-@ xargs -s 6000 -t -a clean_C_DEPS.tmp $(RM)
 	-@$(RM) clean_C_DEPS.tmp
 endif
-	-$(RM)  verify.elf
+	-$(RM)  SPS_EMS.elf
 	-@echo ' '
 
 secondary-outputs: $(SECONDARY_FLASH) $(SECONDARY_SIZE)
 
 .PHONY: all clean dependents
-K:/GitHub/adc_s5d9/EMS/Release/verify.elf:
 
 -include ../makefile.targets
