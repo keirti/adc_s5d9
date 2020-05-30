@@ -64,69 +64,69 @@ NX_PACKET *resp_packet_ptr;
                                      NX_WAIT_FOREVER);
 	
         /* write HTML code into the packet */
-        /* htmlwrite(p,s)  (nx_packet_data_append(p,s,strlen(s), server_ptr-> nx_http_server_packet_pool_ptr,NX_WAIT_FOREVER)) */
-        status += htmlwrite(resp_packet_ptr, htmlresponse);
-        status += htmlwrite(resp_packet_ptr, htmltag);
-        status += htmlwrite(resp_packet_ptr, refresh);
-        status += htmlwrite(resp_packet_ptr, titleline);
-        status += htmlwrite(resp_packet_ptr, bodytag);
-        status += htmlwrite(resp_packet_ptr, h1line);
+        /* HTMLWRITE(p,s)  (nx_packet_data_append(p,s,strlen(s), server_ptr-> nx_http_server_packet_pool_ptr,NX_WAIT_FOREVER)) */
+        status += HTMLWRITE(resp_packet_ptr, HTMLRESPONSE);
+        status += HTMLWRITE(resp_packet_ptr, HTMLTAG);
+        status += HTMLWRITE(resp_packet_ptr, REFRESH);
+        status += HTMLWRITE(resp_packet_ptr, TITLELINE);
+        status += HTMLWRITE(resp_packet_ptr, BODYTAG);
+        status += HTMLWRITE(resp_packet_ptr, H1LINE);
         status += nx_tcp_socket_send(&(server_ptr -> nx_http_server_socket), resp_packet_ptr, NX_HTTP_SERVER_TIMEOUT);
 	
         /* generate different HTML*/
         status += nx_packet_allocate(server_ptr -> nx_http_server_packet_pool_ptr, &resp_packet_ptr, NX_TCP_PACKET, NX_WAIT_FOREVER);
 	
-        status += htmlwrite(resp_packet_ptr, tabletag);
-        status += htmlwrite(resp_packet_ptr, trtag);
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        status += htmlwrite(resp_packet_ptr, "<B>ADC Channel</B>");
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        status += htmlwrite(resp_packet_ptr, "<B>Raw ADC Count</B>");
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        status += htmlwrite(resp_packet_ptr, "<B>ADC Voltage (X 100)</B>");
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        status += htmlwrite(resp_packet_ptr, "<B>Gain (X 100)</B>");
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        status += htmlwrite(resp_packet_ptr, "<B>Offset (X 100)</B>");
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        status += htmlwrite(resp_packet_ptr, "<B>Scaled Value (X 100)</B>");
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-        status += htmlwrite(resp_packet_ptr, trendtag);
+        status += HTMLWRITE(resp_packet_ptr, TABLETAG);
+        status += HTMLWRITE(resp_packet_ptr, TRTAG);
+        status += HTMLWRITE(resp_packet_ptr, TDTAG);
+        status += HTMLWRITE(resp_packet_ptr, "<B>ADC Channel</B>");
+        status += HTMLWRITE(resp_packet_ptr, TDENDTAG);
+        status += HTMLWRITE(resp_packet_ptr, TDTAG);
+        status += HTMLWRITE(resp_packet_ptr, "<B>Raw ADC Count</B>");
+        status += HTMLWRITE(resp_packet_ptr, TDENDTAG);
+        status += HTMLWRITE(resp_packet_ptr, TDTAG);
+        status += HTMLWRITE(resp_packet_ptr, "<B>ADC Voltage (X 100)</B>");
+        status += HTMLWRITE(resp_packet_ptr, TDENDTAG);
+        status += HTMLWRITE(resp_packet_ptr, TDTAG);
+        status += HTMLWRITE(resp_packet_ptr, "<B>Gain (X 100)</B>");
+        status += HTMLWRITE(resp_packet_ptr, TDENDTAG);
+        status += HTMLWRITE(resp_packet_ptr, TDTAG);
+        status += HTMLWRITE(resp_packet_ptr, "<B>Offset (X 100)</B>");
+        status += HTMLWRITE(resp_packet_ptr, TDENDTAG);
+        status += HTMLWRITE(resp_packet_ptr, TDTAG);
+        status += HTMLWRITE(resp_packet_ptr, "<B>Scaled Value (X 100)</B>");
+        status += HTMLWRITE(resp_packet_ptr, TDENDTAG);
+        status += HTMLWRITE(resp_packet_ptr, TRENDTAG);
 
         for(i = 0u; i < NUM_ADC_CHANNELS; i++)
         {
-            status += htmlwrite(resp_packet_ptr, trtag);
-            status += htmlwrite(resp_packet_ptr, tdtag);
+            status += HTMLWRITE(resp_packet_ptr, TRTAG);
+            status += HTMLWRITE(resp_packet_ptr, TDTAG);
             _nx_http_server_number_convert(i, string);
-            status += htmlwrite(resp_packet_ptr,string);
-            status += htmlwrite(resp_packet_ptr, tdendtag);
+            status += HTMLWRITE(resp_packet_ptr,string);
+            status += HTMLWRITE(resp_packet_ptr, TDENDTAG);
 
-            status += htmlwrite(resp_packet_ptr, tdtag);
+            status += HTMLWRITE(resp_packet_ptr, TDTAG);
             _nx_http_server_number_convert(adc_data[i].adc_raw_count, string);
-            status += htmlwrite(resp_packet_ptr, string);
-            status += htmlwrite(resp_packet_ptr, tdendtag);
-            status += htmlwrite(resp_packet_ptr, tdtag);
+            status += HTMLWRITE(resp_packet_ptr, string);
+            status += HTMLWRITE(resp_packet_ptr, TDENDTAG);
+            status += HTMLWRITE(resp_packet_ptr, TDTAG);
             _nx_http_server_number_convert((UINT)(adc_data[i].adc_voltage * 100.0f), string);
-            status += htmlwrite(resp_packet_ptr, string);
-            status += htmlwrite(resp_packet_ptr, tdendtag);
-            status += htmlwrite(resp_packet_ptr, tdtag);
+            status += HTMLWRITE(resp_packet_ptr, string);
+            status += HTMLWRITE(resp_packet_ptr, TDENDTAG);
+            status += HTMLWRITE(resp_packet_ptr, TDTAG);
             _nx_http_server_number_convert((UINT)(adc_data[i].gain * 100.0f), string);
-            status += htmlwrite(resp_packet_ptr, string);
-            status += htmlwrite(resp_packet_ptr, tdendtag);
-            status += htmlwrite(resp_packet_ptr, tdtag);
+            status += HTMLWRITE(resp_packet_ptr, string);
+            status += HTMLWRITE(resp_packet_ptr, TDENDTAG);
+            status += HTMLWRITE(resp_packet_ptr, TDTAG);
             _nx_http_server_number_convert((UINT)(adc_data[i].offset * 100.0f), string);
-            status += htmlwrite(resp_packet_ptr, string);
-            status += htmlwrite(resp_packet_ptr, tdendtag);
-            status += htmlwrite(resp_packet_ptr, tdtag);
+            status += HTMLWRITE(resp_packet_ptr, string);
+            status += HTMLWRITE(resp_packet_ptr, TDENDTAG);
+            status += HTMLWRITE(resp_packet_ptr, TDTAG);
             _nx_http_server_number_convert((UINT)(adc_data[i].scaled_value * 100.0f), string);
-            status += htmlwrite(resp_packet_ptr, string);
-            status += htmlwrite(resp_packet_ptr, tdendtag);
-            status += htmlwrite(resp_packet_ptr, trendtag);
+            status += HTMLWRITE(resp_packet_ptr, string);
+            status += HTMLWRITE(resp_packet_ptr, TDENDTAG);
+            status += HTMLWRITE(resp_packet_ptr, TRENDTAG);
         }
 	
         status +=  nx_tcp_socket_send(&(server_ptr -> nx_http_server_socket), resp_packet_ptr, NX_HTTP_SERVER_TIMEOUT);
@@ -136,9 +136,9 @@ NX_PACKET *resp_packet_ptr;
                                      NX_TCP_PACKET,
                                      NX_WAIT_FOREVER);
 	
-        status += htmlwrite(resp_packet_ptr, hrline);
-        status += htmlwrite(resp_packet_ptr, bodyendtag );
-        status += htmlwrite(resp_packet_ptr, htmlendtag );
+        status += HTMLWRITE(resp_packet_ptr, HRLINE);
+        status += HTMLWRITE(resp_packet_ptr, BODYENDTAG );
+        status += HTMLWRITE(resp_packet_ptr, HTMLENDTAG );
 	
         status +=  nx_tcp_socket_send(&(server_ptr -> nx_http_server_socket), resp_packet_ptr, NX_HTTP_SERVER_TIMEOUT);
 	

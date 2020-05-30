@@ -1,31 +1,81 @@
-#define htmlwrite(p,s)  (nx_packet_data_append(p,s,(ULONG)strlen((const char*)s), server_ptr-> nx_http_server_packet_pool_ptr,NX_WAIT_FOREVER))
+/*******************************************************************************
+(C) COPYRIGHT Smart Power Systems - 2020
 
-#define htmlresponse "HTTP/1.0 200 \r\nContent-Type: text/html\r\n\r\n"
+FILE
+    htmlstrings.h
 
-#define htmltag "<HTML>"
-#define htmlendtag "</HTML>"
+ORIGINAL AUTHOR
+    Chris Goodwin
 
-#define sysvars_anchor_tag "<I> <a href=\"/\" > System Variables </a> </I>"
+DESCRIPTION
+    Header file to house all the #defines used when sending html text
 
-#define bodytag "<body bgcolor=\"#FFFF00\" >"
-#define bodyendtag "</body>"
+REFERENCES
+    None
 
-#define hrline "<HR SIZE=6 WIDTH=\"90%\" NOSHADE COLOR=\"black\"  >"
+REVIEWS
+    None
+*******************************************************************************/
 
-#define titleline "<HEAD><TITLE>SPS_EMS ADC Information</TITLE></HEAD>\r\n"
-#define h1line " <H1 ALIGN=\"center\">ADC Information</H1>\r\n"
-#define tabletag "<TABLE BORDER=\"1\" ALIGN=\"center\" >"
-#define tableendtag "</TABLE>"
-#define captiontag "<CAPTION ALIGN=\"top\" >"
-#define captionendtag "</CAPTION>"
-#define trtag "<TR>"
-#define trendtag "</TR>"
-#define tdtag "<TD>"
-#define tdendtag "</TD>"
+#ifndef _HTML_STRINGS_H_
+#define _HTML_STRINGS_H_
 
-#define anchortag "<A href=\"/test.htm?Display="
-#define gtchar "\">"
-#define anchorendtag "</A>"
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-#define refresh "<H1 ALIGN=\"center\">"   "<meta http-equiv=\"refresh\" content=\"2\">"   "</H1>\r\n"
+/*=============================================================================*
+ ANSI C & System-wide Header Files
+*=============================================================================*/
+/* None */
+
+/*=============================================================================*
+ Interface Header Files
+*=============================================================================*/
+/* None */
+
+/*=============================================================================*
+ Pragmas
+*=============================================================================*/
+/* None */
+
+/*=============================================================================*
+ Public Defines
+*=============================================================================*/
+#define HTMLWRITE(p,s)  (nx_packet_data_append(p,s,(ULONG)strlen((const char*)s), server_ptr-> nx_http_server_packet_pool_ptr,NX_WAIT_FOREVER))
+#define HTMLRESPONSE "HTTP/1.0 200 \r\nContent-Type: text/html\r\n\r\n"
+#define HTMLTAG "<HTML>"
+#define HTMLENDTAG "</HTML>"
+#define BODYTAG "<body bgcolor=\"#FFFF00\" >"
+#define BODYENDTAG "</body>"
+#define HRLINE "<HR SIZE=6 WIDTH=\"90%\" NOSHADE COLOR=\"black\"  >"
+#define TITLELINE "<HEAD><TITLE>SPS_EMS ADC Information</TITLE></HEAD>\r\n"
+#define H1LINE " <H1 ALIGN=\"center\">ADC Information</H1>\r\n"
+#define TABLETAG "<TABLE BORDER=\"1\" ALIGN=\"center\" >"
+#define TABLEENDTAG "</TABLE>"
+#define CAPTIONTAG "<CAPTION ALIGN=\"top\" >"
+#define CAPTIONENDTAG "</CAPTION>"
+#define TRTAG "<TR>"
+#define TRENDTAG "</TR>"
+#define TDTAG "<TD>"
+#define TDENDTAG "</TD>"
+#define ANCHORTAG "<A href=\"/test.htm?Display="
+#define GTCHAR "\">"
+#define ANCHORENDTAG "</A>"
+#define REFRESH "<H1 ALIGN=\"center\">"   "<meta http-equiv=\"refresh\" content=\"2\">"   "</H1>\r\n"
+
+/*=============================================================================*
+ Public Data
+*=============================================================================*/
+/* None */
+
+/*=============================================================================*
+ Public Function Definitions
+*=============================================================================*/
+/* None */
+
+/*=============================================================================*
+End Of File
+*=============================================================================*/
+#endif  /* _HTML_STRINGS_H_ */
 
