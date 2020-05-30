@@ -86,10 +86,14 @@ void http_thread_entry(void)
 
     /*
      * Init the ADC pointer and pass it to the query
+	 * Should this fail, stop the server (never started)
      */
     adc_data = get_adc_arr();
     if(adc_data != NULL)
     {
+		/*
+		 * Init the query, should this fail, stop the server (never started)
+		 */
         if(http_query_init(adc_data))
         {
             /*
@@ -99,39 +103,64 @@ void http_thread_entry(void)
             {
                 __BKPT(0);
             }
-
+			
+			/*
+			 * Main Thread Loop
+			 */
             while (1)
-                {
-
-                    /*
-                     * Start the server,
-                     * Sleep the Thread,
-                     */
-                    if(nx_http_server_start(&g_http_server0))
-                    {
-                         err_counter++;
-                    }
-
-                    /*
-                     * Increment the monitor counter
-                     */
-                    if(SSP_SUCCESS != g_sf_thread_monitor0.p_api->countIncrement(g_sf_thread_monitor0.p_ctrl))
-                    {
-                        __BKPT(0);
-                    }
-
-                    tx_thread_sleep(100u);
-                }
-
+            {
                 /*
-                 * Never stop the server
+                 * Start the server,
+                 * Sleep the Thread,
                  */
-                if(nx_http_server_stop(&g_http_server0))
+                if(nx_http_server_start(&g_http_server0))
                 {
                      err_counter++;
                 }
+
+                /*
+                 * Increment the monitor counter
+                 */
+                if(SSP_SUCCESS != g_sf_thread_monitor0.p_api->countIncrement(g_sf_thread_monitor0.p_ctrl))
+                {
+                    __BKPT(0);
+                }
+				
+				/*
+				 * Sleep the thread
+				 */
+                tx_thread_sleep(100u);
+            }
+
+            /*
+             * Never stop the server
+             */
+            if(nx_http_server_stop(&g_http_server0))
+            {
+                 err_counter++;
+            }
         }
+		else
+		{
+			/*
+			 * Never stop the server
+			 */
+			if(nx_http_server_stop(&g_http_server0))
+			{
+				err_counter++;
+			}
+		}
     }
+	else
+	{
+		/*
+		* Never stop the server
+		*/
+		if(nx_http_server_stop(&g_http_server0))
+		{
+			err_counter++;
+		}
+	}
 }
 
 /*=============================================================================*

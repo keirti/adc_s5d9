@@ -60,21 +60,44 @@ static adc_data_t* adc_data = NULL;
 /*=============================================================================*
  Public Function Implementations
 *=============================================================================*/
+/*-------------------------------------------------------------------* 
+
+  NAME
+	http_query_init
+  
+  DESCRIPTION
+	Function to init the query, ensuring everything is in the correct
+	state at the start of execution
+	
+  PARAM
+	adc_data_t* data - A Pointer to the data
+  
+  RETURNS
+	bool to_return - if the init has been successful or not
+
+*--------------------------------------------------------------------*/
 bool http_query_init(adc_data_t* data)
 {
-    bool to_return = false;
-
+	bool to_return = false;
+	/*
+	 * Copy the PTR passed into the internal variable,
+	 * Check the current state, set return flag if the ptr is correctly
+	 * initilised
+	 */
     adc_data = data;
     if(adc_data != NULL)
     {
         to_return = true;
     }
 
+	/*
+	 * Return the return flag
+	 */
     return to_return;
 }
 
 
-UINT    authentication_check(struct NX_HTTP_SERVER_STRUCT *server_ptr, UINT request_type, CHAR *resource, CHAR **name, CHAR **password, CHAR **realm)
+UINT authentication_check(struct NX_HTTP_SERVER_STRUCT *server_ptr, UINT request_type, CHAR *resource, CHAR **name, CHAR **password, CHAR **realm)
 {
       SSP_PARAMETER_NOT_USED(resource);
       SSP_PARAMETER_NOT_USED(request_type);
@@ -92,12 +115,12 @@ UINT    authentication_check(struct NX_HTTP_SERVER_STRUCT *server_ptr, UINT requ
 #endif
 }
 
-UINT    request_notify(NX_HTTP_SERVER *server_ptr, UINT request_type, CHAR *resource, NX_PACKET *packet_ptr)
+UINT request_notify(NX_HTTP_SERVER *server_ptr, UINT request_type, CHAR *resource, NX_PACKET *packet_ptr)
 {
-CHAR    string[30];
-UINT    status=0;
-UINT    error=0;
-NX_PACKET *resp_packet_ptr;
+	CHAR    string[30];
+	UINT    status=0;
+	UINT    error=0;
+	NX_PACKET *resp_packet_ptr;
   
     SSP_PARAMETER_NOT_USED(request_type);
     SSP_PARAMETER_NOT_USED(packet_ptr);
@@ -107,10 +130,7 @@ NX_PACKET *resp_packet_ptr;
     {
         uint8_t i = 0u;
         /* obtain a packet for our html code to be sent to the client */
-        status += nx_packet_allocate(server_ptr -> nx_http_server_packet_pool_ptr,
-                                     &resp_packet_ptr,
-                                     NX_TCP_PACKET,
-                                     NX_WAIT_FOREVER);
+        status += nx_packet_allocate(server_ptr -> nx_http_server_packet_pool_ptr, &resp_packet_ptr, NX_TCP_PACKET, NX_WAIT_FOREVER);
 
         /* write HTML code into the packet */
         /* HTMLWRITE(p,s)  (nx_packet_data_append(p,s,strlen(s), server_ptr-> nx_http_server_packet_pool_ptr,NX_WAIT_FOREVER)) */
@@ -146,7 +166,10 @@ NX_PACKET *resp_packet_ptr;
         status += HTMLWRITE(resp_packet_ptr, "<B>Scaled Value (X 100)</B>");
         status += HTMLWRITE(resp_packet_ptr, TDENDTAG);
         status += HTMLWRITE(resp_packet_ptr, TRENDTAG);
-
+		
+		/*
+		 * Loop for all the ADCs Configured printing each value to each column of the table
+		 */
         for(i = 0u; i < NUM_ADC_CHANNELS; i++)
         {
             status += HTMLWRITE(resp_packet_ptr, TRTAG);
@@ -180,10 +203,7 @@ NX_PACKET *resp_packet_ptr;
 
         status +=  nx_tcp_socket_send(&(server_ptr -> nx_http_server_socket), resp_packet_ptr, NX_HTTP_SERVER_TIMEOUT);
 
-        status += nx_packet_allocate(server_ptr -> nx_http_server_packet_pool_ptr,
-                                     &resp_packet_ptr,
-                                     NX_TCP_PACKET,
-                                     NX_WAIT_FOREVER);
+        status += nx_packet_allocate(server_ptr -> nx_http_server_packet_pool_ptr, &resp_packet_ptr, NX_TCP_PACKET, NX_WAIT_FOREVER);
 
         status += HTMLWRITE(resp_packet_ptr, HRLINE);
         status += HTMLWRITE(resp_packet_ptr, BODYENDTAG );
@@ -192,8 +212,9 @@ NX_PACKET *resp_packet_ptr;
         status +=  nx_tcp_socket_send(&(server_ptr -> nx_http_server_socket), resp_packet_ptr, NX_HTTP_SERVER_TIMEOUT);
 
         if(status)
-          error++;
-
+		{
+		  error++;
+		}
         return(NX_HTTP_CALLBACK_COMPLETED);
     }
     return(NX_SUCCESS);
