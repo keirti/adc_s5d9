@@ -1,5 +1,4 @@
-src/httpserver_query.o: ../src/httpserver_query.c \
- K:\GitHub\adc_s5d9\EMS\src/htmlstrings.h \
+src/httpserver_query.o: ../src/httpserver_query.c ../src/htmlstrings.h \
  K:\GitHub\adc_s5d9\EMS\src\synergy_gen/common_data.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\bsp/bsp_api.h \
  k:\github\adc_s5d9\ems\synergy\ssp\inc\ssp_common_api.h \
@@ -81,15 +80,15 @@ src/httpserver_query.o: ../src/httpserver_query.c \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_ioport.h \
  K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_ioport_cfg.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el\nx_application_layer/nx_http_server.h \
- K:\GitHub\adc_s5d9\EMS\src\synergy_gen/http_thread.h \
- K:\GitHub\adc_s5d9\EMS\src\synergy_gen/hal_data.h \
- K:\GitHub\adc_s5d9\EMS\src\synergy_gen/common_data.h \
  K:\GitHub\adc_s5d9\EMS\include/adc_interface.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_adc_api.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_elc_api.h \
- K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_transfer_api.h
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_transfer_api.h \
+ K:\GitHub\adc_s5d9\EMS\src\synergy_gen/http_thread.h \
+ K:\GitHub\adc_s5d9\EMS\src\synergy_gen/hal_data.h \
+ K:\GitHub\adc_s5d9\EMS\src\synergy_gen/common_data.h
 
-K:\GitHub\adc_s5d9\EMS\src/htmlstrings.h:
+../src/htmlstrings.h:
 
 K:\GitHub\adc_s5d9\EMS\src\synergy_gen/common_data.h:
 
@@ -253,12 +252,6 @@ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_ioport_cfg.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el\nx_application_layer/nx_http_server.h:
 
-K:\GitHub\adc_s5d9\EMS\src\synergy_gen/http_thread.h:
-
-K:\GitHub\adc_s5d9\EMS\src\synergy_gen/hal_data.h:
-
-K:\GitHub\adc_s5d9\EMS\src\synergy_gen/common_data.h:
-
 K:\GitHub\adc_s5d9\EMS\include/adc_interface.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_adc_api.h:
@@ -266,3 +259,9 @@ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_adc_api.h:
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_elc_api.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_transfer_api.h:
+
+K:\GitHub\adc_s5d9\EMS\src\synergy_gen/http_thread.h:
+
+K:\GitHub\adc_s5d9\EMS\src\synergy_gen/hal_data.h:
+
+K:\GitHub\adc_s5d9\EMS\src\synergy_gen/common_data.h:

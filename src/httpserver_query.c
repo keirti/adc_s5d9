@@ -1,21 +1,65 @@
-#include <htmlstrings.h>
-#include   "common_data.h"
-#include   "nx_api.h"
-#include   "nx_http_server.h"
-#include   "http_thread.h"
-#include    "adc_interface.h"
-#include    "stdbool.h"
+/*******************************************************************************
+(C) COPYRIGHT Smart Power Systems - 2020
 
+FILE
+    http_server_query.c
+
+ORIGINAL AUTHOR
+    Chris Goodwin
+
+DESCRIPTION
+    File to TX all the information over the ethernet port
+
+REFERENCES
+    None
+
+REVIEWS
+    None
+*******************************************************************************/
+
+/*=============================================================================*
+ ANSI C & System-wide Header Files
+*=============================================================================*/
+#include "stdbool.h"
+
+/*=============================================================================*
+ Interface Header Files
+*=============================================================================*/
+#include "htmlstrings.h"
+#include "common_data.h"
+#include "nx_api.h"
+#include "nx_http_server.h"
+#include "adc_interface.h"
+
+/*=============================================================================*
+ Local Header File
+*=============================================================================*/
+#include "http_thread.h"
+
+/*=============================================================================*
+ Private Defines
+*=============================================================================*/
 extern UINT _nx_http_server_number_convert(UINT number, CHAR *string);
-/* graphics are located in nx_http_demo_graphics.c */
 
-extern const char nxlogo[];
-extern const char txlogo[];
-extern UINT nxlogosize, txlogosize;
-
+/*=============================================================================*
+ Private Variable Definitions (static)
+*=============================================================================*/
 static adc_data_t* adc_data = NULL;
 static bool pointer_init = false;
 
+/*=============================================================================*
+ Private Function Definitions (static)
+*=============================================================================*/
+/* None */
+
+/*=============================================================================*
+ Private Function Implementations (Static)
+*=============================================================================*/
+/* None */
+
+/*=============================================================================*
+ Public Function Implementations
+*=============================================================================*/
 UINT    authentication_check(struct NX_HTTP_SERVER_STRUCT *server_ptr, UINT request_type, CHAR *resource, CHAR **name, CHAR **password, CHAR **realm)
 {
       SSP_PARAMETER_NOT_USED(resource);
@@ -52,7 +96,7 @@ NX_PACKET *resp_packet_ptr;
             pointer_init = true;
         }
     }
-	
+
     /* return requested resource or query */
     if(strcmp((const char*)resource,(const char*)"/")==0)
     {
@@ -62,7 +106,7 @@ NX_PACKET *resp_packet_ptr;
                                      &resp_packet_ptr,
                                      NX_TCP_PACKET,
                                      NX_WAIT_FOREVER);
-	
+
         /* write HTML code into the packet */
         /* HTMLWRITE(p,s)  (nx_packet_data_append(p,s,strlen(s), server_ptr-> nx_http_server_packet_pool_ptr,NX_WAIT_FOREVER)) */
         status += HTMLWRITE(resp_packet_ptr, HTMLRESPONSE);
@@ -72,10 +116,10 @@ NX_PACKET *resp_packet_ptr;
         status += HTMLWRITE(resp_packet_ptr, BODYTAG);
         status += HTMLWRITE(resp_packet_ptr, H1LINE);
         status += nx_tcp_socket_send(&(server_ptr -> nx_http_server_socket), resp_packet_ptr, NX_HTTP_SERVER_TIMEOUT);
-	
+
         /* generate different HTML*/
         status += nx_packet_allocate(server_ptr -> nx_http_server_packet_pool_ptr, &resp_packet_ptr, NX_TCP_PACKET, NX_WAIT_FOREVER);
-	
+
         status += HTMLWRITE(resp_packet_ptr, TABLETAG);
         status += HTMLWRITE(resp_packet_ptr, TRTAG);
         status += HTMLWRITE(resp_packet_ptr, TDTAG);
@@ -128,25 +172,30 @@ NX_PACKET *resp_packet_ptr;
             status += HTMLWRITE(resp_packet_ptr, TDENDTAG);
             status += HTMLWRITE(resp_packet_ptr, TRENDTAG);
         }
-	
+
         status +=  nx_tcp_socket_send(&(server_ptr -> nx_http_server_socket), resp_packet_ptr, NX_HTTP_SERVER_TIMEOUT);
-	
+
         status += nx_packet_allocate(server_ptr -> nx_http_server_packet_pool_ptr,
                                      &resp_packet_ptr,
                                      NX_TCP_PACKET,
                                      NX_WAIT_FOREVER);
-	
+
         status += HTMLWRITE(resp_packet_ptr, HRLINE);
         status += HTMLWRITE(resp_packet_ptr, BODYENDTAG );
         status += HTMLWRITE(resp_packet_ptr, HTMLENDTAG );
-	
+
         status +=  nx_tcp_socket_send(&(server_ptr -> nx_http_server_socket), resp_packet_ptr, NX_HTTP_SERVER_TIMEOUT);
-	
+
         if(status)
           error++;
-	
+
         return(NX_HTTP_CALLBACK_COMPLETED);
     }
     return(NX_SUCCESS);
 }
+
+/*=============================================================================*
+End Of File
+*=============================================================================*/
+
 
