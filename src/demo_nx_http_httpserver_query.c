@@ -81,6 +81,7 @@ NX_PACKET *resp_packet_ptr;
     /* return requested resource or query */
     if(strcmp((const char*)resource,(const char*)"/")==0)
     {
+        uint8_t i = 0u;
         /* obtain a packet for our html code to be sent to the client */
         status += nx_packet_allocate(server_ptr -> nx_http_server_packet_pool_ptr,
                                      &resp_packet_ptr,
@@ -103,7 +104,6 @@ NX_PACKET *resp_packet_ptr;
                                      NX_TCP_PACKET,
                                      NX_WAIT_FOREVER);
 	
-        status += htmlwrite(resp_packet_ptr, hrline);
         status += htmlwrite(resp_packet_ptr, tabletag);
         status += htmlwrite(resp_packet_ptr, trtag);
         status += htmlwrite(resp_packet_ptr, tdtag);
@@ -116,211 +116,46 @@ NX_PACKET *resp_packet_ptr;
         status += htmlwrite(resp_packet_ptr, "<B>ADC Voltage (X 100)</B>");
         status += htmlwrite(resp_packet_ptr, tdendtag);
         status += htmlwrite(resp_packet_ptr, tdtag);
-        status += htmlwrite(resp_packet_ptr, "<B>Gain</B>");
+        status += htmlwrite(resp_packet_ptr, "<B>Gain (X 100)</B>");
         status += htmlwrite(resp_packet_ptr, tdendtag);
         status += htmlwrite(resp_packet_ptr, tdtag);
-        status += htmlwrite(resp_packet_ptr, "<B>Offset</B>");
+        status += htmlwrite(resp_packet_ptr, "<B>Offset (X 100)</B>");
+        status += htmlwrite(resp_packet_ptr, tdendtag);
+        status += htmlwrite(resp_packet_ptr, tdtag);
+        status += htmlwrite(resp_packet_ptr, "<B>Scaled Value (X 100)</B>");
         status += htmlwrite(resp_packet_ptr, tdendtag);
         status += htmlwrite(resp_packet_ptr, trendtag);
 
-        status += htmlwrite(resp_packet_ptr, trtag);
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        status += htmlwrite(resp_packet_ptr, "<B>Thread 0 Counter </B> ");
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-	
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        _nx_http_server_number_convert(adc_data[0].adc_raw_count, string);
-        status += htmlwrite(resp_packet_ptr, string);
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        _nx_http_server_number_convert((UINT)(adc_data[0].adc_voltage * 100.0f), string);
-        status += htmlwrite(resp_packet_ptr, string);
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-        status += htmlwrite(resp_packet_ptr, trendtag);
-	
-        status += htmlwrite(resp_packet_ptr, trtag);
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        status += htmlwrite(resp_packet_ptr, "<B>Thread 1 Counter </B> ");
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-	
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        _nx_http_server_number_convert(adc_data[1].adc_raw_count, string);
-        status += htmlwrite(resp_packet_ptr, string);
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-        status += htmlwrite(resp_packet_ptr, trendtag);
-	
-        status += htmlwrite(resp_packet_ptr, trtag);
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        status += htmlwrite(resp_packet_ptr, "<B>Thread 2 Counter </B> ");
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-	
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        _nx_http_server_number_convert(adc_data[2].adc_raw_count, string);
-        status += htmlwrite(resp_packet_ptr, string);
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-        status += htmlwrite(resp_packet_ptr, trendtag);
-	
-        status += htmlwrite(resp_packet_ptr, trtag);
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        status += htmlwrite(resp_packet_ptr, "<B>Thread 3 Counter </B> ");
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-	
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        _nx_http_server_number_convert(adc_data[3].adc_raw_count, string);
-        status += htmlwrite(resp_packet_ptr, string);
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-        status += htmlwrite(resp_packet_ptr, trendtag);
-	
-        status += htmlwrite(resp_packet_ptr, trtag);
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        status += htmlwrite(resp_packet_ptr, "<B>Thread 4 Counter </B> ");
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-	
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        _nx_http_server_number_convert(adc_data[4].adc_raw_count, string);
-        status += htmlwrite(resp_packet_ptr, string);
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-        status += htmlwrite(resp_packet_ptr, trendtag);
-	
-        status += htmlwrite(resp_packet_ptr, trtag);
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        status += htmlwrite(resp_packet_ptr, "<B>Thread 5 Counter </B> ");
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-	
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        _nx_http_server_number_convert(adc_data[5].adc_raw_count, string);
-        status += htmlwrite(resp_packet_ptr, string);
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-        status += htmlwrite(resp_packet_ptr, trendtag);
-	
-        status += htmlwrite(resp_packet_ptr, trtag);
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        status += htmlwrite(resp_packet_ptr, "<B>Thread 6 Counter </B> ");
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-	
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        _nx_http_server_number_convert(adc_data[6].adc_raw_count, string);
-        status += htmlwrite(resp_packet_ptr, string);
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-        status += htmlwrite(resp_packet_ptr, trendtag);
-	
-        status += htmlwrite(resp_packet_ptr, trtag);
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        status += htmlwrite(resp_packet_ptr, "<B>Thread 7 Counter </B> ");
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-	
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        _nx_http_server_number_convert(adc_data[7].adc_raw_count, string);
-        status += htmlwrite(resp_packet_ptr, string);
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-        status += htmlwrite(resp_packet_ptr, trendtag);
-        status += htmlwrite(resp_packet_ptr, tableendtag);
-	
-        status += htmlwrite(resp_packet_ptr, hrline);
-        status += htmlwrite(resp_packet_ptr, tabletag);
-        status += htmlwrite(resp_packet_ptr, captiontag);
-        status += htmlwrite(resp_packet_ptr, sysvars_anchor_tag);
-        status += htmlwrite(resp_packet_ptr, captionendtag);
-	
-        status += htmlwrite(resp_packet_ptr, trtag);
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        status += htmlwrite(resp_packet_ptr, "<B>Thread 0 Counter </B> ");
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-	
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        _nx_http_server_number_convert(thread_0_counter, string);
-        status += htmlwrite(resp_packet_ptr, string);
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-        status += htmlwrite(resp_packet_ptr, trendtag);
-	
-        status += htmlwrite(resp_packet_ptr, trtag);
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        status += htmlwrite(resp_packet_ptr, "<B>Thread 1 Counter </B> ");
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-	
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        _nx_http_server_number_convert(thread_1_counter, string);
-        status += htmlwrite(resp_packet_ptr, string);
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-        status += htmlwrite(resp_packet_ptr, trendtag);
-	
-        status += htmlwrite(resp_packet_ptr, trtag);
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        status += htmlwrite(resp_packet_ptr, "<B>Thread 2 Counter </B> ");
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-	
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        _nx_http_server_number_convert(thread_2_counter, string);
-        status += htmlwrite(resp_packet_ptr, string);
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-        status += htmlwrite(resp_packet_ptr, trendtag);
-	
-        status += htmlwrite(resp_packet_ptr, trtag);
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        status += htmlwrite(resp_packet_ptr, "<B>Thread 3 Counter </B> ");
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-	
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        _nx_http_server_number_convert(thread_3_counter, string);
-        status += htmlwrite(resp_packet_ptr, string);
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-        status += htmlwrite(resp_packet_ptr, trendtag);
-	
-        status += htmlwrite(resp_packet_ptr, trtag);
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        status += htmlwrite(resp_packet_ptr, "<B>Thread 4 Counter </B> ");
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-	
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        _nx_http_server_number_convert(thread_4_counter, string);
-        status += htmlwrite(resp_packet_ptr, string);
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-        status += htmlwrite(resp_packet_ptr, trendtag);
-	
-        status += htmlwrite(resp_packet_ptr, trtag);
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        status += htmlwrite(resp_packet_ptr, "<B>Thread 5 Counter </B> ");
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-	
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        _nx_http_server_number_convert(thread_5_counter, string);
-        status += htmlwrite(resp_packet_ptr, string);
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-        status += htmlwrite(resp_packet_ptr, trendtag);
-	
-        status += htmlwrite(resp_packet_ptr, trtag);
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        status += htmlwrite(resp_packet_ptr, "<B>Thread 6 Counter </B> ");
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-	
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        _nx_http_server_number_convert(thread_6_counter, string);
-        status += htmlwrite(resp_packet_ptr, string);
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-        status += htmlwrite(resp_packet_ptr, trendtag);
-	
-        status += htmlwrite(resp_packet_ptr, trtag);
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        status += htmlwrite(resp_packet_ptr, "<B>Trial Counter </B> ");
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-	
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        _nx_http_server_number_convert(trial_counter, string);
-        status += htmlwrite(resp_packet_ptr, string);
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-        status += htmlwrite(resp_packet_ptr, trendtag);
-	
-        status += htmlwrite(resp_packet_ptr, trtag);
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        status += htmlwrite(resp_packet_ptr, "<B>Thread 7 Counter </B> ");
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-	
-        status += htmlwrite(resp_packet_ptr, tdtag);
-        _nx_http_server_number_convert(thread_7_counter, string);
-        status += htmlwrite(resp_packet_ptr, string);
-        status += htmlwrite(resp_packet_ptr, tdendtag);
-        status += htmlwrite(resp_packet_ptr, trendtag);
-        status += htmlwrite(resp_packet_ptr, tableendtag);
+        for(i = 0u; i < NUM_ADC_CHANNELS; i++)
+        {
+            status += htmlwrite(resp_packet_ptr, trtag);
+            status += htmlwrite(resp_packet_ptr, tdtag);
+            _nx_http_server_number_convert(i, string);
+            status += htmlwrite(resp_packet_ptr,string);
+            status += htmlwrite(resp_packet_ptr, tdendtag);
+
+            status += htmlwrite(resp_packet_ptr, tdtag);
+            _nx_http_server_number_convert(adc_data[i].adc_raw_count, string);
+            status += htmlwrite(resp_packet_ptr, string);
+            status += htmlwrite(resp_packet_ptr, tdendtag);
+            status += htmlwrite(resp_packet_ptr, tdtag);
+            _nx_http_server_number_convert((UINT)(adc_data[i].adc_voltage * 100.0f), string);
+            status += htmlwrite(resp_packet_ptr, string);
+            status += htmlwrite(resp_packet_ptr, tdendtag);
+            status += htmlwrite(resp_packet_ptr, tdtag);
+            _nx_http_server_number_convert((UINT)(adc_data[i].gain * 100.0f), string);
+            status += htmlwrite(resp_packet_ptr, string);
+            status += htmlwrite(resp_packet_ptr, tdendtag);
+            status += htmlwrite(resp_packet_ptr, tdtag);
+            _nx_http_server_number_convert((UINT)(adc_data[i].offset * 100.0f), string);
+            status += htmlwrite(resp_packet_ptr, string);
+            status += htmlwrite(resp_packet_ptr, tdendtag);
+            status += htmlwrite(resp_packet_ptr, tdtag);
+            _nx_http_server_number_convert((UINT)(adc_data[i].scaled_value * 100.0f), string);
+            status += htmlwrite(resp_packet_ptr, string);
+            status += htmlwrite(resp_packet_ptr, tdendtag);
+            status += htmlwrite(resp_packet_ptr, trendtag);
+        }
 	
         status +=  nx_tcp_socket_send(&(server_ptr -> nx_http_server_socket), resp_packet_ptr, NX_HTTP_SERVER_TIMEOUT);
 	
