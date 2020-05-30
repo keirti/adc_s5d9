@@ -96,7 +96,21 @@ bool http_query_init(adc_data_t* data)
     return to_return;
 }
 
+/*-------------------------------------------------------------------*
 
+  NAME
+    authentication_check
+
+  DESCRIPTION
+    Check the authentication requirements
+
+  PARAM
+    -
+
+  RETURNS
+    UINT - Success status
+
+*--------------------------------------------------------------------*/
 UINT authentication_check(struct NX_HTTP_SERVER_STRUCT *server_ptr, UINT request_type, CHAR *resource, CHAR **name, CHAR **password, CHAR **realm)
 {
       SSP_PARAMETER_NOT_USED(resource);
@@ -115,6 +129,21 @@ UINT authentication_check(struct NX_HTTP_SERVER_STRUCT *server_ptr, UINT request
 #endif
 }
 
+/*-------------------------------------------------------------------*
+
+  NAME
+    request_notify
+
+  DESCRIPTION
+    Updates the HTML data with the latest information
+
+  PARAM
+    -
+
+  RETURNS
+    UINT to_return - Success status
+
+*--------------------------------------------------------------------*/
 UINT request_notify(NX_HTTP_SERVER *server_ptr, UINT request_type, CHAR *resource, NX_PACKET *packet_ptr)
 {
     UINT to_return = 0u;
