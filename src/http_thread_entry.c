@@ -26,6 +26,8 @@ REVIEWS
  Interface Header Files
 *=============================================================================*/
 #include "watchdog.h"
+#include "http_query.h"
+#include "adc_interface.h"
 
 /*=============================================================================*
  Local Header File
@@ -43,6 +45,7 @@ REVIEWS
 *=============================================================================*/
 static UINT err_counter=0;
 static sf_thread_monitor_counter_min_max_t min_max_values;
+static adc_data_t* adc_data = NULL;
 
 /*=============================================================================*
  Private Function Definitions (static)
@@ -82,41 +85,52 @@ void http_thread_entry(void)
     min_max_values.minimum_count = WD_MIN_COUNT;
 
     /*
-     * Register the thread with the monitor
+     * Init the ADC pointer and pass it to the query
      */
-    if(SSP_SUCCESS != g_sf_thread_monitor0.p_api->threadRegister (g_sf_thread_monitor0.p_ctrl, &min_max_values))
+    adc_data = get_adc_arr();
+    if(adc_data != NULL)
     {
-        __BKPT(0);
-    }
-
-    while (1)
-    {
-        /*
-         * Start the server,
-         * Sleep the Thread,
-         */
-        if(nx_http_server_start(&g_http_server0))
+        if(http_query_init(adc_data))
         {
-             err_counter++;
+            /*
+             * Register the thread with the monitor
+             */
+            if(SSP_SUCCESS != g_sf_thread_monitor0.p_api->threadRegister (g_sf_thread_monitor0.p_ctrl, &min_max_values))
+            {
+                __BKPT(0);
+            }
+
+            while (1)
+                {
+
+                    /*
+                     * Start the server,
+                     * Sleep the Thread,
+                     */
+                    if(nx_http_server_start(&g_http_server0))
+                    {
+                         err_counter++;
+                    }
+
+                    /*
+                     * Increment the monitor counter
+                     */
+                    if(SSP_SUCCESS != g_sf_thread_monitor0.p_api->countIncrement(g_sf_thread_monitor0.p_ctrl))
+                    {
+                        __BKPT(0);
+                    }
+
+                    tx_thread_sleep(100u);
+                }
+
+                /*
+                 * Never stop the server
+                 */
+                if(nx_http_server_stop(&g_http_server0))
+                {
+                     err_counter++;
+                }
         }
-
-        /*
-         * Increment the monitor counter
-         */
-        if(SSP_SUCCESS != g_sf_thread_monitor0.p_api->countIncrement(g_sf_thread_monitor0.p_ctrl))
-        {
-            __BKPT(0);
-        }
-
-        tx_thread_sleep(100u);
-    }
-
-    /*
-     * Never stop the server
-     */
-    if(nx_http_server_stop(&g_http_server0))
-    {
-         err_counter++;
     }
 }
 

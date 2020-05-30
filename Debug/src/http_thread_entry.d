@@ -87,6 +87,12 @@ src/http_thread_entry.o: ../src/http_thread_entry.c \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\instances/sf_thread_monitor.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\api/sf_thread_monitor_api.h \
  K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework/sf_thread_monitor_cfg.h \
+ K:\GitHub\adc_s5d9\EMS\include/http_query.h \
+ K:\GitHub\adc_s5d9\EMS\include/adc_interface.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_adc_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_elc_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_transfer_api.h \
+ K:\GitHub\adc_s5d9\EMS\include/adc_interface.h \
  K:\GitHub\adc_s5d9\EMS\src\synergy_gen/http_thread.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el\nx_application_layer/nx_http_server.h
 
@@ -265,6 +271,18 @@ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\instances/sf_thread_monitor.h:
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\api/sf_thread_monitor_api.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework/sf_thread_monitor_cfg.h:
+
+K:\GitHub\adc_s5d9\EMS\include/http_query.h:
+
+K:\GitHub\adc_s5d9\EMS\include/adc_interface.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_adc_api.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_elc_api.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_transfer_api.h:
+
+K:\GitHub\adc_s5d9\EMS\include/adc_interface.h:
 
 K:\GitHub\adc_s5d9\EMS\src\synergy_gen/http_thread.h:
 

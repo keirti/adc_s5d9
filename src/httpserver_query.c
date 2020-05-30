@@ -35,6 +35,7 @@ REVIEWS
  Local Header File
 *=============================================================================*/
 #include "http_thread.h"
+#include "http_query.h"
 
 /*=============================================================================*
  Private Defines
@@ -45,7 +46,6 @@ extern UINT _nx_http_server_number_convert(UINT number, CHAR *string);
  Private Variable Definitions (static)
 *=============================================================================*/
 static adc_data_t* adc_data = NULL;
-static bool pointer_init = false;
 
 /*=============================================================================*
  Private Function Definitions (static)
@@ -60,6 +60,20 @@ static bool pointer_init = false;
 /*=============================================================================*
  Public Function Implementations
 *=============================================================================*/
+bool http_query_init(adc_data_t* data)
+{
+    bool to_return = false;
+
+    adc_data = data;
+    if(adc_data != NULL)
+    {
+        to_return = true;
+    }
+
+    return to_return;
+}
+
+
 UINT    authentication_check(struct NX_HTTP_SERVER_STRUCT *server_ptr, UINT request_type, CHAR *resource, CHAR **name, CHAR **password, CHAR **realm)
 {
       SSP_PARAMETER_NOT_USED(resource);
@@ -87,15 +101,6 @@ NX_PACKET *resp_packet_ptr;
   
     SSP_PARAMETER_NOT_USED(request_type);
     SSP_PARAMETER_NOT_USED(packet_ptr);
-
-    if(!pointer_init)
-    {
-        adc_data = get_adc_arr();
-        if(adc_data != NULL)
-        {
-            pointer_init = true;
-        }
-    }
 
     /* return requested resource or query */
     if(strcmp((const char*)resource,(const char*)"/")==0)

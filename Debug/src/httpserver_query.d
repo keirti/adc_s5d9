@@ -86,7 +86,9 @@ src/httpserver_query.o: ../src/httpserver_query.c ../src/htmlstrings.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_transfer_api.h \
  K:\GitHub\adc_s5d9\EMS\src\synergy_gen/http_thread.h \
  K:\GitHub\adc_s5d9\EMS\src\synergy_gen/hal_data.h \
- K:\GitHub\adc_s5d9\EMS\src\synergy_gen/common_data.h
+ K:\GitHub\adc_s5d9\EMS\src\synergy_gen/common_data.h \
+ K:\GitHub\adc_s5d9\EMS\include/http_query.h \
+ K:\GitHub\adc_s5d9\EMS\include/adc_interface.h
 
 ../src/htmlstrings.h:
 
@@ -265,3 +267,7 @@ K:\GitHub\adc_s5d9\EMS\src\synergy_gen/http_thread.h:
 K:\GitHub\adc_s5d9\EMS\src\synergy_gen/hal_data.h:
 
 K:\GitHub\adc_s5d9\EMS\src\synergy_gen/common_data.h:
+
+K:\GitHub\adc_s5d9\EMS\include/http_query.h:
+
+K:\GitHub\adc_s5d9\EMS\include/adc_interface.h:
