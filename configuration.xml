@@ -179,6 +179,26 @@
       <description>Watchdog Timer: Provides=[WDT]</description>
       <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
     </component>
+    <component apiversion="" class="Express Logic" condition="" group="all" subgroup="nx" variant="" vendor="Renesas" version="1.7.5">
+      <description>Express Logic NetX: Provides=[NetX] , Requires=[ThreadX ,NetX Driver]</description>
+      <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
+    </component>
+    <component apiversion="" class="Express Logic" condition="" group="all" subgroup="nx_md5" variant="" vendor="Renesas" version="1.7.5">
+      <description>Express Logic NetX MD5: Provides=[NetX MD5]</description>
+      <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
+    </component>
+    <component apiversion="" class="Express Logic" condition="" group="all" subgroup="nx_http_server" variant="" vendor="Renesas" version="1.7.5">
+      <description>Express Logic NetX HTTP Server: Provides=[NetX HTTP Server] , Requires=[NetX ,NetX MD5]</description>
+      <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
+    </component>
+    <component apiversion="" class="Express Logic" condition="" group="all" subgroup="filex_stub" variant="" vendor="Renesas" version="1.7.5">
+      <description>FILEX_STUB Drivers</description>
+      <originalPack>Renesas.Synergy_filex_stub.1.7.5.pack</originalPack>
+    </component>
+    <component apiversion="" class="Framework Services" condition="" group="all" subgroup="sf_el_nx" variant="" vendor="Renesas" version="1.7.5">
+      <description>Express Logic NetX Synergy Port: Provides=[NetX Driver] , Requires=[NetX]</description>
+      <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
+    </component>
   </synergyComponentSelection>
   <synergyIcuConfiguration/>
   <synergyMessagingConfiguration/>
@@ -363,6 +383,56 @@
       <property id="module.driver.adc.pga1" value="module.driver.adc.pga.disabled"/>
       <property id="module.driver.adc.pga2" value="module.driver.adc.pga.disabled"/>
     </module>
+    <module id="module.el.nx_http_server.1204600873">
+      <property id="module.el.nx_http_server.name" value="g_http_server0"/>
+      <property id="module.el.nx_http_server.stack_size" value="4096"/>
+      <property id="module.el.nx_http_server.authentication_function" value="authentication_check"/>
+      <property id="module.el.nx_http_server.request_notify_function" value="request_notify"/>
+      <property id="module.el.nx_http_server.init_function" value="http_server_init0"/>
+      <property id="module.el.nx_http_server.init" value="module.el.nx_http_server.init.enable"/>
+    </module>
+    <module id="module.el.nx.ip.1958614510">
+      <property id="module.el.nx.ip.name" value="g_ip0"/>
+      <property id="module.el.nx.ip.address" value="192.168.1.128"/>
+      <property id="module.el.nx.ip.subnet_mask" value="255.255.255.0"/>
+      <property id="module.el.nx.ip.gateway_address" value="192.168.1.254"/>
+      <property id="module.el.nx.ip.stack_size" value="2048"/>
+      <property id="module.el.nx.ip.priority" value="3"/>
+      <property id="module.el.nx.ip.arp" value="module.el.nx.ip.arp.enable"/>
+      <property id="module.el.nx.ip.arp_cache_size_units" value="module.el.nx.ip.arp_cache_size_units.bytes"/>
+      <property id="module.el.nx.ip.arp_cache_size" value="520"/>
+      <property id="module.el.nx.ip.rarp" value="module.el.nx.ip.rarp.disable"/>
+      <property id="module.el.nx.ip.tcp" value="module.el.nx.ip.tcp.enable"/>
+      <property id="module.el.nx.ip.udp" value="module.el.nx.ip.udp.enable"/>
+      <property id="module.el.nx.ip.icmp" value="module.el.nx.ip.icmp.enable"/>
+      <property id="module.el.nx.ip.igmp" value="module.el.nx.ip.igmp.enable"/>
+      <property id="module.el.nx.ip.fragmentation" value="module.el.nx.ip.fragmentation.disable"/>
+      <property id="module.el.nx.ip.init_function" value="ip_init0"/>
+      <property id="module.el.nx.ip.init" value="module.el.nx.ip.init.enable"/>
+      <property id="module.el.nx.ip.link_change_callback" value="NULL"/>
+    </module>
+    <module id="module.el.nx_common.1590897073">
+      <property id="module.el.nx_common.init_function" value="nx_common_init0"/>
+      <property id="module.el.nx_common.init" value="module.el.nx_common.init.enable"/>
+    </module>
+    <module id="module.el.nx.packet_pool.1293591688">
+      <property id="module.el.nx.packet_pool.name" value="g_packet_pool0"/>
+      <property id="module.el.nx.packet_pool.packet_size" value="2048"/>
+      <property id="module.el.nx.packet_pool.number_of_packets" value="32"/>
+      <property id="module.el.nx.packet_pool.init_function" value="packet_pool_init0"/>
+      <property id="module.el.nx.packet_pool.init" value="module.el.nx.packet_pool.init.enable"/>
+    </module>
+    <module id="module.el.nx_http_common.1032740433"/>
+    <module id="module.el.ns_md5.365490429"/>
+    <module id="module.framework.fx_stub.954739382">
+      <property id="module.framework.fx.name" value="g_fx_media0"/>
+    </module>
+    <module id="module.framework.sf_el_nx.831427810">
+      <property id="module.framework.sf_el_nx.name" value="g_sf_el_nx"/>
+      <property id="module.framework.sf_el_nx.channel" value="0"/>
+      <property id="module.framework.sf_el_nx.mac_update_callback" value="NULL"/>
+      <property id="module.framework.sf_el_nx.receive_callback" value="NULL"/>
+    </module>
     <context id="_hal.0">
       <stack module="module.driver.ioport_on_ioport.0"/>
       <stack module="module.driver.elc_on_elc.0"/>
@@ -426,8 +496,42 @@
       <property id="rtos.threadx.thread.timeslice" value="1"/>
       <stack module="module.driver.adc_on_adc.702076447"/>
     </context>
+    <context id="rtos.threadx.thread.686673691">
+      <property id="_symbol" value="http_thread"/>
+      <property id="rtos.threadx.thread.name" value="HTTP Thread"/>
+      <property id="rtos.threadx.thread.stack" value="1024"/>
+      <property id="rtos.threadx.thread.priority" value="2"/>
+      <property id="rtos.threadx.thread.autostart" value="rtos.threadx.thread.autostart.enabled"/>
+      <property id="rtos.threadx.thread.timeslice" value="1"/>
+      <stack module="module.el.nx_http_server.1204600873">
+        <stack module="module.el.nx.ip.1958614510" requires="module.el.nx_http_server.requires.nx.ip">
+          <stack module="module.el.nx_common.1590897073" requires="module.el.nx.ip.requires.nx_common"/>
+          <stack module="module.el.nx.packet_pool.1293591688" requires="module.el.nx.ip.requires.nx.packet_pool">
+            <stack module="module.el.nx_common.1590897073" requires="module.el.nx.packet_pool.requires.nx_common"/>
+          </stack>
+          <stack module="module.framework.sf_el_nx.831427810" requires="module.el.nx.ip.requires.sf_el_nx"/>
+        </stack>
+        <stack module="module.framework.fx_stub.954739382" requires="module.el.nx_http_server.requires.fx"/>
+        <stack module="module.el.nx_http_common.1032740433" requires="module.el.nx_http_server.requires.nx_http_common">
+          <stack module="module.el.ns_md5.365490429" requires="module.el.nx_http_common.requires.nx_md5"/>
+        </stack>
+      </stack>
+    </context>
     <config id="config.driver.wdt">
       <property id="config.driver.wdt.param_checking_enable" value="config.driver.wdt.param_checking_enable.bsp"/>
+    </config>
+    <config id="config.framework.sf_el_nx">
+      <property id="config.framework.sf_el_nx.param_checking_enable" value="config.framework.sf_el_nx.param_checking_enable.enabled"/>
+      <property id="config.framework.sf_el_nx.pin0" value="IOPORT_PORT_08_PIN_06"/>
+      <property id="config.framework.sf_el_nx.mach0" value="0x00002E09"/>
+      <property id="config.framework.sf_el_nx.macl0" value="0x0A0076C7"/>
+      <property id="config.framework.sf_el_nx.pin1" value="IOPORT_PORT_08_PIN_06"/>
+      <property id="config.framework.sf_el_nx.mach1" value="0x00002E09"/>
+      <property id="config.framework.sf_el_nx.macl1" value="0x0A0076C8"/>
+      <property id="config.framework.sf_el_nx.num_rx_desc" value="8"/>
+      <property id="config.framework.sf_el_nx.num_tx_desc" value="32"/>
+      <property id="config.framework.sf_el_nx.irq_ipl" value="board.icu.common.irq.priority3"/>
+      <property id="config.framework.sf_el_nx.monitor_method" value="config.framework.sf_el_nx.monitor_method.polling"/>
     </config>
     <config id="config.driver.cgc">
       <property id="config.driver.cgc.param_checking_enable" value="config.driver.cgc.param_checking_enable.bsp"/>
@@ -436,6 +540,27 @@
       <property id="config.driver.cgc.subclock_drive" value="config.driver.cgc.subclock_drive.standard"/>
       <property id="config.driver.cgc.subclock_at_reset_enable" value="config.driver.cgc.subclock_at_reset_enable.enabled"/>
       <property id="config.driver.cgc.low_voltage_mode" value="config.driver.cgc.low_voltage_mode.disabled"/>
+    </config>
+    <config id="config.el.nx_http_server">
+      <property id="config.el.nx_http_server.filex" value="config.el.nx_http_server.filex.disable"/>
+      <property id="config.el.nx_http_server.multipart" value="config.el.nx_http_server.multipart.disable"/>
+      <property id="module.el.nx_http_server.priority" value="16"/>
+      <property id="config.el.nx_http_server.time_slice" value="1"/>
+      <property id="config.el.nx_http_server.server_window_size" value="2048"/>
+      <property id="config.el.nx_http_server.server_timeout" value="10"/>
+      <property id="config.el.nx_http_server.server_timeout_accept" value="10"/>
+      <property id="config.el.nx_http_server.server_timeout_disconnect" value="10"/>
+      <property id="config.el.nx_http_server.server_timeout_receive" value="10"/>
+      <property id="config.el.nx_http_server.server_timeout_send" value="10"/>
+      <property id="config.el.nx_http_server.max_header_field" value="256"/>
+      <property id="config.el.nx_http_server.server_max_pending" value="5"/>
+      <property id="config.el.nx_http_server.max_name" value="20"/>
+      <property id="config.el.nx_http_server.max_password" value="20"/>
+      <property id="config.el.nx_http_server.server_min_packet_size" value="600"/>
+      <property id="config.el.nx_http_server.transmit_queue_depth" value="20"/>
+      <property id="config.el.nx_http_server.retry_seconds" value="2"/>
+      <property id="config.el.nx_http_server.retry_max" value="10"/>
+      <property id="config.el.nx_http_server.retry_shift" value="1"/>
     </config>
     <config id="config.driver.ioport">
       <property id="config.driver.ioport.checking" value="config.driver.ioport.checking.system"/>
@@ -449,6 +574,40 @@
       <property id="config.driver.sci_uart.uart_rx_enable" value="config.driver.sci_uart.uart_rx_enable.enabled"/>
       <property id="config.driver.sci_uart.uart_tx_enable" value="config.driver.sci_uart.uart_tx_enable.enabled"/>
       <property id="config.driver.sci_uart.param_checking_enable" value="config.driver.sci_uart.param_checking_enable.bsp"/>
+    </config>
+    <config id="config.el.nx"/>
+    <config id="config.el.nx_dhcp_common">
+      <property id="config.el.nx_dhcp_common.tos" value="config.el.nx_dhcp_common.tos.normal"/>
+      <property id="config.el.nx_dhcp_common.fragment_option" value="config.el.nx_dhcp_common.fragment_option.dont_fragment"/>
+      <property id="config.el.nx_dhcp_common.time_to_live" value="128"/>
+      <property id="config.el.nx_dhcp_common.queue_depth" value="5"/>
+    </config>
+    <config id="config.el.nx_http_common">
+      <property id="config.el.nx_http_common.tos" value="config.el.nx_http_common.tos.normal"/>
+      <property id="config.el.nx_http_common.fragment_option" value="config.el.nx_http_common.fragment_option.dont_fragment"/>
+      <property id="config.el.nx_http_common.time_to_live" value="128"/>
+      <property id="config.el.nx_http_common.digest" value="config.el.nx_http_common.digest.disable"/>
+      <property id="config.el.nx_http_common.max_resource" value="40"/>
+    </config>
+    <config id="config.el.nx_ftp_common">
+      <property id="config.el.nx_ftp_common.filex" value="config.el.nx_ftp_common.filex.enable"/>
+      <property id="config.el.nx_ftp_common.control_tos" value="config.el.nx_ftp_common.control_tos.normal"/>
+      <property id="config.el.nx_ftp_common.data_tos" value="config.el.nx_ftp_common.data_tos.normal"/>
+      <property id="config.el.nx_ftp_common.fragment_option" value="config.el.nx_ftp_common.fragment_option.dont_fragment"/>
+      <property id="config.el.nx_ftp_common.time_to_live" value="128"/>
+      <property id="config.el.nx_ftp_common.timeout_period" value="60"/>
+    </config>
+    <config id="config.el.nx_tftp_common">
+      <property id="config.el.nx_tftp_common.error_string_max" value="64"/>
+      <property id="config.el.nx_tftp_common.time_to_live" value="128"/>
+      <property id="config.el.nx_tftp_common.tos" value="config.el.nx_tftp_common.tos.normal"/>
+      <property id="config.el.nx_tftp_common.fragment_option" value="config.el.nx_tftp_common.fragment_option.dont_fragment"/>
+    </config>
+    <config id="config.el.nx_telnet_common">
+      <property id="config.el.nx_telnet_common.control_tos" value="config.el.nx_telnet_common.control_tos.normal"/>
+      <property id="config.el.nx_telnet_common.fragment_option" value="config.el.nx_telnet_common.fragment_option.dont_fragment"/>
+      <property id="config.el.nx_telnet_common.telnet_server_port" value="23"/>
+      <property id="config.el.nx_telnet_common.time_to_live" value="128"/>
     </config>
     <config id="config.driver.gpt">
       <property id="config.driver.gpt.param_checking_enable" value="config.driver.gpt.param_checking_enable.bsp"/>
