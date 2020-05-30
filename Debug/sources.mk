@@ -50,5 +50,10 @@ synergy/ssp/src/driver/r_gpt \
 synergy/ssp/src/driver/r_ioport \
 synergy/ssp/src/driver/r_sci_uart \
 synergy/ssp/src/driver/r_wdt \
+synergy/ssp/src/framework/el/nx_application_layer/nx_http_server \
+synergy/ssp/src/framework/el/nx_md5 \
+synergy/ssp/src/framework/sf_el_nx \
+synergy/ssp/src/framework/sf_el_nx/phy \
 synergy/ssp/src/framework/sf_thread_monitor \
+synergy/ssp_supplemental/filex_stub \
 

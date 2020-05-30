@@ -71,6 +71,9 @@ src/can_thread_entry.o: ../src/can_thread_entry.c \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_elc_api.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_ioport.h \
  K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_ioport_cfg.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_can.h \
+ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_can_cfg.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_can_api.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\api/sf_thread_monitor_api.h \
  K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework/sf_thread_monitor_cfg.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_wdt_api.h \
@@ -222,6 +225,12 @@ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_elc_api.h:
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_ioport.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_ioport_cfg.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_can.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_can_cfg.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_can_api.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\api/sf_thread_monitor_api.h:
 
