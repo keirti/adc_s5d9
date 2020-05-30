@@ -1,9 +1,6 @@
-src/demo_nx_http_graphics.o: ../src/demo_nx_http_graphics.c \
- K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_api.h \
- K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_port.h \
- k:\github\adc_s5d9\ems\synergy\ssp\inc\framework\el\cm4_gcc\tx_port.h \
- K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/tx_user.h \
- K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_cmsis.h \
+src/httpserver_query.o: ../src/httpserver_query.c \
+ K:\GitHub\adc_s5d9\EMS\src/htmlstrings.h \
+ K:\GitHub\adc_s5d9\EMS\src\synergy_gen/common_data.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\bsp/bsp_api.h \
  k:\github\adc_s5d9\ems\synergy\ssp\inc\ssp_common_api.h \
  k:\github\adc_s5d9\ems\synergy\ssp\inc\ssp_version.h \
@@ -59,17 +56,42 @@ src/demo_nx_http_graphics.o: ../src/demo_nx_http_graphics.c \
  k:\github\adc_s5d9\ems\synergy\ssp\src\bsp\mcu\all\bsp_delay.h \
  k:\github\adc_s5d9\ems\synergy\ssp\src\bsp\mcu\all\bsp_feature.h \
  k:\github\adc_s5d9\ems\synergy\ssp\src\bsp\mcu\all\bsp_mcu_api.h \
- k:\github\adc_s5d9\ems\synergy\ssp\src\bsp\mcu\all\bsp_error_checking.h
+ k:\github\adc_s5d9\ems\synergy\ssp\src\bsp\mcu\all\bsp_error_checking.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el\nx/nx_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_port.h \
+ k:\github\adc_s5d9\ems\synergy\ssp\inc\framework\el\cm4_gcc\tx_port.h \
+ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/tx_user.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_cmsis.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el\nx/nx_port.h \
+ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/nx_user.h \
+ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/nx_http_common_cfg.h \
+ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/nx_http_server_cfg.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_trace.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/nx_md5.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp_supplemental\filex_stub/filex_stub.h \
+ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework/sf_el_nx_cfg.h \
+ k:\github\adc_s5d9\ems\synergy\ssp\src\framework\sf_el_nx\nx_renesas_synergy.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_cgc.h \
+ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_cgc_cfg.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_cgc_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_elc.h \
+ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_elc_cfg.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_elc_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_ioport.h \
+ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_ioport_cfg.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el\nx_application_layer/nx_http_server.h \
+ K:\GitHub\adc_s5d9\EMS\src\synergy_gen/http_thread.h \
+ K:\GitHub\adc_s5d9\EMS\src\synergy_gen/hal_data.h \
+ K:\GitHub\adc_s5d9\EMS\src\synergy_gen/common_data.h \
+ K:\GitHub\adc_s5d9\EMS\include/adc_interface.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_adc_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_elc_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_transfer_api.h
 
-K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_api.h:
+K:\GitHub\adc_s5d9\EMS\src/htmlstrings.h:
 
-K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_port.h:
-
-k:\github\adc_s5d9\ems\synergy\ssp\inc\framework\el\cm4_gcc\tx_port.h:
-
-K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/tx_user.h:
-
-K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_cmsis.h:
+K:\GitHub\adc_s5d9\EMS\src\synergy_gen/common_data.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\bsp/bsp_api.h:
 
@@ -182,3 +204,65 @@ k:\github\adc_s5d9\ems\synergy\ssp\src\bsp\mcu\all\bsp_feature.h:
 k:\github\adc_s5d9\ems\synergy\ssp\src\bsp\mcu\all\bsp_mcu_api.h:
 
 k:\github\adc_s5d9\ems\synergy\ssp\src\bsp\mcu\all\bsp_error_checking.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el\nx/nx_api.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_api.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_port.h:
+
+k:\github\adc_s5d9\ems\synergy\ssp\inc\framework\el\cm4_gcc\tx_port.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/tx_user.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_cmsis.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el\nx/nx_port.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/nx_user.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/nx_http_common_cfg.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/nx_http_server_cfg.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_trace.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/nx_md5.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp_supplemental\filex_stub/filex_stub.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework/sf_el_nx_cfg.h:
+
+k:\github\adc_s5d9\ems\synergy\ssp\src\framework\sf_el_nx\nx_renesas_synergy.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_cgc.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_cgc_cfg.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_cgc_api.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_elc.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_elc_cfg.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_elc_api.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_ioport.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_ioport_cfg.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el\nx_application_layer/nx_http_server.h:
+
+K:\GitHub\adc_s5d9\EMS\src\synergy_gen/http_thread.h:
+
+K:\GitHub\adc_s5d9\EMS\src\synergy_gen/hal_data.h:
+
+K:\GitHub\adc_s5d9\EMS\src\synergy_gen/common_data.h:
+
+K:\GitHub\adc_s5d9\EMS\include/adc_interface.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_adc_api.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_elc_api.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_transfer_api.h:

@@ -1,5 +1,3 @@
-
-
 #define htmlwrite(p,s)  (nx_packet_data_append(p,s,(ULONG)strlen((const char*)s), server_ptr-> nx_http_server_packet_pool_ptr,NX_WAIT_FOREVER))
 
 #define htmlresponse "HTTP/1.0 200 \r\nContent-Type: text/html\r\n\r\n"
@@ -15,7 +13,7 @@
 #define hrline "<HR SIZE=6 WIDTH=\"90%\" NOSHADE COLOR=\"black\"  >"
 
 #define titleline "<HEAD><TITLE>SPS_EMS ADC Information</TITLE></HEAD>\r\n"
-#define h1line " <H1 ALIGN=\"center\"> <img src=\"/nxlogo.gif\"> ADC Information <img src=\"/txlogo.gif\"></H1>\r\n"
+#define h1line " <H1 ALIGN=\"center\">ADC Information</H1>\r\n"
 #define tabletag "<TABLE BORDER=\"1\" ALIGN=\"center\" >"
 #define tableendtag "</TABLE>"
 #define captiontag "<CAPTION ALIGN=\"top\" >"

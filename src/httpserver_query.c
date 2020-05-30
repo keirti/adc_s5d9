@@ -1,6 +1,6 @@
+#include <htmlstrings.h>
 #include   "common_data.h"
 #include   "nx_api.h"
-#include   "demo_nx_http_htmlstrings.h"
 #include   "nx_http_server.h"
 #include   "http_thread.h"
 #include    "adc_interface.h"
@@ -52,19 +52,6 @@ NX_PACKET *resp_packet_ptr;
             pointer_init = true;
         }
     }
-
-    /* send the graphics data */
-    if(strcmp((const char*)resource,(const char*)"/nxlogo.gif")==0)
-    {
-        nx_http_server_callback_data_send(server_ptr, (void *)nxlogo, nxlogosize);
-        return(NX_HTTP_CALLBACK_COMPLETED);
-    }
-	
-    if(strcmp((const char*)resource,(const char*)"/txlogo.gif")==0)
-    {
-        nx_http_server_callback_data_send(server_ptr, (void *)txlogo, txlogosize);
-        return(NX_HTTP_CALLBACK_COMPLETED);
-    }
 	
     /* return requested resource or query */
     if(strcmp((const char*)resource,(const char*)"/")==0)
@@ -84,13 +71,10 @@ NX_PACKET *resp_packet_ptr;
         status += htmlwrite(resp_packet_ptr, titleline);
         status += htmlwrite(resp_packet_ptr, bodytag);
         status += htmlwrite(resp_packet_ptr, h1line);
-        status +=  nx_tcp_socket_send(&(server_ptr -> nx_http_server_socket), resp_packet_ptr, NX_HTTP_SERVER_TIMEOUT);
+        status += nx_tcp_socket_send(&(server_ptr -> nx_http_server_socket), resp_packet_ptr, NX_HTTP_SERVER_TIMEOUT);
 	
         /* generate different HTML*/
-        status += nx_packet_allocate(server_ptr -> nx_http_server_packet_pool_ptr,
-                                     &resp_packet_ptr,
-                                     NX_TCP_PACKET,
-                                     NX_WAIT_FOREVER);
+        status += nx_packet_allocate(server_ptr -> nx_http_server_packet_pool_ptr, &resp_packet_ptr, NX_TCP_PACKET, NX_WAIT_FOREVER);
 	
         status += htmlwrite(resp_packet_ptr, tabletag);
         status += htmlwrite(resp_packet_ptr, trtag);

@@ -7,10 +7,9 @@ C_SRCS += \
 ../src/Leds_entry.c \
 ../src/adc_interface.c \
 ../src/adc_thread_entry.c \
-../src/demo_nx_http_graphics.c \
-../src/demo_nx_http_httpserver_query.c \
 ../src/hal_entry.c \
 ../src/http_thread_entry.c \
+../src/httpserver_query.c \
 ../src/modbus_thread_entry.c \
 ../src/watchdog_entry.c 
 
@@ -18,10 +17,9 @@ OBJS += \
 ./src/Leds_entry.o \
 ./src/adc_interface.o \
 ./src/adc_thread_entry.o \
-./src/demo_nx_http_graphics.o \
-./src/demo_nx_http_httpserver_query.o \
 ./src/hal_entry.o \
 ./src/http_thread_entry.o \
+./src/httpserver_query.o \
 ./src/modbus_thread_entry.o \
 ./src/watchdog_entry.o 
 
@@ -29,10 +27,9 @@ C_DEPS += \
 ./src/Leds_entry.d \
 ./src/adc_interface.d \
 ./src/adc_thread_entry.d \
-./src/demo_nx_http_graphics.d \
-./src/demo_nx_http_httpserver_query.d \
 ./src/hal_entry.d \
 ./src/http_thread_entry.d \
+./src/httpserver_query.d \
 ./src/modbus_thread_entry.d \
 ./src/watchdog_entry.d 
 
