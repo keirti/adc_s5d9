@@ -21,7 +21,7 @@ ULONG flags;
              err_counter++;
         }
 
-        tx_thread_sleep(2000u);
+        tx_thread_sleep(100u);
 
         status = nx_http_server_stop(&g_http_server0);
         if(status)

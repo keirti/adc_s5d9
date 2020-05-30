@@ -105,10 +105,24 @@ NX_PACKET *resp_packet_ptr;
 	
         status += htmlwrite(resp_packet_ptr, hrline);
         status += htmlwrite(resp_packet_ptr, tabletag);
-        status += htmlwrite(resp_packet_ptr, captiontag);
-        status += htmlwrite(resp_packet_ptr, sysvars_anchor_tag);
-        status += htmlwrite(resp_packet_ptr, captionendtag);
-	
+        status += htmlwrite(resp_packet_ptr, trtag);
+        status += htmlwrite(resp_packet_ptr, tdtag);
+        status += htmlwrite(resp_packet_ptr, "<B>ADC Channel</B>");
+        status += htmlwrite(resp_packet_ptr, tdendtag);
+        status += htmlwrite(resp_packet_ptr, tdtag);
+        status += htmlwrite(resp_packet_ptr, "<B>Raw ADC Count</B>");
+        status += htmlwrite(resp_packet_ptr, tdendtag);
+        status += htmlwrite(resp_packet_ptr, tdtag);
+        status += htmlwrite(resp_packet_ptr, "<B>ADC Voltage (X 100)</B>");
+        status += htmlwrite(resp_packet_ptr, tdendtag);
+        status += htmlwrite(resp_packet_ptr, tdtag);
+        status += htmlwrite(resp_packet_ptr, "<B>Gain</B>");
+        status += htmlwrite(resp_packet_ptr, tdendtag);
+        status += htmlwrite(resp_packet_ptr, tdtag);
+        status += htmlwrite(resp_packet_ptr, "<B>Offset</B>");
+        status += htmlwrite(resp_packet_ptr, tdendtag);
+        status += htmlwrite(resp_packet_ptr, trendtag);
+
         status += htmlwrite(resp_packet_ptr, trtag);
         status += htmlwrite(resp_packet_ptr, tdtag);
         status += htmlwrite(resp_packet_ptr, "<B>Thread 0 Counter </B> ");
@@ -116,6 +130,10 @@ NX_PACKET *resp_packet_ptr;
 	
         status += htmlwrite(resp_packet_ptr, tdtag);
         _nx_http_server_number_convert(adc_data[0].adc_raw_count, string);
+        status += htmlwrite(resp_packet_ptr, string);
+        status += htmlwrite(resp_packet_ptr, tdendtag);
+        status += htmlwrite(resp_packet_ptr, tdtag);
+        _nx_http_server_number_convert((UINT)(adc_data[0].adc_voltage * 100.0f), string);
         status += htmlwrite(resp_packet_ptr, string);
         status += htmlwrite(resp_packet_ptr, tdendtag);
         status += htmlwrite(resp_packet_ptr, trendtag);
