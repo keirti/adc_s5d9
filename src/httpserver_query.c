@@ -117,9 +117,10 @@ UINT authentication_check(struct NX_HTTP_SERVER_STRUCT *server_ptr, UINT request
 
 UINT request_notify(NX_HTTP_SERVER *server_ptr, UINT request_type, CHAR *resource, NX_PACKET *packet_ptr)
 {
-	CHAR    string[30];
-	UINT    status=0;
-	UINT    error=0;
+    UINT to_return = 0u;
+	CHAR string[30];
+	UINT status=0;
+	UINT error=0;
 	NX_PACKET *resp_packet_ptr;
   
     SSP_PARAMETER_NOT_USED(request_type);
@@ -215,9 +216,13 @@ UINT request_notify(NX_HTTP_SERVER *server_ptr, UINT request_type, CHAR *resourc
 		{
 		  error++;
 		}
-        return(NX_HTTP_CALLBACK_COMPLETED);
+        to_return = NX_HTTP_CALLBACK_COMPLETED;
     }
-    return(NX_SUCCESS);
+    else
+    {
+        to_return = NX_SUCCESS;
+    }
+    return to_return;
 }
 
 /*=============================================================================*
