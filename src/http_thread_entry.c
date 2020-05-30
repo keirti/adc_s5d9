@@ -55,7 +55,22 @@ static UINT err_counter=0;
 /*=============================================================================*
  Public Function Implementations
 *=============================================================================*/
-/* HTTP Server Thread entry function */
+/*-------------------------------------------------------------------*
+
+  NAME
+    http_thread_entry
+
+  DESCRIPTION
+    Main thread function for the http server,
+    ensures its initilised correctly and then loops running the server
+
+  PARAM
+    None
+
+  RETURNS
+    None
+
+*--------------------------------------------------------------------*/
 void http_thread_entry(void)
 {
     /* TODO: add your own code here */
