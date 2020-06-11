@@ -7,6 +7,7 @@ extern void Leds_create(void);
 extern void watchdog_create(void);
 extern void adc_thread_create(void);
 extern void http_thread_create(void);
+extern void can_thread_create(void);
 
 uint32_t g_ssp_common_thread_count;
 bool g_ssp_common_initialized;
@@ -66,6 +67,7 @@ void tx_application_define(void *first_unused_memory)
     watchdog_create ();
     adc_thread_create ();
     http_thread_create ();
+    can_thread_create ();
 
 #ifdef TX_USER_ENABLE_TRACE
     TX_USER_ENABLE_TRACE;

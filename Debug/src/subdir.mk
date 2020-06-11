@@ -7,8 +7,8 @@ C_SRCS += \
 ../src/adc_interface.c \
 ../src/adc_thread_entry.c \
 ../src/hal_entry.c \
+../src/http_query.c \
 ../src/http_thread_entry.c \
-../src/httpserver_query.c \
 ../src/leds_entry.c \
 ../src/modbus_thread_entry.c \
 ../src/watchdog_entry.c 
@@ -17,8 +17,8 @@ OBJS += \
 ./src/adc_interface.o \
 ./src/adc_thread_entry.o \
 ./src/hal_entry.o \
+./src/http_query.o \
 ./src/http_thread_entry.o \
-./src/httpserver_query.o \
 ./src/leds_entry.o \
 ./src/modbus_thread_entry.o \
 ./src/watchdog_entry.o 
@@ -27,8 +27,8 @@ C_DEPS += \
 ./src/adc_interface.d \
 ./src/adc_thread_entry.d \
 ./src/hal_entry.d \
+./src/http_query.d \
 ./src/http_thread_entry.d \
-./src/httpserver_query.d \
 ./src/leds_entry.d \
 ./src/modbus_thread_entry.d \
 ./src/watchdog_entry.d 

@@ -641,4 +641,12 @@ Synergy Configuration
         
       Instance "NetX HTTP Common"
         Instance "NetX MD5"
+  Thread "Can Thread"
+    Symbol: can_thread
+    Name: Can Thread
+    Stack size (bytes): 1024
+    Priority: 1
+    Auto start: Enabled
+    Time slicing interval (ticks): 1
+    
   Messaging
