@@ -6,6 +6,7 @@
 C_SRCS += \
 ../src/adc_interface.c \
 ../src/adc_thread_entry.c \
+../src/can_thread_entry.c \
 ../src/hal_entry.c \
 ../src/http_query.c \
 ../src/http_thread_entry.c \
@@ -16,6 +17,7 @@ C_SRCS += \
 OBJS += \
 ./src/adc_interface.o \
 ./src/adc_thread_entry.o \
+./src/can_thread_entry.o \
 ./src/hal_entry.o \
 ./src/http_query.o \
 ./src/http_thread_entry.o \
@@ -26,6 +28,7 @@ OBJS += \
 C_DEPS += \
 ./src/adc_interface.d \
 ./src/adc_thread_entry.d \
+./src/can_thread_entry.d \
 ./src/hal_entry.d \
 ./src/http_query.d \
 ./src/http_thread_entry.d \
