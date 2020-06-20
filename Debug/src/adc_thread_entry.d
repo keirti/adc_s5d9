@@ -1,5 +1,4 @@
-src/adc_thread_entry.o: ../src/adc_thread_entry.c \
- K:\GitHub\adc_s5d9\EMS\include/adc_interface.h \
+src/adc_thread_entry.o: ../src/adc_thread_entry.c ../src/adc_interface.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_adc_api.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\bsp/bsp_api.h \
  k:\github\adc_s5d9\ems\synergy\ssp\inc\ssp_common_api.h \
@@ -59,43 +58,71 @@ src/adc_thread_entry.o: ../src/adc_thread_entry.c \
  k:\github\adc_s5d9\ems\synergy\ssp\src\bsp\mcu\all\bsp_error_checking.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_elc_api.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_transfer_api.h \
- K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\api/sf_thread_monitor_api.h \
- K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework/sf_thread_monitor_cfg.h \
- K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_wdt_api.h \
+ K:\GitHub\adc_s5d9\EMS\src\synergy_gen/adc_thread.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_api.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_port.h \
  k:\github\adc_s5d9\ems\synergy\ssp\inc\framework\el\cm4_gcc\tx_port.h \
  K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/tx_user.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_cmsis.h \
- K:\GitHub\adc_s5d9\EMS\src\synergy_gen/watchdog.h \
  K:\GitHub\adc_s5d9\EMS\src\synergy_gen/hal_data.h \
  K:\GitHub\adc_s5d9\EMS\src\synergy_gen/common_data.h \
- K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el\nx/nx_api.h \
- K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el\nx/nx_port.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_crypto_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_aes_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_crypto_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_aes_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_rsa_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_rsa_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_ecc_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_hash_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_trng_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_trng_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_sce.h \
+ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_sce_cfg.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\sf_el_nx_crypto/nx_crypto_sce_config.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\nxd_application_layer\nxd_tls_secure/nx_secure_tls.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el\nxd/nx_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el\nxd/nx_port.h \
  K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/nx_user.h \
- K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/nx_http_common_cfg.h \
- K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/nx_http_server_cfg.h \
+ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/nxd_dhcp_common_cfg.h \
+ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/nxd_dhcp_client_cfg.h \
+ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/nxd_dns_client_cfg.h \
+ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/nxd_sntp_client_cfg.h \
+ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/nx_secure_user.h \
+ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/nxd_mqtt_client_cfg.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_trace.h \
- K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/nx_md5.h \
- K:\GitHub\adc_s5d9\EMS\synergy\ssp_supplemental\filex_stub/filex_stub.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el\nxd_application_layer/nx_secure_port.h \
+ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/nx_secure_user.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el\nxd_application_layer/nx_crypto.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el\nxd_application_layer/nx_crypto_const.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\nxd_application_layer\nxd_tls_secure/nx_secure_x509.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\nxd_application_layer\nxd_tls_secure/nx_secure_tls_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el\nxd/nx_port.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\nxd_application_layer\nxd_tls_secure/nx_secure_tls.h \
  K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework/sf_el_nx_cfg.h \
  k:\github\adc_s5d9\ems\synergy\ssp\src\framework\sf_el_nx\nx_renesas_synergy.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_ioport.h \
+ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_ioport_cfg.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_cgc.h \
  K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_cgc_cfg.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_cgc_api.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_elc.h \
  K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_elc_cfg.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_elc_api.h \
- K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_ioport.h \
- K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_ioport_cfg.h \
- K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_wdt.h \
- K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_wdt_cfg.h \
- K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\instances/sf_thread_monitor.h \
- K:\GitHub\adc_s5d9\EMS\src\synergy_gen/adc_thread.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/ux_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/ux_port.h \
+ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/ux_user.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/ux_utility.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/ux_system.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/ux_dcd_synergy.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_transfer_api.h \
+ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework/sf_el_ux_dcd_fs_cfg.h \
+ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework/sf_el_ux_cfg.h \
+ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/ux_device_class_cdc_acm.h \
  K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_adc.h \
  K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_adc_cfg.h
 
-K:\GitHub\adc_s5d9\EMS\include/adc_interface.h:
+../src/adc_interface.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_adc_api.h:
 
@@ -215,11 +242,7 @@ K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_elc_api.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_transfer_api.h:
 
-K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\api/sf_thread_monitor_api.h:
-
-K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework/sf_thread_monitor_cfg.h:
-
-K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_wdt_api.h:
+K:\GitHub\adc_s5d9\EMS\src\synergy_gen/adc_thread.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_api.h:
 
@@ -231,31 +254,81 @@ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/tx_user.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_cmsis.h:
 
-K:\GitHub\adc_s5d9\EMS\src\synergy_gen/watchdog.h:
-
 K:\GitHub\adc_s5d9\EMS\src\synergy_gen/hal_data.h:
 
 K:\GitHub\adc_s5d9\EMS\src\synergy_gen/common_data.h:
 
-K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el\nx/nx_api.h:
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_crypto_api.h:
 
-K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el\nx/nx_port.h:
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_aes_api.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_crypto_api.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_aes_api.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_rsa_api.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_rsa_api.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_ecc_api.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_hash_api.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_trng_api.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_trng_api.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_sce.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_sce_cfg.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\sf_el_nx_crypto/nx_crypto_sce_config.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\nxd_application_layer\nxd_tls_secure/nx_secure_tls.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el\nxd/nx_api.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el\nxd/nx_port.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/nx_user.h:
 
-K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/nx_http_common_cfg.h:
+K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/nxd_dhcp_common_cfg.h:
 
-K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/nx_http_server_cfg.h:
+K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/nxd_dhcp_client_cfg.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/nxd_dns_client_cfg.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/nxd_sntp_client_cfg.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/nx_secure_user.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/nxd_mqtt_client_cfg.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_trace.h:
 
-K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/nx_md5.h:
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el\nxd_application_layer/nx_secure_port.h:
 
-K:\GitHub\adc_s5d9\EMS\synergy\ssp_supplemental\filex_stub/filex_stub.h:
+K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/nx_secure_user.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el\nxd_application_layer/nx_crypto.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el\nxd_application_layer/nx_crypto_const.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\nxd_application_layer\nxd_tls_secure/nx_secure_x509.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\nxd_application_layer\nxd_tls_secure/nx_secure_tls_api.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el\nxd/nx_port.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\src\framework\el\nxd_application_layer\nxd_tls_secure/nx_secure_tls.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework/sf_el_nx_cfg.h:
 
 k:\github\adc_s5d9\ems\synergy\ssp\src\framework\sf_el_nx\nx_renesas_synergy.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_ioport.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_ioport_cfg.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_cgc.h:
 
@@ -269,17 +342,27 @@ K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_elc_cfg.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_elc_api.h:
 
-K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_ioport.h:
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/ux_api.h:
 
-K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_ioport_cfg.h:
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/tx_api.h:
 
-K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_wdt.h:
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/ux_port.h:
 
-K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\driver/r_wdt_cfg.h:
+K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework\el/ux_user.h:
 
-K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\instances/sf_thread_monitor.h:
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/ux_utility.h:
 
-K:\GitHub\adc_s5d9\EMS\src\synergy_gen/adc_thread.h:
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/ux_system.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/ux_dcd_synergy.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\api/r_transfer_api.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework/sf_el_ux_dcd_fs_cfg.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy_cfg\ssp_cfg\framework/sf_el_ux_cfg.h:
+
+K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\framework\el/ux_device_class_cdc_acm.h:
 
 K:\GitHub\adc_s5d9\EMS\synergy\ssp\inc\driver\instances/r_adc.h:
 

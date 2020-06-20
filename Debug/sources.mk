@@ -31,11 +31,6 @@ C_DEPS :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 src \
-src/freemb/demo \
-src/freemb/demo/port \
-src/freemb/modbus/functions \
-src/freemb/modbus \
-src/freemb/modbus/rtu \
 src/synergy_gen \
 synergy/board/s5d9_pk \
 synergy/ssp/src/bsp/cmsis/Device/RENESAS/S5D9/Source \
@@ -43,17 +38,21 @@ synergy/ssp/src/bsp/mcu/all \
 synergy/ssp/src/bsp/mcu/s5d9 \
 synergy/ssp/src/driver/r_adc \
 synergy/ssp/src/driver/r_cgc \
-synergy/ssp/src/driver/r_dtc \
 synergy/ssp/src/driver/r_elc \
+synergy/ssp/src/driver/r_flash_hp/hw/target \
+synergy/ssp/src/driver/r_flash_hp \
 synergy/ssp/src/driver/r_fmi \
-synergy/ssp/src/driver/r_gpt \
 synergy/ssp/src/driver/r_ioport \
-synergy/ssp/src/driver/r_sci_uart \
-synergy/ssp/src/driver/r_wdt \
-synergy/ssp/src/framework/el/nx_application_layer/nx_http_server \
-synergy/ssp/src/framework/el/nx_md5 \
+synergy/ssp/src/framework/el/nxd_application_layer/nxd_crypto_generic \
+synergy/ssp/src/framework/el/nxd_application_layer/nxd_dhcp \
+synergy/ssp/src/framework/el/nxd_application_layer/nxd_dns \
+synergy/ssp/src/framework/el/nxd_application_layer/nxd_mqtt_client \
+synergy/ssp/src/framework/el/nxd_application_layer/nxd_sntp \
+synergy/ssp/src/framework/el/nxd_application_layer/nxd_tls_secure \
+synergy/ssp/src/framework/sf_console \
 synergy/ssp/src/framework/sf_el_nx \
 synergy/ssp/src/framework/sf_el_nx/phy \
-synergy/ssp/src/framework/sf_thread_monitor \
-synergy/ssp_supplemental/filex_stub \
+synergy/ssp/src/framework/sf_el_nx_crypto \
+synergy/ssp/src/framework/sf_el_ux \
+synergy/ssp/src/framework/sf_el_ux_comms_v2 \
 

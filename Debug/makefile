@@ -10,19 +10,23 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include synergy/ssp_supplemental/filex_stub/subdir.mk
--include synergy/ssp/src/framework/sf_thread_monitor/subdir.mk
+-include synergy/ssp/src/framework/sf_el_ux_comms_v2/subdir.mk
+-include synergy/ssp/src/framework/sf_el_ux/subdir.mk
+-include synergy/ssp/src/framework/sf_el_nx_crypto/subdir.mk
 -include synergy/ssp/src/framework/sf_el_nx/phy/subdir.mk
 -include synergy/ssp/src/framework/sf_el_nx/subdir.mk
--include synergy/ssp/src/framework/el/nx_md5/subdir.mk
--include synergy/ssp/src/framework/el/nx_application_layer/nx_http_server/subdir.mk
--include synergy/ssp/src/driver/r_wdt/subdir.mk
--include synergy/ssp/src/driver/r_sci_uart/subdir.mk
+-include synergy/ssp/src/framework/sf_console/subdir.mk
+-include synergy/ssp/src/framework/el/nxd_application_layer/nxd_tls_secure/subdir.mk
+-include synergy/ssp/src/framework/el/nxd_application_layer/nxd_sntp/subdir.mk
+-include synergy/ssp/src/framework/el/nxd_application_layer/nxd_mqtt_client/subdir.mk
+-include synergy/ssp/src/framework/el/nxd_application_layer/nxd_dns/subdir.mk
+-include synergy/ssp/src/framework/el/nxd_application_layer/nxd_dhcp/subdir.mk
+-include synergy/ssp/src/framework/el/nxd_application_layer/nxd_crypto_generic/subdir.mk
 -include synergy/ssp/src/driver/r_ioport/subdir.mk
--include synergy/ssp/src/driver/r_gpt/subdir.mk
 -include synergy/ssp/src/driver/r_fmi/subdir.mk
+-include synergy/ssp/src/driver/r_flash_hp/hw/target/subdir.mk
+-include synergy/ssp/src/driver/r_flash_hp/subdir.mk
 -include synergy/ssp/src/driver/r_elc/subdir.mk
--include synergy/ssp/src/driver/r_dtc/subdir.mk
 -include synergy/ssp/src/driver/r_cgc/subdir.mk
 -include synergy/ssp/src/driver/r_adc/subdir.mk
 -include synergy/ssp/src/bsp/mcu/s5d9/subdir.mk
@@ -30,11 +34,6 @@ RM := rm -rf
 -include synergy/ssp/src/bsp/cmsis/Device/RENESAS/S5D9/Source/subdir.mk
 -include synergy/board/s5d9_pk/subdir.mk
 -include src/synergy_gen/subdir.mk
--include src/freemb/modbus/rtu/subdir.mk
--include src/freemb/modbus/functions/subdir.mk
--include src/freemb/modbus/subdir.mk
--include src/freemb/demo/port/subdir.mk
--include src/freemb/demo/subdir.mk
 -include src/subdir.mk
 -include subdir.mk
 -include objects.mk
@@ -86,7 +85,7 @@ all: SPS_EMS.elf secondary-outputs
 SPS_EMS.elf: $(OBJS) $(USER_OBJS) $(LINKER_SCRIPT)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GNU ARM Cross C Linker'
-	$(file > SPS_EMS.elf.in,-mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O2 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wunused -Wuninitialized -Wall -Wextra -Wmissing-declarations -Wconversion -Wpointer-arith -Wshadow -Wlogical-op -Waggregate-return -Wfloat-equal  -g3 -T "K:\\GitHub\\adc_s5d9\\EMS\\script/s5d9.ld" -Xlinker --gc-sections -L "K:\\GitHub\\adc_s5d9\\EMS\\synergy\\ssp\\src\\bsp\\cmsis\\DSP_Lib\\cm4_gcc" -L "K:\\GitHub\\adc_s5d9\\EMS\\synergy\\ssp\\src\\framework\\el\\tx\\cm4_gcc" -L "K:\\GitHub\\adc_s5d9\\EMS\\synergy\\ssp\\src\\framework\\el\\nx\\cm4_gcc" -Wl,-Map,"SPS_EMS.map" --specs=nano.specs --specs=rdimon.specs -o "SPS_EMS.elf" -Wl,--start-group $(OBJS) $(USER_OBJS) $(LIBS) -Wl,--end-group)
+	$(file > SPS_EMS.elf.in,-mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O2 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wunused -Wuninitialized -Wall -Wextra -Wmissing-declarations -Wconversion -Wpointer-arith -Wshadow -Wlogical-op -Waggregate-return -Wfloat-equal  -g3 -T "K:\\GitHub\\adc_s5d9\\EMS\\script/s5d9.ld" -Xlinker --gc-sections -L "K:\\GitHub\\adc_s5d9\\EMS\\synergy\\ssp\\src\\bsp\\cmsis\\DSP_Lib\\cm4_gcc" -L "K:\\GitHub\\adc_s5d9\\EMS\\synergy\\ssp\\src\\framework\\el\\nxd\\cm4_gcc" -L "K:\\GitHub\\adc_s5d9\\EMS\\synergy\\ssp\\src\\framework\\el\\tx\\cm4_gcc" -L "K:\\GitHub\\adc_s5d9\\EMS\\synergy\\ssp\\src\\framework\\el\\ux\\cm4_gcc" -L "K:\\GitHub\\adc_s5d9\\EMS\\synergy\\ssp\\src\\framework\\el\\ux_device_class_cdc_acm\\cm4_gcc" -L "K:\\GitHub\\adc_s5d9\\EMS\\synergy\\ssp\\src\\driver\\r_sce\\libs" -Wl,-Map,"SPS_EMS.map" --specs=nano.specs --specs=rdimon.specs -o "SPS_EMS.elf" -Wl,--start-group $(OBJS) $(USER_OBJS) $(LIBS) -Wl,--end-group)
 	arm-none-eabi-gcc @"SPS_EMS.elf.in"
 	@echo 'Finished building target: $@'
 	@echo ' '

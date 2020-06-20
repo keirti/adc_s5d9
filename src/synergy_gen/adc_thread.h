@@ -16,7 +16,7 @@ extern "C"
 {
 #endif
 /** ADC on ADC Instance. */
-extern const adc_instance_t g_adc0;
+extern const adc_instance_t g_adc;
 #ifndef NULL
 void NULL(adc_callback_args_t *p_args);
 #endif

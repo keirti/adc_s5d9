@@ -2,11 +2,10 @@
 #include "bsp_api.h"
 #include "tx_api.h"
 
-extern void modbus_thread_create(void);
-extern void Leds_create(void);
-extern void watchdog_create(void);
+extern void MQTT_Thread_create(void);
+extern void MQTT_Rx_Thread_create(void);
+extern void console_thread_create(void);
 extern void adc_thread_create(void);
-extern void http_thread_create(void);
 
 uint32_t g_ssp_common_thread_count;
 bool g_ssp_common_initialized;
@@ -61,11 +60,10 @@ void tx_application_define(void *first_unused_memory)
         tx_startup_err_callback (&g_ssp_common_initialized_semaphore, 0);
     }
 
-    modbus_thread_create ();
-    Leds_create ();
-    watchdog_create ();
+    MQTT_Thread_create ();
+    MQTT_Rx_Thread_create ();
+    console_thread_create ();
     adc_thread_create ();
-    http_thread_create ();
 
 #ifdef TX_USER_ENABLE_TRACE
     TX_USER_ENABLE_TRACE;

@@ -151,52 +151,72 @@
       <description>I/O Port: Provides=[IO Port]</description>
       <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
     </component>
+    <component apiversion="" class="Framework Services" condition="" group="all" subgroup="sf_console" variant="" vendor="Renesas" version="1.7.5">
+      <description>Console, Requires=[Communications ,ThreadX]</description>
+      <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
+    </component>
+    <component apiversion="" class="Framework Services" condition="" group="all" subgroup="sf_el_nx" variant="" vendor="Renesas" version="1.7.5">
+      <description>Express Logic NetX Synergy Port: Provides=[NetX Driver] , Requires=[NetX]</description>
+      <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
+    </component>
+    <component apiversion="" class="Framework Services" condition="" group="all" subgroup="sf_el_nx_crypto" variant="" vendor="Renesas" version="1.7.5">
+      <description>SF_EL_NX_CRYPTO Framework: Provides=[SSP Express Logic NetX Duo Crypto Framework] , Requires=[ThreadX]</description>
+      <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
+    </component>
+    <component apiversion="" class="Framework Services" condition="" group="all" subgroup="sf_el_ux" variant="" vendor="Renesas" version="1.7.5">
+      <description>Express Logic USBX Synergy Port: Provides=[USBX Driver] , Requires=[USBX ,Transfer]</description>
+      <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
+    </component>
+    <component apiversion="" class="Framework Services" condition="" group="all" subgroup="sf_el_ux_comms_v2" variant="" vendor="Renesas" version="1.7.5">
+      <description>USBX CDC ACM Device Communciations: Provides=[Communications] , Requires=[USBX ,ThreadX]</description>
+      <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
+    </component>
+    <component apiversion="" class="Express Logic" condition="" group="all" subgroup="nxd_dhcp" variant="" vendor="Renesas" version="1.7.5">
+      <description>Express Logic NetX Duo DHCP: Provides=[NetX Duo DHCP] , Requires=[NetX Duo]</description>
+      <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
+    </component>
+    <component apiversion="" class="Express Logic" condition="" group="all" subgroup="nxd_dns" variant="" vendor="Renesas" version="1.7.5">
+      <description>Express Logic NetX Duo DNS: Provides=[NetX Duo DNS] , Requires=[NetX Duo]</description>
+      <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
+    </component>
+    <component apiversion="" class="Express Logic" condition="" group="all" subgroup="nxd_mqtt_client" variant="" vendor="Renesas" version="1.7.5">
+      <description>Express Logic NetX Duo MQTT Client: Provides=[NetX Duo MQTT Client] , Requires=[NetX Duo]</description>
+      <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
+    </component>
+    <component apiversion="" class="Express Logic" condition="" group="all" subgroup="nxd_sntp" variant="" vendor="Renesas" version="1.7.5">
+      <description>Express Logic NetX Duo SNTP: Provides=[NetX Duo SNTP] , Requires=[NetX Duo]</description>
+      <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
+    </component>
+    <component apiversion="" class="Express Logic" condition="" group="all" subgroup="nxd_tls_secure" variant="" vendor="Renesas" version="1.7.5">
+      <description>Express Logic NetX Duo TLS Secure: Provides=[NetX Duo TLS Secure] , Requires=[NetX Duo]</description>
+      <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
+    </component>
     <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_adc" variant="" vendor="Renesas" version="1.7.5">
       <description>A/D Converter: Provides=[ADC]</description>
+      <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
+    </component>
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_flash_hp" variant="" vendor="Renesas" version="1.7.5">
+      <description>Flash Memory: Provides=[Flash]</description>
+      <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
+    </component>
+    <component apiversion="" class="Express Logic" condition="" group="all" subgroup="nxd" variant="" vendor="Renesas" version="1.7.5">
+      <description>Express Logic NetX Duo: Provides=[NetX Duo] , Requires=[ThreadX ,NetX Driver]</description>
       <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
     </component>
     <component apiversion="" class="Express Logic" condition="" group="all" subgroup="tx" variant="" vendor="Renesas" version="1.7.5">
       <description>Express Logic ThreadX: Provides=[ThreadX]</description>
       <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
     </component>
-    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_dtc" variant="" vendor="Renesas" version="1.7.5">
-      <description>Data Transfer Controller: Provides=[Transfer]</description>
+    <component apiversion="" class="Express Logic" condition="" group="all" subgroup="ux" variant="" vendor="Renesas" version="1.7.5">
+      <description>Express Logic USBX: Provides=[USBX] , Requires=[ThreadX ,USBX Driver]</description>
       <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
     </component>
-    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_gpt" variant="" vendor="Renesas" version="1.7.5">
-      <description>General Purpose Timer: Provides=[Timer ,GPT]</description>
+    <component apiversion="" class="Express Logic" condition="" group="all" subgroup="ux_device_class_cdc_acm" variant="" vendor="Renesas" version="1.7.5">
+      <description>Express Logic USBX Device Class CDC ACM: Provides=[USBX Device Class CDC ACM] , Requires=[ThreadX ,USBX]</description>
       <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
     </component>
-    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_sci_uart" variant="" vendor="Renesas" version="1.7.5">
-      <description>SCI UART: Provides=[UART] , Requires=[SCI Common]</description>
-      <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
-    </component>
-    <component apiversion="" class="Framework Services" condition="" group="all" subgroup="sf_thread_monitor" variant="" vendor="Renesas" version="1.7.5">
-      <description>Framework Thread Monitor: Provides=[Framework Thread Monitor] , Requires=[ThreadX ,WDT]</description>
-      <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
-    </component>
-    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_wdt" variant="" vendor="Renesas" version="1.7.5">
-      <description>Watchdog Timer: Provides=[WDT]</description>
-      <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
-    </component>
-    <component apiversion="" class="Express Logic" condition="" group="all" subgroup="nx" variant="" vendor="Renesas" version="1.7.5">
-      <description>Express Logic NetX: Provides=[NetX] , Requires=[ThreadX ,NetX Driver]</description>
-      <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
-    </component>
-    <component apiversion="" class="Express Logic" condition="" group="all" subgroup="nx_md5" variant="" vendor="Renesas" version="1.7.5">
-      <description>Express Logic NetX MD5: Provides=[NetX MD5]</description>
-      <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
-    </component>
-    <component apiversion="" class="Express Logic" condition="" group="all" subgroup="nx_http_server" variant="" vendor="Renesas" version="1.7.5">
-      <description>Express Logic NetX HTTP Server: Provides=[NetX HTTP Server] , Requires=[NetX ,NetX MD5]</description>
-      <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
-    </component>
-    <component apiversion="" class="Express Logic" condition="" group="all" subgroup="filex_stub" variant="" vendor="Renesas" version="1.7.5">
-      <description>FILEX_STUB Drivers</description>
-      <originalPack>Renesas.Synergy_filex_stub.1.7.5.pack</originalPack>
-    </component>
-    <component apiversion="" class="Framework Services" condition="" group="all" subgroup="sf_el_nx" variant="" vendor="Renesas" version="1.7.5">
-      <description>Express Logic NetX Synergy Port: Provides=[NetX Driver] , Requires=[NetX]</description>
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_sce" variant="" vendor="Renesas" version="1.7.5">
+      <description>Secure Cryptography Engine: Provides=[TRNG, AES, HASH, RSA, DSA, TDES, ARC4, ECC, KEY_INSTALLATION]</description>
       <originalPack>Renesas.Synergy.1.7.5.pack</originalPack>
     </component>
   </synergyComponentSelection>
@@ -215,88 +235,218 @@
     <module id="module.driver.fmi_on_fmi.0">
       <property id="module.driver.fmi.name" value="g_fmi"/>
     </module>
-    <module id="module.driver.uart_on_sci_uart.2097021479">
-      <property id="module.driver.uart.name" value="g_uart0"/>
-      <property id="module.driver.uart.channel" value="3"/>
-      <property id="module.driver.uart.baud_rate" value="9600"/>
-      <property id="module.driver.uart.data_bits" value="module.driver.uart.data_bits.data_bits_8"/>
-      <property id="module.driver.uart.parity" value="module.driver.uart.parity.parity_off"/>
-      <property id="module.driver.uart.stop_bits" value="module.driver.uart.stop_bits.stop_bits_1"/>
-      <property id="module.driver.uart.ctsrts_en" value="module.driver.uart.ctsrts_en.false"/>
-      <property id="module.driver.uart.callback" value="user_uart_callback"/>
-      <property id="module.driver.uart.callback.rts_pin_ctrl" value="NULL"/>
-      <property id="module.driver.uart.clk_src" value="module.driver.uart.clk_src.int_clk"/>
-      <property id="module.driver.uart.baudclk_out" value="module.driver.uart.baudclk_out.false"/>
-      <property id="module.driver.uart.rx_edge_start" value="module.driver.uart.rx_edge_start.true"/>
-      <property id="module.driver.uart.noisecancel_en" value="module.driver.uart.noisecancel_en.false"/>
-      <property id="module.driver.uart.bitrate_modulation" value="module.driver.uart.bitrate_modulation.true"/>
-      <property id="module.driver.uart.rx_fifo_trigger" value="module.driver.uart.rx_fifo_trigger.max"/>
-      <property id="module.driver.uart.rxi_ipl" value="board.icu.common.irq.priority12"/>
-      <property id="module.driver.uart.txi_ipl" value="board.icu.common.irq.priority12"/>
-      <property id="module.driver.uart.tei_ipl" value="board.icu.common.irq.priority12"/>
-      <property id="module.driver.uart.eri_ipl" value="board.icu.common.irq.disabled"/>
-      <property id="module.driver.uart.baud_rate_error" value="2.0"/>
-      <property id="module.driver.uart.uart_comm_mode" value="module.driver.uart.uart_comm_mode.uart_rs485_mode"/>
-      <property id="module.driver.uart.uart_rs485_mode" value="module.driver.uart.uart_rs485_mode.uart_fd_mode"/>
-      <property id="module.driver.uart.rs485_de_port" value="module.driver.uart.rs485_de_port.PORT_08"/>
-      <property id="module.driver.uart.rs485_de_pin" value="module.driver.uart.rs485_de_pin.PIN_00"/>
+    <module id="module.el.nxd_mqtt_client.1048661494">
+      <property id="module.el.nxd_mqtt_client.name" value="g_mqtt_client0"/>
+      <property id="module.el.nxd_mqtt_client.mqtt_client_id_callback" value="mqtt_client_id_callback"/>
+      <property id="module.el.nxd_mqtt_client.mqtt_client_id_max_length" value="12"/>
+      <property id="module.el.nxd_mqtt_client.mqtt_stack_size" value="4096"/>
+      <property id="module.el.nxd_mqtt_client.mqtt_client_memory" value="10"/>
+      <property id="module.el.nxd_mqtt_client.mqtt_client_priority" value="2"/>
+      <property id="module.el.nxd_mqtt_client.init_function" value="mqtt_client_init0"/>
+      <property id="module.el.nxd_mqtt_client.init" value="module.el.nxd_mqtt_client.init.disable"/>
     </module>
-    <module id="module.driver.transfer_on_dtc.1737285144">
-      <property id="module.driver.transfer.name" value="g_transfer0"/>
-      <property id="module.driver.transfer.mode" value="module.driver.transfer.mode.mode_normal"/>
-      <property id="module.driver.transfer.size" value="module.driver.transfer.size.size_2_byte"/>
-      <property id="module.driver.transfer.dest_addr_mode" value="module.driver.transfer.dest_addr_mode.addr_mode_fixed"/>
-      <property id="module.driver.transfer.src_addr_mode" value="module.driver.transfer.src_addr_mode.addr_mode_fixed"/>
-      <property id="module.driver.transfer.repeat_area" value="module.driver.transfer.repeat_area.repeat_area_source"/>
-      <property id="module.driver.transfer.interrupt" value="module.driver.transfer.interrupt.interrupt_end"/>
-      <property id="module.driver.transfer.p_dest" value="NULL"/>
-      <property id="module.driver.transfer.p_src" value="NULL"/>
-      <property id="module.driver.transfer.length" value="0"/>
-      <property id="module.driver.transfer.num_blocks" value="0"/>
-      <property id="module.driver.transfer.activation_source" value="module.driver.transfer.event.event_elc_software_event_0"/>
-      <property id="module.driver.transfer.auto_enable" value="module.driver.transfer.auto_enable.true"/>
-      <property id="module.driver.transfer.p_callback" value="NULL"/>
-      <property id="module.driver.transfer.irq_ipl" value="board.icu.common.irq.disabled"/>
+    <module id="module.el.nxd.ip.1537161625">
+      <property id="module.el.nx.ip.name" value="g_ip0"/>
+      <property id="module.el.nx.ip.address" value="192.168.0.2"/>
+      <property id="module.el.nx.ip.subnet_mask" value="255.255.255.0"/>
+      <property id="module.el.nx.ip.gateway_address" value="0.0.0.0"/>
+      <property id="module.el.nx.ipv6.address_global" value="2001:0:0:0:0:0:0:1"/>
+      <property id="module.el.nx.ipv6.address_local" value="0:0:0:0:0:0:0:0"/>
+      <property id="module.el.nx.ip.stack_size" value="2048"/>
+      <property id="module.el.nx.ip.priority" value="3"/>
+      <property id="module.el.nx.ip.arp" value="module.el.nx.ip.arp.enable"/>
+      <property id="module.el.nx.ip.arp_cache_size_units" value="module.el.nx.ip.arp_cache_size_units.bytes"/>
+      <property id="module.el.nx.ip.arp_cache_size" value="520"/>
+      <property id="module.el.nx.ip.rarp" value="module.el.nx.ip.rarp.disable"/>
+      <property id="module.el.nx.ip.tcp" value="module.el.nx.ip.tcp.enable"/>
+      <property id="module.el.nx.ip.udp" value="module.el.nx.ip.udp.enable"/>
+      <property id="module.el.nx.ip.icmp" value="module.el.nx.ip.icmp.enable"/>
+      <property id="module.el.nx.ip.igmp" value="module.el.nx.ip.igmp.enable"/>
+      <property id="module.el.nx.ip.fragmentation" value="module.el.nx.ip.fragmentation.enable"/>
+      <property id="module.el.nx.ip.init_function" value="ip_init0"/>
+      <property id="module.el.nx.ip.init" value="module.el.nx.ip.init.enable"/>
+      <property id="module.el.nx.ip.link_change_callback" value="NULL"/>
     </module>
-    <module id="module.driver.timer_on_gpt.441649034">
-      <property id="module.driver.timer.name" value="g_timer0"/>
-      <property id="module.driver.timer.channel" value="0"/>
-      <property id="module.driver.timer.mode" value="module.driver.timer.mode.mode_periodic"/>
-      <property id="module.driver.timer.shortest_pwm_signal" value="module.driver.timer.mode.shortest_pwm_signal_disabled"/>
-      <property id="module.driver.timer.period" value="50"/>
-      <property id="module.driver.timer.unit" value="module.driver.timer.unit.unit_period_usec"/>
-      <property id="module.driver.timer.duty_cycle" value="50"/>
-      <property id="module.driver.timer.duty_cycle_unit" value="module.driver.timer.duty_cycle_unit.unit_percent"/>
-      <property id="module.driver.timer.autostart" value="module.driver.timer.autostart.true"/>
-      <property id="module.driver.timer.gtioca_output_enabled" value="module.driver.timer.gtioca_output_enabled.false"/>
-      <property id="module.driver.timer.gtioca_stop_level" value="module.driver.timer.gtioca_stop_level.pin_level_low"/>
-      <property id="module.driver.timer.gtiocb_output_enabled" value="module.driver.timer.gtiocb_output_enabled.false"/>
-      <property id="module.driver.timer.gtiocb_stop_level" value="module.driver.timer.gtiocb_stop_level.pin_level_low"/>
-      <property id="module.driver.timer.p_callback" value="timer_user_callback"/>
-      <property id="module.driver.timer.irq_ipl" value="board.icu.common.irq.priority7"/>
+    <module id="module.el.nxd_common.714204677">
+      <property id="module.el.nxd_common.init_function" value="nx_common_init0"/>
+      <property id="module.el.nxd_common.init" value="module.el.nxd_common.init.enable"/>
     </module>
-    <module id="module.framework.thread_monitor.245673544">
-      <property id="module.framework.sf_thread_monitor.name" value="g_sf_thread_monitor0"/>
-      <property id="module.framework.thread_monitor.profiling_mode_enable" value="module.framework.thread_monitor.profiling_mode_enable.disabled"/>
-      <property id="module.framework.thread_monitor.priority" value="1"/>
-      <property id="module.framework.thread_monitor.init_function" value="sf_thread_monitor_init0"/>
-      <property id="module.framework.thread_monitor.init" value="module.framework.sf_thread_monitor.init.enable"/>
+    <module id="module.el.nxd.packet_pool.2006175513">
+      <property id="module.el.nx.packet_pool.name" value="g_packet_pool0"/>
+      <property id="module.el.nx.packet_pool.packet_size" value="1568"/>
+      <property id="module.el.nx.packet_pool.number_of_packets" value="50"/>
+      <property id="module.el.nx.packet_pool.init_function" value="packet_pool_init0"/>
+      <property id="module.el.nx.packet_pool.init" value="module.el.nx.packet_pool.init.enable"/>
     </module>
-    <module id="module.driver.watchdog_on_wdt.159755993">
-      <property id="module.driver.watchdog.name" value="g_wdt0"/>
-      <property id="module.driver.watchdog.start_mode" value="module.driver.watchdog.start_mode.register"/>
-      <property id="module.driver.watchdog.start_wdt_after_cfg" value="module.driver.watchdog.start_mode.start_wdt_after_cfg.true"/>
-      <property id="module.driver.watchdog.timeout" value="module.driver.watchdog.timeout.16384"/>
-      <property id="module.driver.watchdog.clock_division" value="module.driver.watchdog.clock_division.8192"/>
-      <property id="module.driver.watchdog.window_start" value="module.driver.watchdog.window_start.100"/>
-      <property id="module.driver.watchdog.window_end" value="module.driver.watchdog.window_end.0"/>
-      <property id="module.driver.watchdog.reset_control" value="module.driver.watchdog.reset_control.reset"/>
-      <property id="module.driver.watchdog.stop_control" value="module.driver.watchdog.stop_control.enable"/>
-      <property id="module.driver.watchdog.nmi_callback" value="NULL"/>
+    <module id="module.el.nxd_tls_common.2031146574">
+      <property id="module.el.nxd_tls_common.init_function" value="nx_secure_common_init"/>
+      <property id="module.el.nxd_tls_common.init" value="module.el.nxd_tls_common.init.enable"/>
     </module>
-    <module id="module.driver.adc_on_adc.702076447">
-      <property id="module.driver.adc.name" value="g_adc0"/>
-      <property id="module.driver.adc.unit" value="module.driver.adc.unit.unit0"/>
+    <module id="module.el.nxd_crypto_generic.1582387003">
+      <property id="module.el.nxd_crypto_generic.name" value="g_crypto_generic"/>
+    </module>
+    <module id="module.framework.sf_el_nx_crypto.424027688">
+      <property id="module.framework.sf_el_nx_crypto.name" value="g_sf_el_nx_crypto"/>
+    </module>
+    <module id="module.driver.sce.1822335318">
+      <property id="module.driver.sce.name" value="g_sce"/>
+      <property id="module.driver.sce.endian_flag" value="module.driver.sce.endian_flag.big_endian"/>
+      <property id="module.driver.sce.intentional_blank_line_1" value=""/>
+      <property id="module.driver.sce.crypto_module_list" value=""/>
+      <property id="module.driver.sce.crypto_aes_plain_text_128_ecb" value="module.driver.sce.crypto_aes_plain_text_128_ecb.enable"/>
+      <property id="module.driver.sce.crypto_aes_plain_text_128_cbc" value="module.driver.sce.crypto_aes_plain_text_128_cbc.enable"/>
+      <property id="module.driver.sce.crypto_aes_plain_text_128_ctr" value="module.driver.sce.crypto_aes_plain_text_128_ctr.enable"/>
+      <property id="module.driver.sce.crypto_aes_plain_text_128_gcm" value="module.driver.sce.crypto_aes_plain_text_128_gcm.enable"/>
+      <property id="module.driver.sce.crypto_aes_plain_text_128_xts" value="module.driver.sce.crypto_aes_plain_text_128_xts.enable"/>
+      <property id="module.driver.sce.crypto_aes_plain_text_192_ecb" value="module.driver.sce.crypto_aes_plain_text_192_ecb.enable"/>
+      <property id="module.driver.sce.crypto_aes_plain_text_192_cbc" value="module.driver.sce.crypto_aes_plain_text_192_cbc.enable"/>
+      <property id="module.driver.sce.crypto_aes_plain_text_192_ctr" value="module.driver.sce.crypto_aes_plain_text_192_ctr.enable"/>
+      <property id="module.driver.sce.crypto_aes_plain_text_192_gcm" value="module.driver.sce.crypto_aes_plain_text_192_gcm.enable"/>
+      <property id="module.driver.sce.crypto_aes_plain_text_256_ecb" value="module.driver.sce.crypto_aes_plain_text_256_ecb.enable"/>
+      <property id="module.driver.sce.crypto_aes_plain_text_256_cbc" value="module.driver.sce.crypto_aes_plain_text_256_cbc.enable"/>
+      <property id="module.driver.sce.crypto_aes_plain_text_256_ctr" value="module.driver.sce.crypto_aes_plain_text_256_ctr.enable"/>
+      <property id="module.driver.sce.crypto_aes_plain_text_256_gcm" value="module.driver.sce.crypto_aes_plain_text_256_gcm.enable"/>
+      <property id="module.driver.sce.crypto_aes_plain_text_256_xts" value="module.driver.sce.crypto_aes_plain_text_256_xts.enable"/>
+      <property id="module.driver.sce.crypto_aes_wrapped_128_ecb" value="module.driver.sce.crypto_aes_wrapped_128_ecb.enable"/>
+      <property id="module.driver.sce.crypto_aes_wrapped_128_cbc" value="module.driver.sce.crypto_aes_wrapped_128_cbc.enable"/>
+      <property id="module.driver.sce.crypto_aes_wrapped_128_ctr" value="module.driver.sce.crypto_aes_wrapped_128_ctr.enable"/>
+      <property id="module.driver.sce.crypto_aes_wrapped_128_gcm" value="module.driver.sce.crypto_aes_wrapped_128_gcm.enable"/>
+      <property id="module.driver.sce.crypto_aes_wrapped_128_xts" value="module.driver.sce.crypto_aes_wrapped_128_xts.enable"/>
+      <property id="module.driver.sce.crypto_aes_wrapped_192_ecb" value="module.driver.sce.crypto_aes_wrapped_192_ecb.enable"/>
+      <property id="module.driver.sce.crypto_aes_wrapped_192_cbc" value="module.driver.sce.crypto_aes_wrapped_192_cbc.enable"/>
+      <property id="module.driver.sce.crypto_aes_wrapped_192_ctr" value="module.driver.sce.crypto_aes_wrapped_192_ctr.enable"/>
+      <property id="module.driver.sce.crypto_aes_wrapped_192_gcm" value="module.driver.sce.crypto_aes_wrapped_192_gcm.enable"/>
+      <property id="module.driver.sce.crypto_aes_wrapped_256_ecb" value="module.driver.sce.crypto_aes_wrapped_256_ecb.enable"/>
+      <property id="module.driver.sce.crypto_aes_wrapped_256_cbc" value="module.driver.sce.crypto_aes_wrapped_256_cbc.enable"/>
+      <property id="module.driver.sce.crypto_aes_wrapped_256_ctr" value="module.driver.sce.crypto_aes_wrapped_256_ctr.enable"/>
+      <property id="module.driver.sce.crypto_aes_wrapped_256_gcm" value="module.driver.sce.crypto_aes_wrapped_256_gcm.enable"/>
+      <property id="module.driver.sce.crypto_aes_wrapped_256_xts" value="module.driver.sce.crypto_aes_wrapped_256_xts.enable"/>
+      <property id="module.driver.sce.crypto_rsa_plain_text_1024" value="module.driver.sce.crypto_rsa_plain_text_1024.enable"/>
+      <property id="module.driver.sce.crypto_rsa_plain_text_2048" value="module.driver.sce.crypto_rsa_plain_text_2048.enable"/>
+      <property id="module.driver.sce.crypto_rsa_wrapped_1024" value="module.driver.sce.crypto_rsa_wrapped_1024.enable"/>
+      <property id="module.driver.sce.crypto_rsa_wrapped_2048" value="module.driver.sce.crypto_rsa_wrapped_2048.enable"/>
+      <property id="module.driver.sce.crypto_ecc_plain_text_192" value="module.driver.sce.crypto_ecc_plain_text_192.enable"/>
+      <property id="module.driver.sce.crypto_ecc_plain_text_256" value="module.driver.sce.crypto_ecc_plain_text_256.enable"/>
+      <property id="module.driver.sce.crypto_ecc_wrapped_192" value="module.driver.sce.crypto_ecc_wrapped_192.enable"/>
+      <property id="module.driver.sce.crypto_ecc_wrapped_256" value="module.driver.sce.crypto_ecc_wrapped_256.enable"/>
+      <property id="module.driver.sce.crypto_hash_sha1" value="module.driver.sce.crypto_hash_sha1.enable"/>
+      <property id="module.driver.sce.crypto_hash_sha224" value="module.driver.sce.crypto_hash_sha224.enable"/>
+      <property id="module.driver.sce.crypto_hash_sha256" value="module.driver.sce.crypto_hash_sha256.enable"/>
+      <property id="module.driver.sce.crypto_hash_md5" value="module.driver.sce.crypto_hash_md5.enable"/>
+      <property id="module.driver.sce.crypto_trng" value="module.driver.sce.crypto_trng.enable"/>
+    </module>
+    <module id="module.framework.sf_el_nx.1453026558">
+      <property id="module.framework.sf_el_nx.name" value="g_sf_el_nx_ethernet"/>
+      <property id="module.framework.sf_el_nx.channel" value="0"/>
+      <property id="module.framework.sf_el_nx.mac_update_callback" value="NULL"/>
+      <property id="module.framework.sf_el_nx.receive_callback" value="NULL"/>
+    </module>
+    <module id="module.el.nxd_dns_client.1079623600">
+      <property id="module.el.nx_dns_client.name" value="g_dns0"/>
+      <property id="module.el.nx_dns_client.init_function" value="dns_client_init0"/>
+      <property id="module.el.nx_dns_client.init" value="module.el.nx_dns_client.init.enable"/>
+    </module>
+    <module id="module.el.nxd_dhcp_client.1602669280">
+      <property id="module.el.nx_dhcp_client.name" value="g_dhcp_client0"/>
+      <property id="module.el.nx_dhcp_client.init_function" value="dhcp_client_init0"/>
+      <property id="module.el.nx_dhcp_client.init" value="module.el.nx_dhcp_client.init.enable"/>
+      <property id="module.el.nxd_dhcp_client.option" value="module.el.nxd_dhcp_client.option.disable"/>
+      <property id="module.el.nxd_dhcp_client.option_func" value="module.el.nxd_dhcp_client.option_func.enable"/>
+      <property id="module.el.nxd_dhcp_client.option_function" value="dhcp_user_option_add_client0"/>
+    </module>
+    <module id="module.el.nxd_dhcp_common.195400358"/>
+    <module id="module.driver.flash_on_flash_hp.1135024883">
+      <property id="module.driver.flash.name" value="g_int_storageInst"/>
+      <property id="module.driver.flash.data_flash_bgo" value="module.driver.flash.data_flash_bgo.enabled"/>
+      <property id="module.driver.flash.p_callback" value="flash_callback"/>
+      <property id="module.driver.flash.irq_ipl" value="board.icu.common.irq.priority5"/>
+      <property id="module.driver.flash.err_irq_ipl" value="board.icu.common.irq.priority5"/>
+    </module>
+    <module id="module.el.nxd_sntp_client.820545831">
+      <property id="module.el.nx_sntp_client.name" value="g_sntp_client0"/>
+      <property id="module.el.nx_sntp_client.index_network_interface" value="0"/>
+      <property id="module.el.nx_sntp_client.leap_second_handler" value="leap_second_handler"/>
+      <property id="module.el.nx_sntp_client.kiss_of_death_handler" value="kiss_of_death_handler"/>
+      <property id="module.el.nx_sntp_client.random_number_function" value="NULL"/>
+      <property id="module.el.nx_sntp_client.init_function" value="sntp_client_init0"/>
+      <property id="module.el.nx_sntp_client.init" value="module.el.nx_sntp_client.init.enable"/>
+    </module>
+    <module id="module.el.nxd.tls_dtls_session.1850356886">
+      <property id="module.el.nxd.tls_dtls_session.name" value="g_tls_session"/>
+      <property id="module.el.nxd.tls_dtls_session.meta_data_size" value="16384"/>
+      <property id="module.el.nxd.tls_dtls_session.timestamp_func" value="NULL"/>
+      <property id="module.el.nxd.tls_dtls_session.cert_verf_func" value="NULL"/>
+      <property id="module.el.nxd.tls_dtls_session.init_function" value="tls_dtls_session_init0"/>
+      <property id="module.el.nxd.tls_dtls_session.auto_init" value="module.el.nxd.tls_dtls_session.auto_init.disable"/>
+    </module>
+    <module id="module.framework.sf_console.1043512463">
+      <property id="module.framework.sf_console.name" value="g_sf_console"/>
+      <property id="module.framework.sf_console.initial_menu" value="g_sf_console_root_menu"/>
+      <property id="module.framework.sf_console.echo" value="module.framework.sf_console.echo.true"/>
+      <property id="module.framework.sf_console.autostart" value="module.framework.sf_console.autostart.false"/>
+      <property id="module.framework.sf_console.init_function" value="sf_console_init0"/>
+      <property id="module.framework.sf_console.init" value="module.framework.sf_console.init.enable"/>
+    </module>
+    <module id="module.framework.sf_el_ux_comms_v2.76447918">
+      <property id="module.framework.sf_comms.name" value="g_sf_comms0"/>
+      <property id="module.framework.sf_comms.init_function" value="sf_comms_init0"/>
+      <property id="module.framework.sf_comms.init" value="module.framework.sf_comms.init.enable"/>
+    </module>
+    <module id="module.el.ux_device_class_cdc_acm_v2.1549209751">
+      <property id="module.el.ux_device_class_cdc_acm_v2.name" value="g_ux_device_class_cdc_acm0"/>
+      <property id="module.el.ux_device_class_cdc_acm_v2.pfunc_activate" value="ux_cdc_device0_instance_activate"/>
+      <property id="module.el.ux_device_class_cdc_acm_v2.pfunc_deactivate" value="ux_cdc_device0_instance_deactivate"/>
+      <property id="module.el.ux_device_class_cdc_acm_v2.init_function" value="ux_device_class_cdc_acm_init0"/>
+      <property id="module.el.ux_device_class_cdc_acm_v2.init" value="module.el.ux_device_class_cdc_acm_v2.init.enable"/>
+    </module>
+    <module id="module.el.ux_device.1580428732">
+      <property id="module.el.ux_device.idVendor" value="0x045B"/>
+      <property id="module.el.ux_device.idProduct" value="0x0000"/>
+      <property id="module.el.ux_device.bcdDevice" value="0x0000"/>
+      <property id="module.el.ux_device.iManufacturer" value="0x00"/>
+      <property id="module.el.ux_device.iProduct" value="0x00"/>
+      <property id="module.el.ux_device.iSerialNumber" value="0x00"/>
+      <property id="module.el.ux_device.bDeviceClass" value="module.el.ux_device.bDeviceClass.cdc"/>
+      <property id="module.el.ux_device.iConfiguration" value="0x00"/>
+      <property id="module.el.ux_device.wTotalLength" value="0x00"/>
+      <property id="module.el.ux_device.bNumInterfaces" value="0x00"/>
+      <property id="module.el.ux_device.bmAttributes_bit6" value="module.el.ux_device.bmAttributes_bit6.enable"/>
+      <property id="module.el.ux_device.bmAttributes_bit5" value="module.el.ux_device.bmAttributes_bit5.disable"/>
+      <property id="module.el.ux_device.bMaxPower" value="50"/>
+      <property id="module.el.ux_device.language_code" value="0x0409"/>
+      <property id="module.el.ux_device.string_descriptor.name" value="NULL"/>
+      <property id="module.el.ux_device.string_descriptor.index" value="0"/>
+      <property id="module.el.ux_device.language_descriptor.name" value="NULL"/>
+      <property id="module.el.ux_device.language_descriptor.number" value="0"/>
+      <property id="module.el.ux_device.init_function" value="ux_device_init0"/>
+      <property id="module.el.ux_device.init" value="module.el.ux_device.init.enable"/>
+    </module>
+    <module id="module.el.ux_v2.186565229">
+      <property id="module.el.ux_v2.pool_memory_name" value="g_ux_pool_memory"/>
+      <property id="module.el.ux_v2.pool_memory_size" value="18432"/>
+      <property id="module.el.ux_v2.system_change_function" value="NULL"/>
+      <property id="module.el.ux_v2.slave_change_function" value="NULL"/>
+      <property id="module.el.ux_v2.init_function" value="ux_common_init0"/>
+      <property id="module.el.ux_v2.init" value="module.el.ux_v2.init.enable"/>
+    </module>
+    <module id="module.el.ux.interface_descriptor_cdcacm.cdc_acm.1343623820">
+      <property id="module.el.ux.interface_descriptor_cdcacm.name" value="g_usb_interface_desc_cdcacm_0"/>
+      <property id="module.el.ux.interface_descriptor_cdcacm.bInterfaceNumber_comm" value="0x00"/>
+      <property id="module.el.ux.interface_descriptor_cdcacm.ep_interrupt" value="module.el.ux.interface_descriptor_cdcacm.ep_interrupt.ep3"/>
+      <property id="module.el.ux.interface_descriptor_cdcacm.bInterval" value="0x0F"/>
+      <property id="module.el.ux.interface_descriptor_cdcacm.bInterfaceNumber_data" value="0x01"/>
+      <property id="module.el.ux.interface_descriptor_cdcacm.ep_bulk_out" value="module.el.ux.interface_descriptor_cdcacm.ep_bulk_out.ep1"/>
+      <property id="module.el.ux.interface_descriptor_cdcacm.ep_bulk_in" value="module.el.ux.interface_descriptor_cdcacm.ep_bulk_in.ep2"/>
+      <property id="module.el.ux.interface_descriptor_cdcacm.iInterface_comm" value="0x00"/>
+      <property id="module.el.ux.interface_descriptor_cdcacm.iInterface_data" value="0x00"/>
+    </module>
+    <module id="module.framework.sf_el_ux_dcd_fs.458517779">
+      <property id="module.framework.sf_el_ux_dcd_fs.name" value="g_sf_el_ux_dcd_fs_0"/>
+      <property id="module.framework.sf_el_ux_dcd_fs.hw_address" value="module.framework.sf_el_ux_dcd_fs.hw_address.fs"/>
+    </module>
+    <module id="module.driver.adc_on_adc.1368415259">
+      <property id="module.driver.adc.name" value="g_adc"/>
+      <property id="module.driver.adc.unit" value="0"/>
       <property id="module.driver.adc.resolution" value="module.driver.adc.resolution.resolution_12_bit"/>
       <property id="module.driver.adc.alignment" value="module.driver.adc.alignment.alignment_right"/>
       <property id="module.driver.adc.clearing" value="module.driver.adc.clearing.clear_after_read_on"/>
@@ -310,7 +460,7 @@
       <property id="module.driver.adc.channel_4" value="module.driver.adc.channel_4.used"/>
       <property id="module.driver.adc.channel_5" value="module.driver.adc.channel_5.used"/>
       <property id="module.driver.adc.channel_6" value="module.driver.adc.channel_6.used"/>
-      <property id="module.driver.adc.channel_7" value="module.driver.adc.channel_7.used"/>
+      <property id="module.driver.adc.channel_7" value="module.driver.adc.scan_mask.channel_7.unused"/>
       <property id="module.driver.adc.channel_8" value="module.driver.adc.scan_mask.channel_8.unused"/>
       <property id="module.driver.adc.channel_9" value="module.driver.adc.scan_mask.channel_9.unused"/>
       <property id="module.driver.adc.channel_10" value="module.driver.adc.scan_mask.channel_10.unused"/>
@@ -370,11 +520,11 @@
       <property id="module.driver.adc.add_mask.channel_voltage" value="module.driver.adc.add_mask.channel_voltage.unused"/>
       <property id="module.driver.adc.sample_hold_mask" value="module.driver.adc.sample_hold_mask.default"/>
       <property id="module.driver.adc.sample_hold_mask.channel_0" value="module.driver.adc.sample_hold_mask.channel_0.used"/>
-      <property id="module.driver.adc.sample_hold_mask.channel_1" value="module.driver.adc.sample_hold_mask.channel_1.used"/>
-      <property id="module.driver.adc.sample_hold_mask.channel_2" value="module.driver.adc.sample_hold_mask.channel_2.used"/>
+      <property id="module.driver.adc.sample_hold_mask.channel_1" value="module.driver.adc.sample_hold_mask.channel_1.unused"/>
+      <property id="module.driver.adc.sample_hold_mask.channel_2" value="module.driver.adc.sample_hold_mask.channel_2.unused"/>
       <property id="module.driver.adc.sample_hold_states" value="24"/>
       <property id="module.driver.adc.p_callback" value="NULL"/>
-      <property id="module.driver.adc.scan_end_ipl" value="board.icu.common.irq.priority4"/>
+      <property id="module.driver.adc.scan_end_ipl" value="board.icu.common.irq.priority7"/>
       <property id="module.driver.adc.scan_end_b_ipl" value="board.icu.common.irq.disabled"/>
       <property id="module.driver.adc.voltage_ref" value="module.driver.adc.voltage_ref.ref"/>
       <property id="module.driver.adc.over_current" value="module.driver.adc.over_current.enable"/>
@@ -383,146 +533,174 @@
       <property id="module.driver.adc.pga1" value="module.driver.adc.pga.disabled"/>
       <property id="module.driver.adc.pga2" value="module.driver.adc.pga.disabled"/>
     </module>
-    <module id="module.el.nx_http_server.1204600873">
-      <property id="module.el.nx_http_server.name" value="g_http_server0"/>
-      <property id="module.el.nx_http_server.stack_size" value="4096"/>
-      <property id="module.el.nx_http_server.authentication_function" value="authentication_check"/>
-      <property id="module.el.nx_http_server.request_notify_function" value="request_notify"/>
-      <property id="module.el.nx_http_server.init_function" value="http_server_init0"/>
-      <property id="module.el.nx_http_server.init" value="module.el.nx_http_server.init.enable"/>
-    </module>
-    <module id="module.el.nx.ip.1958614510">
-      <property id="module.el.nx.ip.name" value="g_ip0"/>
-      <property id="module.el.nx.ip.address" value="192.168.1.128"/>
-      <property id="module.el.nx.ip.subnet_mask" value="255.255.255.0"/>
-      <property id="module.el.nx.ip.gateway_address" value="192.168.1.254"/>
-      <property id="module.el.nx.ip.stack_size" value="2048"/>
-      <property id="module.el.nx.ip.priority" value="3"/>
-      <property id="module.el.nx.ip.arp" value="module.el.nx.ip.arp.enable"/>
-      <property id="module.el.nx.ip.arp_cache_size_units" value="module.el.nx.ip.arp_cache_size_units.bytes"/>
-      <property id="module.el.nx.ip.arp_cache_size" value="520"/>
-      <property id="module.el.nx.ip.rarp" value="module.el.nx.ip.rarp.disable"/>
-      <property id="module.el.nx.ip.tcp" value="module.el.nx.ip.tcp.enable"/>
-      <property id="module.el.nx.ip.udp" value="module.el.nx.ip.udp.enable"/>
-      <property id="module.el.nx.ip.icmp" value="module.el.nx.ip.icmp.enable"/>
-      <property id="module.el.nx.ip.igmp" value="module.el.nx.ip.igmp.enable"/>
-      <property id="module.el.nx.ip.fragmentation" value="module.el.nx.ip.fragmentation.disable"/>
-      <property id="module.el.nx.ip.init_function" value="ip_init0"/>
-      <property id="module.el.nx.ip.init" value="module.el.nx.ip.init.enable"/>
-      <property id="module.el.nx.ip.link_change_callback" value="NULL"/>
-    </module>
-    <module id="module.el.nx_common.1590897073">
-      <property id="module.el.nx_common.init_function" value="nx_common_init0"/>
-      <property id="module.el.nx_common.init" value="module.el.nx_common.init.enable"/>
-    </module>
-    <module id="module.el.nx.packet_pool.1293591688">
-      <property id="module.el.nx.packet_pool.name" value="g_packet_pool0"/>
-      <property id="module.el.nx.packet_pool.packet_size" value="2048"/>
-      <property id="module.el.nx.packet_pool.number_of_packets" value="32"/>
-      <property id="module.el.nx.packet_pool.init_function" value="packet_pool_init0"/>
-      <property id="module.el.nx.packet_pool.init" value="module.el.nx.packet_pool.init.enable"/>
-    </module>
-    <module id="module.el.nx_http_common.1032740433"/>
-    <module id="module.el.ns_md5.365490429"/>
-    <module id="module.framework.fx_stub.954739382">
-      <property id="module.framework.fx.name" value="g_fx_media0"/>
-    </module>
-    <module id="module.framework.sf_el_nx.831427810">
-      <property id="module.framework.sf_el_nx.name" value="g_sf_el_nx"/>
-      <property id="module.framework.sf_el_nx.channel" value="0"/>
-      <property id="module.framework.sf_el_nx.mac_update_callback" value="NULL"/>
-      <property id="module.framework.sf_el_nx.receive_callback" value="NULL"/>
-    </module>
     <context id="_hal.0">
-      <stack module="module.driver.ioport_on_ioport.0"/>
       <stack module="module.driver.elc_on_elc.0"/>
       <stack module="module.driver.fmi_on_fmi.0"/>
       <stack module="module.driver.cgc_on_cgc.0"/>
+      <stack module="module.driver.ioport_on_ioport.0"/>
     </context>
-    <context id="rtos.threadx.thread.378640711">
-      <property id="_symbol" value="modbus_thread"/>
-      <property id="rtos.threadx.thread.name" value="Modbus Thread"/>
-      <property id="rtos.threadx.thread.stack" value="1024"/>
-      <property id="rtos.threadx.thread.priority" value="3"/>
+    <context id="rtos.threadx.thread.1836914544">
+      <property id="_symbol" value="MQTT_Thread"/>
+      <property id="rtos.threadx.thread.name" value="MQTT_Thread"/>
+      <property id="rtos.threadx.thread.stack" value="8192"/>
+      <property id="rtos.threadx.thread.priority" value="5"/>
       <property id="rtos.threadx.thread.autostart" value="rtos.threadx.thread.autostart.enabled"/>
-      <property id="rtos.threadx.thread.timeslice" value="1"/>
-      <stack module="module.driver.uart_on_sci_uart.2097021479">
-        <stack module="module.driver.transfer_on_dtc.1737285144" requires="module.driver.uart_on_sci_uart.requires.transfer_tx"/>
-      </stack>
-      <stack module="module.driver.timer_on_gpt.441649034"/>
-      <object id="rtos.threadx.object.semaphore.1522151406">
-        <property id="rtos.threadx.object.semaphore.name" value="UART semaphore"/>
-        <property id="rtos.threadx.object.semaphore.symbol" value="g_uart_semaphore0"/>
-        <property id="rtos.threadx.object.semaphore.count" value="1"/>
-      </object>
-      <object id="rtos.threadx.object.queue.1457873800">
-        <property id="rtos.threadx.object.queue.name" value="Modbus Queue"/>
-        <property id="rtos.threadx.object.queue.symbol" value="g_modbus_queue"/>
-        <property id="rtos.threadx.object.queue.msg_size" value="1"/>
-        <property id="rtos.threadx.object.queue.queue_size" value="20"/>
-      </object>
-      <object id="rtos.threadx.object.queue.1132028263">
-        <property id="rtos.threadx.object.queue.name" value="serial RX Queue"/>
-        <property id="rtos.threadx.object.queue.symbol" value="g_serial_RX_queue"/>
-        <property id="rtos.threadx.object.queue.msg_size" value="1"/>
-        <property id="rtos.threadx.object.queue.queue_size" value="20"/>
-      </object>
-    </context>
-    <context id="rtos.threadx.thread.178740337">
-      <property id="_symbol" value="Leds"/>
-      <property id="rtos.threadx.thread.name" value="Led Thread"/>
-      <property id="rtos.threadx.thread.stack" value="1024"/>
-      <property id="rtos.threadx.thread.priority" value="3"/>
-      <property id="rtos.threadx.thread.autostart" value="rtos.threadx.thread.autostart.enabled"/>
-      <property id="rtos.threadx.thread.timeslice" value="1"/>
-    </context>
-    <context id="rtos.threadx.thread.1095392334">
-      <property id="_symbol" value="watchdog"/>
-      <property id="rtos.threadx.thread.name" value="WD"/>
-      <property id="rtos.threadx.thread.stack" value="1024"/>
-      <property id="rtos.threadx.thread.priority" value="1"/>
-      <property id="rtos.threadx.thread.autostart" value="rtos.threadx.thread.autostart.enabled"/>
-      <property id="rtos.threadx.thread.timeslice" value="1"/>
-      <stack module="module.framework.thread_monitor.245673544">
-        <stack module="module.driver.watchdog_on_wdt.159755993" requires="module.framework.thread_monitor.requires.wdt"/>
-      </stack>
-    </context>
-    <context id="rtos.threadx.thread.5020636">
-      <property id="_symbol" value="adc_thread"/>
-      <property id="rtos.threadx.thread.name" value="ADC Thread"/>
-      <property id="rtos.threadx.thread.stack" value="1024"/>
-      <property id="rtos.threadx.thread.priority" value="4"/>
-      <property id="rtos.threadx.thread.autostart" value="rtos.threadx.thread.autostart.enabled"/>
-      <property id="rtos.threadx.thread.timeslice" value="1"/>
-      <stack module="module.driver.adc_on_adc.702076447"/>
-    </context>
-    <context id="rtos.threadx.thread.686673691">
-      <property id="_symbol" value="http_thread"/>
-      <property id="rtos.threadx.thread.name" value="HTTP Thread"/>
-      <property id="rtos.threadx.thread.stack" value="1024"/>
-      <property id="rtos.threadx.thread.priority" value="2"/>
-      <property id="rtos.threadx.thread.autostart" value="rtos.threadx.thread.autostart.enabled"/>
-      <property id="rtos.threadx.thread.timeslice" value="1"/>
-      <stack module="module.el.nx_http_server.1204600873">
-        <stack module="module.el.nx.ip.1958614510" requires="module.el.nx_http_server.requires.nx.ip">
-          <stack module="module.el.nx_common.1590897073" requires="module.el.nx.ip.requires.nx_common"/>
-          <stack module="module.el.nx.packet_pool.1293591688" requires="module.el.nx.ip.requires.nx.packet_pool">
-            <stack module="module.el.nx_common.1590897073" requires="module.el.nx.packet_pool.requires.nx_common"/>
+      <property id="rtos.threadx.thread.timeslice" value="10"/>
+      <stack module="module.el.nxd_mqtt_client.1048661494">
+        <stack module="module.el.nxd.ip.1537161625" requires="module.el.nxd_mqtt_client.requires.nxd.ip">
+          <stack module="module.el.nxd_common.714204677" requires="module.el.nx.ip.requires.nxd_common"/>
+          <stack module="module.el.nxd.packet_pool.2006175513" requires="module.el.nx.ip.requires.nxd.packet_pool">
+            <stack module="module.el.nxd_common.714204677" requires="module.el.nx.packet_pool.requires.nxd_common"/>
           </stack>
-          <stack module="module.framework.sf_el_nx.831427810" requires="module.el.nx.ip.requires.sf_el_nx"/>
+          <stack module="module.framework.sf_el_nx.1453026558" requires="module.el.nx.ip.requires.sf_el_nx"/>
         </stack>
-        <stack module="module.framework.fx_stub.954739382" requires="module.el.nx_http_server.requires.fx"/>
-        <stack module="module.el.nx_http_common.1032740433" requires="module.el.nx_http_server.requires.nx_http_common">
-          <stack module="module.el.ns_md5.365490429" requires="module.el.nx_http_common.requires.nx_md5"/>
+        <stack module="module.el.nxd.packet_pool.2006175513" requires="module.el.nxd_mqtt_client.requires.nxd.packet_pool">
+          <stack module="module.el.nxd_common.714204677" requires="module.el.nx.packet_pool.requires.nxd_common"/>
+        </stack>
+        <stack module="module.el.nxd_tls_common.2031146574" requires="module.el.nxd_mqtt_client.requires.el.nxd_tls_common">
+          <stack module="module.el.nxd_common.714204677" requires="module.el.nxd_tls_common.requires.el.nxd_common"/>
+          <stack module="module.el.nxd_crypto_generic.1582387003" requires="module.el.nxd_tls_common.requires.module.el.nxd_crypto_generic">
+            <stack module="module.framework.sf_el_nx_crypto.424027688" requires="module.el.nxd_crypto_generic.requires.module.framework.sf_el_nx_crypto">
+              <stack module="module.driver.sce.1822335318" requires="module.framework.sf_el_nx_crypto.requires.module.driver.sce"/>
+            </stack>
+          </stack>
         </stack>
       </stack>
+      <stack module="module.el.nxd_dns_client.1079623600">
+        <stack module="module.el.nxd.ip.1537161625" requires="module.el.nx_dns_client.requires.nxd.ip">
+          <stack module="module.el.nxd_common.714204677" requires="module.el.nx.ip.requires.nxd_common"/>
+          <stack module="module.el.nxd.packet_pool.2006175513" requires="module.el.nx.ip.requires.nxd.packet_pool">
+            <stack module="module.el.nxd_common.714204677" requires="module.el.nx.packet_pool.requires.nxd_common"/>
+          </stack>
+          <stack module="module.framework.sf_el_nx.1453026558" requires="module.el.nx.ip.requires.sf_el_nx"/>
+        </stack>
+      </stack>
+      <stack module="module.el.nxd_dhcp_client.1602669280">
+        <stack module="module.el.nxd.ip.1537161625" requires="module.el.nx_dhcp_client.requires.nxd.ip">
+          <stack module="module.el.nxd_common.714204677" requires="module.el.nx.ip.requires.nxd_common"/>
+          <stack module="module.el.nxd.packet_pool.2006175513" requires="module.el.nx.ip.requires.nxd.packet_pool">
+            <stack module="module.el.nxd_common.714204677" requires="module.el.nx.packet_pool.requires.nxd_common"/>
+          </stack>
+          <stack module="module.framework.sf_el_nx.1453026558" requires="module.el.nx.ip.requires.sf_el_nx"/>
+        </stack>
+        <stack module="module.el.nxd_dhcp_common.195400358" requires="module.el.nx_dhcp_client.requires.nxd_dhcp_common"/>
+      </stack>
+      <stack module="module.driver.flash_on_flash_hp.1135024883"/>
+      <stack module="module.el.nxd_sntp_client.820545831">
+        <stack module="module.el.nxd.ip.1537161625" requires="module.el.nx_sntp_client.requires.nxd.ip">
+          <stack module="module.el.nxd_common.714204677" requires="module.el.nx.ip.requires.nxd_common"/>
+          <stack module="module.el.nxd.packet_pool.2006175513" requires="module.el.nx.ip.requires.nxd.packet_pool">
+            <stack module="module.el.nxd_common.714204677" requires="module.el.nx.packet_pool.requires.nxd_common"/>
+          </stack>
+          <stack module="module.framework.sf_el_nx.1453026558" requires="module.el.nx.ip.requires.sf_el_nx"/>
+        </stack>
+        <stack module="module.el.nxd.packet_pool.2006175513" requires="module.el.nx_sntp_client.requires.nxd.packet_pool">
+          <stack module="module.el.nxd_common.714204677" requires="module.el.nx.packet_pool.requires.nxd_common"/>
+        </stack>
+      </stack>
+      <stack module="module.el.nxd.tls_dtls_session.1850356886">
+        <stack module="module.el.nxd_tls_common.2031146574" requires="module.el.nxd.tls_dtls_session.requires.module.el.nxd_tls_common">
+          <stack module="module.el.nxd_common.714204677" requires="module.el.nxd_tls_common.requires.el.nxd_common"/>
+          <stack module="module.el.nxd_crypto_generic.1582387003" requires="module.el.nxd_tls_common.requires.module.el.nxd_crypto_generic">
+            <stack module="module.framework.sf_el_nx_crypto.424027688" requires="module.el.nxd_crypto_generic.requires.module.framework.sf_el_nx_crypto">
+              <stack module="module.driver.sce.1822335318" requires="module.framework.sf_el_nx_crypto.requires.module.driver.sce"/>
+            </stack>
+          </stack>
+        </stack>
+      </stack>
+      <object id="rtos.threadx.object.flags.479035167">
+        <property id="rtos.threadx.object.flags.name" value="user_event"/>
+        <property id="rtos.threadx.object.flags.symbol" value="g_sys_event_flags"/>
+      </object>
+      <object id="rtos.threadx.object.mutex.2100583194">
+        <property id="rtos.threadx.object.mutex.name" value="MQTT Mutex"/>
+        <property id="rtos.threadx.object.mutex.symbol" value="g_mqtt_mutex"/>
+        <property id="rtos.threadx.object.mutex.inherit" value="rtos.threadx.object.mutex.inherit.disabled"/>
+      </object>
+      <object id="rtos.threadx.object.flags.1051141821">
+        <property id="rtos.threadx.object.flags.name" value="Internal Storage Event Flags"/>
+        <property id="rtos.threadx.object.flags.symbol" value="g_int_storage_evt_grp"/>
+      </object>
+      <object id="rtos.threadx.object.semaphore.1979888134">
+        <property id="rtos.threadx.object.semaphore.name" value="New Semaphore"/>
+        <property id="rtos.threadx.object.semaphore.symbol" value="g_google_semaphore"/>
+        <property id="rtos.threadx.object.semaphore.count" value="0"/>
+      </object>
+      <object id="rtos.threadx.object.queue.1338546717">
+        <property id="rtos.threadx.object.queue.name" value="New Queue"/>
+        <property id="rtos.threadx.object.queue.symbol" value="g_msg_queue"/>
+        <property id="rtos.threadx.object.queue.msg_size" value="1"/>
+        <property id="rtos.threadx.object.queue.queue_size" value="4"/>
+      </object>
+      <object id="rtos.threadx.object.queue.1764542619">
+        <property id="rtos.threadx.object.queue.name" value="New Queue"/>
+        <property id="rtos.threadx.object.queue.symbol" value="g_mqtt_rx_payload"/>
+        <property id="rtos.threadx.object.queue.msg_size" value="2"/>
+        <property id="rtos.threadx.object.queue.queue_size" value="32"/>
+      </object>
     </context>
-    <config id="config.driver.wdt">
-      <property id="config.driver.wdt.param_checking_enable" value="config.driver.wdt.param_checking_enable.bsp"/>
+    <context id="rtos.threadx.thread.1282313206">
+      <property id="_symbol" value="MQTT_Rx_Thread"/>
+      <property id="rtos.threadx.thread.name" value="MQTT RX Thread"/>
+      <property id="rtos.threadx.thread.stack" value="1280"/>
+      <property id="rtos.threadx.thread.priority" value="6"/>
+      <property id="rtos.threadx.thread.autostart" value="rtos.threadx.thread.autostart.enabled"/>
+      <property id="rtos.threadx.thread.timeslice" value="10"/>
+      <object id="rtos.threadx.object.semaphore.44471103">
+        <property id="rtos.threadx.object.semaphore.name" value="New Semaphore"/>
+        <property id="rtos.threadx.object.semaphore.symbol" value="g_mqtt_notify_sem"/>
+        <property id="rtos.threadx.object.semaphore.count" value="0"/>
+      </object>
+    </context>
+    <context id="rtos.threadx.thread.198190431">
+      <property id="_symbol" value="console_thread"/>
+      <property id="rtos.threadx.thread.name" value="Console Thread"/>
+      <property id="rtos.threadx.thread.stack" value="4096"/>
+      <property id="rtos.threadx.thread.priority" value="6"/>
+      <property id="rtos.threadx.thread.autostart" value="rtos.threadx.thread.autostart.enabled"/>
+      <property id="rtos.threadx.thread.timeslice" value="10"/>
+      <stack module="module.framework.sf_console.1043512463">
+        <stack module="module.framework.sf_el_ux_comms_v2.76447918" requires="module.framework.sf_console.requires.sf_comms">
+          <stack module="module.el.ux_device_class_cdc_acm_v2.1549209751" requires="module.framework.sf_el_ux_comms_v2.requires.ux_device_class_cdc_acm_v2">
+            <stack module="module.el.ux_device.1580428732" requires="module.el.ux_device_class_cdc_acm_v2.requires.ux_device">
+              <stack module="module.framework.sf_el_ux_dcd_fs.458517779" requires="module.el.ux_device.requires.sf_el_ux_dcd"/>
+              <stack module="module.el.ux_v2.186565229" requires="module.el.ux_device.requires.ux_v2"/>
+            </stack>
+            <stack module="module.el.ux.interface_descriptor_cdcacm.cdc_acm.1343623820" requires="module.el.ux_device_class_cdc_acm_v2.requires.interface_descriptor_cdcacm"/>
+          </stack>
+        </stack>
+      </stack>
+      <object id="rtos.threadx.object.mutex.1955145788">
+        <property id="rtos.threadx.object.mutex.name" value="Console Mutex"/>
+        <property id="rtos.threadx.object.mutex.symbol" value="g_console_mutex"/>
+        <property id="rtos.threadx.object.mutex.inherit" value="rtos.threadx.object.mutex.inherit.disabled"/>
+      </object>
+    </context>
+    <context id="rtos.threadx.thread.1028315481">
+      <property id="_symbol" value="adc_thread"/>
+      <property id="rtos.threadx.thread.name" value="Adc Thread"/>
+      <property id="rtos.threadx.thread.stack" value="1024"/>
+      <property id="rtos.threadx.thread.priority" value="7"/>
+      <property id="rtos.threadx.thread.autostart" value="rtos.threadx.thread.autostart.enabled"/>
+      <property id="rtos.threadx.thread.timeslice" value="1"/>
+      <stack module="module.driver.adc_on_adc.1368415259"/>
+    </context>
+    <config id="config.el.ux_v2"/>
+    <config id="config.el.ux_device">
+      <property id="config.el.ux_device.composite" value="config.el.ux_device.composite.disable"/>
+    </config>
+    <config id="config.driver.flash_hp">
+      <property id="config.driver.flash_hp.param_checking_enable" value="config.driver.flash_hp.param_checking_enable.bsp"/>
+      <property id="config.driver.flash_hp.param_code_flash_programming_enable" value="config.driver.flash_hp.param_code_flash_programming_enable.disabled"/>
+    </config>
+    <config id="config.framework.sf_el_ux_comms_v2">
+      <property id="config.framework.sf_comms.param_checking_enable" value="config.framework.sf_comms.param_checking_enable.bsp"/>
+      <property id="config.framework.sf_comms.read_size" value="128"/>
+      <property id="config.framework.sf_comms.timeout" value="1000"/>
     </config>
     <config id="config.framework.sf_el_nx">
-      <property id="config.framework.sf_el_nx.param_checking_enable" value="config.framework.sf_el_nx.param_checking_enable.enabled"/>
-      <property id="config.framework.sf_el_nx.pin0" value="IOPORT_PORT_08_PIN_06"/>
+      <property id="config.framework.sf_el_nx.param_checking_enable" value="config.framework.sf_el_nx.param_checking_enable.bsp"/>
+      <property id="config.framework.sf_el_nx.pin0" value="IOPORT_PORT_09_PIN_03"/>
       <property id="config.framework.sf_el_nx.mach0" value="0x00002E09"/>
       <property id="config.framework.sf_el_nx.macl0" value="0x0A0076C7"/>
       <property id="config.framework.sf_el_nx.pin1" value="IOPORT_PORT_08_PIN_06"/>
@@ -530,7 +708,7 @@
       <property id="config.framework.sf_el_nx.macl1" value="0x0A0076C8"/>
       <property id="config.framework.sf_el_nx.num_rx_desc" value="8"/>
       <property id="config.framework.sf_el_nx.num_tx_desc" value="32"/>
-      <property id="config.framework.sf_el_nx.irq_ipl" value="board.icu.common.irq.priority3"/>
+      <property id="config.framework.sf_el_nx.irq_ipl" value="board.icu.common.irq.priority12"/>
       <property id="config.framework.sf_el_nx.monitor_method" value="config.framework.sf_el_nx.monitor_method.polling"/>
     </config>
     <config id="config.driver.cgc">
@@ -541,27 +719,16 @@
       <property id="config.driver.cgc.subclock_at_reset_enable" value="config.driver.cgc.subclock_at_reset_enable.enabled"/>
       <property id="config.driver.cgc.low_voltage_mode" value="config.driver.cgc.low_voltage_mode.disabled"/>
     </config>
-    <config id="config.el.nx_http_server">
-      <property id="config.el.nx_http_server.filex" value="config.el.nx_http_server.filex.disable"/>
-      <property id="config.el.nx_http_server.multipart" value="config.el.nx_http_server.multipart.disable"/>
-      <property id="module.el.nx_http_server.priority" value="16"/>
-      <property id="config.el.nx_http_server.time_slice" value="1"/>
-      <property id="config.el.nx_http_server.server_window_size" value="2048"/>
-      <property id="config.el.nx_http_server.server_timeout" value="10"/>
-      <property id="config.el.nx_http_server.server_timeout_accept" value="10"/>
-      <property id="config.el.nx_http_server.server_timeout_disconnect" value="10"/>
-      <property id="config.el.nx_http_server.server_timeout_receive" value="10"/>
-      <property id="config.el.nx_http_server.server_timeout_send" value="10"/>
-      <property id="config.el.nx_http_server.max_header_field" value="256"/>
-      <property id="config.el.nx_http_server.server_max_pending" value="5"/>
-      <property id="config.el.nx_http_server.max_name" value="20"/>
-      <property id="config.el.nx_http_server.max_password" value="20"/>
-      <property id="config.el.nx_http_server.server_min_packet_size" value="600"/>
-      <property id="config.el.nx_http_server.transmit_queue_depth" value="20"/>
-      <property id="config.el.nx_http_server.retry_seconds" value="2"/>
-      <property id="config.el.nx_http_server.retry_max" value="10"/>
-      <property id="config.el.nx_http_server.retry_shift" value="1"/>
-    </config>
+    <config id="config.driver.sce"/>
+    <config id="config.driver.sce_trng"/>
+    <config id="config.driver.sce_aes"/>
+    <config id="config.driver.sce_hash"/>
+    <config id="config.driver.sce_rsa"/>
+    <config id="config.driver.sce_dsa"/>
+    <config id="config.driver.sce_arc4"/>
+    <config id="config.driver.sce_tdes"/>
+    <config id="config.driver.sce_ecc"/>
+    <config id="config.driver.sce_key_installation"/>
     <config id="config.driver.ioport">
       <property id="config.driver.ioport.checking" value="config.driver.ioport.checking.system"/>
     </config>
@@ -569,66 +736,193 @@
     <config id="config.driver.adc">
       <property id="config.driver.adc.param_checking_enable" value="config.driver.adc.param_checking_enable.enabled"/>
     </config>
-    <config id="config.driver.sci_uart">
-      <property id="config.driver.sci_uart.external_rts_operation" value="config.driver.sci_uart.external_rts_operation.disabled"/>
-      <property id="config.driver.sci_uart.uart_rx_enable" value="config.driver.sci_uart.uart_rx_enable.enabled"/>
-      <property id="config.driver.sci_uart.uart_tx_enable" value="config.driver.sci_uart.uart_tx_enable.enabled"/>
-      <property id="config.driver.sci_uart.param_checking_enable" value="config.driver.sci_uart.param_checking_enable.bsp"/>
+    <config id="config.framework.sf_el_ux">
+      <property id="config.framework.sf_el_ux.VBUSENpin_logic" value="config.framework.sf_el_ux.VBUSENpin_logic.active_high"/>
+      <property id="config.framework.sf_el_ux.hs_irq_ipl" value="board.icu.common.irq.disabled"/>
+      <property id="config.framework.sf_el_ux.fs_irq_ipl" value="board.icu.common.irq.disabled"/>
     </config>
-    <config id="config.el.nx"/>
-    <config id="config.el.nx_dhcp_common">
-      <property id="config.el.nx_dhcp_common.tos" value="config.el.nx_dhcp_common.tos.normal"/>
-      <property id="config.el.nx_dhcp_common.fragment_option" value="config.el.nx_dhcp_common.fragment_option.dont_fragment"/>
-      <property id="config.el.nx_dhcp_common.time_to_live" value="128"/>
-      <property id="config.el.nx_dhcp_common.queue_depth" value="5"/>
+    <config id="config.framework.sf_el_ux_hcd_hs">
+      <property id="config.framework.sf_el_ux_hcd_hs.irq_ipl" value="board.icu.common.irq.disabled"/>
+      <property id="config.framework.sf_el_ux_hcd_hs.fifo_size" value="config.framework.sf_el_ux_hcd_hs.fifo_size.normal"/>
+      <property id="config.framework.sf_el_ux_hcd_hs.bulk_pipe_start_index" value="config.framework.sf_el_ux_hcd_hs.bulk_pipe_start_index.pipe1"/>
+      <property id="config.framework.sf_el_ux_hcd_hs.VBUSENpin_logic" value="config.framework.sf_el_ux_hcd_hs.VBUSENpin_logic.active_high"/>
+      <property id="config.framework.sf_el_ux_hcd_hs.hs_bit" value="config.framework.sf_el_ux_hcd_hs.hs_bit.bitset_high"/>
     </config>
-    <config id="config.el.nx_http_common">
-      <property id="config.el.nx_http_common.tos" value="config.el.nx_http_common.tos.normal"/>
-      <property id="config.el.nx_http_common.fragment_option" value="config.el.nx_http_common.fragment_option.dont_fragment"/>
-      <property id="config.el.nx_http_common.time_to_live" value="128"/>
-      <property id="config.el.nx_http_common.digest" value="config.el.nx_http_common.digest.disable"/>
-      <property id="config.el.nx_http_common.max_resource" value="40"/>
+    <config id="config.framework.sf_el_ux_hcd_fs">
+      <property id="config.framework.sf_el_ux_hcd_fs.irq_ipl" value="board.icu.common.irq.disabled"/>
+      <property id="config.framework.sf_el_ux_hcd_fs.VBUSENpin_logic" value="config.framework.sf_el_ux_hcd_fs.VBUSENpin_logic.active_high"/>
+      <property id="config.framework.sf_el_ux_hcd_fs.VCC_LDO_Regulator" value="config.framework.sf_el_ux_hcd_fs.VCC_LDO_Regulator.disabled"/>
     </config>
-    <config id="config.el.nx_ftp_common">
-      <property id="config.el.nx_ftp_common.filex" value="config.el.nx_ftp_common.filex.enable"/>
-      <property id="config.el.nx_ftp_common.control_tos" value="config.el.nx_ftp_common.control_tos.normal"/>
-      <property id="config.el.nx_ftp_common.data_tos" value="config.el.nx_ftp_common.data_tos.normal"/>
-      <property id="config.el.nx_ftp_common.fragment_option" value="config.el.nx_ftp_common.fragment_option.dont_fragment"/>
-      <property id="config.el.nx_ftp_common.time_to_live" value="128"/>
-      <property id="config.el.nx_ftp_common.timeout_period" value="60"/>
+    <config id="config.framework.sf_el_ux_dcd_hs">
+      <property id="config.framework.sf_el_ux_dcd_hs.irq_ipl" value="board.icu.common.irq.disabled"/>
     </config>
-    <config id="config.el.nx_tftp_common">
-      <property id="config.el.nx_tftp_common.error_string_max" value="64"/>
-      <property id="config.el.nx_tftp_common.time_to_live" value="128"/>
-      <property id="config.el.nx_tftp_common.tos" value="config.el.nx_tftp_common.tos.normal"/>
-      <property id="config.el.nx_tftp_common.fragment_option" value="config.el.nx_tftp_common.fragment_option.dont_fragment"/>
-    </config>
-    <config id="config.el.nx_telnet_common">
-      <property id="config.el.nx_telnet_common.control_tos" value="config.el.nx_telnet_common.control_tos.normal"/>
-      <property id="config.el.nx_telnet_common.fragment_option" value="config.el.nx_telnet_common.fragment_option.dont_fragment"/>
-      <property id="config.el.nx_telnet_common.telnet_server_port" value="23"/>
-      <property id="config.el.nx_telnet_common.time_to_live" value="128"/>
-    </config>
-    <config id="config.driver.gpt">
-      <property id="config.driver.gpt.param_checking_enable" value="config.driver.gpt.param_checking_enable.bsp"/>
+    <config id="config.framework.sf_el_ux_dcd_fs">
+      <property id="config.framework.sf_el_ux_dcd_fs.irq_ipl" value="board.icu.common.irq.priority4"/>
+      <property id="config.framework.sf_el_ux_dcd_fs.VCC_LDO_Regulator" value="config.framework.sf_el_ux_dcd_fs.VCC_LDO_Regulator.disabled"/>
     </config>
     <config id="config.driver.fmi">
       <property id="config.driver.fmi.param_checking_enable" value="config.driver.fmi.param_checking_enable.bsp"/>
       <property id="config.driver.fmi.custom_base_address_symbol" value="g_fmi_data"/>
       <property id="config.driver.fmi.part_number_mask" value="0xFE00"/>
     </config>
+    <config id="config.el.nxd_dhcpv6_client">
+      <property id="config.el.nxd_dhcpv6_client.priority" value="3"/>
+      <property id="config.el.nxd_dhcpv6_client.mutex_wait" value="TX_WAIT_FOREVER"/>
+      <property id="config.el.nxd_dhcpv6_client.ip_lifetime_timer_interval" value="1"/>
+      <property id="config.el.nxd_dhcpv6_client.max_ia_address" value="1"/>
+      <property id="config.el.nxd_dhcpv6_client.num_dns_servers" value="2"/>
+      <property id="config.el.nxd_dhcpv6_client.num_time_servers" value="1"/>
+      <property id="config.el.nxd_dhcpv6_client.domain_name_buffer_size" value="32"/>
+      <property id="config.el.nxd_dhcpv6_client.time_zone_buffer_size" value="16"/>
+      <property id="config.el.nxd_dhcpv6_client.max_message_size" value="100"/>
+    </config>
+    <config id="config.el.nxd_dhcp_client">
+      <property id="config.el.nxd_dhcp_client.priority" value="3"/>
+      <property id="config.el.nxd_dhcp_client.thread_stack_size" value="4096"/>
+      <property id="config.el.nxd_dhcp_client.time_interval" value="1"/>
+      <property id="config.el.nxd_dhcp_client.bootp" value="config.el.nxd_dhcp_client.bootp.disable"/>
+      <property id="config.el.nxd_dhcp_client.send_arp_probe" value="config.el.nxd_dhcp_client.send_arp_probe.disable"/>
+      <property id="config.el.nxd_dhcp_client.arp_probe_wait" value="1"/>
+      <property id="config.el.nxd_dhcp_client.arp_probe_min" value="1"/>
+      <property id="config.el.nxd_dhcp_client.arp_probe_max" value="2"/>
+      <property id="config.el.nxd_dhcp_client.arp_probe_num" value="2"/>
+      <property id="config.el.nxd_dhcp_client.max_retrans_timeout" value="64"/>
+      <property id="config.el.nxd_dhcp_client.min_renew_timeout" value="60"/>
+      <property id="config.el.nxd_dhcp_client.min_retrans_timeout" value="4"/>
+      <property id="config.el.nxd_dhcp_client.packet_payload" value="592"/>
+      <property id="config.el.nxd_dhcp_client.packet_pool_size" value="5"/>
+      <property id="config.el.nxd_dhcp_client.client_restore_state" value="config.el.nxd_dhcp_client.client_restore_state.disable"/>
+      <property id="config.el.nxd_dhcp_client.user_create_packet_pool" value="config.el.nxd_dhcp_client.user_create_packet_pool.disable"/>
+      <property id="config.el.nxd_dhcp_client.send_max_dhcp_message_option" value="config.el.nxd_dhcp_client.send_max_dhcp_message_option.disable"/>
+      <property id="config.el.nxd_dhcp_client.buffer_size" value="312"/>
+      <property id="config.el.nxd_dhcp_client.max_records" value="1"/>
+      <property id="config.el.nxd_dhcp_client.restart_wait" value="10"/>
+    </config>
+    <config id="config.el.nxd"/>
+    <config id="config.el.nxd_dhcp_common">
+      <property id="config.el.nxd_dhcp_common.tos" value="config.el.nxd_dhcp_common.tos.normal"/>
+      <property id="config.el.nxd_dhcp_common.fragment_option" value="config.el.nxd_dhcp_common.fragment_option.dont_fragment"/>
+      <property id="config.el.nxd_dhcp_common.time_to_live" value="128"/>
+      <property id="config.el.nxd_dhcp_common.queue_depth" value="5"/>
+    </config>
+    <config id="config.el.nxd_dhcpv6_common">
+      <property id="config.el.nxd_dhcpv6_common.tos" value="config.el.nxd_dhcpv6_common.tos.normal"/>
+      <property id="config.el.nxd_dhcpv6_common.time_to_live" value="128"/>
+      <property id="config.el.nxd_dhcpv6_common.queue_depth" value="5"/>
+      <property id="config.el.nxd_dhcpv6_common.packet_time_out" value="3"/>
+      <property id="config.el.nxd_dhcpv6_common.session_timer_interval" value="3"/>
+    </config>
+    <config id="config.el.nxd_http_common">
+      <property id="config.el.nxd_http_common.tos" value="config.el.nxd_http_common.tos.normal"/>
+      <property id="config.el.nxd_http_common.fragment_option" value="config.el.nxd_http_common.fragment_option.dont_fragment"/>
+      <property id="config.el.nxd_http_common.time_to_live" value="128"/>
+      <property id="config.el.nxd_http_common.digest" value="config.el.nxd_http_common.digest.disable"/>
+      <property id="config.el.nxd_http_common.max_resource" value="40"/>
+      <property id="config.el.nxd_http_common.max_password" value="20"/>
+      <property id="config.el.nxd_http_common.max_name" value="20"/>
+    </config>
+    <config id="config.el.nxd_web_http_common">
+      <property id="config.el.nxd_web_http_common.tos" value="config.el.nxd_web_http_common.tos.normal"/>
+      <property id="config.el.nxd_web_http_common.fragment_option" value="config.el.nxd_web_http_common.fragment_option.dont_fragment"/>
+      <property id="config.el.nxd_web_http_common.digest" value="config.el.nxd_web_http_common.digest.disable"/>
+      <property id="config.el.nxd_web_http_common.time_to_live" value="128"/>
+      <property id="config.el.nxd_web_http_common.max_password" value="20"/>
+      <property id="config.el.nxd_web_http_common.max_name" value="20"/>
+    </config>
+    <config id="config.el.nxd_ftp_common">
+      <property id="config.el.nxd_ftp_common.filex" value="config.el.nxd_ftp_common.filex.enable"/>
+      <property id="config.el.nxd_ftp_common.control_tos" value="config.el.nxd_ftp_common.control_tos.normal"/>
+      <property id="config.el.nxd_ftp_common.data_tos" value="config.el.nxd_ftp_common.data_tos.normal"/>
+      <property id="config.el.nxd_ftp_common.fragment_option" value="config.el.nxd_ftp_common.fragment_option.dont_fragment"/>
+      <property id="config.el.nxd_ftp_common.time_to_live" value="128"/>
+      <property id="config.el.nxd_ftp_common.timeout_period" value="60"/>
+    </config>
+    <config id="config.el.nxd_tftp_common">
+      <property id="config.el.nxd_tftp_common.error_string_max" value="64"/>
+      <property id="config.el.nxd_tftp_common.time_to_live" value="128"/>
+      <property id="config.el.nxd_tftp_common.tos" value="config.el.nxd_tftp_common.tos.normal"/>
+      <property id="config.el.nxd_tftp_common.fragment_option" value="config.el.nxd_tftp_common.fragment_option.dont_fragment"/>
+    </config>
+    <config id="config.el.nxd_telnet_common">
+      <property id="config.el.nxd_telnet_common.control_tos" value="config.el.nxd_telnet_common.control_tos.normal"/>
+      <property id="config.el.nxd_telnet_common.fragment_option" value="config.el.nxd_telnet_common.fragment_option.dont_fragment"/>
+      <property id="config.el.nxd_telnet_common.telnet_server_port" value="23"/>
+      <property id="config.el.nxd_telnet_common.time_to_live" value="128"/>
+    </config>
+    <config id="config.el.nxd_tls_common">
+      <property id="config.el.nxd.nxd_tls_common.crypto_engine" value="config.el.nxd.nxd_tls_common.crypto_engine.hw"/>
+      <property id="config.el.nxd.nxd_tls_common.allow_self_signed_cert" value="config.el.nxd.nxd_tls_common.allow_self_signed_cert.Disable"/>
+      <property id="config.el.nxd.nxd_tls_common.enable_psk_cipher" value="config.el.nxd.nxd_tls_common.enable_psk_cipher.Disable"/>
+      <property id="config.el.nxd.nxd_tls_common.enable_ecc_cipher" value="config.el.nxd.nxd_tls_common.enable_ecc_cipher.Disable"/>
+      <property id="config.el.nxd.nxd_tls_common.x509_strict_name_compare" value="config.el.nxd.nxd_tls_common.x509_strict_name_compare.Disable"/>
+      <property id="config.el.nxd.nxd_tls_common.x509_extend_distinguished_name" value="config.el.nxd.nxd_tls_common.x509_extend_distinguished_name.Disable"/>
+      <property id="config.el.nxd.nxd_tls_common.rsa_modulus_expected" value="config.el.nxd.nxd_tls_common.rsa_modulus_expected.b4096"/>
+      <property id="config.el.nxd.nxd_tls_common.enable_legacy_tls_v_10" value="config.el.nxd.nxd_tls_common.enable_legacy_tls_v_10.Disable"/>
+      <property id="config.el.nxd.nxd_tls_common.disable_tls_v_1_1_mode" value="config.el.nxd.nxd_tls_common.disable_tls_v_1_1_mode.Disable"/>
+      <property id="config.el.nxd.nxd_tls_common.disable_server" value="config.el.nxd.nxd_tls_common.disable_server.Enable"/>
+      <property id="config.el.nxd.nxd_tls_common.disable_client" value="config.el.nxd.nxd_tls_common.disable_client.Enable"/>
+    </config>
+    <config id="config.el.nxd_dns_client">
+      <property id="config.el.nxd_dns_client.control_tos" value="config.el.nxd_dns_client.control_tos.normal"/>
+      <property id="config.el.nxd_dns_client.fragment_option" value="config.el.nxd_dns_client.fragment_option.dont_fragment"/>
+      <property id="config.el.nxd_dns_client.time_to_live" value="128"/>
+      <property id="config.el.nxd_dns_client.dns_server_ip_version" value="config.el.nxd_dns_client.dns_server_ip_version.ipv4"/>
+      <property id="config.el.nxd_dns_client.max_servers" value="5"/>
+      <property id="config.el.nxd_dns_client.message_max" value="512"/>
+      <property id="config.el.nxd_dns_client.packet_pool_size" value="16"/>
+      <property id="config.el.nxd_dns_client.max_retries" value="3"/>
+      <property id="config.el.nxd_dns_client.max_retrans_timeout" value="64"/>
+      <property id="config.el.nxd_dns_client.packet_allocate_timeout" value="1"/>
+      <property id="config.el.nxd_dns_client.ip_gateway_and_dns_server" value="config.el.nxd_dns_client.ip_gateway_and_dns_server.disable"/>
+      <property id="config.el.nxd_dns_client.client_user_create_packet_pool" value="config.el.nxd_dns_client.client_user_create_packet_pool.disable"/>
+      <property id="config.el.nxd_dns_client.client_clear_queue" value="config.el.nxd_dns_client.client_clear_queue.disable"/>
+      <property id="config.el.nxd_dns_client.enable_extended_rr_types" value="config.el.nxd_dns_client.enable_extended_rr_types.disable"/>
+      <property id="config.el.nxd_dns_client.cache_enable" value="config.el.nxd_dns_client.cache_enable.disable"/>
+    </config>
     <config id="config.driver.elc">
       <property id="config.driver.elc.checking" value="config.driver.elc.checking.system"/>
     </config>
-    <config id="config.driver.dtc">
-      <property id="config.driver.dtc.param_checking_enable" value="config.driver.dtc.param_checking_enable.bsp"/>
-      <property id="config.driver.dtc.software_start" value="config.driver.dtc.software_start.disabled"/>
-      <property id="config.driver.dtc.vector_table" value=".ssp_dtc_vector_table"/>
+    <config id="config.framework.sf_console">
+      <property id="config.framework.sf_console.param_checking_enable" value="config.framework.sf_console.param_checking_enable.bsp"/>
+      <property id="config.framework.sf_console.max_input_length" value="128"/>
+      <property id="config.framework.sf_console.max_write_length" value="128"/>
+      <property id="config.framework.sf_console.prv_timeout" value="0xFFFFFFFF"/>
     </config>
-    <config id="config.framework.thread_monitor">
-      <property id="config.framework.thread_monitor.param_checking_enable" value="config.framework.thread_monitor.param_checking_enable.bsp"/>
-      <property id="config.framework.thread_monitor.max_threads" value="5"/>
-      <property id="config.framework.thread_monitor.stack_size" value="1024"/>
+    <config id="config.el.nxd_sntp_client">
+      <property id="config.el.nxd_sntp_client.stack_size" value="2048"/>
+      <property id="config.el.nxd_sntp_client.time_slice" value="TX_NO_TIME_SLICE"/>
+      <property id="config.el.nxd_sntp_client.priority" value="2"/>
+      <property id="config.el.nxd_sntp_client.udp_socket_name" value="SNTP Client socket"/>
+      <property id="config.el.nxd_sntp_client.client_udp_port" value="123"/>
+      <property id="config.el.nxd_sntp_client.server_udp_port" value="123"/>
+      <property id="config.el.nxd_sntp_client.time_to_live" value="128"/>
+      <property id="config.el.nxd_sntp_client.queue_depth" value="5"/>
+      <property id="config.el.nxd_sntp_client.packet_time_out" value="1"/>
+      <property id="config.el.nxd_sntp_client.ntp_version" value="3"/>
+      <property id="config.el.nxd_sntp_client.ntp_min_version" value="3"/>
+      <property id="config.el.nxd_sntp_client.min_server_stratum" value="2"/>
+      <property id="config.el.nxd_sntp_client.min_time_adjustment" value="10"/>
+      <property id="config.el.nxd_sntp_client.max_time_adjustment" value="10800000"/>
+      <property id="config.el.nxd_sntp_client.ignore_max_adjust_startup" value="config.el.nxd_sntp_client.ignore_max_adjust_startup.enable"/>
+      <property id="config.el.nxd_sntp_client.max_time_lapse" value="7200"/>
+      <property id="config.el.nxd_sntp_client.update_timeout_interval" value="1"/>
+      <property id="config.el.nxd_sntp_client.unicast_poll_interval" value="3600"/>
+      <property id="config.el.nxd_sntp_client.exp_backoff_rate" value="2"/>
+      <property id="config.el.nxd_sntp_client.rtt_required" value="config.el.nxd_sntp_client.rtt_required.disable"/>
+      <property id="config.el.nxd_sntp_client.maximum_root_dispersion" value="50000"/>
+      <property id="config.el.nxd_sntp_client.invalid_update_limit" value="3"/>
+      <property id="config.el.nxd_sntp_client.randomize_on_startup" value="config.el.nxd_sntp_client.randomize_on_startup.disable"/>
+      <property id="config.el.nxd_sntp_client.client_sleep_interval" value="1"/>
+      <property id="config.el.nxd_sntp_client.cur_year" value="2018"/>
+    </config>
+    <config id="config.el.nxd_mqtt_client">
+      <property id="config.el.nxd_mqtt_client.param_checking_enable" value="config.el.nxd_mqtt_client.param_checking_enable.bsp_default"/>
+      <property id="module.el.nxd_mqtt_client.secure" value="module.el.nxd_mqtt_client.secure.enable"/>
+      <property id="module.el.nxd_mqtt_client.mqtt_topic_max_length" value="128"/>
+      <property id="module.el.nxd_mqtt_client.mqtt_msg_max_length" value="2048"/>
+      <property id="module.el.nxd_mqtt_client.mqtt_keepalive_timer_rate" value="60"/>
+      <property id="module.el.nxd_mqtt_client.mqtt_ping_timeout_delay" value="60"/>
+      <property id="config.el.nxd_mqtt_client.mqtt_socket_timeout" value="0xFFFFFFFF"/>
     </config>
   </synergyModuleConfiguration>
   <synergyPinConfiguration>

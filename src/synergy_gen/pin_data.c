@@ -294,7 +294,7 @@ const ioport_pin_cfg_t g_bsp_pin_cfg_data[] = {
 	},
 	{
 		.pin = IOPORT_PORT_05_PIN_11,
-		.pin_cfg = (IOPORT_CFG_DRIVE_HIGH | IOPORT_CFG_PERIPHERAL_PIN | IOPORT_PERIPHERAL_RIIC),
+		.pin_cfg = (IOPORT_CFG_DRIVE_MID | IOPORT_CFG_PERIPHERAL_PIN | IOPORT_PERIPHERAL_RIIC),
 	},
 	{
 		.pin = IOPORT_PORT_05_PIN_12,

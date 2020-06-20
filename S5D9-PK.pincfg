@@ -221,7 +221,7 @@
     <v1:connectionSetting altId="iic2.sda.p511"/>
   </v1:configSetting>
   <v1:configSetting configurationId="iic0.mode" altId="iic0.mode.disabled"/>
-  <v1:configSetting configurationId="p511.gpio_drivecapacity" altId="p511.gpio_speed.gpio_speed_high"/>
+  <v1:configSetting configurationId="p511.gpio_drivecapacity" altId="p511.gpio_speed.gpio_speed_medium"/>
   <v1:configSetting configurationId="iic2.mode" altId="iic2.mode.enabled.a"/>
   <v1:configSetting configurationId="iic2.scl" altId="iic2.scl.p512">
     <v1:connectionSetting altId="p512.iic2.scl"/>
@@ -853,5 +853,4 @@
   <v1:configSetting configurationId="p613.gpio_mode" altId="p613.gpio_mode.gpio_mode_in"/>
   <v1:configSetting configurationId="p806.gpio_mode" altId="p806.gpio_mode.gpio_mode_out.high"/>
   <v1:configSetting configurationId="p806" altId="p806.output.high"/>
-  <v1:configSetting configurationId="p003.gpio_mode" altId="p003.gpio_mode.disabled"/>
 </v1:pinSettings>

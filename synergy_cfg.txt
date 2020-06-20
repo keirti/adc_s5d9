@@ -171,7 +171,7 @@ Synergy Configuration
       P506 146 GPIO - - None "Input mode" - None "ADC0: AN19; IRQ0: IRQ15; SCI6: SDA; SCI6: TXD_MOSI; SDHI1: CD" 
       P507 147 GPIO - - - "Input mode" - None "ADC1: AN19; SCI5: CTS_RTS_SS; SDHI1: WP" 
       P508 148 - - - - Disabled - - "ADC0: AN20; SCI5: SCK; SCI6: SCK" 
-      P511 176 IIC2_SDA - High None "Peripheral mode" CMOS None "CAN1: CRX; GPT0: GTIOCB; IIC2: SDA; IRQ0: IRQ15; PDC0: PCKO; SCI4: RXD_MISO; SCI4: SCL" 
+      P511 176 IIC2_SDA - Medium None "Peripheral mode" CMOS None "CAN1: CRX; GPT0: GTIOCB; IIC2: SDA; IRQ0: IRQ15; PDC0: PCKO; SCI4: RXD_MISO; SCI4: SCL" 
       P512 175 IIC2_SCL - Medium None "Peripheral mode" CMOS None "CAN1: CTX; GPT0: GTIOCA; IIC2: SCL; IRQ0: IRQ14; PDC0: VSYNC; SCI4: SDA; SCI4: TXD_MOSI" 
       P513 174 - - - - Disabled - - "GLCDC0: LCD_DATA16; SCI5: RXD_MISO; SCI5: SCL" 
       P600 122 GPIO - Low - "Output mode (Initial High)" CMOS None "BUS0: RD; CAC0: CACREF; CGC0: CLKOUT; GLCDC0: LCD_DATA02; GPT6: GTIOCB; SCI9: SCK" 
@@ -278,67 +278,37 @@ Synergy Configuration
     SSP MCU Information Symbol Name: g_fmi_data
     Part Number Mask: 0xFE00
     
-  Module "UART Driver on r_sci_uart"
-    External RTS Operation: Disable
-    Reception: Enable
-    Transmission: Enable
+  Module "NetX Duo MQTT Client"
     Parameter Checking: Default (BSP)
+    NX Secure: Enable
+    Topic Name Max Length: 128
+    Message Max Length: 2048
+    Keepalive Timer Rate (s): 60
+    Ping Timeout Delay (s): 60
+    Socket Timeout (in timer ticks) : 0xFFFFFFFF
     
-  Module "Transfer Driver on r_dtc"
-    Parameter Checking: Default (BSP)
-    Software Start: Disabled
-    Linker section to keep DTC vector table: .ssp_dtc_vector_table
+  Module "NetX Duo IP Instance"
+  Module "NetX Duo Common on nxd"
+  Module "NetX Duo Packet Pool Instance"
+  Module "NetX Duo TLS Common"
+    Crypto Engine: Hardware
+    Self Signed Certificates: Disable
+    PSK Cipher Suite: Disable
+    ECC Cipher Suite: Disable
+    X509 Strict Name Compare: Disable
+    X509 Extended Distinguished Names: Disable
+    Maximum RSA Modulus size (bits): 4096
+    TLS v1.0: Disable
+    TLS v1.1: Disable
+    Server Mode: Enable
+    Client Mode: Enable
     
-  Module "Timer Driver on r_gpt"
-    Parameter Checking: Default (BSP)
-    
-  Module "Thread Monitor Framework on sf_thread_monitor"
-    Parameter Checking: Default (BSP)
-    Maximum Number of Monitored Threads: 5
-    Stack size of the Thread Monitor Thread (bytes): 1024
-    
-  Module "Watchdog Driver on r_wdt"
-    Parameter Checking: Default (BSP)
-    
-  Module "ADC Driver on r_adc"
-    Parameter Checking: Enabled
-    
-  Module "NetX HTTP Server"
-    FileX Support: Disable
-    Multipart HTTP requests support: Disable
-    Internal thread priority: 16
-    Internal thread time slicing interval (ticks): 1
-    Server socket window size (bytes): 2048
-    Server time out (seconds): 10
-    Server time out for accept (seconds): 10
-    Server time out for disconnect (seconds): 10
-    Server time out for receive (seconds): 10
-    Server time out for send (seconds): 10
-    Maximum size of header field (bytes): 256
-    Maximum connections in queue: 5
-    Maximum client user name length (bytes): 20
-    Maximum client user password length (bytes): 20
-    Minimum size of packets in pool (bytes): 600
-    Maximum number of queued transmit packets (units): 20
-    Wait before retry (seconds): 2
-    Maximum number of retries per packet: 10
-    Binary left shift as multiplier for next retry duration: 1
-    
-  Module "NetX IP Instance"
-  Module "NetX Common on nx"
-  Module "NetX Packet Pool Instance"
-  Module "NetX HTTP Common"
-    Type of Service: Normal
-    Fragmentation option: Don't fragment
-    Time to live: 128
-    MD5 Support: Disable
-    Maximum resource name length (bytes): 40
-    
-  Module "NetX MD5"
-  Module "FileX Stub"
+  Module "NetX Duo Software Crypto"
+  Module "NetX Crypto Hardware Accelerator"
+  Module "SCE COMMON Driver on r_sce"
   Module "NetX Port ETHER on sf_el_nx"
-    Parameter Checking: Enabled
-    Channel 0 Phy Reset Pin: IOPORT_PORT_08_PIN_06
+    Parameter Checking: Default (BSP)
+    Channel 0 Phy Reset Pin: IOPORT_PORT_09_PIN_03
     Channel 0 MAC Address High Bits: 0x00002E09
     Channel 0 MAC Address Low Bits: 0x0A0076C7
     Channel 1 Phy Reset Pin: IOPORT_PORT_08_PIN_06
@@ -346,13 +316,111 @@ Synergy Configuration
     Channel 1 MAC Address Low Bits: 0x0A0076C8
     Number of Receive Buffer Descriptors: 8
     Number of Transmit Buffer Descriptors: 32
-    Ethernet Interrupt Priority: Priority 3
+    Ethernet Interrupt Priority: Priority 12
     Link status monitoring method: PHY Polling
     
+  Module "NetX Duo DNS Client"
+    DNS Control Type of Service: Normal
+    Socket fragmentation option: Dont fragment
+    Time to live: 128
+    Client DNS IP version: IPv4
+    Maximum number of DNS Servers in the Client server list: 5
+    Maximum DNS queries size (bytes): 512
+    Packets in DNS packet pool (units): 16
+    Maximum retries for a server: 3
+    Maximum duration to retransmit a DNS query (seconds): 64
+    Packet allocate timeout (seconds): 1
+    Client has DNS and Gateway server: Disable
+    Use application packet pool: Disable
+    Clear previous DNS queries from queue: Disable
+    Extended RR types support: Disable
+    Cache support: Disable
+    
+  Module "NetX Duo DHCP IPv4 Client"
+    Internal thread priority: 3
+    Internal thread stack size (bytes): 4096
+    Timeout between DHCP messages processed (seconds): 1
+    Use BOOTP: Disable
+    Send ARP probe: Disable
+    ARP probe wait time (seconds): 1
+    Minimum ARP probe wait time (seconds): 1
+    Maximum ARP probe wait time (seconds): 2
+    ARP probe count: 2
+    Maximum retransmission timeout (seconds): 64
+    Minimum renew timeout (seconds): 60
+    Minimum retransmission timeout (seconds): 4
+    Client packet payload size (bytes): 592
+    Number of packets in internal packet pool: 5
+    Persistent client state: Disable
+    Use application packet pool: Disable
+    Maximum message size support: Disable
+    DHCP options buffer size (bytes): 312
+    Maximum number of network interfaces for DHCP client: 1
+    Wait before restarting the configuration process (seconds): 10
+    
+  Module "NetX Duo DHCP IPv4 Common"
+    Type of Service for UDP requests: Normal
+    Fragmentation option: Don't fragment
+    Time to live: 128
+    Packet Queue depth: 5
+    
+  Module "Flash Driver on r_flash_hp"
+    Parameter Checking: Default (BSP)
+    Code Flash Programming Enable: Disabled
+    
+  Module "NetX Duo SNTP Client"
+    Internal thread stack size (bytes): 2048
+    SNTP client thread time slicing interval (ticks): TX_NO_TIME_SLICE
+    Internal thread priority: 2
+    UDP socket name: SNTP Client socket
+    UDP port number: 123
+    Server UDP port: 123
+    Time to live: 128
+    Maximum UDP packets queue depth (units): 5
+    Packet allocation timeout (seconds): 1
+    SNTP version to use: 3
+    NTP minimum version: 3
+    Lowest level server stratum client accepts: 2
+    Minimum time difference that triggers adjustment (milliseconds): 10
+    Maximum time adjustment allowed to local clock time (milliseconds): 10800000
+    Ignore maximum time adjust limit at startup: True
+    Maximum time lapse without valid update (seconds): 7200
+    'Update time remaining' timer update interval (seconds): 1
+    Starting poll interval for unicast update request (seconds): 3600
+    Poll interval increment after failed time update: 2
+    Calculate round trip time of messages: False
+    Maximum server clock inaccuracy to accept (to disable set 0): 50000
+    Invalid message limit to mark server invalid: 3
+    Randomize update request interval on startup: False
+    Internal Task sleep interval (ticks): 1
+    Current calendar year: 2018
+    
+  Module "NetX Duo TLS Session"
+  Module "Console Framework on sf_console"
+    Parameter Checking: Default (BSP)
+    Maximum Input String Length: 128
+    Maximum Write String Length: 128
+    Console print timeout value: 0xFFFFFFFF
+    
+  Module "Communications Framework on sf_el_ux_comms_v2"
+    Parameter Checking: Default (BSP)
+    Read Input Buffer Size (Bytes): 128
+    Timeout in ticks: 1000
+    
+  Module "USBX Device Class CDC-ACM"
+  Module "USBX Device Configuration"
+    Composite Device: Disable
+    
+  Module "USBX on ux"
+  Module "USBX Interface Configuration CDC-ACM"
+  Module "USBX Port DCD on sf_el_ux for USBFS"
+    Full Speed Interrupt Priority: Priority 4
+    LDO Regulator(Only for S3 and S1 part MCUs): Disable
+    
+  Module "ADC Driver on r_adc"
+    Parameter Checking: Enabled
+    
   HAL
-    Instance "g_ioport I/O Port Driver on r_ioport"
-      Name [Fixed]: g_ioport
-      
     Instance "g_elc ELC Driver on r_elc"
       Name [Fixed]: g_elc
       
@@ -362,136 +430,512 @@ Synergy Configuration
     Instance "g_cgc CGC Driver on r_cgc"
       Name [Fixed]: g_cgc
       
-  Thread "Modbus Thread"
-    Symbol: modbus_thread
-    Name: Modbus Thread
-    Stack size (bytes): 1024
-    Priority: 3
-    Auto start: Enabled
-    Time slicing interval (ticks): 1
-    
-    Instance "g_uart0 UART Driver on r_sci_uart"
-      Name: g_uart0
-      Channel: 3
-      Baud Rate: 9600
-      Data Bits: 8bits
-      Parity: None
-      Stop Bits: 1bit
-      CTS/RTS Selection: RTS (CTS is disabled)
-      Name of UART callback function to be defined by user: user_uart_callback
-      Name of UART callback function for the RTS external pin control to be defined by user: NULL
-      Clock Source: Internal Clock
-      Baudrate Clock Output from SCK pin: Disable
-      Start bit detection: Falling Edge
-      Noise Cancel: Disable
-      Bit Rate Modulation Enable: Enable
-      Receive FIFO Trigger Level: Max
-      Receive Interrupt Priority: Priority 12
-      Transmit Interrupt Priority: Priority 12
-      Transmit End Interrupt Priority: Priority 12
-      Error Interrupt Priority: Disabled
-      Baudrate Percent Error: 2.0
-      UART Communication Mode: RS485
-      UART RS485 Communication Mode: Full Duplex
-      RS485 DE Port: 08
-      RS485 DE Pin: 00
+    Instance "g_ioport I/O Port Driver on r_ioport"
+      Name [Fixed]: g_ioport
       
-      Instance "g_transfer0 Transfer Driver on r_dtc SCI3 TXI"
-        Name: g_transfer0
-        Mode: Normal
-        Transfer Size: 1 Byte
-        Destination Address Mode: Fixed
-        Source Address Mode: Incremented
-        Repeat Area (Unused in Normal Mode): Source
-        Interrupt Frequency: After all transfers have completed
-        Destination Pointer: NULL
-        Source Pointer: NULL
-        Number of Transfers: 0
-        Number of Blocks (Valid only in Block Mode): 0
-        Activation Source (Must enable IRQ): SCI3 TXI
-        Auto Enable: False
-        Callback (Only valid with Software start): NULL
-        ELC Software Event Interrupt Priority: Disabled
+  Thread "MQTT_Thread"
+    Symbol: MQTT_Thread
+    Name: MQTT_Thread
+    Stack size (bytes): 8192
+    Priority: 5
+    Auto start: Enabled
+    Time slicing interval (ticks): 10
+    
+    Instance "g_mqtt_client0 NetX Duo MQTT Client"
+      Name: g_mqtt_client0
+      Client ID Callback: mqtt_client_id_callback
+      Client ID Max Length: 12
+      Client Thread Stack Size: 4096
+      Number of Messages to be stored in memory: 10
+      Client thread priority: 2
+      Name of generated initialization function: mqtt_client_init0
+      Auto Initialization: Disable
+      
+      Instance "g_ip0 NetX Duo IP Instance"
+        Name: g_ip0
+        IPv4 Address: 0.0.0.0
+        Subnet Mask: 255.255.255.0
+        Default Gateway Address: 0.0.0.0
+        IPv6 Global Address: 2001:0:0:0:0:0:0:1
+        IPv6 Link Local Address (All zeros means use MAC address): 0:0:0:0:0:0:0:0
+        IP Helper Thread Stack Size (bytes): 2048
+        IP Helper Thread Priority: 3
+        ARP: Enable
+        ARP cache storage units: Bytes
+            ARP cache size (in storage units): 520
+        Reverse ARP: Disable
+        TCP: Enable
+        UDP: Enable
+        ICMP: Enable
+        IGMP: Enable
+        IP fragmentation: Enable
+        Name of generated initialization function: ip_init0
+        Auto Initialization: Enable
+        Link status change callback: NULL
         
-    Instance "g_timer0 Timer Driver on r_gpt"
-      Name: g_timer0
-      Channel: 0
-      Mode: Periodic
-      Duty Cycle Range (only applicable in PWM mode): Shortest: 2 PCLK, Longest: (Period - 1) PCLK
-      Period Value: 50
-      Period Unit: Microseconds
-      Duty Cycle Value: 50
-      Duty Cycle Unit: Unit Raw Counts
-      Auto Start: True
-      GTIOCA Output Enabled: False
-      GTIOCA Stop Level: Pin Level Low
-      GTIOCB Output Enabled: False
-      GTIOCB Stop Level: Pin Level Low
-      Callback: timer_user_callback
-      Overflow Interrupt Priority: Priority 7
-      
-    Object "g_uart_semaphore0 Semaphore"
-      Name: UART semaphore
-      Symbol: g_uart_semaphore0
-      Initial count: 1
-      
-    Object "g_modbus_queue Queue"
-      Name: Modbus Queue
-      Symbol: g_modbus_queue
-      Message Size (Words): 1
-      Queue Size (Bytes): 20
-      
-    Object "g_serial_RX_queue Queue"
-      Name: serial RX Queue
-      Symbol: g_serial_RX_queue
-      Message Size (Words): 1
-      Queue Size (Bytes): 20
-      
-  Thread "Led Thread"
-    Symbol: Leds
-    Name: Led Thread
-    Stack size (bytes): 1024
-    Priority: 3
-    Auto start: Enabled
-    Time slicing interval (ticks): 1
-    
-  Thread "WD"
-    Symbol: watchdog
-    Name: WD
-    Stack size (bytes): 1024
-    Priority: 1
-    Auto start: Enabled
-    Time slicing interval (ticks): 1
-    
-    Instance "g_sf_thread_monitor0 Thread Monitor Framework on sf_thread_monitor"
-      Name: g_sf_thread_monitor0
-      Profiling Mode: Disabled
-      Thread Monitor Thread Priority: 1
-      Name of generated initialization function: sf_thread_monitor_init0
+        Instance "NetX Duo Common on nxd"
+          Name of generated initialization function: nx_common_init0
+          Auto Initialization: Enable
+          
+        Instance "g_packet_pool0 NetX Duo Packet Pool Instance"
+          Name: g_packet_pool0
+          Packet Size (bytes): 1568
+          Number of Packets in Pool: 50
+          Name of generated initialization function: packet_pool_init0
+          Auto Initialization: Enable
+          
+          Instance "NetX Duo Common on nxd"
+            Name of generated initialization function: nx_common_init0
+            Auto Initialization: Enable
+            
+        Instance "g_sf_el_nx_ethernet NetX Port ETHER on sf_el_nx"
+          Name: g_sf_el_nx_ethernet
+          Channel: 0
+          MAC address change callback: NULL
+          Unknown packet receive Callback: NULL
+          
+      Instance "g_packet_pool0 NetX Duo Packet Pool Instance"
+        Name: g_packet_pool0
+        Packet Size (bytes): 1568
+        Number of Packets in Pool: 50
+        Name of generated initialization function: packet_pool_init0
+        Auto Initialization: Enable
+        
+        Instance "NetX Duo Common on nxd"
+          Name of generated initialization function: nx_common_init0
+          Auto Initialization: Enable
+          
+      Instance " NetX Duo TLS Common"
+        Name of generated initialization function: nx_secure_common_init
+        Auto Initialization: Enable
+        
+        Instance "NetX Duo Common on nxd"
+          Name of generated initialization function: nx_common_init0
+          Auto Initialization: Enable
+          
+        Instance "g_crypto_generic NetX Duo Software Crypto"
+          Name: g_crypto_generic
+          
+          Instance "g_sf_el_nx_crypto NetX Crypto Hardware Accelerator"
+            Name: g_sf_el_nx_crypto
+            
+            Instance "g_sce_0 SCE COMMON Driver on r_sce"
+              Name: g_sce_0
+              Endian flag: CRYPTO_WORD_ENDIAN_BIG
+              : 
+              Interfaces which can be accessed through InterfaceGet API.: 
+              AES Plain-text ECB 128-bit: Enable
+              AES Plain-text CBC 128-bit: Enable
+              AES Plain-text CTR 128-bit: Enable
+              AES Plain-text GCM 128-bit: Enable
+              AES Plain-text XTS 128-bit: Enable
+              AES Plain-text ECB 192-bit: Enable
+              AES Plain-text CBC 192-bit: Enable
+              AES Plain-text CTR 192-bit: Enable
+              AES Plain-text GCM 192-bit: Enable
+              AES Plain-text ECB 256-bit: Enable
+              AES Plain-text CBC 256-bit: Enable
+              AES Plain-text CTR 256-bit: Enable
+              AES Plain-text GCM 256-bit: Enable
+              AES Plain-text XTS 256-bit: Enable
+              AES Wrapped ECB 128-bit: Enable
+              AES Wrapped CBC 128-bit: Enable
+              AES Wrapped CTR 128-bit: Enable
+              AES Wrapped GCM 128-bit: Enable
+              AES Wrapped XTS 128-bit: Enable
+              AES Wrapped ECB 192-bit: Enable
+              AES Wrapped CBC 192-bit: Enable
+              AES Wrapped CTR 192-bit: Enable
+              AES Wrapped GCM 192-bit: Enable
+              AES Wrapped ECB 256-bit: Enable
+              AES Wrapped CBC 256-bit: Enable
+              AES Wrapped CTR 256-bit: Enable
+              AES Wrapped GCM 256-bit: Enable
+              AES Wrapped XTS 256-bit: Enable
+              RSA Plain-text 1024-bit: Enable
+              RSA Plain-text 2048-bit: Enable
+              RSA Wrapped 1024-bit: Enable
+              RSA Wrapped 2048-bit: Enable
+              ECC Plain-text 192-bit: Enable
+              ECC Plain-text 256-bit: Enable
+              ECC Wrapped 192-bit: Enable
+              ECC Wrapped 256-bit: Enable
+              HASH SHA1: Enable
+              HASH SHA224: Enable
+              HASH SHA256: Enable
+              HASH MD5: Enable
+              True Random Number Generator: Enable
+              
+    Instance "g_dns0 NetX Duo DNS Client"
+      Name: g_dns0
+      Name of generated initialization function: dns_client_init0
       Auto Initialization: Enable
       
-      Instance "g_wdt0 Watchdog Driver on r_wdt"
-        Name: g_wdt0
-        Start Mode: Register
-        Start Watchdog After Configuration: True
-        Timeout: 16,384 Cycles
-        Clock Division Ratio: PCLK/8192
-        Window Start Position: 100% (Window Position Not Specified)
-        Window End Position: 0% (Window Position Not Specified)
-        Reset Control: Reset Output
-        Stop Control: WDT Count Disabled in Low Power Mode
-        NMI Callback: NULL
+      Instance "g_ip0 NetX Duo IP Instance"
+        Name: g_ip0
+        IPv4 Address: 0.0.0.0
+        Subnet Mask: 255.255.255.0
+        Default Gateway Address: 0.0.0.0
+        IPv6 Global Address: 2001:0:0:0:0:0:0:1
+        IPv6 Link Local Address (All zeros means use MAC address): 0:0:0:0:0:0:0:0
+        IP Helper Thread Stack Size (bytes): 2048
+        IP Helper Thread Priority: 3
+        ARP: Enable
+        ARP cache storage units: Bytes
+            ARP cache size (in storage units): 520
+        Reverse ARP: Disable
+        TCP: Enable
+        UDP: Enable
+        ICMP: Enable
+        IGMP: Enable
+        IP fragmentation: Enable
+        Name of generated initialization function: ip_init0
+        Auto Initialization: Enable
+        Link status change callback: NULL
         
-  Thread "ADC Thread"
+        Instance "NetX Duo Common on nxd"
+          Name of generated initialization function: nx_common_init0
+          Auto Initialization: Enable
+          
+        Instance "g_packet_pool0 NetX Duo Packet Pool Instance"
+          Name: g_packet_pool0
+          Packet Size (bytes): 1568
+          Number of Packets in Pool: 50
+          Name of generated initialization function: packet_pool_init0
+          Auto Initialization: Enable
+          
+          Instance "NetX Duo Common on nxd"
+            Name of generated initialization function: nx_common_init0
+            Auto Initialization: Enable
+            
+        Instance "g_sf_el_nx_ethernet NetX Port ETHER on sf_el_nx"
+          Name: g_sf_el_nx_ethernet
+          Channel: 0
+          MAC address change callback: NULL
+          Unknown packet receive Callback: NULL
+          
+    Instance "g_dhcp_client0 NetX Duo DHCP IPv4 Client"
+      Name: g_dhcp_client0
+      Name of generated initialization function: dhcp_client_init0
+      Auto Initialization: Enable
+      DHCP Option addition: Disable
+      DHCP Option addition function: Enable
+      Name of the DHCP option addition function: dhcp_user_option_add_client0
+      
+      Instance "g_ip0 NetX Duo IP Instance"
+        Name: g_ip0
+        IPv4 Address: 0.0.0.0
+        Subnet Mask: 255.255.255.0
+        Default Gateway Address: 0.0.0.0
+        IPv6 Global Address: 2001:0:0:0:0:0:0:1
+        IPv6 Link Local Address (All zeros means use MAC address): 0:0:0:0:0:0:0:0
+        IP Helper Thread Stack Size (bytes): 2048
+        IP Helper Thread Priority: 3
+        ARP: Enable
+        ARP cache storage units: Bytes
+            ARP cache size (in storage units): 520
+        Reverse ARP: Disable
+        TCP: Enable
+        UDP: Enable
+        ICMP: Enable
+        IGMP: Enable
+        IP fragmentation: Enable
+        Name of generated initialization function: ip_init0
+        Auto Initialization: Enable
+        Link status change callback: NULL
+        
+        Instance "NetX Duo Common on nxd"
+          Name of generated initialization function: nx_common_init0
+          Auto Initialization: Enable
+          
+        Instance "g_packet_pool0 NetX Duo Packet Pool Instance"
+          Name: g_packet_pool0
+          Packet Size (bytes): 1568
+          Number of Packets in Pool: 50
+          Name of generated initialization function: packet_pool_init0
+          Auto Initialization: Enable
+          
+          Instance "NetX Duo Common on nxd"
+            Name of generated initialization function: nx_common_init0
+            Auto Initialization: Enable
+            
+        Instance "g_sf_el_nx_ethernet NetX Port ETHER on sf_el_nx"
+          Name: g_sf_el_nx_ethernet
+          Channel: 0
+          MAC address change callback: NULL
+          Unknown packet receive Callback: NULL
+          
+      Instance "NetX Duo DHCP IPv4 Common"
+    Instance "g_int_storageInst Flash Driver on r_flash_hp"
+      Name: g_int_storageInst
+      Data Flash Background Operation: Enabled
+      Callback: flash_callback
+      Flash Ready Interrupt Priority: Priority 5
+      Flash Error Interrupt Priority: Priority 5
+      
+    Instance "g_sntp_client0 NetX Duo SNTP Client"
+      Name: g_sntp_client0
+      Index to SNTP Network Interface: 0
+      Name of Leap Second Handler: leap_second_handler
+      Name of Kiss of Death Handler: kiss_of_death_handler
+      Name of Random Number Generator Function (optional): NULL
+      Name of generated initialization function: sntp_client_init0
+      Auto Initialization: Enable
+      
+      Instance "g_ip0 NetX Duo IP Instance"
+        Name: g_ip0
+        IPv4 Address: 0.0.0.0
+        Subnet Mask: 255.255.255.0
+        Default Gateway Address: 0.0.0.0
+        IPv6 Global Address: 2001:0:0:0:0:0:0:1
+        IPv6 Link Local Address (All zeros means use MAC address): 0:0:0:0:0:0:0:0
+        IP Helper Thread Stack Size (bytes): 2048
+        IP Helper Thread Priority: 3
+        ARP: Enable
+        ARP cache storage units: Bytes
+            ARP cache size (in storage units): 520
+        Reverse ARP: Disable
+        TCP: Enable
+        UDP: Enable
+        ICMP: Enable
+        IGMP: Enable
+        IP fragmentation: Enable
+        Name of generated initialization function: ip_init0
+        Auto Initialization: Enable
+        Link status change callback: NULL
+        
+        Instance "NetX Duo Common on nxd"
+          Name of generated initialization function: nx_common_init0
+          Auto Initialization: Enable
+          
+        Instance "g_packet_pool0 NetX Duo Packet Pool Instance"
+          Name: g_packet_pool0
+          Packet Size (bytes): 1568
+          Number of Packets in Pool: 50
+          Name of generated initialization function: packet_pool_init0
+          Auto Initialization: Enable
+          
+          Instance "NetX Duo Common on nxd"
+            Name of generated initialization function: nx_common_init0
+            Auto Initialization: Enable
+            
+        Instance "g_sf_el_nx_ethernet NetX Port ETHER on sf_el_nx"
+          Name: g_sf_el_nx_ethernet
+          Channel: 0
+          MAC address change callback: NULL
+          Unknown packet receive Callback: NULL
+          
+      Instance "g_packet_pool0 NetX Duo Packet Pool Instance"
+        Name: g_packet_pool0
+        Packet Size (bytes): 1568
+        Number of Packets in Pool: 50
+        Name of generated initialization function: packet_pool_init0
+        Auto Initialization: Enable
+        
+        Instance "NetX Duo Common on nxd"
+          Name of generated initialization function: nx_common_init0
+          Auto Initialization: Enable
+          
+    Instance "g_tls_session NetX Duo TLS Session"
+      Name: g_tls_session
+      Meta data size: 16384
+      Name of Timestamp Function: NULL
+      Name of Certificate Verification Function: NULL
+      Name of generated initialization function: tls_dtls_session_init0
+      Auto Init: Disable
+      
+      Instance " NetX Duo TLS Common"
+        Name of generated initialization function: nx_secure_common_init
+        Auto Initialization: Enable
+        
+        Instance "NetX Duo Common on nxd"
+          Name of generated initialization function: nx_common_init0
+          Auto Initialization: Enable
+          
+        Instance "g_crypto_generic NetX Duo Software Crypto"
+          Name: g_crypto_generic
+          
+          Instance "g_sf_el_nx_crypto NetX Crypto Hardware Accelerator"
+            Name: g_sf_el_nx_crypto
+            
+            Instance "g_sce_0 SCE COMMON Driver on r_sce"
+              Name: g_sce_0
+              Endian flag: CRYPTO_WORD_ENDIAN_BIG
+              : 
+              Interfaces which can be accessed through InterfaceGet API.: 
+              AES Plain-text ECB 128-bit: Enable
+              AES Plain-text CBC 128-bit: Enable
+              AES Plain-text CTR 128-bit: Enable
+              AES Plain-text GCM 128-bit: Enable
+              AES Plain-text XTS 128-bit: Enable
+              AES Plain-text ECB 192-bit: Enable
+              AES Plain-text CBC 192-bit: Enable
+              AES Plain-text CTR 192-bit: Enable
+              AES Plain-text GCM 192-bit: Enable
+              AES Plain-text ECB 256-bit: Enable
+              AES Plain-text CBC 256-bit: Enable
+              AES Plain-text CTR 256-bit: Enable
+              AES Plain-text GCM 256-bit: Enable
+              AES Plain-text XTS 256-bit: Enable
+              AES Wrapped ECB 128-bit: Enable
+              AES Wrapped CBC 128-bit: Enable
+              AES Wrapped CTR 128-bit: Enable
+              AES Wrapped GCM 128-bit: Enable
+              AES Wrapped XTS 128-bit: Enable
+              AES Wrapped ECB 192-bit: Enable
+              AES Wrapped CBC 192-bit: Enable
+              AES Wrapped CTR 192-bit: Enable
+              AES Wrapped GCM 192-bit: Enable
+              AES Wrapped ECB 256-bit: Enable
+              AES Wrapped CBC 256-bit: Enable
+              AES Wrapped CTR 256-bit: Enable
+              AES Wrapped GCM 256-bit: Enable
+              AES Wrapped XTS 256-bit: Enable
+              RSA Plain-text 1024-bit: Enable
+              RSA Plain-text 2048-bit: Enable
+              RSA Wrapped 1024-bit: Enable
+              RSA Wrapped 2048-bit: Enable
+              ECC Plain-text 192-bit: Enable
+              ECC Plain-text 256-bit: Enable
+              ECC Wrapped 192-bit: Enable
+              ECC Wrapped 256-bit: Enable
+              HASH SHA1: Enable
+              HASH SHA224: Enable
+              HASH SHA256: Enable
+              HASH MD5: Enable
+              True Random Number Generator: Enable
+              
+    Object "g_sys_event_flags Event Flags"
+      Name: user_event
+      Symbol: g_sys_event_flags
+      
+    Object "g_mqtt_mutex Mutex"
+      Name: MQTT Mutex
+      Symbol: g_mqtt_mutex
+      Priority inheritance: Disabled
+      
+    Object "g_int_storage_evt_grp Event Flags"
+      Name: Internal Storage Event Flags
+      Symbol: g_int_storage_evt_grp
+      
+    Object "g_google_semaphore Semaphore"
+      Name: New Semaphore
+      Symbol: g_google_semaphore
+      Initial count: 0
+      
+    Object "g_msg_queue Queue"
+      Name: New Queue
+      Symbol: g_msg_queue
+      Message Size (Words): 1
+      Queue Size (Bytes): 4
+      
+    Object "g_mqtt_rx_payload Queue"
+      Name: New Queue
+      Symbol: g_mqtt_rx_payload
+      Message Size (Words): 2
+      Queue Size (Bytes): 32
+      
+  Thread "MQTT RX Thread"
+    Symbol: MQTT_Rx_Thread
+    Name: MQTT RX Thread
+    Stack size (bytes): 1280
+    Priority: 6
+    Auto start: Enabled
+    Time slicing interval (ticks): 10
+    
+    Object "g_mqtt_notify_sem Semaphore"
+      Name: New Semaphore
+      Symbol: g_mqtt_notify_sem
+      Initial count: 0
+      
+  Thread "Console Thread"
+    Symbol: console_thread
+    Name: Console Thread
+    Stack size (bytes): 4096
+    Priority: 6
+    Auto start: Enabled
+    Time slicing interval (ticks): 10
+    
+    Instance "g_sf_console Console Framework on sf_console"
+      Name: g_sf_console
+      Name of Initial Menu (Application Defined): g_sf_console_root_menu
+      Echo: True
+      Autostart: False
+      Name of generated initialization function: sf_console_init0
+      Auto Initialization: Enable
+      
+      Instance "g_sf_comms0 Communications Framework on sf_el_ux_comms_v2"
+        Name: g_sf_comms0
+        Name of generated initialization function: sf_comms_init0
+        Auto Initialization: Enable
+        
+        Instance "g_ux_device_class_cdc_acm0 USBX Device Class CDC-ACM"
+          Name: g_ux_device_class_cdc_acm0
+          USBX CDC-ACM instance_activate Function Callback: ux_cdc_device0_instance_activate
+          USBX CDC-ACM instance_deactivate Function Callback: ux_cdc_device0_instance_deactivate
+          Name of generated initialization function: ux_device_class_cdc_acm_init0
+          Auto Initialization: Enable
+          
+          Instance "USBX Device Configuration"
+            Vendor ID: 0x045B
+            Product ID: 0x0000
+            Device Release Number: 0x0000
+            Index of Manufacturer String Descriptor: 0x00
+            Index of Product String Descriptor: 0x00
+            Index of Serial Number String Descriptor: 0x00
+            Class Code: Communications(CDC)
+            Index of String Descriptor describing this configuration: 0x00
+            Size of USB Descriptor in bytes for this configuration (Modify this value only for Vendor-specific Class, otherwise set zero): 0x00
+            Number of Interfaces (Modify this value only for Vendor-specific Class, otherwise set zero): 0x00
+            Self-Powered: Enable
+            Remote Wakeup: Disable
+            Maximum Power Consumption (in 2mA units): 50
+            Supported Language Code: 0x0409
+            Name of USBX String Framework: NULL
+            Total index number of USB String Descriptors in USBX String Framework: 0
+            Name of USBX Language Framework: NULL
+            Number of Languages to support (US English is applied if zero is set): 0
+            Name of generated initialization function: ux_device_init0
+            Auto Initialization: Enable
+            
+            Instance "g_sf_el_ux_dcd_fs_0 USBX Port DCD on sf_el_ux for USBFS"
+              Name: g_sf_el_ux_dcd_fs_0
+              USB Controller Selection: USBFS
+              
+            Instance "USBX on ux"
+              USBX Pool Memory Name: g_ux_pool_memory
+              USBX Pool Memory Size: 18432
+              User Callback for Host Event Notification(Only valid for USB Host): NULL
+              User Callback for Device Event Notification(Only valid for USB Device): NULL
+              Name of generated initialization function: ux_common_init0
+              Auto Initialization: Enable
+              
+          Instance "g_usb_interface_desc_cdcacm_0 USBX Interface Configuration CDC-ACM"
+            Name: g_usb_interface_desc_cdcacm_0
+            Interface Number of Communications Class interface: 0x00
+            Interrupt Transfer endpoint to use for Communications Class: Endpoint 3
+            Polling period for Interrupt Endpoint (in mS/125us units for FS/HS): 0x0F
+            Interface Number of Data Class interface: 0x01
+            Bulk In Transfer endpoint to use for Data Class: Endpoint 1
+            Bulk Out Transfer endpoint to use for Data Class: Endpoint 2
+            Index of String Descriptor Describing Communications Class interface (Interface Descriptor:iInterface).: 0x00
+            Index of String Descriptor Describing Data Class interface (Interface Descriptor:iInterface).: 0x00
+            
+    Object "g_console_mutex Mutex"
+      Name: Console Mutex
+      Symbol: g_console_mutex
+      Priority inheritance: Disabled
+      
+  Thread "Adc Thread"
     Symbol: adc_thread
-    Name: ADC Thread
+    Name: Adc Thread
     Stack size (bytes): 1024
-    Priority: 4
+    Priority: 7
     Auto start: Enabled
     Time slicing interval (ticks): 1
     
-    Instance "g_adc0 ADC Driver on r_adc"
-      Name: g_adc0
+    Instance "g_adc ADC Driver on r_adc"
+      Name: g_adc
       Unit: 0
       Resolution: 12-Bit
       Alignment: Right
@@ -506,7 +950,7 @@ Synergy Configuration
           Channel 4: Use in Normal/Group A
           Channel 5: Use in Normal/Group A
           Channel 6: Use in Normal/Group A
-          Channel 7: Use in Normal/Group A
+          Channel 7: Unused
           Channel 8: Unused
           Channel 9: Unused
           Channel 10: Unused
@@ -566,11 +1010,11 @@ Synergy Configuration
           Voltage Sensor: Disabled
       Sample and Hold Mask (Available only on selected MCUs): Select channels for which individual sample and hold circuit is to be enabled
           Channel 0: Enabled
-          Channel 1: Enabled
-          Channel 2: Enabled
+          Channel 1: Disabled
+          Channel 2: Disabled
       Sample Hold States (Applies only to the 3 channels selected above): 24
       Callback: NULL
-      Scan End Interrupt Priority: Priority 4
+      Scan End Interrupt Priority: Priority 7
       Scan End Group B Interrupt Priority: Disabled
       Voltage reference(Only for S1JA): External VREFH0
       Over current protection(Only for S1JA): Enabled
@@ -579,66 +1023,4 @@ Synergy Configuration
       PGA 1: Disabled
       PGA 2: Disabled
       
-  Thread "HTTP Thread"
-    Symbol: http_thread
-    Name: HTTP Thread
-    Stack size (bytes): 1024
-    Priority: 2
-    Auto start: Enabled
-    Time slicing interval (ticks): 1
-    
-    Instance "g_http_server0 NetX HTTP Server"
-      Name: g_http_server0
-      Internal thread stack size (bytes): 4096
-      Name of Authentication Checking Function: authentication_check
-      Name of Request Notify Callback Function: request_notify
-      Name of generated initialization function: http_server_init0
-      Auto Initialization: Enable
-      
-      Instance "g_ip0 NetX IP Instance"
-        Name: g_ip0
-        IPv4 Address: 192.168.1.128
-        Subnet Mask: 255.255.255.0
-        Default Gateway Address: 192.168.1.254
-        IP Helper Thread Stack Size (bytes): 2048
-        IP Helper Thread Priority: 3
-        ARP: Enable
-        ARP cache storage units: Bytes
-            ARP cache size (in storage units): 520
-        Reverse ARP: Disable
-        TCP: Enable
-        UDP: Enable
-        ICMP: Enable
-        IGMP: Enable
-        IP fragmentation: Disable
-        Name of generated initialization function: ip_init0
-        Auto Initialization: Enable
-        Link status change callback: NULL
-        
-        Instance "NetX Common on nx"
-          Name of generated initialization function: nx_common_init0
-          Auto Initialization: Enable
-          
-        Instance "g_packet_pool0 NetX Packet Pool Instance"
-          Name: g_packet_pool0
-          Packet Size in Bytes: 2048
-          Number of Packets in Pool: 32
-          Name of generated initialization function: packet_pool_init0
-          Auto Initialization: Enable
-          
-          Instance "NetX Common on nx"
-            Name of generated initialization function: nx_common_init0
-            Auto Initialization: Enable
-            
-        Instance "g_sf_el_nx NetX Port ETHER on sf_el_nx"
-          Name: g_sf_el_nx
-          Channel: 0
-          MAC address change callback: NULL
-          Unknown packet receive Callback: NULL
-          
-      Instance "g_fx_media0 FileX Stub"
-        Name: g_fx_media0
-        
-      Instance "NetX HTTP Common"
-        Instance "NetX MD5"
   Messaging

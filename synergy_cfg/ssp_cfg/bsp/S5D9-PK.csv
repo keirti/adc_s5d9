@@ -563,7 +563,7 @@ SDHI1: WP"
 "P508","148","","","","","Disabled","","","ADC0: AN20
 SCI5: SCK
 SCI6: SCK"
-"P511","176","IIC2_SDA","","High","None","Peripheral mode","CMOS","None","CAN1: CRX
+"P511","176","IIC2_SDA","","Medium","None","Peripheral mode","CMOS","None","CAN1: CRX
 GPT0: GTIOCB
 IIC2: SDA
 IRQ0: IRQ15

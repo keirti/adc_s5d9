@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>SPS_EMS</name>
+	<name>mqtt_s5d9</name>
 	<comment></comment>
 	<projects>
-		<project>verify</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

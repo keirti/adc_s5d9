@@ -28,8 +28,6 @@ REVIEWS
  Interface Header Files
 *=============================================================================*/
 #include "adc_interface.h"
-#include "sf_thread_monitor_api.h"
-#include "watchdog.h"
 
 /*=============================================================================*
  Local Header File
@@ -39,13 +37,10 @@ REVIEWS
 /*=============================================================================*
  Private Defines
 *=============================================================================*/
-#define WD_MIN_COUNT 1
-#define WD_MAX_COUNT 200
 
 /*=============================================================================*
  Private Variable Definitions (static)
 *=============================================================================*/
-static sf_thread_monitor_counter_min_max_t min_max_values;
 static adc_data_t* adc_data;
 
 /*=============================================================================*
@@ -161,30 +156,16 @@ void adc_thread_entry(void)
     initialise_monitor_handles();
 
     /*
-     * Populate the structure counters for the thread monitor with the defines
-     */
-    min_max_values.maximum_count = WD_MAX_COUNT;
-    min_max_values.minimum_count = WD_MIN_COUNT;
-
-    /*
-     * Register the thread with the monitor
-     */
-    if(SSP_SUCCESS != g_sf_thread_monitor0.p_api->threadRegister (g_sf_thread_monitor0.p_ctrl, &min_max_values))
-    {
-       __BKPT(0);
-    }
-
-    /*
      * Open the ADC Module
      * Configure the scan
      */
-    g_adc0.p_api->open(g_adc0.p_ctrl,g_adc0.p_cfg);
-    g_adc0.p_api->scanCfg(g_adc0.p_ctrl, g_adc0.p_channel_cfg);
+    g_adc.p_api->open(g_adc.p_ctrl,g_adc.p_cfg);
+    g_adc.p_api->scanCfg(g_adc.p_ctrl, g_adc.p_channel_cfg);
 
     /*
      * Start the ADC scan, print and error message should this fail
      */
-    if(g_adc0.p_api->scanStart(g_adc0.p_ctrl) != SSP_SUCCESS)
+    if(g_adc.p_api->scanStart(g_adc.p_ctrl) != SSP_SUCCESS)
     {
          printf("scan start failed\n");
     }
@@ -199,7 +180,7 @@ void adc_thread_entry(void)
          * Increment the channel
          * Check the channel is within the range of the configured amount of adcs
          */
-        g_adc0.p_api->read(g_adc0.p_ctrl, channel, &adc_data[channel].adc_raw_count);
+        g_adc.p_api->read(g_adc.p_ctrl, channel, &adc_data[channel].adc_raw_count);
         calculate_adc_voltages(channel);
         scale_adc(channel);
         channel++;
@@ -212,10 +193,6 @@ void adc_thread_entry(void)
          *  Increment the thread_counter
          *  Sleep the thread
          */
-        if(SSP_SUCCESS != g_sf_thread_monitor0.p_api->countIncrement(g_sf_thread_monitor0.p_ctrl))
-        {
-            __BKPT(0);
-        }
         tx_thread_sleep (1);
     }
 
@@ -223,7 +200,7 @@ void adc_thread_entry(void)
      * Only close the api when we break out of the while loop..
      * which is never
      */
-    g_adc0.p_api->close(g_adc0.p_ctrl);
+    g_adc.p_api->close(g_adc.p_ctrl);
 }
 
 /*=============================================================================*
